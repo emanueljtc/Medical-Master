@@ -48,7 +48,6 @@ Cache::config('default', array('engine' => 'File'));
  *     'Vendor'                    => array('/path/to/vendors/', '/next/path/to/vendors/'),
  *     'Plugin'                    => array('/path/to/plugins/', '/next/path/to/plugins/'),
  * ));
- *
  */
 
 /**
@@ -57,18 +56,38 @@ Cache::config('default', array('engine' => 'File'));
  *
  * Inflector::rules('singular', array('rules' => array(), 'irregular' => array(), 'uninflected' => array()));
  * Inflector::rules('plural', array('rules' => array(), 'irregular' => array(), 'uninflected' => array()));
- *
  */
 
 /**
  * Plugins need to be loaded manually, you can either load them one by one or all of them in a single call
  * Uncomment one of the lines below, as you need. Make sure you read the documentation on CakePlugin to use more
  * advanced ways of loading plugins
- *
- * CakePlugin::loadAll(); // Loads all plugins at once
- * CakePlugin::load('DebugKit'); //Loads a single plugin named DebugKit
- *
  */
+
+ CakePlugin::load('DebugKit'); // Loads a single plugin named DebugKit
+  // CakePlugin::load('CakePdf', array('bootstrap'=>true, 'routes' =>true));
+	//
+  //   Configure::write('CakePdf', array(
+	//
+  //       //'binary' => 'C:\wkhtmltopdf\bin\wkhtmltopdf.exe',//DESCOMENTAR PARA WINDOWS
+  //       'engine' => 'CakePdf.WkHtmlToPdf',
+  //       'options' => array(
+  //           'print-media-type' => true,
+  //           'outline' => true,
+  //           'dpi' => 96
+  //       ),
+  //       'margin' => array(
+  //           'bottom' => 12,
+  //           'left' => 10,
+  //           'right' => 10,
+  //           'top' => 20
+  //       ),
+  //       'orientation' => 'landscape',
+  //      'download' => true,
+	//
+  //   ));
+   // CakePlugin::load('AclExtras');
+
 
 /**
  * To prefer app translation over plugin translation, you can set

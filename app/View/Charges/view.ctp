@@ -16,9 +16,9 @@
 			<?php echo $this->Html->link($charge['Person']['name'], array('controller' => 'people', 'action' => 'view', $charge['Person']['id'])); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Quote'); ?></dt>
+		<dt><?php echo __('Citation'); ?></dt>
 		<dd>
-			<?php echo $this->Html->link($charge['Quote']['id'], array('controller' => 'quotes', 'action' => 'view', $charge['Quote']['id'])); ?>
+			<?php echo $this->Html->link($charge['Citation']['id'], array('controller' => 'citations', 'action' => 'view', $charge['Citation']['id'])); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('State Charge'); ?></dt>
@@ -26,9 +26,9 @@
 			<?php echo h($charge['Charge']['state_charge']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Type Payment'); ?></dt>
+		<dt><?php echo __('Typepayment'); ?></dt>
 		<dd>
-			<?php echo h($charge['Charge']['type_payment']); ?>
+			<?php echo $this->Html->link($charge['Typepayment']['id'], array('controller' => 'typepayments', 'action' => 'view', $charge['Typepayment']['id'])); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Observations'); ?></dt>
@@ -57,7 +57,9 @@
 		<li><?php echo $this->Html->link(__('New Charge'), array('action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List People'), array('controller' => 'people', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Person'), array('controller' => 'people', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Quotes'), array('controller' => 'quotes', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Quote'), array('controller' => 'quotes', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Citations'), array('controller' => 'citations', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Citation'), array('controller' => 'citations', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Typepayments'), array('controller' => 'typepayments', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Typepayment'), array('controller' => 'typepayments', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

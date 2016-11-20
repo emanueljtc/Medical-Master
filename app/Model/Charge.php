@@ -4,7 +4,8 @@ App::uses('AppModel', 'Model');
  * Charge Model
  *
  * @property Person $Person
- * @property Quote $Quote
+ * @property Citation $Citation
+ * @property Typepayment $Typepayment
  */
 class Charge extends AppModel {
 
@@ -41,7 +42,7 @@ class Charge extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'quote_id' => array(
+		'citation_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -61,7 +62,7 @@ class Charge extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'type_payment' => array(
+		'typepayment_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -98,9 +99,16 @@ class Charge extends AppModel {
 			'fields' => '',
 			'order' => ''
 		),
-		'Quote' => array(
-			'className' => 'Quote',
-			'foreignKey' => 'quote_id',
+		'Citation' => array(
+			'className' => 'Citation',
+			'foreignKey' => 'citation_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Typepayment' => array(
+			'className' => 'Typepayment',
+			'foreignKey' => 'typepayment_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

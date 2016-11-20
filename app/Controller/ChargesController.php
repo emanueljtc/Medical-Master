@@ -57,8 +57,9 @@ class ChargesController extends AppController {
 			}
 		}
 		$people = $this->Charge->Person->find('list');
-		$quotes = $this->Charge->Quote->find('list');
-		$this->set(compact('people', 'quotes'));
+		$citations = $this->Charge->Citation->find('list');
+		$typepayments = $this->Charge->Typepayment->find('list');
+		$this->set(compact('people', 'citations', 'typepayments'));
 	}
 
 /**
@@ -84,8 +85,9 @@ class ChargesController extends AppController {
 			$this->request->data = $this->Charge->find('first', $options);
 		}
 		$people = $this->Charge->Person->find('list');
-		$quotes = $this->Charge->Quote->find('list');
-		$this->set(compact('people', 'quotes'));
+		$citations = $this->Charge->Citation->find('list');
+		$typepayments = $this->Charge->Typepayment->find('list');
+		$this->set(compact('people', 'citations', 'typepayments'));
 	}
 
 /**

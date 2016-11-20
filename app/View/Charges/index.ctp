@@ -6,9 +6,9 @@
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('total_cost'); ?></th>
 			<th><?php echo $this->Paginator->sort('person_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('quote_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('citation_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('state_charge'); ?></th>
-			<th><?php echo $this->Paginator->sort('type_payment'); ?></th>
+			<th><?php echo $this->Paginator->sort('typepayment_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('observations'); ?></th>
 			<th><?php echo $this->Paginator->sort('created'); ?></th>
 			<th><?php echo $this->Paginator->sort('modified'); ?></th>
@@ -24,10 +24,12 @@
 			<?php echo $this->Html->link($charge['Person']['name'], array('controller' => 'people', 'action' => 'view', $charge['Person']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($charge['Quote']['id'], array('controller' => 'quotes', 'action' => 'view', $charge['Quote']['id'])); ?>
+			<?php echo $this->Html->link($charge['Citation']['id'], array('controller' => 'citations', 'action' => 'view', $charge['Citation']['id'])); ?>
 		</td>
 		<td><?php echo h($charge['Charge']['state_charge']); ?>&nbsp;</td>
-		<td><?php echo h($charge['Charge']['type_payment']); ?>&nbsp;</td>
+		<td>
+			<?php echo $this->Html->link($charge['Typepayment']['id'], array('controller' => 'typepayments', 'action' => 'view', $charge['Typepayment']['id'])); ?>
+		</td>
 		<td><?php echo h($charge['Charge']['observations']); ?>&nbsp;</td>
 		<td><?php echo h($charge['Charge']['created']); ?>&nbsp;</td>
 		<td><?php echo h($charge['Charge']['modified']); ?>&nbsp;</td>
@@ -60,7 +62,9 @@
 		<li><?php echo $this->Html->link(__('New Charge'), array('action' => 'add')); ?></li>
 		<li><?php echo $this->Html->link(__('List People'), array('controller' => 'people', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Person'), array('controller' => 'people', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Quotes'), array('controller' => 'quotes', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Quote'), array('controller' => 'quotes', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Citations'), array('controller' => 'citations', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Citation'), array('controller' => 'citations', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Typepayments'), array('controller' => 'typepayments', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Typepayment'), array('controller' => 'typepayments', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

@@ -33,7 +33,7 @@
 		</dd>
 		<dt><?php echo __('Datecitation'); ?></dt>
 		<dd>
-			<?php echo $this->Html->link($citation['Datecitation']['id'], array('controller' => 'datecitations', 'action' => 'view', $citation['Datecitation']['id'])); ?>
+			<?php echo $this->Html->link($citation['Datecitation']['state'], array('controller' => 'datecitations', 'action' => 'view', $citation['Datecitation']['id'])); ?>
 			&nbsp;
 		</dd>
 	</dl>

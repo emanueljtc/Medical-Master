@@ -5,6 +5,7 @@ App::uses('AppModel', 'Model');
  *
  * @property Person $Person
  * @property Datecitation $Datecitation
+ * @property Charge $Charge
  */
 class Citation extends AppModel {
 
@@ -86,4 +87,26 @@ class Citation extends AppModel {
 			'order' => ''
 		)
 	);
+
+/**
+ * hasMany associations
+ *
+ * @var array
+ */
+	public $hasMany = array(
+		'Charge' => array(
+			'className' => 'Charge',
+			'foreignKey' => 'citation_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
+
 }

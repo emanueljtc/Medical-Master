@@ -25,7 +25,7 @@
 		<td><?php echo h($citation['Citation']['created']); ?>&nbsp;</td>
 		<td><?php echo h($citation['Citation']['modified']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($citation['Datecitation']['id'], array('controller' => 'datecitations', 'action' => 'view', $citation['Datecitation']['id'])); ?>
+			<?php echo $this->Html->link($citation['Datecitation']['state'], array('controller' => 'datecitations', 'action' => 'view', $citation['Datecitation']['id'])); ?>
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $citation['Citation']['id'])); ?>

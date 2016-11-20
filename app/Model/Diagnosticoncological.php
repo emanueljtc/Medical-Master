@@ -3,8 +3,8 @@ App::uses('AppModel', 'Model');
 /**
  * Diagnosticoncological Model
  *
- * @property Diagnosticoncological $Diagnosticoncological
- * @property Diagnosticoncological $Diagnosticoncological
+ * @property Person $Person
+ * @property History $History
  * @property Indication $Indication
  * @property Study $Study
  */
@@ -333,7 +333,17 @@ class Diagnosticoncological extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'diagnosticoncological_id' => array(
+		'person_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'history_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -353,9 +363,16 @@ class Diagnosticoncological extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Diagnosticoncological' => array(
-			'className' => 'Diagnosticoncological',
-			'foreignKey' => 'diagnosticoncological_id',
+		'Person' => array(
+			'className' => 'Person',
+			'foreignKey' => 'person_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'History' => array(
+			'className' => 'History',
+			'foreignKey' => 'history_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
@@ -368,19 +385,6 @@ class Diagnosticoncological extends AppModel {
  * @var array
  */
 	public $hasMany = array(
-		'Diagnosticoncological' => array(
-			'className' => 'Diagnosticoncological',
-			'foreignKey' => 'diagnosticoncological_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
 		'Indication' => array(
 			'className' => 'Indication',
 			'foreignKey' => 'diagnosticoncological_id',

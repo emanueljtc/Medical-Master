@@ -16,11 +16,18 @@ class DoctorSpecialty extends AppModel {
 	public $useTable = 'doctor_ specialties';
 
 /**
+ * Primary key field
+ *
+ * @var string
+ */
+	public $primaryKey = 'specialtie_id';
+
+/**
  * Display field
  *
  * @var string
  */
-	public $displayField = 'id';
+	public $displayField = 'rol_id';
 
 /**
  * Validation rules

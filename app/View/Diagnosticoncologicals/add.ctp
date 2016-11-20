@@ -34,7 +34,8 @@
 		echo $this->Form->input('cesareans');
 		echo $this->Form->input('age_birth_one');
 		echo $this->Form->input('diagnostico');
-		echo $this->Form->input('diagnosticoncological_id');
+		echo $this->Form->input('person_id');
+		echo $this->Form->input('history_id');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

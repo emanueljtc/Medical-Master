@@ -161,9 +161,14 @@
 			<?php echo h($diagnosticoncological['Diagnosticoncological']['diagnostico']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Diagnosticoncological Id'); ?></dt>
+		<dt><?php echo __('Person Id'); ?></dt>
 		<dd>
-			<?php echo h($diagnosticoncological['Diagnosticoncological']['diagnosticoncological_id']); ?>
+			<?php echo h($diagnosticoncological['Diagnosticoncological']['person_id']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('History Id'); ?></dt>
+		<dd>
+			<?php echo h($diagnosticoncological['Diagnosticoncological']['history_id']); ?>
 			&nbsp;
 		</dd>
 	</dl>

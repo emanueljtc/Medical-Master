@@ -3,8 +3,8 @@ App::uses('AppModel', 'Model');
 /**
  * Rol Model
  *
- * @property DoctorSpecialty $DoctorSpecialty
  * @property Person $Person
+ * @property Specialty $Specialty
  */
 class Rol extends AppModel {
 
@@ -13,7 +13,7 @@ class Rol extends AppModel {
  *
  * @var string
  */
-	public $displayField = 'rol';
+	public $displayField = 'id';
 
 /**
  * Validation rules
@@ -41,8 +41,8 @@ class Rol extends AppModel {
  * @var array
  */
 	public $hasMany = array(
-		'DoctorSpecialty' => array(
-			'className' => 'DoctorSpecialty',
+		'Person' => array(
+			'className' => 'Person',
 			'foreignKey' => 'rol_id',
 			'dependent' => false,
 			'conditions' => '',
@@ -54,8 +54,8 @@ class Rol extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-		'Person' => array(
-			'className' => 'Person',
+		'Specialty' => array(
+			'className' => 'Specialty',
 			'foreignKey' => 'rol_id',
 			'dependent' => false,
 			'conditions' => '',

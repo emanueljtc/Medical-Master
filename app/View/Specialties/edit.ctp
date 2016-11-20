@@ -5,6 +5,7 @@
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('specialty');
+		echo $this->Form->input('rol_id');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
@@ -15,7 +16,7 @@
 
 		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Specialty.id')), array(), __('Are you sure you want to delete # %s?', $this->Form->value('Specialty.id'))); ?></li>
 		<li><?php echo $this->Html->link(__('List Specialties'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Doctor Specialties'), array('controller' => 'doctor_specialties', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Doctor Specialty'), array('controller' => 'doctor_specialties', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Rols'), array('controller' => 'rols', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Rol'), array('controller' => 'rols', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

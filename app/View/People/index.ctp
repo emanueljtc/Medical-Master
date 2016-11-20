@@ -13,6 +13,7 @@
 			<th><?php echo $this->Paginator->sort('email'); ?></th>
 			<th><?php echo $this->Paginator->sort('rol_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('nationality_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('specialty_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('pass_app'); ?></th>
 			<th><?php echo $this->Paginator->sort('token'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
@@ -34,6 +35,9 @@
 		</td>
 		<td>
 			<?php echo $this->Html->link($person['Nationality']['nacionalidad'], array('controller' => 'nationalities', 'action' => 'view', $person['Nationality']['id'])); ?>
+		</td>
+		<td>
+			<?php echo $this->Html->link($person['Specialty']['id'], array('controller' => 'specialties', 'action' => 'view', $person['Specialty']['id'])); ?>
 		</td>
 		<td><?php echo h($person['Person']['pass_app']); ?>&nbsp;</td>
 		<td><?php echo h($person['Person']['token']); ?>&nbsp;</td>
@@ -68,6 +72,8 @@
 		<li><?php echo $this->Html->link(__('New Rol'), array('controller' => 'rols', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Nationalities'), array('controller' => 'nationalities', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Nationality'), array('controller' => 'nationalities', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Specialties'), array('controller' => 'specialties', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Specialty'), array('controller' => 'specialties', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Antecedents'), array('controller' => 'antecedents', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Antecedent'), array('controller' => 'antecedents', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Charges'), array('controller' => 'charges', 'action' => 'index')); ?> </li>

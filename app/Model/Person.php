@@ -5,6 +5,7 @@ App::uses('AppModel', 'Model');
  *
  * @property Rol $Rol
  * @property Nationality $Nationality
+ * @property Specialty $Specialty
  * @property Antecedent $Antecedent
  * @property Charge $Charge
  * @property Citation $Citation
@@ -119,6 +120,16 @@ class Person extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'specialty_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
 		'token' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
@@ -150,6 +161,14 @@ class Person extends AppModel {
 			'className' => 'Nationality',
 			'foreignKey' => 'nationality_id',
 			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Specialty' => array(
+			'className' => 'Specialty',
+			'foreignKey' => 'specialty_id',
+			'conditions' => '',
+			'required' => false,
 			'fields' => '',
 			'order' => ''
 		)

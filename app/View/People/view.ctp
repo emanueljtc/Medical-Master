@@ -51,6 +51,11 @@
 			<?php echo $this->Html->link($person['Nationality']['nacionalidad'], array('controller' => 'nationalities', 'action' => 'view', $person['Nationality']['id'])); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Specialty'); ?></dt>
+		<dd>
+			<?php echo $this->Html->link($person['Specialty']['id'], array('controller' => 'specialties', 'action' => 'view', $person['Specialty']['id'])); ?>
+			&nbsp;
+		</dd>
 		<dt><?php echo __('Pass App'); ?></dt>
 		<dd>
 			<?php echo h($person['Person']['pass_app']); ?>
@@ -74,6 +79,8 @@
 		<li><?php echo $this->Html->link(__('New Rol'), array('controller' => 'rols', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Nationalities'), array('controller' => 'nationalities', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Nationality'), array('controller' => 'nationalities', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Specialties'), array('controller' => 'specialties', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Specialty'), array('controller' => 'specialties', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Antecedents'), array('controller' => 'antecedents', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Antecedent'), array('controller' => 'antecedents', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Charges'), array('controller' => 'charges', 'action' => 'index')); ?> </li>

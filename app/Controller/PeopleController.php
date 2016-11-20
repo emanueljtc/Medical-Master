@@ -24,6 +24,8 @@ class PeopleController extends AppController {
 	public function index() {
 		$this->Person->recursive = 0;
 		$this->set('people', $this->Paginator->paginate());
+		$posts = $this->paginate();
+		$this->set('posts',$posts);
 	}
 
 /**
@@ -108,4 +110,9 @@ class PeopleController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
+	public function getposts()
+	    {
+	    $this->set('posts', $this->Person->find('all'));
+			//	$post(array('posts' => person););
+	    }
 }

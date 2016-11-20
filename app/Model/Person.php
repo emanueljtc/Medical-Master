@@ -9,7 +9,7 @@ App::uses('AppModel', 'Model');
  * @property Charge $Charge
  * @property History $History
  * @property Indication $Indication
- * @property Quote $Quote
+
  * @property Study $Study
  * @property Treatment $Treatment
  */
@@ -202,20 +202,7 @@ class Person extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-		'Quote' => array(
-			'className' => 'Quote',
-			'foreignKey' => 'person_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'Study' => array(
+			'Study' => array(
 			'className' => 'Study',
 			'foreignKey' => 'person_id',
 			'dependent' => false,

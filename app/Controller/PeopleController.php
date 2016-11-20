@@ -1,4 +1,4 @@
-<?php
+d<?php
 App::uses('AppController', 'Controller');
 /**
  * People Controller

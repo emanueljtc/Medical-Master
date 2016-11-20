@@ -33,6 +33,8 @@
 		echo $this->Form->input('gynecological_vulva');
 		echo $this->Form->input('cesareans');
 		echo $this->Form->input('age_birth_one');
+		echo $this->Form->input('diagnostico');
+		echo $this->Form->input('diagnosticoncological_id');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

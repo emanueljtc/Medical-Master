@@ -156,6 +156,16 @@
 			<?php echo h($diagnosticoncological['Diagnosticoncological']['age_birth_one']); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Diagnostico'); ?></dt>
+		<dd>
+			<?php echo h($diagnosticoncological['Diagnosticoncological']['diagnostico']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Diagnosticoncological Id'); ?></dt>
+		<dd>
+			<?php echo h($diagnosticoncological['Diagnosticoncological']['diagnosticoncological_id']); ?>
+			&nbsp;
+		</dd>
 	</dl>
 </div>
 <div class="actions">

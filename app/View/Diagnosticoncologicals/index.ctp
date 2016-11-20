@@ -34,6 +34,8 @@
 			<th><?php echo $this->Paginator->sort('gynecological_vulva'); ?></th>
 			<th><?php echo $this->Paginator->sort('cesareans'); ?></th>
 			<th><?php echo $this->Paginator->sort('age_birth_one'); ?></th>
+			<th><?php echo $this->Paginator->sort('diagnostico'); ?></th>
+			<th><?php echo $this->Paginator->sort('diagnosticoncological_id'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	</thead>
@@ -71,6 +73,8 @@
 		<td><?php echo h($diagnosticoncological['Diagnosticoncological']['gynecological_vulva']); ?>&nbsp;</td>
 		<td><?php echo h($diagnosticoncological['Diagnosticoncological']['cesareans']); ?>&nbsp;</td>
 		<td><?php echo h($diagnosticoncological['Diagnosticoncological']['age_birth_one']); ?>&nbsp;</td>
+		<td><?php echo h($diagnosticoncological['Diagnosticoncological']['diagnostico']); ?>&nbsp;</td>
+		<td><?php echo h($diagnosticoncological['Diagnosticoncological']['diagnosticoncological_id']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $diagnosticoncological['Diagnosticoncological']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $diagnosticoncological['Diagnosticoncological']['id'])); ?>

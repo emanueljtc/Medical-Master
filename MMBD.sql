@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 20-11-2016 a las 16:30:17
+-- Tiempo de generación: 20-11-2016 a las 16:47:03
 -- Versión del servidor: 5.7.16-0ubuntu0.16.04.1
 -- Versión de PHP: 5.6.27-1+deb.sury.org~xenial+1
 
@@ -148,7 +148,8 @@ CREATE TABLE `diagnosticoncologicals` (
   `cesareans` varchar(100) NOT NULL,
   `age_birth_one` int(3) NOT NULL,
   `diagnostico` text NOT NULL,
-  `diagnosticoncological_id` int(11) NOT NULL
+  `person_id` int(11) NOT NULL,
+  `history_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

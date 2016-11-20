@@ -41,14 +41,14 @@
 			<?php echo h($person['Person']['email']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Rol'); ?></dt>
-		<dd>
-			<?php echo $this->Html->link($person['Rol']['rol'], array('controller' => 'rols', 'action' => 'view', $person['Rol']['id'])); ?>
-			&nbsp;
-		</dd>
 		<dt><?php echo __('Nationality'); ?></dt>
 		<dd>
 			<?php echo $this->Html->link($person['Nationality']['nacionalidad'], array('controller' => 'nationalities', 'action' => 'view', $person['Nationality']['id'])); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Rol'); ?></dt>
+		<dd>
+			<?php echo $this->Html->link($person['Rol']['id'], array('controller' => 'rols', 'action' => 'view', $person['Rol']['id'])); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Specialty'); ?></dt>

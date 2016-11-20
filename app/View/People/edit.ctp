@@ -11,8 +11,8 @@
 		echo $this->Form->input('address');
 		echo $this->Form->input('phone');
 		echo $this->Form->input('email');
-		echo $this->Form->input('rol_id');
 		echo $this->Form->input('nationality_id');
+		echo $this->Form->input('rol_id');
 		echo $this->Form->input('specialty_id');
 		echo $this->Form->input('pass_app');
 		echo $this->Form->input('token');

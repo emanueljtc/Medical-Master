@@ -11,8 +11,8 @@
 			<th><?php echo $this->Paginator->sort('address'); ?></th>
 			<th><?php echo $this->Paginator->sort('phone'); ?></th>
 			<th><?php echo $this->Paginator->sort('email'); ?></th>
-			<th><?php echo $this->Paginator->sort('rol_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('nationality_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('rol_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('specialty_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('pass_app'); ?></th>
 			<th><?php echo $this->Paginator->sort('token'); ?></th>
@@ -31,10 +31,10 @@
 		<td><?php echo h($person['Person']['phone']); ?>&nbsp;</td>
 		<td><?php echo h($person['Person']['email']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($person['Rol']['rol'], array('controller' => 'rols', 'action' => 'view', $person['Rol']['id'])); ?>
+			<?php echo $this->Html->link($person['Nationality']['nacionalidad'], array('controller' => 'nationalities', 'action' => 'view', $person['Nationality']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($person['Nationality']['nacionalidad'], array('controller' => 'nationalities', 'action' => 'view', $person['Nationality']['id'])); ?>
+			<?php echo $this->Html->link($person['Rol']['id'], array('controller' => 'rols', 'action' => 'view', $person['Rol']['id'])); ?>
 		</td>
 		<td>
 			<?php echo $this->Html->link($person['Specialty']['id'], array('controller' => 'specialties', 'action' => 'view', $person['Specialty']['id'])); ?>

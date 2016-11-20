@@ -13,7 +13,7 @@ class Rol extends AppModel {
  *
  * @var string
  */
-	public $displayField = 'id';
+	public $displayField = 'rol';
 
 /**
  * Validation rules

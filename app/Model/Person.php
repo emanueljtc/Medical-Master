@@ -7,9 +7,10 @@ App::uses('AppModel', 'Model');
  * @property Nationality $Nationality
  * @property Antecedent $Antecedent
  * @property Charge $Charge
+ * @property Citation $Citation
+ * @property Diagnostic $Diagnostic
  * @property History $History
  * @property Indication $Indication
-
  * @property Study $Study
  * @property Treatment $Treatment
  */
@@ -118,6 +119,16 @@ class Person extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'token' => array(
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
@@ -176,6 +187,32 @@ class Person extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
+		'Citation' => array(
+			'className' => 'Citation',
+			'foreignKey' => 'person_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'Diagnostic' => array(
+			'className' => 'Diagnostic',
+			'foreignKey' => 'person_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
 		'History' => array(
 			'className' => 'History',
 			'foreignKey' => 'person_id',
@@ -202,7 +239,7 @@ class Person extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-			'Study' => array(
+		'Study' => array(
 			'className' => 'Study',
 			'foreignKey' => 'person_id',
 			'dependent' => false,

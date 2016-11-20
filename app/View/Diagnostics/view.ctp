@@ -6,24 +6,169 @@
 			<?php echo h($diagnostic['Diagnostic']['id']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Diagnostic'); ?></dt>
+		<dt><?php echo __('Size Boobs'); ?></dt>
 		<dd>
-			<?php echo h($diagnostic['Diagnostic']['diagnostic']); ?>
+			<?php echo h($diagnostic['Diagnostic']['size_boobs']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Treatment'); ?></dt>
+		<dt><?php echo __('Form Boobs'); ?></dt>
 		<dd>
-			<?php echo $this->Html->link($diagnostic['Treatment']['id'], array('controller' => 'treatments', 'action' => 'view', $diagnostic['Treatment']['id'])); ?>
+			<?php echo h($diagnostic['Diagnostic']['form_boobs']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Created'); ?></dt>
+		<dt><?php echo __('Symmetry Boobs'); ?></dt>
 		<dd>
-			<?php echo h($diagnostic['Diagnostic']['created']); ?>
+			<?php echo h($diagnostic['Diagnostic']['symmetry_boobs']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Modified'); ?></dt>
+		<dt><?php echo __('Skin Boobs'); ?></dt>
 		<dd>
-			<?php echo h($diagnostic['Diagnostic']['modified']); ?>
+			<?php echo h($diagnostic['Diagnostic']['skin_boobs']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Cap Boobs'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['cap_boobs']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Pussy'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['pussy']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Neck Pussy'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['neck_pussy']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Coloscopia'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['coloscopia']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Ano  Straight'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['ano_ straight']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Head Neck'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['head_neck']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Touch Tumor'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['touch_tumor']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Form Tumor'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['form_tumor']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Surface Tumor'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['surface_tumor']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Contour Tumor'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['contour_tumor']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Axis Tumor'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['axis_tumor']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Consistency Tumor'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['consistency_tumor']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Laringoscopia'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['laringoscopia']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Menarguia'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['menarguia']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Reglas'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['reglas']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Prs'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['prs']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Companion Sexual'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['companion_sexual']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Distance Cap'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['distance_cap']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Gestas'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['gestas']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Rsi'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['rsi']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Paras'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['paras']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Abdomen'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['abdomen']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Misbirth'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['misbirth']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Gynecological Vulva'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['gynecological_vulva']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Cesareans'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['cesareans']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Age Birth One'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['age_birth_one']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Diagnostico'); ?></dt>
+		<dd>
+			<?php echo h($diagnostic['Diagnostic']['diagnostico']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Person'); ?></dt>
+		<dd>
+			<?php echo $this->Html->link($diagnostic['Person']['name'], array('controller' => 'people', 'action' => 'view', $diagnostic['Person']['id'])); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('History'); ?></dt>
+		<dd>
+			<?php echo $this->Html->link($diagnostic['History']['id'], array('controller' => 'histories', 'action' => 'view', $diagnostic['History']['id'])); ?>
 			&nbsp;
 		</dd>
 	</dl>
@@ -35,8 +180,10 @@
 		<li><?php echo $this->Form->postLink(__('Delete Diagnostic'), array('action' => 'delete', $diagnostic['Diagnostic']['id']), array(), __('Are you sure you want to delete # %s?', $diagnostic['Diagnostic']['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__('List Diagnostics'), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Diagnostic'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Treatments'), array('controller' => 'treatments', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Treatment'), array('controller' => 'treatments', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List People'), array('controller' => 'people', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Person'), array('controller' => 'people', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Histories'), array('controller' => 'histories', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New History'), array('controller' => 'histories', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Indications'), array('controller' => 'indications', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Indication'), array('controller' => 'indications', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Studies'), array('controller' => 'studies', 'action' => 'index')); ?> </li>

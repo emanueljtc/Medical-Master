@@ -4,7 +4,7 @@
 	<thead>
 	<tr>
 			<th><?php echo $this->Paginator->sort('rol_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('specialtie_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('specialty_id'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	</thead>
@@ -15,12 +15,12 @@
 			<?php echo $this->Html->link($doctorSpecialty['Rol']['rol'], array('controller' => 'rols', 'action' => 'view', $doctorSpecialty['Rol']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($doctorSpecialty['Specialtie']['id'], array('controller' => 'specialties', 'action' => 'view', $doctorSpecialty['Specialtie']['id'])); ?>
+			<?php echo $this->Html->link($doctorSpecialty['Specialty']['id'], array('controller' => 'specialties', 'action' => 'view', $doctorSpecialty['Specialty']['id'])); ?>
 		</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $doctorSpecialty['DoctorSpecialty']['specialtie_id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $doctorSpecialty['DoctorSpecialty']['specialtie_id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $doctorSpecialty['DoctorSpecialty']['specialtie_id']), array(), __('Are you sure you want to delete # %s?', $doctorSpecialty['DoctorSpecialty']['specialtie_id'])); ?>
+			<?php echo $this->Html->link(__('View'), array('action' => 'view', $doctorSpecialty['DoctorSpecialty']['specialty_id'])); ?>
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $doctorSpecialty['DoctorSpecialty']['specialty_id'])); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $doctorSpecialty['DoctorSpecialty']['specialty_id']), array(), __('Are you sure you want to delete # %s?', $doctorSpecialty['DoctorSpecialty']['specialty_id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -47,6 +47,6 @@
 		<li><?php echo $this->Html->link(__('List Rols'), array('controller' => 'rols', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Rol'), array('controller' => 'rols', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Specialties'), array('controller' => 'specialties', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Specialtie'), array('controller' => 'specialties', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Specialty'), array('controller' => 'specialties', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

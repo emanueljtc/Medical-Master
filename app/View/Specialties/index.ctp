@@ -4,7 +4,7 @@
 	<thead>
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort(' specialty'); ?></th>
+			<th><?php echo $this->Paginator->sort('specialty'); ?></th>
 			<th><?php echo $this->Paginator->sort('created'); ?></th>
 			<th><?php echo $this->Paginator->sort('modified'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
@@ -14,7 +14,7 @@
 	<?php foreach ($specialties as $specialty): ?>
 	<tr>
 		<td><?php echo h($specialty['Specialty']['id']); ?>&nbsp;</td>
-		<td><?php echo h($specialty['Specialty'][' specialty']); ?>&nbsp;</td>
+		<td><?php echo h($specialty['Specialty']['specialty']); ?>&nbsp;</td>
 		<td><?php echo h($specialty['Specialty']['created']); ?>&nbsp;</td>
 		<td><?php echo h($specialty['Specialty']['modified']); ?>&nbsp;</td>
 		<td class="actions">
@@ -44,5 +44,7 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('New Specialty'), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('List Doctor Specialties'), array('controller' => 'doctor_specialties', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Doctor Specialty'), array('controller' => 'doctor_specialties', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

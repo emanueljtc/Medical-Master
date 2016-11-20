@@ -3,7 +3,7 @@
 	<fieldset>
 		<legend><?php echo __('Add Specialty'); ?></legend>
 	<?php
-		echo $this->Form->input(' specialty');
+		echo $this->Form->input('specialty');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
@@ -13,5 +13,7 @@
 	<ul>
 
 		<li><?php echo $this->Html->link(__('List Specialties'), array('action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('List Doctor Specialties'), array('controller' => 'doctor_specialties', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Doctor Specialty'), array('controller' => 'doctor_specialties', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

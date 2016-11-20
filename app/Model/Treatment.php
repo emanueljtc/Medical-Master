@@ -4,7 +4,6 @@ App::uses('AppModel', 'Model');
  * Treatment Model
  *
  * @property Person $Person
- * @property Diagnostic $Diagnostic
  */
 class Treatment extends AppModel {
 
@@ -13,7 +12,7 @@ class Treatment extends AppModel {
  *
  * @var string
  */
-	public $displayField = 'treatment';
+	public $displayField = 'id';
 
 /**
  * Validation rules
@@ -79,26 +78,4 @@ class Treatment extends AppModel {
 			'order' => ''
 		)
 	);
-
-/**
- * hasMany associations
- *
- * @var array
- */
-	public $hasMany = array(
-		'Diagnostic' => array(
-			'className' => 'Diagnostic',
-			'foreignKey' => 'treatment_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		)
-	);
-
 }

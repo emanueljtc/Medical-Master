@@ -5,7 +5,7 @@ App::uses('AppModel', 'Model');
  *
  * @property Person $Person
  * @property Antecedent $Antecedent
- * @property DignosticsSpecialty $DignosticsSpecialty
+ * @property Diagnostic $Diagnostic
  */
 class History extends AppModel {
 
@@ -111,8 +111,8 @@ class History extends AppModel {
  * @var array
  */
 	public $hasMany = array(
-		'DignosticsSpecialty' => array(
-			'className' => 'DignosticsSpecialty',
+		'Diagnostic' => array(
+			'className' => 'Diagnostic',
 			'foreignKey' => 'history_id',
 			'dependent' => false,
 			'conditions' => '',

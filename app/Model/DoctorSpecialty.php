@@ -4,7 +4,7 @@ App::uses('AppModel', 'Model');
  * DoctorSpecialty Model
  *
  * @property Rol $Rol
- * @property Specialtie $Specialtie
+ * @property Specialty $Specialty
  */
 class DoctorSpecialty extends AppModel {
 
@@ -20,7 +20,7 @@ class DoctorSpecialty extends AppModel {
  *
  * @var string
  */
-	public $primaryKey = 'specialtie_id';
+	public $primaryKey = 'specialty_id';
 
 /**
  * Display field
@@ -45,7 +45,7 @@ class DoctorSpecialty extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'specialtie_id' => array(
+		'specialty_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -72,9 +72,9 @@ class DoctorSpecialty extends AppModel {
 			'fields' => '',
 			'order' => ''
 		),
-		'Specialtie' => array(
-			'className' => 'Specialtie',
-			'foreignKey' => 'specialtie_id',
+		'Specialty' => array(
+			'className' => 'Specialty',
+			'foreignKey' => 'specialty_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

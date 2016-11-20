@@ -56,6 +56,11 @@
 			<?php echo h($person['Person']['pass_app']); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Token'); ?></dt>
+		<dd>
+			<?php echo h($person['Person']['token']); ?>
+			&nbsp;
+		</dd>
 	</dl>
 </div>
 <div class="actions">
@@ -73,12 +78,14 @@
 		<li><?php echo $this->Html->link(__('New Antecedent'), array('controller' => 'antecedents', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Charges'), array('controller' => 'charges', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Charge'), array('controller' => 'charges', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Citations'), array('controller' => 'citations', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Citation'), array('controller' => 'citations', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Diagnostics'), array('controller' => 'diagnostics', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Diagnostic'), array('controller' => 'diagnostics', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Histories'), array('controller' => 'histories', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New History'), array('controller' => 'histories', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Indications'), array('controller' => 'indications', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Indication'), array('controller' => 'indications', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Quotes'), array('controller' => 'quotes', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Quote'), array('controller' => 'quotes', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Studies'), array('controller' => 'studies', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Study'), array('controller' => 'studies', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Treatments'), array('controller' => 'treatments', 'action' => 'index')); ?> </li>
@@ -138,9 +145,9 @@
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Total Cost'); ?></th>
 		<th><?php echo __('Person Id'); ?></th>
-		<th><?php echo __('Quote Id'); ?></th>
+		<th><?php echo __('Citation Id'); ?></th>
 		<th><?php echo __('State Charge'); ?></th>
-		<th><?php echo __('Type Payment'); ?></th>
+		<th><?php echo __('Typepayment Id'); ?></th>
 		<th><?php echo __('Observations'); ?></th>
 		<th><?php echo __('Created'); ?></th>
 		<th><?php echo __('Modified'); ?></th>
@@ -151,9 +158,9 @@
 			<td><?php echo $charge['id']; ?></td>
 			<td><?php echo $charge['total_cost']; ?></td>
 			<td><?php echo $charge['person_id']; ?></td>
-			<td><?php echo $charge['quote_id']; ?></td>
+			<td><?php echo $charge['citation_id']; ?></td>
 			<td><?php echo $charge['state_charge']; ?></td>
-			<td><?php echo $charge['type_payment']; ?></td>
+			<td><?php echo $charge['typepayment_id']; ?></td>
 			<td><?php echo $charge['observations']; ?></td>
 			<td><?php echo $charge['created']; ?></td>
 			<td><?php echo $charge['modified']; ?></td>
@@ -170,6 +177,138 @@
 	<div class="actions">
 		<ul>
 			<li><?php echo $this->Html->link(__('New Charge'), array('controller' => 'charges', 'action' => 'add')); ?> </li>
+		</ul>
+	</div>
+</div>
+<div class="related">
+	<h3><?php echo __('Related Citations'); ?></h3>
+	<?php if (!empty($person['Citation'])): ?>
+	<table cellpadding = "0" cellspacing = "0">
+	<tr>
+		<th><?php echo __('Id'); ?></th>
+		<th><?php echo __('Person Id'); ?></th>
+		<th><?php echo __('Hour'); ?></th>
+		<th><?php echo __('Date'); ?></th>
+		<th><?php echo __('Created'); ?></th>
+		<th><?php echo __('Modified'); ?></th>
+		<th><?php echo __('Datecitation Id'); ?></th>
+		<th class="actions"><?php echo __('Actions'); ?></th>
+	</tr>
+	<?php foreach ($person['Citation'] as $citation): ?>
+		<tr>
+			<td><?php echo $citation['id']; ?></td>
+			<td><?php echo $citation['person_id']; ?></td>
+			<td><?php echo $citation['hour']; ?></td>
+			<td><?php echo $citation['date']; ?></td>
+			<td><?php echo $citation['created']; ?></td>
+			<td><?php echo $citation['modified']; ?></td>
+			<td><?php echo $citation['datecitation_id']; ?></td>
+			<td class="actions">
+				<?php echo $this->Html->link(__('View'), array('controller' => 'citations', 'action' => 'view', $citation['id'])); ?>
+				<?php echo $this->Html->link(__('Edit'), array('controller' => 'citations', 'action' => 'edit', $citation['id'])); ?>
+				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'citations', 'action' => 'delete', $citation['id']), array(), __('Are you sure you want to delete # %s?', $citation['id'])); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+	</table>
+<?php endif; ?>
+
+	<div class="actions">
+		<ul>
+			<li><?php echo $this->Html->link(__('New Citation'), array('controller' => 'citations', 'action' => 'add')); ?> </li>
+		</ul>
+	</div>
+</div>
+<div class="related">
+	<h3><?php echo __('Related Diagnostics'); ?></h3>
+	<?php if (!empty($person['Diagnostic'])): ?>
+	<table cellpadding = "0" cellspacing = "0">
+	<tr>
+		<th><?php echo __('Id'); ?></th>
+		<th><?php echo __('Size Boobs'); ?></th>
+		<th><?php echo __('Form Boobs'); ?></th>
+		<th><?php echo __('Symmetry Boobs'); ?></th>
+		<th><?php echo __('Skin Boobs'); ?></th>
+		<th><?php echo __('Cap Boobs'); ?></th>
+		<th><?php echo __('Pussy'); ?></th>
+		<th><?php echo __('Neck Pussy'); ?></th>
+		<th><?php echo __('Coloscopia'); ?></th>
+		<th><?php echo __('Ano  Straight'); ?></th>
+		<th><?php echo __('Head Neck'); ?></th>
+		<th><?php echo __('Touch Tumor'); ?></th>
+		<th><?php echo __('Form Tumor'); ?></th>
+		<th><?php echo __('Surface Tumor'); ?></th>
+		<th><?php echo __('Contour Tumor'); ?></th>
+		<th><?php echo __('Axis Tumor'); ?></th>
+		<th><?php echo __('Consistency Tumor'); ?></th>
+		<th><?php echo __('Laringoscopia'); ?></th>
+		<th><?php echo __('Menarguia'); ?></th>
+		<th><?php echo __('Reglas'); ?></th>
+		<th><?php echo __('Prs'); ?></th>
+		<th><?php echo __('Companion Sexual'); ?></th>
+		<th><?php echo __('Distance Cap'); ?></th>
+		<th><?php echo __('Gestas'); ?></th>
+		<th><?php echo __('Rsi'); ?></th>
+		<th><?php echo __('Paras'); ?></th>
+		<th><?php echo __('Abdomen'); ?></th>
+		<th><?php echo __('Misbirth'); ?></th>
+		<th><?php echo __('Gynecological Vulva'); ?></th>
+		<th><?php echo __('Cesareans'); ?></th>
+		<th><?php echo __('Age Birth One'); ?></th>
+		<th><?php echo __('Diagnostico'); ?></th>
+		<th><?php echo __('Person Id'); ?></th>
+		<th><?php echo __('History Id'); ?></th>
+		<th class="actions"><?php echo __('Actions'); ?></th>
+	</tr>
+	<?php foreach ($person['Diagnostic'] as $diagnostic): ?>
+		<tr>
+			<td><?php echo $diagnostic['id']; ?></td>
+			<td><?php echo $diagnostic['size_boobs']; ?></td>
+			<td><?php echo $diagnostic['form_boobs']; ?></td>
+			<td><?php echo $diagnostic['symmetry_boobs']; ?></td>
+			<td><?php echo $diagnostic['skin_boobs']; ?></td>
+			<td><?php echo $diagnostic['cap_boobs']; ?></td>
+			<td><?php echo $diagnostic['pussy']; ?></td>
+			<td><?php echo $diagnostic['neck_pussy']; ?></td>
+			<td><?php echo $diagnostic['coloscopia']; ?></td>
+			<td><?php echo $diagnostic['ano_ straight']; ?></td>
+			<td><?php echo $diagnostic['head_neck']; ?></td>
+			<td><?php echo $diagnostic['touch_tumor']; ?></td>
+			<td><?php echo $diagnostic['form_tumor']; ?></td>
+			<td><?php echo $diagnostic['surface_tumor']; ?></td>
+			<td><?php echo $diagnostic['contour_tumor']; ?></td>
+			<td><?php echo $diagnostic['axis_tumor']; ?></td>
+			<td><?php echo $diagnostic['consistency_tumor']; ?></td>
+			<td><?php echo $diagnostic['laringoscopia']; ?></td>
+			<td><?php echo $diagnostic['menarguia']; ?></td>
+			<td><?php echo $diagnostic['reglas']; ?></td>
+			<td><?php echo $diagnostic['prs']; ?></td>
+			<td><?php echo $diagnostic['companion_sexual']; ?></td>
+			<td><?php echo $diagnostic['distance_cap']; ?></td>
+			<td><?php echo $diagnostic['gestas']; ?></td>
+			<td><?php echo $diagnostic['rsi']; ?></td>
+			<td><?php echo $diagnostic['paras']; ?></td>
+			<td><?php echo $diagnostic['abdomen']; ?></td>
+			<td><?php echo $diagnostic['misbirth']; ?></td>
+			<td><?php echo $diagnostic['gynecological_vulva']; ?></td>
+			<td><?php echo $diagnostic['cesareans']; ?></td>
+			<td><?php echo $diagnostic['age_birth_one']; ?></td>
+			<td><?php echo $diagnostic['diagnostico']; ?></td>
+			<td><?php echo $diagnostic['person_id']; ?></td>
+			<td><?php echo $diagnostic['history_id']; ?></td>
+			<td class="actions">
+				<?php echo $this->Html->link(__('View'), array('controller' => 'diagnostics', 'action' => 'view', $diagnostic['id'])); ?>
+				<?php echo $this->Html->link(__('Edit'), array('controller' => 'diagnostics', 'action' => 'edit', $diagnostic['id'])); ?>
+				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'diagnostics', 'action' => 'delete', $diagnostic['id']), array(), __('Are you sure you want to delete # %s?', $diagnostic['id'])); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+	</table>
+<?php endif; ?>
+
+	<div class="actions">
+		<ul>
+			<li><?php echo $this->Html->link(__('New Diagnostic'), array('controller' => 'diagnostics', 'action' => 'add')); ?> </li>
 		</ul>
 	</div>
 </div>
@@ -248,45 +387,6 @@
 	</div>
 </div>
 <div class="related">
-	<h3><?php echo __('Related Quotes'); ?></h3>
-	<?php if (!empty($person['Quote'])): ?>
-	<table cellpadding = "0" cellspacing = "0">
-	<tr>
-		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Person Id'); ?></th>
-		<th><?php echo __('Hour'); ?></th>
-		<th><?php echo __('Date'); ?></th>
-		<th><?php echo __('Created'); ?></th>
-		<th><?php echo __('Modified'); ?></th>
-		<th><?php echo __('State Quote Id'); ?></th>
-		<th class="actions"><?php echo __('Actions'); ?></th>
-	</tr>
-	<?php foreach ($person['Quote'] as $quote): ?>
-		<tr>
-			<td><?php echo $quote['id']; ?></td>
-			<td><?php echo $quote['person_id']; ?></td>
-			<td><?php echo $quote['hour']; ?></td>
-			<td><?php echo $quote['date']; ?></td>
-			<td><?php echo $quote['created']; ?></td>
-			<td><?php echo $quote['modified']; ?></td>
-			<td><?php echo $quote['state_quote_id']; ?></td>
-			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'quotes', 'action' => 'view', $quote['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'quotes', 'action' => 'edit', $quote['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'quotes', 'action' => 'delete', $quote['id']), array(), __('Are you sure you want to delete # %s?', $quote['id'])); ?>
-			</td>
-		</tr>
-	<?php endforeach; ?>
-	</table>
-<?php endif; ?>
-
-	<div class="actions">
-		<ul>
-			<li><?php echo $this->Html->link(__('New Quote'), array('controller' => 'quotes', 'action' => 'add')); ?> </li>
-		</ul>
-	</div>
-</div>
-<div class="related">
 	<h3><?php echo __('Related Studies'); ?></h3>
 	<?php if (!empty($person['Study'])): ?>
 	<table cellpadding = "0" cellspacing = "0">
@@ -331,12 +431,10 @@
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
 		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('History Id'); ?></th>
 		<th><?php echo __('Person Id'); ?></th>
-		<th><?php echo __('Quote Id'); ?></th>
-		<th><?php echo __('State Treatment'); ?></th>
+		<th><?php echo __('Status Treament'); ?></th>
 		<th><?php echo __('Treatment'); ?></th>
-		<th><?php echo __(' Observations'); ?></th>
+		<th><?php echo __('Observations Treaments'); ?></th>
 		<th><?php echo __('Created'); ?></th>
 		<th><?php echo __('Modified'); ?></th>
 		<th class="actions"><?php echo __('Actions'); ?></th>
@@ -344,12 +442,10 @@
 	<?php foreach ($person['Treatment'] as $treatment): ?>
 		<tr>
 			<td><?php echo $treatment['id']; ?></td>
-			<td><?php echo $treatment['history_id']; ?></td>
 			<td><?php echo $treatment['person_id']; ?></td>
-			<td><?php echo $treatment['quote_id']; ?></td>
-			<td><?php echo $treatment['state_treatment']; ?></td>
+			<td><?php echo $treatment['status_treament']; ?></td>
 			<td><?php echo $treatment['treatment']; ?></td>
-			<td><?php echo $treatment[' observations']; ?></td>
+			<td><?php echo $treatment['observations_treaments']; ?></td>
 			<td><?php echo $treatment['created']; ?></td>
 			<td><?php echo $treatment['modified']; ?></td>
 			<td class="actions">

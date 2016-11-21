@@ -26,6 +26,7 @@
 Icon?
 ehthumbs.db
 Thumbs.db
+<<<<<<< HEAD
 =======
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
@@ -62,3 +63,8 @@ $RECYCLE.BIN/
 Thumbs.db
 UserInterfaceState.xcuserstate
 >>>>>>> 3114317f691d2667e010efc4565ad52d44249e59
+=======
+node_modules
+hooks
+wwww
+>>>>>>> desarrollo

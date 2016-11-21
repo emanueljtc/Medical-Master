@@ -1,7 +1,4 @@
 page-admin {
-.login-content{
-  background-color: cadetblue;
-}
 
 label{
     text-align: center;
@@ -16,5 +13,31 @@ h3{
     background-color: #387ef5;
     text-align: center;
         
+}
+.card-background-page {
+ 
+    background-color: cadetblue;
+  ion-card {
+    position: relative;
+    text-align: center;
+  }
+
+  .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: black;
+  }
+
+  .card-subtitle {
+    font-size: 2.5em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: #f53d3d;
+  }
+
 }
 }

@@ -41,8 +41,9 @@ export class LoginPage {
       this.service.postLogin(data)
         .subscribe(data => {
             this.mydata = data;
-            this.storage.set('username', this.mydata[0].name);
-            this.storage.set('token', this.mydata[0].token)
+            this.storage.set('nombre', this.mydata[0].name);
+            this.storage.set('token', this.mydata[0].token);
+            this.storage.set('apellido', this.mydata[0].last_name);
           console.log(this.mydata);
           this.navCtrl.setRoot(Page1);
         }, error =>{

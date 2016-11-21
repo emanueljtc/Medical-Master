@@ -20,7 +20,7 @@ export class HomePage {
    data: any;
   public getsession: any;
   public name : any;
-  public tokensito: any;
+  public lastname: any;
   x: any;
 
 
@@ -30,16 +30,21 @@ export class HomePage {
          
         this.service.checkToken()
         .then((key: any)=>{
-         console.log (key);
+        // console.log (key);
           this.x  = key;
           if( this.x == null){
            console.log("nulo");
             
           } else{
-             this.name = this.storage.get('username');
+             this.name = this.storage.get('nombre');// trae del storage el valor de la variable nombre
             this.name.then((value : any)=>{
               this.name = value;
              //console.log (this.name);
+            });
+            this.lastname = this.storage.get('apellido'); // lo mismo aqui
+            this.lastname.then((value:any)=>{
+              this.lastname = value;
+              //console.log(this.lastname);
             });
           }
            

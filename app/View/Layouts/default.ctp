@@ -14,50 +14,71 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
-$cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
+$cakeDescription = __d('cake_dev', 'Medical M.');
 ?>
-<!DOCTYPE html>
+<?php echo $this->Html->docType('html5'); ?>
 <html>
-<head>
-	<?php echo $this->Html->charset(); ?>
-	<title>
-		<?php echo $cakeDescription ?>:
-		<?php echo $this->fetch('title'); ?>
-	</title>
-	<?php
-		echo $this->Html->meta('icon');
+	<head>
+		<?php echo $this->Html->charset(); ?>
 
-		echo $this->Html->css('cake.generic');
+		<title>
+			<?php echo $cakeDescription ?>:
+			<?php echo $title_for_layout; ?>
+		</title>
+		<?php
+			echo $this->Html->meta('icon');
+			echo $this->Html->meta(['name' => 'viewport', 'content' => 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no']);
+			echo $this->fetch('meta');
 
-		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
-	?>
-</head>
-<body>
-	<div id="container">
-		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
-		</div>
-		<div id="content">
+			echo $this->Html->css('bootstrap.min.css');
+			echo $this->Html->css('//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css');
+			echo $this->Html->css('ionicons.min.css');
+			echo $this->Html->css('//fonts.googleapis.com/css?family=Droid+Serif:400,700,700italic,400italic');
+			echo $this->Html->css('CakeAdminLTE');
+			echo $this->fetch('css');
+			//echo $this->Html->script('libs/jquery-1.10.2.min');
+			//echo $this->Html->script('libs/bootstrap.min');
 
-			<?php echo $this->Session->flash(); ?>
+			echo $this->fetch('script');
+		?>
+	</head>
 
-			<?php echo $this->fetch('content'); ?>
-		</div>
-		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false, 'id' => 'cake-powered')
-				);
-			?>
-			<p>
-				<?php echo $cakeVersion; ?>
-			</p>
-		</div>
-	</div>
-	<?php echo $this->element('sql_dump'); ?>
-</body>
+	<body class="skin-blue fixed">
+
+		<?php echo $this->element('top_menu'); ?>
+		<div class="wrapper row-offcanvas row-offcanvas-left">
+			<?php echo $this->element('left_sidebar'); ?>
+
+			<!-- Right side column. Contains the navbar and content of the page -->
+		    <aside class="right-side">
+		    	<section class="content-header">
+				    <h1>
+				        <?php echo $title_for_layout; ?>
+				        <small>Control Panel</small>
+				    </h1>
+				    <ol class="breadcrumb">
+				        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+				        <li class="active">Blank page</li>
+				    </ol>
+				</section>
+				<section class="content">
+				<?php echo $this->Session->flash(); ?>
+				<?php echo $this->fetch('content'); ?>
+				</section>
+			</aside><!-- /.right-side -->
+
+
+		</div><!-- ./wrapper -->
+
+
+
+		<?php
+			echo $this->Html->script('jquery.min');
+			echo $this->Html->script('bootstrap.min');
+			echo $this->Html->script('CakeAdminLTE/app');
+			echo $this->fetch('script');
+		?>
+
+	</body>
+
 </html>

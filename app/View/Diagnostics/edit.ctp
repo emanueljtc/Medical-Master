@@ -1,61 +1,127 @@
-<div class="diagnostics form">
-<?php echo $this->Form->create('Diagnostic'); ?>
-	<fieldset>
-		<legend><?php echo __('Edit Diagnostic'); ?></legend>
-	<?php
-		echo $this->Form->input('id');
-		echo $this->Form->input('size_boobs');
-		echo $this->Form->input('form_boobs');
-		echo $this->Form->input('symmetry_boobs');
-		echo $this->Form->input('skin_boobs');
-		echo $this->Form->input('cap_boobs');
-		echo $this->Form->input('pussy');
-		echo $this->Form->input('neck_pussy');
-		echo $this->Form->input('coloscopia');
-		echo $this->Form->input('ano_ straight');
-		echo $this->Form->input('head_neck');
-		echo $this->Form->input('touch_tumor');
-		echo $this->Form->input('form_tumor');
-		echo $this->Form->input('surface_tumor');
-		echo $this->Form->input('contour_tumor');
-		echo $this->Form->input('axis_tumor');
-		echo $this->Form->input('consistency_tumor');
-		echo $this->Form->input('laringoscopia');
-		echo $this->Form->input('menarguia');
-		echo $this->Form->input('reglas');
-		echo $this->Form->input('prs');
-		echo $this->Form->input('companion_sexual');
-		echo $this->Form->input('distance_cap');
-		echo $this->Form->input('gestas');
-		echo $this->Form->input('rsi');
-		echo $this->Form->input('paras');
-		echo $this->Form->input('abdomen');
-		echo $this->Form->input('misbirth');
-		echo $this->Form->input('gynecological_vulva');
-		echo $this->Form->input('cesareans');
-		echo $this->Form->input('age_birth_one');
-		echo $this->Form->input('diagnostico');
-		echo $this->Form->input('person_id');
-		echo $this->Form->input('history_id');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
 
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Diagnostic.id')), array(), __('Are you sure you want to delete # %s?', $this->Form->value('Diagnostic.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Diagnostics'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List People'), array('controller' => 'people', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Person'), array('controller' => 'people', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Histories'), array('controller' => 'histories', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New History'), array('controller' => 'histories', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Indications'), array('controller' => 'indications', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Indication'), array('controller' => 'indications', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Studies'), array('controller' => 'studies', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Study'), array('controller' => 'studies', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Treatments'), array('controller' => 'treatments', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Treatment'), array('controller' => 'treatments', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+<div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+		<div class="box box-primary">
+			<div class="box-header">
+			<h3 class="box-title"><?php echo __('Edit Diagnostic'); ?></h3>
+			</div>
+			<div class="box-body table-responsive">
+		
+			<?php echo $this->Form->create('Diagnostic', array('role' => 'form')); ?>
+
+				<fieldset>
+
+										<div class="form-group">
+						<?php echo $this->Form->input('id', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('size_boobs', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('form_boobs', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('symmetry_boobs', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('skin_boobs', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('cap_boobs', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('pussy', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('neck_pussy', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('coloscopia', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('ano_ straight', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('head_neck', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('touch_tumor', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('form_tumor', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('surface_tumor', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('contour_tumor', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('axis_tumor', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('consistency_tumor', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('laringoscopia', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('menarguia', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('reglas', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('prs', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('companion_sexual', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('distance_cap', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('gestas', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('rsi', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('paras', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('abdomen', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('misbirth', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('gynecological_vulva', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('cesareans', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('age_birth_one', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('diagnostico', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('person_id', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('history_id', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+
+					<?php echo $this->Form->submit('Submit', array('class' => 'btn btn-large btn-primary')); ?>
+
+				</fieldset>
+
+						<?php echo $this->Form->end(); ?>
+
+		</div><!-- /.form -->
+			
+	</div><!-- /#page-content .col-sm-9 -->
+
+</div><!-- /#page-container .row-fluid -->

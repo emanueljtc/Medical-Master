@@ -199,7 +199,7 @@
 	<tr>
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Diagnostic Id'); ?></th>
-		<th><?php echo __('Treament Id'); ?></th>
+		<th><?php echo __('Treatment Id'); ?></th>
 		<th><?php echo __('Person Id'); ?></th>
 		<th><?php echo __('Indication'); ?></th>
 		<th><?php echo __('Created'); ?></th>
@@ -210,7 +210,7 @@
 		<tr>
 			<td><?php echo $indication['id']; ?></td>
 			<td><?php echo $indication['diagnostic_id']; ?></td>
-			<td><?php echo $indication['treament_id']; ?></td>
+			<td><?php echo $indication['treatment_id']; ?></td>
 			<td><?php echo $indication['person_id']; ?></td>
 			<td><?php echo $indication['indication']; ?></td>
 			<td><?php echo $indication['created']; ?></td>

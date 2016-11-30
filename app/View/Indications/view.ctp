@@ -11,6 +11,11 @@
 			<?php echo $this->Html->link($indication['Diagnostic']['id'], array('controller' => 'diagnostics', 'action' => 'view', $indication['Diagnostic']['id'])); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Treatment'); ?></dt>
+		<dd>
+			<?php echo $this->Html->link($indication['Treatment']['id'], array('controller' => 'treatments', 'action' => 'view', $indication['Treatment']['id'])); ?>
+			&nbsp;
+		</dd>
 		<dt><?php echo __('Person'); ?></dt>
 		<dd>
 			<?php echo $this->Html->link($indication['Person']['name'], array('controller' => 'people', 'action' => 'view', $indication['Person']['id'])); ?>
@@ -42,6 +47,8 @@
 		<li><?php echo $this->Html->link(__('New Indication'), array('action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Diagnostics'), array('controller' => 'diagnostics', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Diagnostic'), array('controller' => 'diagnostics', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Treatments'), array('controller' => 'treatments', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Treatment'), array('controller' => 'treatments', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List People'), array('controller' => 'people', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Person'), array('controller' => 'people', 'action' => 'add')); ?> </li>
 	</ul>

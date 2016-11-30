@@ -14,7 +14,7 @@ class Treatment extends AppModel {
  *
  * @var string
  */
-	public $displayField = 'id';
+	public $displayField = 'prescription';
 
 /**
  * Validation rules

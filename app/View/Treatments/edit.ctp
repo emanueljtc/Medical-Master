@@ -1,29 +1,43 @@
-<div class="treatments form">
-<?php echo $this->Form->create('Treatment'); ?>
-	<fieldset>
-		<legend><?php echo __('Edit Treatment'); ?></legend>
-	<?php
-		echo $this->Form->input('id');
-		echo $this->Form->input('person_id');
-		echo $this->Form->input('diagnostic_id');
-		echo $this->Form->input('status_treament');
-		echo $this->Form->input('prescription');
-		echo $this->Form->input('observations_prescription');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
 
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Treatment.id')), array(), __('Are you sure you want to delete # %s?', $this->Form->value('Treatment.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Treatments'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List People'), array('controller' => 'people', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Person'), array('controller' => 'people', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Diagnostics'), array('controller' => 'diagnostics', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Diagnostic'), array('controller' => 'diagnostics', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Indications'), array('controller' => 'indications', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Indication'), array('controller' => 'indications', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+<div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+		<div class="box box-primary">
+			<div class="box-header">
+			<h3 class="box-title"><?php echo __('Edit Treatment'); ?></h3>
+			</div>
+			<div class="box-body table-responsive">
+		
+			<?php echo $this->Form->create('Treatment', array('role' => 'form')); ?>
+
+				<fieldset>
+
+										<div class="form-group">
+						<?php echo $this->Form->input('id', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('person_id', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('diagnostic_id', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('status_treament', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('prescription', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('observations_prescription', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+
+					<?php echo $this->Form->submit('Submit', array('class' => 'btn btn-large btn-primary')); ?>
+
+				</fieldset>
+
+						<?php echo $this->Form->end(); ?>
+
+		</div><!-- /.form -->
+			
+	</div><!-- /#page-content .col-sm-9 -->
+
+</div><!-- /#page-container .row-fluid -->

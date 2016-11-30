@@ -5,9 +5,10 @@
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('person_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('diagnostic_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('status_treament'); ?></th>
-			<th><?php echo $this->Paginator->sort('treatment'); ?></th>
-			<th><?php echo $this->Paginator->sort('observations_treaments'); ?></th>
+			<th><?php echo $this->Paginator->sort('prescription'); ?></th>
+			<th><?php echo $this->Paginator->sort('observations_prescription'); ?></th>
 			<th><?php echo $this->Paginator->sort('created'); ?></th>
 			<th><?php echo $this->Paginator->sort('modified'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
@@ -20,9 +21,12 @@
 		<td>
 			<?php echo $this->Html->link($treatment['Person']['name'], array('controller' => 'people', 'action' => 'view', $treatment['Person']['id'])); ?>
 		</td>
+		<td>
+			<?php echo $this->Html->link($treatment['Diagnostic']['id'], array('controller' => 'diagnostics', 'action' => 'view', $treatment['Diagnostic']['id'])); ?>
+		</td>
 		<td><?php echo h($treatment['Treatment']['status_treament']); ?>&nbsp;</td>
-		<td><?php echo h($treatment['Treatment']['treatment']); ?>&nbsp;</td>
-		<td><?php echo h($treatment['Treatment']['observations_treaments']); ?>&nbsp;</td>
+		<td><?php echo h($treatment['Treatment']['prescription']); ?>&nbsp;</td>
+		<td><?php echo h($treatment['Treatment']['observations_prescription']); ?>&nbsp;</td>
 		<td><?php echo h($treatment['Treatment']['created']); ?>&nbsp;</td>
 		<td><?php echo h($treatment['Treatment']['modified']); ?>&nbsp;</td>
 		<td class="actions">
@@ -54,5 +58,9 @@
 		<li><?php echo $this->Html->link(__('New Treatment'), array('action' => 'add')); ?></li>
 		<li><?php echo $this->Html->link(__('List People'), array('controller' => 'people', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Person'), array('controller' => 'people', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Diagnostics'), array('controller' => 'diagnostics', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Diagnostic'), array('controller' => 'diagnostics', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Indications'), array('controller' => 'indications', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Indication'), array('controller' => 'indications', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

@@ -4,9 +4,10 @@
 		<legend><?php echo __('Add Treatment'); ?></legend>
 	<?php
 		echo $this->Form->input('person_id');
+		echo $this->Form->input('diagnostic_id');
 		echo $this->Form->input('status_treament');
-		echo $this->Form->input('treatment');
-		echo $this->Form->input('observations_treaments');
+		echo $this->Form->input('prescription');
+		echo $this->Form->input('observations_prescription');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
@@ -18,5 +19,9 @@
 		<li><?php echo $this->Html->link(__('List Treatments'), array('action' => 'index')); ?></li>
 		<li><?php echo $this->Html->link(__('List People'), array('controller' => 'people', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Person'), array('controller' => 'people', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Diagnostics'), array('controller' => 'diagnostics', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Diagnostic'), array('controller' => 'diagnostics', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Indications'), array('controller' => 'indications', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Indication'), array('controller' => 'indications', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

@@ -104,8 +104,8 @@
 	<?php if (!empty($person['Antecedent'])): ?>
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
-		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Person Id'); ?></th>
+		<th><?php echo __('N° de Antecente'); ?></th>
+		<!-- <th><?php echo __('Person Id'); ?></th> -->
 		<th><?php echo __('Name Antecendent'); ?></th>
 		<th><?php echo __('Origin'); ?></th>
 		<th><?php echo __('Time  Suffering'); ?></th>
@@ -119,7 +119,7 @@
 	<?php foreach ($person['Antecedent'] as $antecedent): ?>
 		<tr>
 			<td><?php echo $antecedent['id']; ?></td>
-			<td><?php echo $antecedent['person_id']; ?></td>
+			<!-- <td><?php echo $antecedent['person_id']; ?></td> -->
 			<td><?php echo $antecedent['name_antecendent']; ?></td>
 			<td><?php echo $antecedent['origin']; ?></td>
 			<td><?php echo $antecedent['time_ suffering']; ?></td>

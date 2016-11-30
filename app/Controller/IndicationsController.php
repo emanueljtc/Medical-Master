@@ -57,8 +57,9 @@ class IndicationsController extends AppController {
 			}
 		}
 		$diagnostics = $this->Indication->Diagnostic->find('list');
+		$treatments = $this->Indication->Treatment->find('list');
 		$people = $this->Indication->Person->find('list');
-		$this->set(compact('diagnostics', 'people'));
+		$this->set(compact('diagnostics', 'treatments', 'people'));
 	}
 
 /**
@@ -84,8 +85,9 @@ class IndicationsController extends AppController {
 			$this->request->data = $this->Indication->find('first', $options);
 		}
 		$diagnostics = $this->Indication->Diagnostic->find('list');
+		$treatments = $this->Indication->Treatment->find('list');
 		$people = $this->Indication->Person->find('list');
-		$this->set(compact('diagnostics', 'people'));
+		$this->set(compact('diagnostics', 'treatments', 'people'));
 	}
 
 /**

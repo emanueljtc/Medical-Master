@@ -188,6 +188,8 @@
 		<li><?php echo $this->Html->link(__('New Indication'), array('controller' => 'indications', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Studies'), array('controller' => 'studies', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Study'), array('controller' => 'studies', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Treatments'), array('controller' => 'treatments', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Treatment'), array('controller' => 'treatments', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 <div class="related">
@@ -197,6 +199,7 @@
 	<tr>
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Diagnostic Id'); ?></th>
+		<th><?php echo __('Treament Id'); ?></th>
 		<th><?php echo __('Person Id'); ?></th>
 		<th><?php echo __('Indication'); ?></th>
 		<th><?php echo __('Created'); ?></th>
@@ -207,6 +210,7 @@
 		<tr>
 			<td><?php echo $indication['id']; ?></td>
 			<td><?php echo $indication['diagnostic_id']; ?></td>
+			<td><?php echo $indication['treament_id']; ?></td>
 			<td><?php echo $indication['person_id']; ?></td>
 			<td><?php echo $indication['indication']; ?></td>
 			<td><?php echo $indication['created']; ?></td>
@@ -263,6 +267,47 @@
 	<div class="actions">
 		<ul>
 			<li><?php echo $this->Html->link(__('New Study'), array('controller' => 'studies', 'action' => 'add')); ?> </li>
+		</ul>
+	</div>
+</div>
+<div class="related">
+	<h3><?php echo __('Related Treatments'); ?></h3>
+	<?php if (!empty($diagnostic['Treatment'])): ?>
+	<table cellpadding = "0" cellspacing = "0">
+	<tr>
+		<th><?php echo __('Id'); ?></th>
+		<th><?php echo __('Person Id'); ?></th>
+		<th><?php echo __('Diagnostic Id'); ?></th>
+		<th><?php echo __('Status Treament'); ?></th>
+		<th><?php echo __('Prescription'); ?></th>
+		<th><?php echo __('Observations Prescription'); ?></th>
+		<th><?php echo __('Created'); ?></th>
+		<th><?php echo __('Modified'); ?></th>
+		<th class="actions"><?php echo __('Actions'); ?></th>
+	</tr>
+	<?php foreach ($diagnostic['Treatment'] as $treatment): ?>
+		<tr>
+			<td><?php echo $treatment['id']; ?></td>
+			<td><?php echo $treatment['person_id']; ?></td>
+			<td><?php echo $treatment['diagnostic_id']; ?></td>
+			<td><?php echo $treatment['status_treament']; ?></td>
+			<td><?php echo $treatment['prescription']; ?></td>
+			<td><?php echo $treatment['observations_prescription']; ?></td>
+			<td><?php echo $treatment['created']; ?></td>
+			<td><?php echo $treatment['modified']; ?></td>
+			<td class="actions">
+				<?php echo $this->Html->link(__('View'), array('controller' => 'treatments', 'action' => 'view', $treatment['id'])); ?>
+				<?php echo $this->Html->link(__('Edit'), array('controller' => 'treatments', 'action' => 'edit', $treatment['id'])); ?>
+				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'treatments', 'action' => 'delete', $treatment['id']), array(), __('Are you sure you want to delete # %s?', $treatment['id'])); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+	</table>
+<?php endif; ?>
+
+	<div class="actions">
+		<ul>
+			<li><?php echo $this->Html->link(__('New Treatment'), array('controller' => 'treatments', 'action' => 'add')); ?> </li>
 		</ul>
 	</div>
 </div>

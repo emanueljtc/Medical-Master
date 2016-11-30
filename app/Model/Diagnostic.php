@@ -16,7 +16,7 @@ class Diagnostic extends AppModel {
  *
  * @var string
  */
-	public $displayField = 'id';
+	public $displayField = 'diagnostico';
 
 /**
  * Validation rules

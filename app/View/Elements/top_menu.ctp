@@ -2,7 +2,7 @@
         <header class="header">
             <a href="index.html" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
-                CakeAdmin
+                MedicalM.
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
@@ -207,19 +207,19 @@
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-user"></i>
-                                <span>Sherwin Robles <i class="caret"></i></span>
+                                <span>Gustavo Torres <i class="caret"></i></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-black">
                                      <?= $this->Html->image('avatar04.png', array('class' => 'img-circle')); ?>
                                     <p>
-                                        Sherwin Robles - Web Developer
-                                        <small>Member since Nov. 2011</small>
+                                        Gustavo Torres
+                                        <small>Doctor Oncologo</small>
                                     </p>
                                 </li>
                                 <!-- Menu Body -->
-                                <li class="user-body">
+                                <!-- <li class="user-body">
                                     <div class="col-xs-4 text-center">
                                         <a href="#">Followers</a>
                                     </div>
@@ -229,14 +229,14 @@
                                     <div class="col-xs-4 text-center">
                                         <a href="#">Friends</a>
                                     </div>
-                                </li>
+                                </li> -->
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                        <a href="#" class="btn btn-default btn-flat">Perfil</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                        <a href="#" class="btn btn-default btn-flat">Salir</a>
                                     </div>
                                 </li>
                             </ul>

@@ -3,10 +3,10 @@
     <div class="col-xs-6 col-xs-offset-3">
 		<div class="box box-primary">
 			<div class="box-header">
-			<h3 class="box-title"><?php echo __('Add Person'); ?></h3>
+			<h3 class="box-title"><?php echo __('Añadir Persona'); ?></h3>
 			</div>
 			<div class="box-body table-responsive">
-		
+
 			<?php echo $this->Form->create('Person', array('role' => 'form')); ?>
 
 				<fieldset>
@@ -55,7 +55,7 @@
 						<?php echo $this->Form->end(); ?>
 
 		</div><!-- /.form -->
-			
+
 	</div><!-- /#page-content .col-sm-9 -->
 
 </div><!-- /#page-container .row-fluid -->

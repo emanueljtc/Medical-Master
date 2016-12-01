@@ -53,12 +53,12 @@ $cakeDescription = __d('cake_dev', 'Medical M.');
 		    <aside class="right-side">
 		    	<section class="content-header">
 				    <h1>
-				        <?php echo $title_for_layout; ?>
-				        <small>Control Panel</small>
+				        <!-- <?php echo $title_for_layout; ?> -->
+				        Control Panel
 				    </h1>
 				    <ol class="breadcrumb">
-				        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-				        <li class="active">Blank page</li>
+				        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+				        <li class="active"><?php echo $title_for_layout; ?></li>
 				    </ol>
 				</section>
 				<section class="content">

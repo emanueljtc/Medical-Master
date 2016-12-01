@@ -7,6 +7,7 @@ App::uses('AppModel', 'Model');
  * @property History $History
  * @property Indication $Indication
  * @property Study $Study
+ * @property Treatment $Treatment
  */
 class Diagnostic extends AppModel {
 
@@ -15,7 +16,7 @@ class Diagnostic extends AppModel {
  *
  * @var string
  */
-	public $displayField = 'id';
+	public $displayField = 'diagnostico';
 
 /**
  * Validation rules
@@ -400,6 +401,19 @@ class Diagnostic extends AppModel {
 		),
 		'Study' => array(
 			'className' => 'Study',
+			'foreignKey' => 'diagnostic_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'Treatment' => array(
+			'className' => 'Treatment',
 			'foreignKey' => 'diagnostic_id',
 			'dependent' => false,
 			'conditions' => '',

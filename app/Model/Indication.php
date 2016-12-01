@@ -4,6 +4,7 @@ App::uses('AppModel', 'Model');
  * Indication Model
  *
  * @property Diagnostic $Diagnostic
+ * @property Treatment $Treatment
  * @property Person $Person
  */
 class Indication extends AppModel {
@@ -22,6 +23,16 @@ class Indication extends AppModel {
  */
 	public $validate = array(
 		'diagnostic_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'treatment_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -64,6 +75,13 @@ class Indication extends AppModel {
 		'Diagnostic' => array(
 			'className' => 'Diagnostic',
 			'foreignKey' => 'diagnostic_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Treatment' => array(
+			'className' => 'Treatment',
+			'foreignKey' => 'treatment_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

@@ -57,7 +57,8 @@ class TreatmentsController extends AppController {
 			}
 		}
 		$people = $this->Treatment->Person->find('list');
-		$this->set(compact('people'));
+		$diagnostics = $this->Treatment->Diagnostic->find('list');
+		$this->set(compact('people', 'diagnostics'));
 	}
 
 /**
@@ -83,7 +84,8 @@ class TreatmentsController extends AppController {
 			$this->request->data = $this->Treatment->find('first', $options);
 		}
 		$people = $this->Treatment->Person->find('list');
-		$this->set(compact('people'));
+		$diagnostics = $this->Treatment->Diagnostic->find('list');
+		$this->set(compact('people', 'diagnostics'));
 	}
 
 /**

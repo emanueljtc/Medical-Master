@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 20-11-2016 a las 19:52:47
+-- Tiempo de generación: 29-11-2016 a las 22:54:29
 -- Versión del servidor: 5.7.16-0ubuntu0.16.04.1
--- Versión de PHP: 5.6.27-1+deb.sury.org~xenial+1
+-- Versión de PHP: 5.6.28-1+deb.sury.org~xenial+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -204,6 +204,7 @@ INSERT INTO `historys` (`id`, `person_id`, `antecedent_id`, `age`, `weight`, `he
 CREATE TABLE `indications` (
   `id` int(10) NOT NULL,
   `diagnostic_id` int(10) NOT NULL,
+  `treatment_id` int(10) NOT NULL,
   `person_id` int(10) NOT NULL,
   `indication` varchar(255) NOT NULL,
   `created` date NOT NULL,
@@ -214,8 +215,8 @@ CREATE TABLE `indications` (
 -- Volcado de datos para la tabla `indications`
 --
 
-INSERT INTO `indications` (`id`, `diagnostic_id`, `person_id`, `indication`, `created`, `modified`) VALUES
-(1, 1, 2, 'Cada 8 horas', '2016-11-20', '2016-11-20');
+INSERT INTO `indications` (`id`, `diagnostic_id`, `treatment_id`, `person_id`, `indication`, `created`, `modified`) VALUES
+(1, 1, 1, 2, 'Cada 8 horas', '2016-11-20', '2016-11-29');
 
 -- --------------------------------------------------------
 
@@ -262,9 +263,10 @@ CREATE TABLE `people` (
 --
 
 INSERT INTO `people` (`id`, `name`, `last_name`, `dni`, `gender`, `address`, `phone`, `email`, `nationality_id`, `rol_id`, `specialty_id`, `pass_app`, `token`) VALUES
-(2, 'guillermo', 'ochoa', 21099, 'masculino', 'mcy', 12245, 'g@gf.com', 1, 1, 0, NULL, ''),
-(3, 'Emanuel', 'Torres', 18971787, 'masculino', 'San juan ', 46231, 'emane@ds.com', 1, 1, 0, '', ''),
-(4, 'Lulu', 'Ochoa', 0, 'femenino', 'Maracay', 2432475, 'lulu@gmail.com', 1, 2, 1, '', 'jwdasdas');
+(2, 'guillermo', 'ochoa', 21099, 'masculino', 'mcy', 12245, 'g@gf.com', 1, 1, 0, '123', 'xZ8CB5ZlY7tbfMp6udVNlS8cV'),
+(3, 'Emanuel', 'Torres', 18971787, 'masculino', 'San juan ', 46231, 'emane@ds.com', 1, 1, 0, '111', 'JCr3SB7D9z4m0bUX50kFIvrpR'),
+(4, 'Lulu', 'Ochoa', 122344, 'femenino', 'Maracay', 2432475, 'lulu@gmail.com', 1, 2, 1, '', 'jwdasdas'),
+(5, 'iyjyk', 'uyoul7', 18787676, 'femenino', 'dsdadaw', 11111, 'dadawdada@dsdda.com', 1, 2, 1, '', 'yoyu');
 
 -- --------------------------------------------------------
 
@@ -333,9 +335,10 @@ CREATE TABLE `studies` (
 CREATE TABLE `treatments` (
   `id` int(10) NOT NULL,
   `person_id` int(10) NOT NULL,
+  `diagnostic_id` int(10) NOT NULL,
   `status_treament` int(10) NOT NULL,
-  `treatment` varchar(100) NOT NULL,
-  `observations_treaments` text NOT NULL,
+  `prescription` varchar(100) NOT NULL,
+  `observations_prescription` text NOT NULL,
   `created` date NOT NULL,
   `modified` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -344,9 +347,8 @@ CREATE TABLE `treatments` (
 -- Volcado de datos para la tabla `treatments`
 --
 
-INSERT INTO `treatments` (`id`, `person_id`, `status_treament`, `treatment`, `observations_treaments`, `created`, `modified`) VALUES
-(1, 2, 1, 'Rifoxina', 'cada 8 horas', '2016-11-20', '2016-11-20'),
-(2, 2, 1, 'SI', 'NOI', '2016-11-20', '2016-11-20');
+INSERT INTO `treatments` (`id`, `person_id`, `diagnostic_id`, `status_treament`, `prescription`, `observations_prescription`, `created`, `modified`) VALUES
+(1, 2, 1, 1, 'Rifoxina', 'cada 8 horas', '2016-11-20', '2016-11-29');
 
 -- --------------------------------------------------------
 
@@ -523,7 +525,7 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT de la tabla `historys`
 --
 ALTER TABLE `historys`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `indications`
 --
@@ -538,7 +540,7 @@ ALTER TABLE `nationalities`
 -- AUTO_INCREMENT de la tabla `people`
 --
 ALTER TABLE `people`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `rols`
 --

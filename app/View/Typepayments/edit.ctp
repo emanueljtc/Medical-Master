@@ -1,21 +1,31 @@
-<div class="typepayments form">
-<?php echo $this->Form->create('Typepayment'); ?>
-	<fieldset>
-		<legend><?php echo __('Edit Typepayment'); ?></legend>
-	<?php
-		echo $this->Form->input('id');
-		echo $this->Form->input('type_payment');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
 
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Typepayment.id')), array(), __('Are you sure you want to delete # %s?', $this->Form->value('Typepayment.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Typepayments'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Charges'), array('controller' => 'charges', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Charge'), array('controller' => 'charges', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+<div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+		<div class="box box-primary">
+			<div class="box-header">
+			<h3 class="box-title"><?php echo __('Edit Typepayment'); ?></h3>
+			</div>
+			<div class="box-body table-responsive">
+		
+			<?php echo $this->Form->create('Typepayment', array('role' => 'form')); ?>
+
+				<fieldset>
+
+										<div class="form-group">
+						<?php echo $this->Form->input('id', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('type_payment', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+
+					<?php echo $this->Form->submit('Submit', array('class' => 'btn btn-large btn-primary')); ?>
+
+				</fieldset>
+
+						<?php echo $this->Form->end(); ?>
+
+		</div><!-- /.form -->
+			
+	</div><!-- /#page-content .col-sm-9 -->
+
+</div><!-- /#page-container .row-fluid -->

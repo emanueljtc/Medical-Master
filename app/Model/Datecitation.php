@@ -12,7 +12,7 @@ class Datecitation extends AppModel {
  *
  * @var string
  */
-	public $displayField = 'id';
+	public $displayField = 'state';
 
 /**
  * Validation rules

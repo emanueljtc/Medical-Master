@@ -56,6 +56,7 @@
 		<th class="text-center"><?php echo __('Full Name'); ?></th>
 		<th class="text-center"><?php echo __('Username'); ?></th>
 		<th class="text-center"><?php echo __('Password'); ?></th>
+		<th class="text-center"><?php echo __('Specialty Id'); ?></th>
 		<th class="text-center"><?php echo __('Group Id'); ?></th>
 		<th class="text-center"><?php echo __('Created'); ?></th>
 		<th class="text-center"><?php echo __('Modified'); ?></th>
@@ -71,6 +72,7 @@
 			<td class="text-center"><?php echo $user['full_name']; ?></td>
 			<td class="text-center"><?php echo $user['username']; ?></td>
 			<td class="text-center"><?php echo $user['password']; ?></td>
+			<td class="text-center"><?php echo $user['specialty_id']; ?></td>
 			<td class="text-center"><?php echo $user['group_id']; ?></td>
 			<td class="text-center"><?php echo $user['created']; ?></td>
 			<td class="text-center"><?php echo $user['modified']; ?></td>

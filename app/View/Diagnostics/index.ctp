@@ -4,9 +4,9 @@
 
     <div class="box box-primary">
 		<div class="box-header">
-			<h3 class="box-title"><?php echo __('Diagnostics'); ?></h3>
+			<h3 class="box-title"><?php echo __('Diagnosticos'); ?></h3>
 			<div class="box-tools pull-right">
-                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> New Diagnostic'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
+                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> Nuevo Diagnostico'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
             </div>
 		</div>
 			<div class="box-body table-responsive">
@@ -14,47 +14,47 @@
 					<thead>
 						<tr>
 													<th class="text-center"><?php echo $this->Paginator->sort('N° de Diagnostico'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('Tamaño de Senos'); ?></th>
+													<!-- <th class="text-center"><?php echo $this->Paginator->sort('Tamaño de Senos'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('Forma de Senos'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('Simetira de Senos'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('Piel de Senos'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('C.A.P de Senos'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('Vagina'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('neck_pussy'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('coloscopia'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('ano_ straight'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('head_neck'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('touch_tumor'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('form_tumor'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('surface_tumor'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('contour_tumor'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('axis_tumor'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('consistency_tumor'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('laringoscopia'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('menarguia'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('reglas'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('prs'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('companion_sexual'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('distance_cap'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('gestas'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('rsi'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('paras'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('abdomen'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('misbirth'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('gynecological_vulva'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('cesareans'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('age_birth_one'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('diagnostico'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('person_id'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('history_id'); ?></th>
-												<th class="text-center"><?php echo __('Actions'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Cuello Vagina'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Coloscopia'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Ano'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Cabeza Cuello'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Tacto Tumor'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Forma Tumor'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Superfice Tumor'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Contorno Tumor'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Eje Tumor'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Consistencia Tumor'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Laringoscopia'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Menarguia'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Reglas'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('PRS'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Compañero Sexual'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Distancia C.A.P'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Gestas'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('R.S.I'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Paras'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Abdomen'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Abortos'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Vulva'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Cesarea'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Edad del Primer Parto'); ?></th> -->
+													<th class="text-center"><?php echo $this->Paginator->sort('Diagnostico'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Paciente'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Numero de Historia'); ?></th>
+												<th class="text-center"><?php echo __('Acciones'); ?></th>
 						</tr>
 					</thead>
 					<tbody>
 					<?php foreach ($diagnostics as $diagnostic): ?>
 	<tr>
 		<td class="text-center"><?php echo h($diagnostic['Diagnostic']['id']); ?>&nbsp;</td>
-		<td class="text-center"><?php echo h($diagnostic['Diagnostic']['size_boobs']); ?>&nbsp;</td>
+		<!-- <td class="text-center"><?php echo h($diagnostic['Diagnostic']['size_boobs']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($diagnostic['Diagnostic']['form_boobs']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($diagnostic['Diagnostic']['symmetry_boobs']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($diagnostic['Diagnostic']['skin_boobs']); ?>&nbsp;</td>
@@ -83,7 +83,7 @@
 		<td class="text-center"><?php echo h($diagnostic['Diagnostic']['misbirth']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($diagnostic['Diagnostic']['gynecological_vulva']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($diagnostic['Diagnostic']['cesareans']); ?>&nbsp;</td>
-		<td class="text-center"><?php echo h($diagnostic['Diagnostic']['age_birth_one']); ?>&nbsp;</td>
+		<td class="text-center"><?php echo h($diagnostic['Diagnostic']['age_birth_one']); ?>&nbsp;</td> -->
 		<td class="text-center"><?php echo h($diagnostic['Diagnostic']['diagnostico']); ?>&nbsp;</td>
 		<td class="text-center">
 			<?php echo $this->Html->link($diagnostic['Person']['name'], array('controller' => 'people', 'action' => 'view', $diagnostic['Person']['id'])); ?>
@@ -92,9 +92,9 @@
 			<?php echo $this->Html->link($diagnostic['History']['id'], array('controller' => 'histories', 'action' => 'view', $diagnostic['History']['id'])); ?>
 		</td>
 		<td class="text-center">
-			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('action' => 'view', $diagnostic['Diagnostic']['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'view')); ?>
-			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $diagnostic['Diagnostic']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'edit')); ?>
-			<?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('action' => 'delete', $diagnostic['Diagnostic']['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'delete'), __('Are you sure you want to delete # %s?', $diagnostic['Diagnostic']['id'])); ?>
+			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('action' => 'view', $diagnostic['Diagnostic']['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Vista')); ?>
+			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $diagnostic['Diagnostic']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Editar')); ?>
+			<?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('action' => 'delete', $diagnostic['Diagnostic']['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Eliminar'), __('Esta seguro de eliminar el diagnostico # %s?', $diagnostic['Diagnostic']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

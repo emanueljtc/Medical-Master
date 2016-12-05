@@ -4,20 +4,20 @@
 
     <div class="box box-primary">
 		<div class="box-header">
-			<h3 class="box-title"><?php echo __('Diagnostics'); ?></h3>
+			<h3 class="box-title"><?php echo __('Diagnostico'); ?></h3>
 			<div class="box-tools pull-right">
-                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> New Diagnostic'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
+                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> Nuevo Diagnostico'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
             </div>
-		</div>	
+		</div>
 			<div class="box-body table-responsive">
                 <table id="Diagnostics" class="table table-bordered table-striped">
 					<thead>
 						<tr>
-													<th class="text-center"><?php echo $this->Paginator->sort('id'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('size_boobs'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('form_boobs'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('symmetry_boobs'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('skin_boobs'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Nº Diagnostico'); ?></th>
+													<!-- <th class="text-center"><?php echo $this->Paginator->sort('Tamaño de Senos'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Forma de los Senos'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Simetira de los Senos'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Piel de los Cenos'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('cap_boobs'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('pussy'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('neck_pussy'); ?></th>
@@ -43,7 +43,7 @@
 													<th class="text-center"><?php echo $this->Paginator->sort('misbirth'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('gynecological_vulva'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('cesareans'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('age_birth_one'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('age_birth_one'); ?></th> -->
 													<th class="text-center"><?php echo $this->Paginator->sort('diagnostico'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('person_id'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('history_id'); ?></th>
@@ -54,7 +54,7 @@
 					<?php foreach ($diagnostics as $diagnostic): ?>
 	<tr>
 		<td class="text-center"><?php echo h($diagnostic['Diagnostic']['id']); ?>&nbsp;</td>
-		<td class="text-center"><?php echo h($diagnostic['Diagnostic']['size_boobs']); ?>&nbsp;</td>
+		<!-- <td class="text-center"><?php echo h($diagnostic['Diagnostic']['size_boobs']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($diagnostic['Diagnostic']['form_boobs']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($diagnostic['Diagnostic']['symmetry_boobs']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($diagnostic['Diagnostic']['skin_boobs']); ?>&nbsp;</td>
@@ -83,7 +83,7 @@
 		<td class="text-center"><?php echo h($diagnostic['Diagnostic']['misbirth']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($diagnostic['Diagnostic']['gynecological_vulva']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($diagnostic['Diagnostic']['cesareans']); ?>&nbsp;</td>
-		<td class="text-center"><?php echo h($diagnostic['Diagnostic']['age_birth_one']); ?>&nbsp;</td>
+		<td class="text-center"><?php echo h($diagnostic['Diagnostic']['age_birth_one']); ?>&nbsp;</td> -->
 		<td class="text-center"><?php echo h($diagnostic['Diagnostic']['diagnostico']); ?>&nbsp;</td>
 		<td class="text-center">
 			<?php echo $this->Html->link($diagnostic['Person']['name'], array('controller' => 'people', 'action' => 'view', $diagnostic['Person']['id'])); ?>
@@ -101,10 +101,10 @@
 					</tbody>
 				</table>
 			</div><!-- /.table-responsive -->
-			
-			
+
+
 		</div><!-- /.index -->
-	
+
 	</div><!-- /#page-content .col-sm-9 -->
 
 </div><!-- /#page-container .row-fluid -->

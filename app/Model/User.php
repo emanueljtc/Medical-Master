@@ -3,6 +3,7 @@ App::uses('AppModel', 'Model');
 /**
  * User Model
  *
+ * @property Specialty $Specialty
  * @property Group $Group
  */
 class User extends AppModel {
@@ -50,6 +51,16 @@ class User extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'specialty_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
 		'group_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
@@ -70,6 +81,13 @@ class User extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
+		'Specialty' => array(
+			'className' => 'Specialty',
+			'foreignKey' => 'specialty_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
 		'Group' => array(
 			'className' => 'Group',
 			'foreignKey' => 'group_id',

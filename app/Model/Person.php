@@ -3,9 +3,7 @@ App::uses('AppModel', 'Model');
 /**
  * Person Model
  *
- * @property Rol $Rol
  * @property Nationality $Nationality
- * @property Specialty $Specialty
  * @property Antecedent $Antecedent
  * @property Charge $Charge
  * @property Citation $Citation
@@ -81,8 +79,8 @@ class Person extends AppModel {
 			),
 		),
 		'phone' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -100,32 +98,12 @@ class Person extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'rol_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
 		'nationality_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'specialty_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				'allowEmpty' =>  true,
-				'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
@@ -150,23 +128,9 @@ class Person extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Rol' => array(
-			'className' => 'Rol',
-			'foreignKey' => 'rol_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
 		'Nationality' => array(
 			'className' => 'Nationality',
 			'foreignKey' => 'nationality_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
-		'Specialty' => array(
-			'className' => 'Specialty',
-			'foreignKey' => 'specialty_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

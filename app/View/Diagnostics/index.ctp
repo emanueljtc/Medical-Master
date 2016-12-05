@@ -8,18 +8,18 @@
 			<div class="box-tools pull-right">
                 <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> New Diagnostic'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
             </div>
-		</div>	
+		</div>
 			<div class="box-body table-responsive">
                 <table id="Diagnostics" class="table table-bordered table-striped">
 					<thead>
 						<tr>
-													<th class="text-center"><?php echo $this->Paginator->sort('id'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('size_boobs'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('form_boobs'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('symmetry_boobs'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('skin_boobs'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('cap_boobs'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('pussy'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('N° de Diagnostico'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Tamaño de Senos'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Forma de Senos'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Simetira de Senos'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Piel de Senos'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('C.A.P de Senos'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Vagina'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('neck_pussy'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('coloscopia'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('ano_ straight'); ?></th>
@@ -101,10 +101,10 @@
 					</tbody>
 				</table>
 			</div><!-- /.table-responsive -->
-			
-			
+
+
 		</div><!-- /.index -->
-	
+
 	</div><!-- /#page-content .col-sm-9 -->
 
 </div><!-- /#page-container .row-fluid -->

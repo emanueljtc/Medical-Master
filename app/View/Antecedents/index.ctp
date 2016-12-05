@@ -4,11 +4,11 @@
 
     <div class="box box-primary">
 		<div class="box-header">
-			<h3 class="box-title"><?php echo __('Antecedents'); ?></h3>
+			<h3 class="box-title"><?php echo __('Antecedentes'); ?></h3>
 			<div class="box-tools pull-right">
-                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> New Antecedent'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
+                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> Nuevo Antecedente'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
             </div>
-		</div>	
+		</div>
 			<div class="box-body table-responsive">
                 <table id="Antecedents" class="table table-bordered table-striped">
 					<thead>
@@ -51,10 +51,10 @@
 					</tbody>
 				</table>
 			</div><!-- /.table-responsive -->
-			
-			
+
+
 		</div><!-- /.index -->
-	
+
 	</div><!-- /#page-content .col-sm-9 -->
 
 </div><!-- /#page-container .row-fluid -->

@@ -4,9 +4,9 @@
 
     <div class="box box-primary">
 		<div class="box-header">
-			<h3 class="box-title"><?php echo __('Personas'); ?></h3>
+			<h3 class="box-title"><?php echo __('Pacientes'); ?></h3>
 			<div class="box-tools pull-right">
-                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> Registrar Persona'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
+                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> Nuevo Paciente'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
             </div>
 		</div>
 			<div class="box-body table-responsive">
@@ -14,19 +14,17 @@
 					<thead>
 						<tr>
 													<!-- <th class="text-center"><?php echo $this->Paginator->sort('id'); ?></th> -->
-													<th class="text-center"><?php echo $this->Paginator->sort('nombre'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('Apellido'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('cedula'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('Sexo'); ?></th>
-													<!-- <th class="text-center"><?php echo $this->Paginator->sort('address'); ?></th> -->
-													<th class="text-center"><?php echo $this->Paginator->sort('Telefono'); ?></th>
-													<!-- <th class="text-center"><?php echo $this->Paginator->sort('email'); ?></th> -->
-													<!-- <th class="text-center"><?php echo $this->Paginator->sort('Nacionalidad'); ?></th> -->
-													<th class="text-center"><?php echo $this->Paginator->sort('rol_id'); ?></th>
-													<!-- <th class="text-center"><?php echo $this->Paginator->sort('specialty_id'); ?></th> -->
-													<!-- <th class="text-center"><?php echo $this->Paginator->sort('pass_app'); ?></th> -->
-													<!-- <th class="text-center"><?php echo $this->Paginator->sort('token'); ?></th> -->
-												<th class="text-center"><?php echo __('Actions'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Nombres'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Apellidos'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Cedula'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Genero'); ?></th>
+													<!-- <th class="text-center"><?php echo $this->Paginator->sort('address'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('phone'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('email'); ?></th> -->
+													<th class="text-center"><?php echo $this->Paginator->sort('Nacionalidad'); ?></th>
+													<!-- <th class="text-center"><?php echo $this->Paginator->sort('pass_app'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('token'); ?></th> -->
+												<th class="text-center"><?php echo __('Acciones'); ?></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -37,20 +35,14 @@
 		<td class="text-center"><?php echo h($person['Person']['last_name']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($person['Person']['dni']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($person['Person']['gender']); ?>&nbsp;</td>
-		<!-- <td class="text-center"><?php echo h($person['Person']['address']); ?>&nbsp;</td> -->
+		<!-- <td class="text-center"><?php echo h($person['Person']['address']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($person['Person']['phone']); ?>&nbsp;</td>
-		<!-- <td class="text-center"><?php echo h($person['Person']['email']); ?>&nbsp;</td> -->
-		<!-- <td class="text-center">
-			<?php echo $this->Html->link($person['Nationality']['nacionalidad'], array('controller' => 'nationalities', 'action' => 'view', $person['Nationality']['id'])); ?>
-		</td> -->
+		<td class="text-center"><?php echo h($person['Person']['email']); ?>&nbsp;</td> -->
 		<td class="text-center">
-			<?php echo $this->Html->link($person['Rol']['rol'], array('controller' => 'rols', 'action' => 'view', $person['Rol']['id'])); ?>
+			<?php echo $this->Html->link($person['Nationality']['nacionalidad'], array('controller' => 'nationalities', 'action' => 'view', $person['Nationality']['id'])); ?>
 		</td>
-		<!-- <td class="text-center">
-			<?php echo $this->Html->link($person['Specialty']['specialty'], array('controller' => 'specialties', 'action' => 'view', $person['Specialty']['id'])); ?>
-		</td> -->
-		<!-- <td class="text-center"><?php echo h($person['Person']['pass_app']); ?>&nbsp;</td> -->
-		<!-- <td class="text-center"><?php echo h($person['Person']['token']); ?>&nbsp;</td> -->
+		<!-- <td class="text-center"><?php echo h($person['Person']['pass_app']); ?>&nbsp;</td>
+		<td class="text-center"><?php echo h($person['Person']['token']); ?>&nbsp;</td> -->
 		<td class="text-center">
 			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('action' => 'view', $person['Person']['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'view')); ?>
 			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $person['Person']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'edit')); ?>

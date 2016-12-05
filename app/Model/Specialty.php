@@ -3,8 +3,7 @@ App::uses('AppModel', 'Model');
 /**
  * Specialty Model
  *
- * @property Rol $Rol
- * @property Person $Person
+ * @property User $User
  */
 class Specialty extends AppModel {
 
@@ -13,7 +12,7 @@ class Specialty extends AppModel {
  *
  * @var string
  */
-	public $displayField = 'specialty';
+	public $displayField = 'id';
 
 /**
  * Validation rules
@@ -31,34 +30,9 @@ class Specialty extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'rol_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
-
-/**
- * belongsTo associations
- *
- * @var array
- */
-	public $belongsTo = array(
-		'Rol' => array(
-			'className' => 'Rol',
-			'foreignKey' => 'rol_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
-	);
 
 /**
  * hasMany associations
@@ -66,8 +40,8 @@ class Specialty extends AppModel {
  * @var array
  */
 	public $hasMany = array(
-		'Person' => array(
-			'className' => 'Person',
+		'User' => array(
+			'className' => 'User',
 			'foreignKey' => 'specialty_id',
 			'dependent' => false,
 			'conditions' => '',

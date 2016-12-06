@@ -40,6 +40,7 @@ $cakeDescription = __d('cake_dev', 'Medical M.');
 			//echo $this->Html->script('libs/bootstrap.min');
 
 			echo $this->fetch('script');
+			echo $this->Html->script(array('validaciones.js'));
 		?>
 	</head>
 

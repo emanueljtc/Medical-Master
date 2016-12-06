@@ -12,7 +12,7 @@ class Typepayment extends AppModel {
  *
  * @var string
  */
-	public $displayField = 'id';
+	public $displayField = 'type_payment';
 
 /**
  * Validation rules

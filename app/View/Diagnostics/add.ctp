@@ -12,103 +12,104 @@
 				<fieldset>
 
 										<div class="form-group">
-						<?php echo $this->Form->input('Tamaño de Senos', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('size_boobs', array('label'=>'Tamaño de Senos','class' => 'form-control')); ?>
+
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Forma de Senos', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('form_boobs', array('label'=>'Forma de Senos','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Simetria de Senos', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('symmetry_boobs', array('label'=>'Simetria de Senos','class' => 'form-control')); ?>
+          </div><!-- .form-group -->
+					<div class="form-group">
+            <?php echo $this->Form->input('skin_boobs', array('label'=>'Piel de Senos','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Piel de Senos', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('cap_boobs', array('label'=>'C A P Senos','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('CAP Senos', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('pussy', array('label'=>'Vagina','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Vagina', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('neck_pussy', array('label'=>'Cuello Vagina','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Cuello Vagina', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('coloscopia', array('label'=>'Coloscopia','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Coloscopia', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('ano_ straight', array('label'=>'Ano','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Ano', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('head_neck', array('label'=>'Cabeza Cuello','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Cabeza Cuello', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('touch_tumor', array('label'=>'Tacto Tumor','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Tacto Tumor', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('form_tumor', array('label'=>'Forma Tumor','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Forma Tumor', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('surface_tumor', array('label'=>'Superfice Tumor','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Superficie Tumor', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('contour_tumor', array('label'=>'Contorno Tumor','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Contorno Tumor', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('axis_tumor', array('label'=>'Eje Tumor','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Eje Tumor', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('consistency_tumor', array('label'=>'Consistencia Tumor','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Consistencia Tumor', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('laringoscopia', array('label'=>'Laringoscopia','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Laringoscopia', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('menarguia', array('label'=>'Menarguia','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Menarguia', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('reglas', array('label'=>'Reglas','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Reglas', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('prs', array('label'=>'P R S','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('PRS', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('companion_sexual', array('label'=>'Compañero Sexual','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Compañero Sexual', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('distance_cap', array('label'=>'Distancia C.A.P','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Distancia CAP', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('gestas', array('label'=>'Gestas','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Gestas', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('rsi', array('label'=>'R.S.I','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('RSI', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('paras', array('label'=>'Paras','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Paras', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('abdomen', array('label'=>'Abdomen','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Abdomen', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('misbirth', array('label'=>'Abortos','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Abortos', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('gynecological_vulva', array('label'=>'Vulva','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Vulva', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('cesareans', array('label'=>'Cesareas','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('cesareas', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('age_birth_one', array('label'=>'Edad Primer Parto','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Edad Primer Parto', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('diagnostico', array('label'=>'Diagnostico','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Diagnostico', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('person_id', array('label'=>'Paciente','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Paciente', array('class' => 'form-control')); ?>
-					</div><!-- .form-group -->
-					<div class="form-group">
-						<?php echo $this->Form->input('Numero de Historia', array('class' => 'form-control')); ?>
+            <?php echo $this->Form->input('history_id', array('label'=>'N° de Historia','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 
 					<?php echo $this->Form->submit('Añadir', array('class' => 'btn btn-large btn-primary')); ?>

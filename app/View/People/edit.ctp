@@ -15,22 +15,22 @@
 						<?php echo $this->Form->input('id', array('class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('name', array('label'=>'Nombres','class' => 'form-control')); ?>
+						<?php echo $this->Form->input('name', array('label'=>'Nombres','class' => 'form-control','onkeypress'=>'return IsNombre(event);','maxlength'=>'60')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('last_name', array('label'=>'Apellidos','class' => 'form-control')); ?>
+						<?php echo $this->Form->input('last_name', array('label'=>'Apellidos','class' => 'form-control','onkeypress'=>'return IsApellidos(event);','maxlength'=>'60')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('dni', array('label'=>'Cedula','class' => 'form-control')); ?>
+						<?php echo $this->Form->input('dni', array('type'=>'text','label'=>'Cedula','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('gender', array('label'=>'Genero','class' => 'form-control')); ?>
+						<?php echo $this->Form->input('gender', array('label'=>'Genero','class' => 'form-control','type'=>'select','options'=>array(''=>'[SELECCIONE SEXO]','Femenino'=>'Femenino','Masculino'=>'Masculino'))); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
 						<?php echo $this->Form->input('address', array('label'=>'Direccion','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('phone', array('label'=>'Telefono','class' => 'form-control')); ?>
+						<?php echo $this->Form->input('phone', array('label'=>'Telefono','class' => 'form-control','onkeypress'=>'return IsTelefono(event);','maxlength'=>'11')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
 						<?php echo $this->Form->input('email', array('label'=>'Correo Electronico','class' => 'form-control')); ?>
@@ -41,10 +41,9 @@
 					<div class="form-group">
 						<?php echo $this->Form->input('pass_app', array('class' => 'form-control')); ?>
 					</div><!-- .form-group -->
-					<div class="form-group">
+					<!-- <div class="form-group">
 						<?php echo $this->Form->input('token', array('class' => 'form-control')); ?>
-					</div><!-- .form-group -->
-
+					</div> -->
 					<?php echo $this->Form->submit('Añadir', array('class' => 'btn btn-large btn-primary')); ?>
 
 				</fieldset>

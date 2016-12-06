@@ -5,6 +5,7 @@ var key = nav4 ? evt.which : evt.keyCode;
 return (key <= 13 || (key >= 48 && key <= 57));
 }
 
+
 var nav5 = window.Event ? true : false;
 function IsEdad(evt){
 // Backspace = 8, Enter = 13, ’0′ = 48, ’9′ = 57, ‘.’ = 46
@@ -31,7 +32,18 @@ function IsApellidos(evt){
 var key = nav8 ? evt.which : evt.keyCode;
 return (key <= 13 || (key >= 64 && key <= 91) || (key >= 97 && key <= 122) || key == 20 || key == 32);
 }
-
+var nav9 = window.Event ? true : false;
+function TamañoSeno(evt){
+// Backspace = 8, Enter = 13, ’0′ = 48, ’9′ = 57, ‘.’ = 46
+var key = nav9 ? evt.which : evt.keyCode;
+return (key <= 13 || (key >= 48 && key <= 57));
+}
+var nav11 = window.Event ? true : false;
+function EdadParto(evt){
+// Backspace = 8, Enter = 13, ’0′ = 48, ’9′ = 57, ‘.’ = 46
+var key = nav11 ? evt.which : evt.keyCode;
+return (key <= 13 || (key >= 48 && key <= 57));
+}
 function calcularEdad()
 {
     var fecha=document.getElementById("f_date2").value;

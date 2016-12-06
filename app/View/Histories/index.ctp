@@ -8,7 +8,7 @@
 			<div class="box-tools pull-right">
                 <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> New History'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
             </div>
-		</div>	
+		</div>
 			<div class="box-body table-responsive">
                 <table id="Histories" class="table table-bordered table-striped">
 					<thead>
@@ -36,19 +36,19 @@
 		<td class="text-center"><?php echo h($history['History']['weight']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($history['History']['height']); ?>&nbsp;</td>
 		<td class="text-center">
-			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('action' => 'view', $history['History']['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'view')); ?>
-			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $history['History']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'edit')); ?>
-			<?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('action' => 'delete', $history['History']['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'delete'), __('Are you sure you want to delete # %s?', $history['History']['id'])); ?>
+			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('action' => 'view', $history['History']['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Ver')); ?>
+			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $history['History']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Editar')); ?>
+			<?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('action' => 'delete', $history['History']['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Eliminar'), __('Are you sure you want to delete # %s?', $history['History']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
 					</tbody>
 				</table>
 			</div><!-- /.table-responsive -->
-			
-			
+
+
 		</div><!-- /.index -->
-	
+
 	</div><!-- /#page-content .col-sm-9 -->
 
 </div><!-- /#page-container .row-fluid -->

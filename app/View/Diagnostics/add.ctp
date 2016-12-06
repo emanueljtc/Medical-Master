@@ -12,7 +12,7 @@
 				<fieldset>
 
 										<div class="form-group">
-            <?php echo $this->Form->input('size_boobs', array('label'=>'Tamaño de Senos','class' => 'form-control')); ?>
+            <?php echo $this->Form->input('size_boobs', array('onkeypress'=>'return TamañoSeno(event);','maxlength'=>'3','label'=>'Tamaño de Senos','class' => 'form-control')); ?>
 
 					</div><!-- .form-group -->
 					<div class="form-group">
@@ -100,7 +100,7 @@
             <?php echo $this->Form->input('cesareans', array('label'=>'Cesareas','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-            <?php echo $this->Form->input('age_birth_one', array('label'=>'Edad Primer Parto','class' => 'form-control')); ?>
+            <?php echo $this->Form->input('age_birth_one', array('type'=>'text','onkeypress'=>'return EdadParto(event);','maxlength'=>'3','label'=>'Edad Primer Parto','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
             <?php echo $this->Form->input('diagnostico', array('label'=>'Diagnostico','class' => 'form-control')); ?>

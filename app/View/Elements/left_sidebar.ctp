@@ -34,11 +34,14 @@
                     <i class="fa fa-th"></i> <span>Inicio</span>
                 </a>
             </li>
+
+            <li>
             <li class="treeview">
                 <a href="#">
                     <i class="glyphicon glyphicon-user"></i>
                     <span>Pacientes</span>
                     <i class="fa fa-angle-left pull-right"></i>
+
                 </a>
                 <ul id="id" class="treeview-menu">
                     <li class="menu">
@@ -48,6 +51,36 @@
                       <?php echo $this->Html->link(__(' Nuevo Paciente'), array('controller' => 'people', 'action' => 'add'), array('class'=>'fa fa-angle-double-right')); ?>
                   </li>
                 </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="glyphicon glyphicon-book"></i>
+                <span>Historias</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul id="id" class="treeview-menu">
+                <li class="menu">
+                  <?php echo $this->Html->link(__(' Historias Registradas'), array('controller' => 'histories', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
+                </li>
+                <li class="menu">
+                  <?php echo $this->Html->link(__(' Nueva Historia'), array('controller' => 'histories', 'action' => 'add'), array('class'=>'fa fa-angle-double-right')); ?>
+                </li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="glyphicon glyphicon-briefcase"></i>
+                <span>Antecedentes</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul id="id" class="treeview-menu">
+                <li class="menu">
+                  <?php echo $this->Html->link(__(' Antecedentes Registrados'), array('controller' => 'antecedents', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
+                </li>
+                <li class="menu">
+                  <?php echo $this->Html->link(__(' Nuevo Antecedentes'), array('controller' => 'antecedents', 'action' => 'add'), array('class'=>'fa fa-angle-double-right')); ?>
+                </li>
+              </ul>
             </li>
             <li class="treeview">
               <a href="#">
@@ -81,25 +114,35 @@
             </li>
             <li class="treeview">
               <a href="#">
-                  <i class="glyphicon glyphicon-briefcase"></i>
-                  <span>Historias</span>
+                  <i class="glyphicon glyphicon-calendar"></i>
+                  <span>Citas</span>
                   <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul id="id" class="treeview-menu">
                   <li class="menu">
-                      <?php echo $this->Html->link(__(' Historias Registradas'), array('controller' => 'histories', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
+                      <?php echo $this->Html->link(__(' Citas Registradas'), array('controller' => 'citations', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
                   </li>
                   <li class="menu">
-                    <?php echo $this->Html->link(__(' Nueva Historia'), array('controller' => 'histories', 'action' => 'add'), array('class'=>'fa fa-angle-double-right')); ?>
+                    <?php echo $this->Html->link(__(' Nueva Cita'), array('controller' => 'citations', 'action' => 'add'), array('class'=>'fa fa-angle-double-right')); ?>
                 </li>
               </ul>
             </li>
-            <li>
-                <a href="pages/calendar.html">
-                    <i class="fa fa-calendar"></i> <span>Calendar</span>
-                    <small class="badge pull-right bg-red">3</small>
-                </a>
+            <li class="treeview">
+              <a href="#">
+                  <i class="glyphicon glyphicon-usd"></i>
+                  <span>Pagos</span>
+                  <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul id="id" class="treeview-menu">
+                  <li class="menu">
+                      <?php echo $this->Html->link(__(' Pagos Registrados'), array('controller' => 'charges', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
+                  </li>
+                  <li class="menu">
+                    <?php echo $this->Html->link(__(' Nuevo Pago'), array('controller' => 'charges', 'action' => 'add'), array('class'=>'fa fa-angle-double-right')); ?>
+                </li>
+              </ul>
             </li>
+
             <!-- <li>
                 <a href="pages/mailbox.html">
                     <i class="fa fa-envelope"></i> <span>Mailbox</span>

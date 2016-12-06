@@ -37,15 +37,15 @@
             <li class="treeview">
                 <a href="#">
                     <i class="glyphicon glyphicon-user"></i>
-                    <span>Personas</span>
+                    <span>Pacientes</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul id="id" class="treeview-menu">
                     <li class="menu">
-                        <?php echo $this->Html->link(__(' Personas Registradas'), array('controller' => 'people', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
+                        <?php echo $this->Html->link(__(' Pacientes Registrados'), array('controller' => 'people', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
                     </li>
                     <li class="menu">
-                      <?php echo $this->Html->link(__(' Nueva Persona'), array('controller' => 'people', 'action' => 'add'), array('class'=>'fa fa-angle-double-right')); ?>
+                      <?php echo $this->Html->link(__(' Nuevo Paciente'), array('controller' => 'people', 'action' => 'add'), array('class'=>'fa fa-angle-double-right')); ?>
                   </li>
                 </ul>
             </li>

@@ -35,12 +35,16 @@ $cakeDescription = __d('cake_dev', 'Medical M.');
 			echo $this->Html->css('ionicons.min.css');
 			echo $this->Html->css('//fonts.googleapis.com/css?family=Droid+Serif:400,700,700italic,400italic');
 			echo $this->Html->css('CakeAdminLTE');
+			echo $this->Html->css(array('jscal2.css'));
 			echo $this->fetch('css');
 			//echo $this->Html->script('libs/jquery-1.10.2.min');
 			//echo $this->Html->script('libs/bootstrap.min');
 
 			echo $this->fetch('script');
 			echo $this->Html->script(array('validaciones.js'));
+			echo $this->Html->script(array('jscal2.js'));
+			echo $this->Html->script(array('es.js'));
+			
 		?>
 	</head>
 

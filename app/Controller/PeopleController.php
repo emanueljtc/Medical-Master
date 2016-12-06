@@ -35,7 +35,7 @@ class PeopleController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->Person->exists($id)) {
-			throw new NotFoundException(__('Invalid person'));
+			throw new NotFoundException(__('Paciente no Existente'));
 		}
 		$options = array('conditions' => array('Person.' . $this->Person->primaryKey => $id));
 		$this->set('person', $this->Person->find('first', $options));
@@ -50,10 +50,10 @@ class PeopleController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Person->create();
 			if ($this->Person->save($this->request->data)) {
-				$this->Session->setFlash(__('The person has been saved'), 'flash/success');
+				$this->Session->setFlash(__('Paciente Guardado Con Exito'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The person could not be saved. Please, try again.'), 'flash/error');
+				$this->Session->setFlash(__('Paciente No Guardado. Por Favor, Intente de Nuevo.'), 'flash/error');
 			}
 		}
 		$nationalities = $this->Person->Nationality->find('list');
@@ -70,14 +70,14 @@ class PeopleController extends AppController {
 	public function edit($id = null) {
         $this->Person->id = $id;
 		if (!$this->Person->exists($id)) {
-			throw new NotFoundException(__('Invalid person'));
+			throw new NotFoundException(__('Paciente no Existente'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Person->save($this->request->data)) {
-				$this->Session->setFlash(__('The person has been saved'), 'flash/success');
+				$this->Session->setFlash(__('Paciente Guardado Con Exito'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The person could not be saved. Please, try again.'), 'flash/error');
+				$this->Session->setFlash(__('Paciente No Editado. Por Favor, Intente de Nuevo.'), 'flash/error');
 			}
 		} else {
 			$options = array('conditions' => array('Person.' . $this->Person->primaryKey => $id));
@@ -101,13 +101,13 @@ class PeopleController extends AppController {
 		}
 		$this->Person->id = $id;
 		if (!$this->Person->exists()) {
-			throw new NotFoundException(__('Invalid person'));
+			throw new NotFoundException(__('Paciente No Existente'));
 		}
 		if ($this->Person->delete()) {
-			$this->Session->setFlash(__('Person deleted'), 'flash/success');
+			$this->Session->setFlash(__('Paciente Eliminado'), 'flash/success');
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Person was not deleted'), 'flash/error');
+		$this->Session->setFlash(__('Paciente no Eliminado'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
 }

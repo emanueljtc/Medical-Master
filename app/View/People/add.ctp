@@ -36,7 +36,7 @@
 						<?php echo $this->Form->input('nationality_id', array('label'=>'Nacionalidad','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('pass_app', array('label'=>'Pass App','class' => 'form-control')); ?>
+						<?php echo $this->Form->input('pass_app', array('label'=>'Pass App','class' => 'form-control','type'=>'password')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
 						<?php echo $this->Form->input('token', array('label'=>'Token','class' => 'form-control')); ?>

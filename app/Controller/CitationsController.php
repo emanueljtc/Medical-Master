@@ -23,7 +23,7 @@ class CitationsController extends AppController {
  */
 	public function index() {
 		$this->Citation->recursive = 0;
-		$this->set('citations', $this->Paginator->paginate());
+		$this->set('citations', $this->paginate());
 	}
 
 /**
@@ -35,7 +35,7 @@ class CitationsController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->Citation->exists($id)) {
-			throw new NotFoundException(__('La Cita No Existe'));
+			throw new NotFoundException(__('Invalid citation'));
 		}
 		$options = array('conditions' => array('Citation.' . $this->Citation->primaryKey => $id));
 		$this->set('citation', $this->Citation->find('first', $options));
@@ -50,10 +50,10 @@ class CitationsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Citation->create();
 			if ($this->Citation->save($this->request->data)) {
-				$this->Session->setFlash(__('La cita ha sido guardada.'), 'flash/success');
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('The citation has been saved'), 'flash/success');
+				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('La cita no ha sido guardada. por favor, Intente de Nuevo.'), 'flash/error');
+				$this->Session->setFlash(__('The citation could not be saved. Please, try again.'), 'flash/error');
 			}
 		}
 		$people = $this->Citation->Person->find('list');
@@ -69,15 +69,16 @@ class CitationsController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+        $this->Citation->id = $id;
 		if (!$this->Citation->exists($id)) {
-			throw new NotFoundException(__('La Cita No Existe'));
+			throw new NotFoundException(__('Invalid citation'));
 		}
-		if ($this->request->is(array('post', 'put'))) {
+		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Citation->save($this->request->data)) {
-				$this->Session->setFlash(__('La cita ha sido actualizada.'), 'flash/success');
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('The citation has been saved'), 'flash/success');
+				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('La cita no ha sido actualizada. por favor, Intente de Nuevo.'), 'flash/error');
+				$this->Session->setFlash(__('The citation could not be saved. Please, try again.'), 'flash/error');
 			}
 		} else {
 			$options = array('conditions' => array('Citation.' . $this->Citation->primaryKey => $id));
@@ -92,20 +93,23 @@ class CitationsController extends AppController {
  * delete method
  *
  * @throws NotFoundException
+ * @throws MethodNotAllowedException
  * @param string $id
  * @return void
  */
 	public function delete($id = null) {
+		if (!$this->request->is('post')) {
+			throw new MethodNotAllowedException();
+		}
 		$this->Citation->id = $id;
 		if (!$this->Citation->exists()) {
-			throw new NotFoundException(__('La cita no existe'));
+			throw new NotFoundException(__('Invalid citation'));
 		}
-		$this->request->allowMethod('post', 'delete');
 		if ($this->Citation->delete()) {
-			$this->Session->setFlash(__('La cita ha sido eliminada.'), 'flash/success');
-		} else {
-			$this->Session->setFlash(__('La cita no ha sido eliminada. Por favor, Intente de Nuevo.'), 'flash/error');
+			$this->Session->setFlash(__('Citation deleted'), 'flash/success');
+			$this->redirect(array('action' => 'index'));
 		}
-		return $this->redirect(array('action' => 'index'));
+		$this->Session->setFlash(__('Citation was not deleted'), 'flash/error');
+		$this->redirect(array('action' => 'index'));
 	}
 }

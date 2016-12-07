@@ -25,27 +25,17 @@ class Citation extends AppModel {
 		'person_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				'message' => 'Campo Vacio',
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'hour' => array(
-			'time' => array(
-				'rule' => array('time'),
-				'message' => 'Campo Vacio',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'date' => array(
-			'date' => array(
-				'rule' => array('date'),
-				'message' => 'Campo Vacio',
+		'date_hour' => array(
+			'datetime' => array(
+				'rule' => array('datetime'),
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -55,7 +45,7 @@ class Citation extends AppModel {
 		'datecitation_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				'message' => 'Campo Vacio',
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

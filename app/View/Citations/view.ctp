@@ -23,14 +23,14 @@
 			<?php echo $this->Html->link($citation['Person']['full_name'], array('controller' => 'people', 'action' => 'view', $citation['Person']['id']), array('class' => '')); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Hour'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Date Hour'); ?></strong></td>
 		<td>
-			<?php echo h($citation['Citation']['hour']); ?>
+			<?php echo h($citation['Citation']['date_hour']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Date'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Datecitation'); ?></strong></td>
 		<td>
-			<?php echo h($citation['Citation']['date']); ?>
+			<?php echo $this->Html->link($citation['Datecitation']['state'], array('controller' => 'datecitations', 'action' => 'view', $citation['Datecitation']['id']), array('class' => '')); ?>
 			&nbsp;
 		</td>
 </tr><tr>		<td><strong><?php echo __('Created'); ?></strong></td>
@@ -41,11 +41,6 @@
 </tr><tr>		<td><strong><?php echo __('Modified'); ?></strong></td>
 		<td>
 			<?php echo h($citation['Citation']['modified']); ?>
-			&nbsp;
-		</td>
-</tr><tr>		<td><strong><?php echo __('Datecitation'); ?></strong></td>
-		<td>
-			<?php echo $this->Html->link($citation['Datecitation']['state'], array('controller' => 'datecitations', 'action' => 'view', $citation['Datecitation']['id']), array('class' => '')); ?>
 			&nbsp;
 		</td>
 </tr>					</tbody>

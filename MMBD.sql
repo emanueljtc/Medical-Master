@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 29-11-2016 a las 22:54:29
+-- Tiempo de generación: 07-12-2016 a las 18:49:38
 -- Versión del servidor: 5.7.16-0ubuntu0.16.04.1
 -- Versión de PHP: 5.6.28-1+deb.sury.org~xenial+1
 
@@ -46,8 +46,8 @@ CREATE TABLE `antecedents` (
 --
 
 INSERT INTO `antecedents` (`id`, `person_id`, `name_antecendent`, `origin`, `time_ suffering`, `family`, `personals_doctors`, `surgicals`, `created`, `modified`) VALUES
-(1, 2, 'no pone musica', 'aburrido', 'siempre', 'muchos', 'quien sabe', 'varias', '2016-11-19', '2016-11-19'),
-(3, 3, 'SueÃ±o', 'cansancio', '12', 'si', 'hugo', 'sssas', '2016-11-20', '2016-11-20');
+(1, 2, 'Diesvio', 'hereditario', '18', 'muchos', 'quien ', 'Si', '2016-11-19', '2016-12-07'),
+(5, 3, 'Antimatismo', 'Heridario', '10', 'si', 'Palo Verltran', 'No', '2016-12-07', '2016-12-07');
 
 -- --------------------------------------------------------
 
@@ -67,6 +67,13 @@ CREATE TABLE `charges` (
   `modified` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `charges`
+--
+
+INSERT INTO `charges` (`id`, `total_cost`, `person_id`, `citation_id`, `state_charge`, `typepayment_id`, `observations`, `created`, `modified`) VALUES
+(1, 5000, 2, 1, 'Pago', 3, 'optimo', '2016-12-06', '2016-12-06');
+
 -- --------------------------------------------------------
 
 --
@@ -76,19 +83,11 @@ CREATE TABLE `charges` (
 CREATE TABLE `citations` (
   `id` int(10) NOT NULL,
   `person_id` int(10) NOT NULL,
-  `hour` time NOT NULL,
-  `date` date NOT NULL,
+  `date_hour` datetime NOT NULL,
+  `datecitation_id` int(11) NOT NULL,
   `created` date NOT NULL,
-  `modified` date NOT NULL,
-  `datecitation_id` int(10) NOT NULL
+  `modified` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `citations`
---
-
-INSERT INTO `citations` (`id`, `person_id`, `hour`, `date`, `created`, `modified`, `datecitation_id`) VALUES
-(1, 2, '18:00:00', '2016-12-20', '2016-11-20', '2016-11-20', 1);
 
 -- --------------------------------------------------------
 
@@ -157,7 +156,7 @@ CREATE TABLE `diagnostics` (
 --
 
 INSERT INTO `diagnostics` (`id`, `size_boobs`, `form_boobs`, `symmetry_boobs`, `skin_boobs`, `cap_boobs`, `pussy`, `neck_pussy`, `coloscopia`, `ano_ straight`, `head_neck`, `touch_tumor`, `form_tumor`, `surface_tumor`, `contour_tumor`, `axis_tumor`, `consistency_tumor`, `laringoscopia`, `menarguia`, `reglas`, `prs`, `companion_sexual`, `distance_cap`, `gestas`, `rsi`, `paras`, `abdomen`, `misbirth`, `gynecological_vulva`, `cesareans`, `age_birth_one`, `diagnostico`, `person_id`, `history_id`) VALUES
-(1, '38 B', 'Redondas', 'perfectas', 'suave', 'no se', 'ufff', 'astabte', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'si', 'no', 'si', '8', '10', 'no', 'no', 'no', 'no', 'no', 'no', 12, 'ESO ESTA FINO', 2, 1);
+(1, '38', 'Redondas', 'perfectas', 'suave', 'si', 'ufff', 'si', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'si', 'no', 'si', '8', '10', 'no', 'no', 'no', 'si', 'no', 'no', 12, 'Perfecto estado', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -182,6 +181,7 @@ CREATE TABLE `historys` (
   `id` int(10) NOT NULL,
   `person_id` int(10) NOT NULL,
   `antecedent_id` int(10) NOT NULL,
+  `born_date` varchar(255) NOT NULL,
   `age` int(3) NOT NULL,
   `weight` int(10) NOT NULL,
   `height` int(25) NOT NULL
@@ -191,9 +191,8 @@ CREATE TABLE `historys` (
 -- Volcado de datos para la tabla `historys`
 --
 
-INSERT INTO `historys` (`id`, `person_id`, `antecedent_id`, `age`, `weight`, `height`) VALUES
-(1, 2, 1, 23, 234, 344),
-(2, 3, 3, 26, 175, 2321);
+INSERT INTO `historys` (`id`, `person_id`, `antecedent_id`, `born_date`, `age`, `weight`, `height`) VALUES
+(1, 2, 1, '04-07-1990', 26, 234, 344);
 
 -- --------------------------------------------------------
 
@@ -249,45 +248,20 @@ CREATE TABLE `people` (
   `dni` int(15) NOT NULL,
   `gender` varchar(10) NOT NULL,
   `address` text NOT NULL,
-  `phone` int(50) NOT NULL,
+  `phone` varchar(20) NOT NULL,
   `email` varchar(100) NOT NULL,
   `nationality_id` int(11) NOT NULL,
-  `rol_id` int(10) NOT NULL,
-  `specialty_id` int(10) DEFAULT NULL,
   `pass_app` varchar(15) DEFAULT NULL,
-  `token` varchar(255) NOT NULL
+  `token` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `people`
 --
 
-INSERT INTO `people` (`id`, `name`, `last_name`, `dni`, `gender`, `address`, `phone`, `email`, `nationality_id`, `rol_id`, `specialty_id`, `pass_app`, `token`) VALUES
-(2, 'guillermo', 'ochoa', 21099, 'masculino', 'mcy', 12245, 'g@gf.com', 1, 1, 0, '123', 'xZ8CB5ZlY7tbfMp6udVNlS8cV'),
-(3, 'Emanuel', 'Torres', 18971787, 'masculino', 'San juan ', 46231, 'emane@ds.com', 1, 1, 0, '111', 'JCr3SB7D9z4m0bUX50kFIvrpR'),
-(4, 'Lulu', 'Ochoa', 122344, 'femenino', 'Maracay', 2432475, 'lulu@gmail.com', 1, 2, 1, '', 'jwdasdas'),
-(5, 'iyjyk', 'uyoul7', 18787676, 'femenino', 'dsdadaw', 11111, 'dadawdada@dsdda.com', 1, 2, 1, '', 'yoyu');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `rols`
---
-
-CREATE TABLE `rols` (
-  `id` int(10) NOT NULL,
-  `rol` varchar(20) NOT NULL,
-  `created` date NOT NULL,
-  `modified` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `rols`
---
-
-INSERT INTO `rols` (`id`, `rol`, `created`, `modified`) VALUES
-(1, 'doctor', '2016-11-19', '2016-11-19'),
-(2, 'paciente', '2016-11-20', '2016-11-20');
+INSERT INTO `people` (`id`, `name`, `last_name`, `dni`, `gender`, `address`, `phone`, `email`, `nationality_id`, `pass_app`, `token`) VALUES
+(2, 'Guillermo', 'Ochoa', 21099, 'Masculino', 'Maracay', '12245', 'g@gf.com', 1, '123', 'spE149EgmtsdbDuVMAXxiacjr'),
+(3, 'Emanuel', 'Torres', 18971787, 'masculino', 'San Juan de los Morros', '46231', 'emane@ds.com', 1, '111', 'JCr3SB7D9z4m0bUX50kFIvrpR');
 
 -- --------------------------------------------------------
 
@@ -298,7 +272,6 @@ INSERT INTO `rols` (`id`, `rol`, `created`, `modified`) VALUES
 CREATE TABLE `specialties` (
   `id` int(10) NOT NULL,
   `specialty` varchar(100) NOT NULL,
-  `rol_id` int(11) NOT NULL,
   `created` date NOT NULL,
   `modified` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -307,8 +280,9 @@ CREATE TABLE `specialties` (
 -- Volcado de datos para la tabla `specialties`
 --
 
-INSERT INTO `specialties` (`id`, `specialty`, `rol_id`, `created`, `modified`) VALUES
-(1, 'Oncologico', 1, '2016-11-20', '2016-11-20');
+INSERT INTO `specialties` (`id`, `specialty`, `created`, `modified`) VALUES
+(2, 'N/A', '2016-11-30', '2016-11-30'),
+(3, 'Oncologo', '2016-11-30', '2016-11-30');
 
 -- --------------------------------------------------------
 
@@ -326,6 +300,13 @@ CREATE TABLE `studies` (
   `modified` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `studies`
+--
+
+INSERT INTO `studies` (`id`, `diagnostic_id`, `person_id`, `name_studie`, `observations`, `created`, `modified`) VALUES
+(1, 1, 2, 'Rayo X', 'zona abdominal', '2016-12-06', '2016-12-06');
+
 -- --------------------------------------------------------
 
 --
@@ -336,9 +317,9 @@ CREATE TABLE `treatments` (
   `id` int(10) NOT NULL,
   `person_id` int(10) NOT NULL,
   `diagnostic_id` int(10) NOT NULL,
-  `status_treament` int(10) NOT NULL,
+  `status_treament` varchar(10) NOT NULL,
   `prescription` varchar(100) NOT NULL,
-  `observations_prescription` text NOT NULL,
+  `observations_prescription` text,
   `created` date NOT NULL,
   `modified` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -348,7 +329,7 @@ CREATE TABLE `treatments` (
 --
 
 INSERT INTO `treatments` (`id`, `person_id`, `diagnostic_id`, `status_treament`, `prescription`, `observations_prescription`, `created`, `modified`) VALUES
-(1, 2, 1, 1, 'Rifoxina', 'cada 8 horas', '2016-11-20', '2016-11-29');
+(3, 2, 1, '1', 'Rifoxina', '12 horas', '2016-12-07', '2016-12-07');
 
 -- --------------------------------------------------------
 
@@ -382,6 +363,7 @@ CREATE TABLE `users` (
   `full_name` varchar(255) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
+  `specialty_id` int(10) NOT NULL,
   `group_id` int(10) NOT NULL,
   `created` date NOT NULL,
   `modified` date NOT NULL
@@ -452,12 +434,6 @@ ALTER TABLE `people`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `rols`
---
-ALTER TABLE `rols`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indices de la tabla `specialties`
 --
 ALTER TABLE `specialties`
@@ -495,17 +471,17 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `antecedents`
 --
 ALTER TABLE `antecedents`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `charges`
 --
 ALTER TABLE `charges`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `citations`
 --
 ALTER TABLE `citations`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `datecitations`
 --
@@ -540,27 +516,22 @@ ALTER TABLE `nationalities`
 -- AUTO_INCREMENT de la tabla `people`
 --
 ALTER TABLE `people`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT de la tabla `rols`
---
-ALTER TABLE `rols`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT de la tabla `specialties`
 --
 ALTER TABLE `specialties`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `studies`
 --
 ALTER TABLE `studies`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `treatments`
 --
 ALTER TABLE `treatments`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `typepayments`
 --

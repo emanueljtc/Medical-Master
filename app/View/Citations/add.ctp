@@ -15,10 +15,7 @@
 						<?php echo $this->Form->input('person_id', array('class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('hour', array('class' => 'form-control')); ?>
-					</div><!-- .form-group -->
-					<div class="form-group">
-						<?php echo $this->Form->input('date', array('class' => 'form-control')); ?>
+						<?php echo $this->Form->input('date_hour', array('class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
 						<?php echo $this->Form->input('datecitation_id', array('class' => 'form-control')); ?>

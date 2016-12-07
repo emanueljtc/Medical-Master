@@ -15,11 +15,10 @@
 						<tr>
 													<th class="text-center"><?php echo $this->Paginator->sort('id'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('person_id'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('hour'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('date'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('date_hour'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('datecitation_id'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('created'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('modified'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('datecitation_id'); ?></th>
 												<th class="text-center"><?php echo __('Actions'); ?></th>
 						</tr>
 					</thead>
@@ -30,13 +29,12 @@
 		<td class="text-center">
 			<?php echo $this->Html->link($citation['Person']['full_name'], array('controller' => 'people', 'action' => 'view', $citation['Person']['id'])); ?>
 		</td>
-		<td class="text-center"><?php echo h($citation['Citation']['hour']); ?>&nbsp;</td>
-		<td class="text-center"><?php echo h($citation['Citation']['date']); ?>&nbsp;</td>
-		<td class="text-center"><?php echo h($citation['Citation']['created']); ?>&nbsp;</td>
-		<td class="text-center"><?php echo h($citation['Citation']['modified']); ?>&nbsp;</td>
+		<td class="text-center"><?php echo h($citation['Citation']['date_hour']); ?>&nbsp;</td>
 		<td class="text-center">
 			<?php echo $this->Html->link($citation['Datecitation']['state'], array('controller' => 'datecitations', 'action' => 'view', $citation['Datecitation']['id'])); ?>
 		</td>
+		<td class="text-center"><?php echo h($citation['Citation']['created']); ?>&nbsp;</td>
+		<td class="text-center"><?php echo h($citation['Citation']['modified']); ?>&nbsp;</td>
 		<td class="text-center">
 			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('action' => 'view', $citation['Citation']['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'view')); ?>
 			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $citation['Citation']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'edit')); ?>

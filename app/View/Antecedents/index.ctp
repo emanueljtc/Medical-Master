@@ -13,17 +13,17 @@
                 <table id="Antecedents" class="table table-bordered table-striped">
 					<thead>
 						<tr>
-													<th class="text-center"><?php echo $this->Paginator->sort('id'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('person_id'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('name_antecendent'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('origin'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('time_ suffering'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('family'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('personals_doctors'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('surgicals'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('created'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('modified'); ?></th>
-												<th class="text-center"><?php echo __('Actions'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('N° Antecedente'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Paciente'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Antecedente'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Origen'); ?></th>
+													<!-- <th class="text-center"><?php echo $this->Paginator->sort('Tiempo de Padecimiento'); ?></th> -->
+													<!-- <th class="text-center"><?php echo $this->Paginator->sort('Familia'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Doctor Tratante'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Sirugias'); ?></th> -->
+													<th class="text-center"><?php echo $this->Paginator->sort('creado'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('modificado'); ?></th>
+												<th class="text-center"><?php echo __('Acciones'); ?></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -31,20 +31,20 @@
 	<tr>
 		<td class="text-center"><?php echo h($antecedent['Antecedent']['id']); ?>&nbsp;</td>
 		<td class="text-center">
-			<?php echo $this->Html->link($antecedent['Person']['name'], array('controller' => 'people', 'action' => 'view', $antecedent['Person']['id'])); ?>
+			<?php echo $this->Html->link($antecedent['Person']['full_name'], array('controller' => 'people', 'action' => 'view', $antecedent['Person']['id'])); ?>
 		</td>
 		<td class="text-center"><?php echo h($antecedent['Antecedent']['name_antecendent']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($antecedent['Antecedent']['origin']); ?>&nbsp;</td>
-		<td class="text-center"><?php echo h($antecedent['Antecedent']['time_ suffering']); ?>&nbsp;</td>
+		<!-- <td class="text-center"><?php echo h($antecedent['Antecedent']['time_ suffering']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($antecedent['Antecedent']['family']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($antecedent['Antecedent']['personals_doctors']); ?>&nbsp;</td>
-		<td class="text-center"><?php echo h($antecedent['Antecedent']['surgicals']); ?>&nbsp;</td>
+		<td class="text-center"><?php echo h($antecedent['Antecedent']['surgicals']); ?>&nbsp;</td> -->
 		<td class="text-center"><?php echo h($antecedent['Antecedent']['created']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($antecedent['Antecedent']['modified']); ?>&nbsp;</td>
 		<td class="text-center">
-			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('action' => 'view', $antecedent['Antecedent']['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'view')); ?>
-			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $antecedent['Antecedent']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'edit')); ?>
-			<?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('action' => 'delete', $antecedent['Antecedent']['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'delete'), __('Are you sure you want to delete # %s?', $antecedent['Antecedent']['id'])); ?>
+			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('action' => 'view', $antecedent['Antecedent']['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Ver')); ?>
+			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $antecedent['Antecedent']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Editar')); ?>
+			<?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('action' => 'delete', $antecedent['Antecedent']['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Eliminar'), __('Esta Seguro de Eliminar el Antecedente # %s?', $antecedent['Antecedent']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

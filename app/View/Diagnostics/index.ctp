@@ -46,7 +46,7 @@
 													<th class="text-center"><?php echo $this->Paginator->sort('Edad del Primer Parto'); ?></th> -->
 													<th class="text-center"><?php echo $this->Paginator->sort('Diagnostico'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('Paciente'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('Numero de Historia'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('N° Historia'); ?></th>
 												<th class="text-center"><?php echo __('Acciones'); ?></th>
 						</tr>
 					</thead>

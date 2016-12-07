@@ -82,10 +82,10 @@ function calcularEdad()
               )); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('weight', array('label'=>'Peso','class' => 'form-control')); ?>
+						<?php echo $this->Form->input('weight', array('type'=>'text','label'=>'Peso','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('height', array('label'=>'Altura','class' => 'form-control')); ?>
+						<?php echo $this->Form->input('height', array('type'=>'text','label'=>'Altura','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 
 					<?php echo $this->Form->submit('Añadir', array('class' => 'btn btn-large btn-primary')); ?>

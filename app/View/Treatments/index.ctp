@@ -29,7 +29,7 @@
 	<tr>
 		<td class="text-center"><?php echo h($treatment['Treatment']['id']); ?>&nbsp;</td>
 		<td class="text-center">
-			<?php echo $this->Html->link($treatment['Person']['name'], array('controller' => 'people', 'action' => 'view', $treatment['Person']['id'])); ?>
+			<?php echo $this->Html->link($treatment['Person']['full_name'], array('controller' => 'people', 'action' => 'view', $treatment['Person']['id'])); ?>
 		</td>
 		<td class="text-center">
 			<?php echo $this->Html->link($treatment['Diagnostic']['diagnostico'], array('controller' => 'diagnostics', 'action' => 'view', $treatment['Diagnostic']['id'])); ?>

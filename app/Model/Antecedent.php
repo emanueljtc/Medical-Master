@@ -13,7 +13,7 @@ class Antecedent extends AppModel {
  *
  * @var string
  */
-	public $displayField = 'id';
+	public $displayField = 'name_antecendent';
 
 /**
  * Validation rules

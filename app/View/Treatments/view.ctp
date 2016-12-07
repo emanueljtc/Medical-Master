@@ -20,7 +20,7 @@
 		</td>
 </tr><tr>		<td><strong><?php echo __('Person'); ?></strong></td>
 		<td>
-			<?php echo $this->Html->link($treatment['Person']['name'], array('controller' => 'people', 'action' => 'view', $treatment['Person']['id']), array('class' => '')); ?>
+			<?php echo $this->Html->link($treatment['Person']['full_name'], array('controller' => 'people', 'action' => 'view', $treatment['Person']['id']), array('class' => '')); ?>
 			&nbsp;
 		</td>
 </tr><tr>		<td><strong><?php echo __('Diagnostic'); ?></strong></td>

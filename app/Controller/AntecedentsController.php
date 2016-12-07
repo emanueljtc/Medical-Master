@@ -23,7 +23,7 @@ class AntecedentsController extends AppController {
  */
 	public function index() {
 		$this->Antecedent->recursive = 0;
-		$this->set('antecedents', $this->Paginator->paginate());
+		$this->set('antecedents', $this->paginate());
 	}
 
 /**
@@ -35,7 +35,7 @@ class AntecedentsController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->Antecedent->exists($id)) {
-			throw new NotFoundException(__('Invalid antecedent'));
+			throw new NotFoundException(__('El antecedente no existe'));
 		}
 		$options = array('conditions' => array('Antecedent.' . $this->Antecedent->primaryKey => $id));
 		$this->set('antecedent', $this->Antecedent->find('first', $options));
@@ -50,10 +50,10 @@ class AntecedentsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Antecedent->create();
 			if ($this->Antecedent->save($this->request->data)) {
-				$this->Session->setFlash(__('The antecedent has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('El antecedente ha sido guardado'), 'flash/success');
+				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The antecedent could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El antecedente no ha sido guardado, Por Favor, Intente de Nuevo'), 'flash/error');
 			}
 		}
 		$people = $this->Antecedent->Person->find('list');
@@ -68,15 +68,16 @@ class AntecedentsController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+        $this->Antecedent->id = $id;
 		if (!$this->Antecedent->exists($id)) {
-			throw new NotFoundException(__('Invalid antecedent'));
+			throw new NotFoundException(__('El antedecente no existe'));
 		}
-		if ($this->request->is(array('post', 'put'))) {
+		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Antecedent->save($this->request->data)) {
-				$this->Session->setFlash(__('The antecedent has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('El antecedente ha sido actualizado'), 'flash/success');
+				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The antecedent could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El antecedente no ha sido actualizado, por favor intente de nuevo.'), 'flash/error');
 			}
 		} else {
 			$options = array('conditions' => array('Antecedent.' . $this->Antecedent->primaryKey => $id));
@@ -90,20 +91,23 @@ class AntecedentsController extends AppController {
  * delete method
  *
  * @throws NotFoundException
+ * @throws MethodNotAllowedException
  * @param string $id
  * @return void
  */
 	public function delete($id = null) {
+		if (!$this->request->is('post')) {
+			throw new MethodNotAllowedException();
+		}
 		$this->Antecedent->id = $id;
 		if (!$this->Antecedent->exists()) {
-			throw new NotFoundException(__('Invalid antecedent'));
+			throw new NotFoundException(__('EL antecedente no existe'));
 		}
-		$this->request->allowMethod('post', 'delete');
 		if ($this->Antecedent->delete()) {
-			$this->Session->setFlash(__('The antecedent has been deleted.'));
-		} else {
-			$this->Session->setFlash(__('The antecedent could not be deleted. Please, try again.'));
+			$this->Session->setFlash(__('El antecedente eliminado'), 'flash/success');
+			$this->redirect(array('action' => 'index'));
 		}
-		return $this->redirect(array('action' => 'index'));
+		$this->Session->setFlash(__('El antecedente no ha sido eliminado, Por Favor, Intente de Nuevo.'), 'flash/error');
+		$this->redirect(array('action' => 'index'));
 	}
 }

@@ -23,7 +23,7 @@
 <tr>
   <td><strong><?php echo __('Paciente'); ?></strong></td>
 		<td>
-			<?php echo $this->Html->link($history['Person']['name'], array('controller' => 'people', 'action' => 'view', $history['Person']['id']), array('class' => '')); ?>
+			<?php echo $this->Html->link($history['Person']['full_name'], array('controller' => 'people', 'action' => 'view', $history['Person']['id']), array('class' => '')); ?>
 			&nbsp;
 		</td>
 </tr>

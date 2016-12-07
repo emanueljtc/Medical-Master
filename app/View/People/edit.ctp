@@ -21,7 +21,7 @@
 						<?php echo $this->Form->input('last_name', array('label'=>'Apellidos','class' => 'form-control','onkeypress'=>'return IsApellidos(event);','maxlength'=>'60')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('dni', array('type'=>'text','label'=>'Cedula','class' => 'form-control')); ?>
+						<?php echo $this->Form->input('dni', array('type'=>'text','label'=>'Cedula','class' => 'form-control','onkeypress'=>'return IsCedula(event);','maxlength'=>'60')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
 						<?php echo $this->Form->input('gender', array('label'=>'Genero','class' => 'form-control','type'=>'select','options'=>array(''=>'[SELECCIONE SEXO]','Femenino'=>'Femenino','Masculino'=>'Masculino'))); ?>

@@ -35,7 +35,7 @@ class NationalitiesController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->Nationality->exists($id)) {
-			throw new NotFoundException(__('Invalid nationality'));
+			throw new NotFoundException(__('Nacionalidad no existe'));
 		}
 		$options = array('conditions' => array('Nationality.' . $this->Nationality->primaryKey => $id));
 		$this->set('nationality', $this->Nationality->find('first', $options));
@@ -50,10 +50,10 @@ class NationalitiesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Nationality->create();
 			if ($this->Nationality->save($this->request->data)) {
-				$this->Session->setFlash(__('The nationality has been saved.'));
+				$this->Session->setFlash(__('La nacionalidad ha sido guardada.'), 'flash/success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The nationality could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La nacionalidad no ha sido guardada. Por Favor, Intente de Nuevo.'));
 			}
 		}
 	}
@@ -67,14 +67,14 @@ class NationalitiesController extends AppController {
  */
 	public function edit($id = null) {
 		if (!$this->Nationality->exists($id)) {
-			throw new NotFoundException(__('Invalid nationality'));
+			throw new NotFoundException(__('Nacionalidad no existe'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Nationality->save($this->request->data)) {
-				$this->Session->setFlash(__('The nationality has been saved.'));
+				$this->Session->setFlash(__('La nacionalidad ha sido guardada.'), 'flash/success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The nationality could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La nacionalidad no ha sido guardada. Por Favor, Intente de Nuevo.'), 'flash/error');
 			}
 		} else {
 			$options = array('conditions' => array('Nationality.' . $this->Nationality->primaryKey => $id));
@@ -92,13 +92,13 @@ class NationalitiesController extends AppController {
 	public function delete($id = null) {
 		$this->Nationality->id = $id;
 		if (!$this->Nationality->exists()) {
-			throw new NotFoundException(__('Invalid nationality'));
+			throw new NotFoundException(__('La nacionalidad no existe'));
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Nationality->delete()) {
-			$this->Session->setFlash(__('The nationality has been deleted.'));
+			$this->Session->setFlash(__('La nacionalidad ha sido eliminada.'), 'flash/succes');
 		} else {
-			$this->Session->setFlash(__('The nationality could not be deleted. Please, try again.'));
+			$this->Session->setFlash(__('La nacionalidad no ha sido eliminada. Por Favor, Intente de Nuevo.'));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}

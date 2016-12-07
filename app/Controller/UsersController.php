@@ -23,7 +23,7 @@ class UsersController extends AppController {
  */
 	public function index() {
 		$this->User->recursive = 0;
-		$this->set('users', $this->Paginator->paginate());
+		$this->set('users', $this->paginate());
 	}
 
 /**
@@ -35,7 +35,7 @@ class UsersController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->User->exists($id)) {
-			throw new NotFoundException(__('Invalid user'));
+			throw new NotFoundException(__('El usuario no existe'));
 		}
 		$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
 		$this->set('user', $this->User->find('first', $options));
@@ -50,14 +50,15 @@ class UsersController extends AppController {
 		if ($this->request->is('post')) {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('The user has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('El usuario ha sido guardado'), 'flash/success');
+				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El usuario no ha sido guardado. Por Favor, Intente de Nuevo'), 'flash/error');
 			}
 		}
+		$specialties = $this->User->Specialty->find('list');
 		$groups = $this->User->Group->find('list');
-		$this->set(compact('groups'));
+		$this->set(compact('specialties', 'groups'));
 	}
 
 /**
@@ -68,42 +69,47 @@ class UsersController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+        $this->User->id = $id;
 		if (!$this->User->exists($id)) {
-			throw new NotFoundException(__('Invalid user'));
+			throw new NotFoundException(__('El usuario no existe'));
 		}
-		if ($this->request->is(array('post', 'put'))) {
+		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('The user has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('El usuario ha sido actualizado'), 'flash/success');
+				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El usuario no ha sido actualizado. Por Favor, Intente de Nuevo.'), 'flash/error');
 			}
 		} else {
 			$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
 			$this->request->data = $this->User->find('first', $options);
 		}
+		$specialties = $this->User->Specialty->find('list');
 		$groups = $this->User->Group->find('list');
-		$this->set(compact('groups'));
+		$this->set(compact('specialties', 'groups'));
 	}
 
 /**
  * delete method
  *
  * @throws NotFoundException
+ * @throws MethodNotAllowedException
  * @param string $id
  * @return void
  */
 	public function delete($id = null) {
+		if (!$this->request->is('post')) {
+			throw new MethodNotAllowedException();
+		}
 		$this->User->id = $id;
 		if (!$this->User->exists()) {
-			throw new NotFoundException(__('Invalid user'));
+			throw new NotFoundException(__('El usuario no existe'));
 		}
-		$this->request->allowMethod('post', 'delete');
 		if ($this->User->delete()) {
-			$this->Session->setFlash(__('The user has been deleted.'));
-		} else {
-			$this->Session->setFlash(__('The user could not be deleted. Please, try again.'));
+			$this->Session->setFlash(__('El usuario ha sido eliminado'), 'flash/success');
+			$this->redirect(array('action' => 'index'));
 		}
-		return $this->redirect(array('action' => 'index'));
+		$this->Session->setFlash(__('El usuario no ha sido eliminado'), 'flash/error');
+		$this->redirect(array('action' => 'index'));
 	}
 }

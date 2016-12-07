@@ -35,7 +35,7 @@ class DatecitationsController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->Datecitation->exists($id)) {
-			throw new NotFoundException(__('Invalid datecitation'));
+			throw new NotFoundException(__('Estado de cita no existe'));
 		}
 		$options = array('conditions' => array('Datecitation.' . $this->Datecitation->primaryKey => $id));
 		$this->set('datecitation', $this->Datecitation->find('first', $options));
@@ -50,10 +50,10 @@ class DatecitationsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Datecitation->create();
 			if ($this->Datecitation->save($this->request->data)) {
-				$this->Session->setFlash(__('The datecitation has been saved.'));
+				$this->Session->setFlash(__('El estado de cita ha sido registrado.'), 'flash/success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The datecitation could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El estado de cita no ha sido registrado. Por Favor, Intente de Nuevo.'), 'flash/error');
 			}
 		}
 	}
@@ -67,14 +67,14 @@ class DatecitationsController extends AppController {
  */
 	public function edit($id = null) {
 		if (!$this->Datecitation->exists($id)) {
-			throw new NotFoundException(__('Invalid datecitation'));
+			throw new NotFoundException(__('Estado de cita no existe'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Datecitation->save($this->request->data)) {
-				$this->Session->setFlash(__('The datecitation has been saved.'));
+				$this->Session->setFlash(__('El estado de cita ha sido actualizado.'), 'flash/success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The datecitation could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El estado de cita no ha sido registrado. Por Favor, Intente de Nuevo.'), 'flash/error');
 			}
 		} else {
 			$options = array('conditions' => array('Datecitation.' . $this->Datecitation->primaryKey => $id));
@@ -92,13 +92,13 @@ class DatecitationsController extends AppController {
 	public function delete($id = null) {
 		$this->Datecitation->id = $id;
 		if (!$this->Datecitation->exists()) {
-			throw new NotFoundException(__('Invalid datecitation'));
+			throw new NotFoundException(__('Estado de cita no existe'));
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Datecitation->delete()) {
-			$this->Session->setFlash(__('The datecitation has been deleted.'));
+			$this->Session->setFlash(__('El estado de cita ha sido eliminado.'), 'flash/success');
 		} else {
-			$this->Session->setFlash(__('The datecitation could not be deleted. Please, try again.'));
+			$this->Session->setFlash(__('El estado de cita no ha sido eliminado. Por Favor, Intente de Nuevo.'), 'flash/error');
 		}
 		return $this->redirect(array('action' => 'index'));
 	}

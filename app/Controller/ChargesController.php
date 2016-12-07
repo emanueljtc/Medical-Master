@@ -35,7 +35,7 @@ class ChargesController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->Charge->exists($id)) {
-			throw new NotFoundException(__('Invalid charge'));
+			throw new NotFoundException(__('Pago No Existe'));
 		}
 		$options = array('conditions' => array('Charge.' . $this->Charge->primaryKey => $id));
 		$this->set('charge', $this->Charge->find('first', $options));
@@ -50,10 +50,10 @@ class ChargesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Charge->create();
 			if ($this->Charge->save($this->request->data)) {
-				$this->Session->setFlash(__('The charge has been saved.'));
+				$this->Session->setFlash(__('Pago registrado.'), 'flash/success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The charge could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('Pago no ha sido registrado. por favor, Intente de Nuevo.'), 'flash/error');
 			}
 		}
 		$people = $this->Charge->Person->find('list');
@@ -71,14 +71,14 @@ class ChargesController extends AppController {
  */
 	public function edit($id = null) {
 		if (!$this->Charge->exists($id)) {
-			throw new NotFoundException(__('Invalid charge'));
+			throw new NotFoundException(__('Pago No Existe'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Charge->save($this->request->data)) {
-				$this->Session->setFlash(__('The charge has been saved.'));
+				$this->Session->setFlash(__('El pago ha sido actualizado.'), 'flash/success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The charge could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El pago no ha sido actualizado. Intente de Nuevo.'), 'flash/error');
 			}
 		} else {
 			$options = array('conditions' => array('Charge.' . $this->Charge->primaryKey => $id));
@@ -100,13 +100,13 @@ class ChargesController extends AppController {
 	public function delete($id = null) {
 		$this->Charge->id = $id;
 		if (!$this->Charge->exists()) {
-			throw new NotFoundException(__('Invalid charge'));
+			throw new NotFoundException(__('Pago No Existe'));
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Charge->delete()) {
-			$this->Session->setFlash(__('The charge has been deleted.'));
+			$this->Session->setFlash(__('El pago ha sido eliminado.'), 'flash/success');
 		} else {
-			$this->Session->setFlash(__('The charge could not be deleted. Please, try again.'));
+			$this->Session->setFlash(__('El pago no ha sido eliminado, Intente de Nuevo.'), 'flash/error');
 		}
 		return $this->redirect(array('action' => 'index'));
 	}

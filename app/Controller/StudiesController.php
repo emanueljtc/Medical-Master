@@ -35,7 +35,7 @@ class StudiesController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->Study->exists($id)) {
-			throw new NotFoundException(__('Invalid study'));
+			throw new NotFoundException(__('El estudio no existe'));
 		}
 		$options = array('conditions' => array('Study.' . $this->Study->primaryKey => $id));
 		$this->set('study', $this->Study->find('first', $options));
@@ -50,10 +50,10 @@ class StudiesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Study->create();
 			if ($this->Study->save($this->request->data)) {
-				$this->Session->setFlash(__('The study has been saved.'));
+				$this->Session->setFlash(__('El estudio ha sido guardado.'), 'flash/success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The study could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El estudio no ha sido guardado, Por Favor, Intente de Nuevo.'), 'flash/error');
 			}
 		}
 		$diagnostics = $this->Study->Diagnostic->find('list');
@@ -70,14 +70,14 @@ class StudiesController extends AppController {
  */
 	public function edit($id = null) {
 		if (!$this->Study->exists($id)) {
-			throw new NotFoundException(__('Invalid study'));
+			throw new NotFoundException(__('El estudio no existe'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Study->save($this->request->data)) {
-				$this->Session->setFlash(__('The study has been saved.'));
+				$this->Session->setFlash(__('El estudio ha sido actualizado.'), 'flash/success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The study could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El estudio no ha sido actuaizado. Por Favor, Intente de Nuevo.'), 'flash/error');
 			}
 		} else {
 			$options = array('conditions' => array('Study.' . $this->Study->primaryKey => $id));
@@ -98,13 +98,13 @@ class StudiesController extends AppController {
 	public function delete($id = null) {
 		$this->Study->id = $id;
 		if (!$this->Study->exists()) {
-			throw new NotFoundException(__('Invalid study'));
+			throw new NotFoundException(__('El estudio no existe'));
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Study->delete()) {
-			$this->Session->setFlash(__('The study has been deleted.'));
+			$this->Session->setFlash(__('El estudio ha silo eliminado.'), 'flash/success');
 		} else {
-			$this->Session->setFlash(__('The study could not be deleted. Please, try again.'));
+			$this->Session->setFlash(__('El estudio no ha sido eliminado. Por Favor, Intente de Nuevo.'), 'flash/error');
 		}
 		return $this->redirect(array('action' => 'index'));
 	}

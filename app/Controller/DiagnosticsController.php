@@ -23,7 +23,7 @@ class DiagnosticsController extends AppController {
  */
 	public function index() {
 		$this->Diagnostic->recursive = 0;
-		$this->set('diagnostics', $this->Paginator->paginate());
+		$this->set('diagnostics', $this->paginate());
 	}
 
 /**
@@ -50,10 +50,10 @@ class DiagnosticsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Diagnostic->create();
 			if ($this->Diagnostic->save($this->request->data)) {
-				$this->Session->setFlash(__('The diagnostic has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('The diagnostic has been saved'), 'flash/success');
+				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The diagnostic could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The diagnostic could not be saved. Please, try again.'), 'flash/error');
 			}
 		}
 		$people = $this->Diagnostic->Person->find('list');
@@ -69,15 +69,16 @@ class DiagnosticsController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+        $this->Diagnostic->id = $id;
 		if (!$this->Diagnostic->exists($id)) {
 			throw new NotFoundException(__('Invalid diagnostic'));
 		}
-		if ($this->request->is(array('post', 'put'))) {
+		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Diagnostic->save($this->request->data)) {
-				$this->Session->setFlash(__('The diagnostic has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('The diagnostic has been saved'), 'flash/success');
+				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The diagnostic could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The diagnostic could not be saved. Please, try again.'), 'flash/error');
 			}
 		} else {
 			$options = array('conditions' => array('Diagnostic.' . $this->Diagnostic->primaryKey => $id));
@@ -92,20 +93,23 @@ class DiagnosticsController extends AppController {
  * delete method
  *
  * @throws NotFoundException
+ * @throws MethodNotAllowedException
  * @param string $id
  * @return void
  */
 	public function delete($id = null) {
+		if (!$this->request->is('post')) {
+			throw new MethodNotAllowedException();
+		}
 		$this->Diagnostic->id = $id;
 		if (!$this->Diagnostic->exists()) {
 			throw new NotFoundException(__('Invalid diagnostic'));
 		}
-		$this->request->allowMethod('post', 'delete');
 		if ($this->Diagnostic->delete()) {
-			$this->Session->setFlash(__('The diagnostic has been deleted.'));
-		} else {
-			$this->Session->setFlash(__('The diagnostic could not be deleted. Please, try again.'));
+			$this->Session->setFlash(__('Diagnostic deleted'), 'flash/success');
+			$this->redirect(array('action' => 'index'));
 		}
-		return $this->redirect(array('action' => 'index'));
+		$this->Session->setFlash(__('Diagnostic was not deleted'), 'flash/error');
+		$this->redirect(array('action' => 'index'));
 	}
 }

@@ -3,7 +3,7 @@
     <div class="col-xs-6 col-xs-offset-3">
 		<div class="box box-primary">
 			<div class="box-header">
-			<h3 class="box-title"><?php echo __('Añadir Cita'); ?></h3>
+			<h3 class="box-title"><?php echo __('Add Citation'); ?></h3>
 			</div>
 			<div class="box-body table-responsive">
 		
@@ -12,19 +12,19 @@
 				<fieldset>
 
 										<div class="form-group">
-						<?php echo $this->Form->input('persona', array('class' => 'form-control')); ?>
+						<?php echo $this->Form->input('person_id', array('class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('hora', array('class' => 'form-control')); ?>
+						<?php echo $this->Form->input('hour', array('class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('fecha', array('class' => 'form-control')); ?>
+						<?php echo $this->Form->input('date', array('class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('Estado de la cita', array('class' => 'form-control')); ?>
+						<?php echo $this->Form->input('datecitation_id', array('class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 
-					<?php echo $this->Form->submit('Añadir', array('class' => 'btn btn-large btn-primary')); ?>
+					<?php echo $this->Form->submit('Submit', array('class' => 'btn btn-large btn-primary')); ?>
 
 				</fieldset>
 

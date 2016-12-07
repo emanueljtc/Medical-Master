@@ -44,6 +44,12 @@ function EdadParto(evt){
 var key = nav11 ? evt.which : evt.keyCode;
 return (key <= 13 || (key >= 48 && key <= 57));
 }
+var nav12 = window.Event ? true : false;
+function TiempoPadecimiento(evt){
+// Backspace = 8, Enter = 13, ’0′ = 48, ’9′ = 57, ‘.’ = 46
+var key = nav12 ? evt.which : evt.keyCode;
+return (key <= 13 || (key >= 48 && key <= 57));
+}
 function calcularEdad()
 {
     var fecha=document.getElementById("f_date2").value;

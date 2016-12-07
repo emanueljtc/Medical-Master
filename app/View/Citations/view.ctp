@@ -6,7 +6,7 @@
 			<div class="box-header">
 				<h3 class="box-title"><?php  echo __('Cita'); ?></h3>
 				<div class="box-tools pull-right">
-	                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i> Edit'), array('action' => 'edit', $citation['Citation']['id']), array('class' => 'btn btn-primary', 'escape' => false)); ?>
+	                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i> Editar'), array('action' => 'edit', $citation['Citation']['id']), array('class' => 'btn btn-primary', 'escape' => false)); ?>
 	            </div>
 			</div>
 			
@@ -59,7 +59,7 @@
 				<div class="box-header">
 					<h3 class="box-title"><?php echo __('Cargas Relacionadas'); ?></h3>
 					<div class="box-tools pull-right">
-						<?php echo $this->Html->link('<i class="glyphicon glyphicon-plus"></i> '.__('New Charge'), array('controller' => 'charges', 'action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>					</div><!-- /.actions -->
+						<?php echo $this->Html->link('<i class="glyphicon glyphicon-plus"></i> '.__('Nueva Carga'), array('controller' => 'charges', 'action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>					</div><!-- /.actions -->
 				</div>
 				<?php if (!empty($citation['Charge'])): ?>
 					

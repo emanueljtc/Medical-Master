@@ -6,7 +6,7 @@
 		<div class="box-header">
 			<h3 class="box-title"><?php echo __('Charges'); ?></h3>
 			<div class="box-tools pull-right">
-                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> New Charge'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
+                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> Nueva Carga'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
             </div>
 		</div>	
 			<div class="box-body table-responsive">

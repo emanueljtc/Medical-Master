@@ -15,7 +15,7 @@
 						<?php echo $this->Form->input('id', array('class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('size_boobs', array('label'=>'Tamaño de Senos','class' => 'form-control')); ?>
+						<?php echo $this->Form->input('size_boobs', array('onkeypress'=>'return TamañoSeno(event);','maxlength'=>'3','label'=>'Tamaño de Senos','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
 						<?php echo $this->Form->input('form_boobs', array('label'=>'Forma de Senos','class' => 'form-control')); ?>

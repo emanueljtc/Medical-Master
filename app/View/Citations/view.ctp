@@ -4,7 +4,7 @@
 		
 		<div class="box box-primary">
 			<div class="box-header">
-				<h3 class="box-title"><?php  echo __('Citation'); ?></h3>
+				<h3 class="box-title"><?php  echo __('Cita'); ?></h3>
 				<div class="box-tools pull-right">
 	                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i> Edit'), array('action' => 'edit', $citation['Citation']['id']), array('class' => 'btn btn-primary', 'escape' => false)); ?>
 	            </div>
@@ -13,37 +13,37 @@
 			<div class="box-body table-responsive">
                 <table id="Citations" class="table table-bordered table-striped">
 					<tbody>
-						<tr>		<td><strong><?php echo __('Id'); ?></strong></td>
+						<tr>		<td><strong><?php echo __('Nº Cita'); ?></strong></td>
 		<td>
 			<?php echo h($citation['Citation']['id']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Person'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Persona'); ?></strong></td>
 		<td>
 			<?php echo $this->Html->link($citation['Person']['name'], array('controller' => 'people', 'action' => 'view', $citation['Person']['id']), array('class' => '')); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Hour'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Hora'); ?></strong></td>
 		<td>
 			<?php echo h($citation['Citation']['hour']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Date'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Fecha'); ?></strong></td>
 		<td>
 			<?php echo h($citation['Citation']['date']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Created'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Creado'); ?></strong></td>
 		<td>
 			<?php echo h($citation['Citation']['created']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Modified'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Modificado'); ?></strong></td>
 		<td>
 			<?php echo h($citation['Citation']['modified']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Datecitation'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Fecha de Cita'); ?></strong></td>
 		<td>
 			<?php echo $this->Html->link($citation['Datecitation']['id'], array('controller' => 'datecitations', 'action' => 'view', $citation['Datecitation']['id']), array('class' => '')); ?>
 			&nbsp;
@@ -57,7 +57,7 @@
 					
 			<div class="box box-primary">
 				<div class="box-header">
-					<h3 class="box-title"><?php echo __('Related Charges'); ?></h3>
+					<h3 class="box-title"><?php echo __('Cargas Relacionadas'); ?></h3>
 					<div class="box-tools pull-right">
 						<?php echo $this->Html->link('<i class="glyphicon glyphicon-plus"></i> '.__('New Charge'), array('controller' => 'charges', 'action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>					</div><!-- /.actions -->
 				</div>
@@ -67,16 +67,16 @@
 						<table class="table table-bordered table-striped">
 							<thead>
 								<tr>
-											<th class="text-center"><?php echo __('Id'); ?></th>
-		<th class="text-center"><?php echo __('Total Cost'); ?></th>
-		<th class="text-center"><?php echo __('Person Id'); ?></th>
-		<th class="text-center"><?php echo __('Citation Id'); ?></th>
-		<th class="text-center"><?php echo __('State Charge'); ?></th>
-		<th class="text-center"><?php echo __('Typepayment Id'); ?></th>
-		<th class="text-center"><?php echo __('Observations'); ?></th>
-		<th class="text-center"><?php echo __('Created'); ?></th>
-		<th class="text-center"><?php echo __('Modified'); ?></th>
-									<th class="text-center"><?php echo __('Actions'); ?></th>
+											<th class="text-center"><?php echo __('Nº Pago'); ?></th>
+		<th class="text-center"><?php echo __('Costo Total'); ?></th>
+		<th class="text-center"><?php echo __('Persona'); ?></th>
+		<th class="text-center"><?php echo __('Cita'); ?></th>
+		<th class="text-center"><?php echo __('Estado de Carga'); ?></th>
+		<th class="text-center"><?php echo __('Tipo de pago'); ?></th>
+		<th class="text-center"><?php echo __('Observaciones'); ?></th>
+		<th class="text-center"><?php echo __('Creado'); ?></th>
+		<th class="text-center"><?php echo __('Modificado'); ?></th>
+									
 								</tr>
 							</thead>
 							<tbody>
@@ -93,11 +93,7 @@
 			<td class="text-center"><?php echo $charge['observations']; ?></td>
 			<td class="text-center"><?php echo $charge['created']; ?></td>
 			<td class="text-center"><?php echo $charge['modified']; ?></td>
-			<td class="text-center">
-				<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('controller' => 'charges', 'action' => 'view', $charge['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'view')); ?>
-				<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('controller' => 'charges', 'action' => 'edit', $charge['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'edit')); ?>
-				<?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('controller' => 'charges', 'action' => 'delete', $charge['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'delete'), __('Are you sure you want to delete # %s?', $charge['id'])); ?>
-			</td>
+			
 		</tr>
 	<?php endforeach; ?>
 							</tbody>

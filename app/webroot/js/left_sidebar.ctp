@@ -144,21 +144,6 @@
             </li>
             <li class="treeview">
               <a href="#">
-                  <i class="glyphicon glyphicon-pushpin"></i>
-                  <span>Usuarios</span>
-                  <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul id="id" class="treeview-menu">
-                  <li class="menu">
-                      <?php echo $this->Html->link(__(' Usuarios'), array('controller' => 'users', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
-                  </li>
-                  <li class="menu">
-                    <?php echo $this->Html->link(__(' Grupos'), array('controller' => 'groups', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
-                </li>
-              </ul>
-            </li>
-            <li class="treeview">
-              <a href="#">
                   <i class="glyphicon glyphicon-tasks"></i>
                   <span>Extras</span>
                   <i class="fa fa-angle-left pull-right"></i>

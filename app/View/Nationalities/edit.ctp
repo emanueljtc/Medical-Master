@@ -6,7 +6,7 @@
 			<h3 class="box-title"><?php echo __('Edit Nationality'); ?></h3>
 			</div>
 			<div class="box-body table-responsive">
-		
+
 			<?php echo $this->Form->create('Nationality', array('role' => 'form')); ?>
 
 				<fieldset>
@@ -18,14 +18,14 @@
 						<?php echo $this->Form->input('nacionalidad', array('class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 
-					<?php echo $this->Form->submit('Submit', array('class' => 'btn btn-large btn-primary')); ?>
+					<?php echo $this->Form->submit('Modificar', array('class' => 'btn btn-large btn-primary')); ?>
 
 				</fieldset>
 
 						<?php echo $this->Form->end(); ?>
 
 		</div><!-- /.form -->
-			
+
 	</div><!-- /#page-content .col-sm-9 -->
 
 </div><!-- /#page-container .row-fluid -->

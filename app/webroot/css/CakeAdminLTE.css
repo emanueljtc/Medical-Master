@@ -9,8 +9,18 @@ body {
   min-height: 100%;
   background: #f9f9f9;
 }
+.divcontainer{
+  min-width: 410px; 
+  height: 500px; 
+  max-width: 800px; 
+  margin: 0 auto; 
+  background-image: url('../img/medicalmaster.png');
+  background-repeat: no-repeat; 
+  background-position: center;
+  background-size: 80%
+}
 a {
-  color: #3c8dbc;
+  color: #555555;
 }
 a:hover,
 a:active,

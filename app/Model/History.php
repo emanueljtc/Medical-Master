@@ -95,14 +95,8 @@ class History extends AppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
-		),
-		'Antecedent' => array(
-			'className' => 'Antecedent',
-			'foreignKey' => 'antecedent_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
+
 	);
 
 /**
@@ -123,6 +117,11 @@ class History extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
+		),
+		'Antecedent' => array(
+			'className' => 'Antecedent',
+			'foreignKey' => 'history_id',
+			'dependent' => false
 		)
 	);
 

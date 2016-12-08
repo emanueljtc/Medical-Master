@@ -27,12 +27,7 @@
 			&nbsp;
 		</td>
 </tr>
-<tr>		<td><strong><?php echo __('N° Antecedente'); ?></strong></td>
-		<td>
-			<?php echo $this->Html->link($history['Antecedent']['id'], array('controller' => 'antecedents', 'action' => 'view', $history['Antecedent']['id']), array('class' => '')); ?>
-			&nbsp;
-		</td>
-</tr>
+
 <tr>
     <td><strong><?php echo __('Fecha de Nacimiento'); ?></strong></td>
 		<td>

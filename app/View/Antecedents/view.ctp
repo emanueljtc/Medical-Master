@@ -23,6 +23,11 @@
 			<?php echo $this->Html->link($antecedent['Person']['full_name'], array('controller' => 'people', 'action' => 'view', $antecedent['Person']['id']), array('class' => '')); ?>
 			&nbsp;
 		</td>
+  </tr><tr>		<td><strong><?php echo __('N° Historia'); ?></strong></td>
+  		<td>
+  			<?php echo $this->Html->link($antecedent['History']['id'], array('controller' => 'people', 'action' => 'view', $antecedent['History']['id']), array('class' => '')); ?>
+  			&nbsp;
+  		</td>
 </tr><tr>		<td><strong><?php echo __('Antecedente'); ?></strong></td>
 		<td>
 			<?php echo h($antecedent['Antecedent']['name_antecendent']); ?>

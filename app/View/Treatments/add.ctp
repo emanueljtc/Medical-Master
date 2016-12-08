@@ -18,13 +18,13 @@
 						<?php echo $this->Form->input('diagnostic_id', array('label'=>'Diagnostico','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('status_treament', array('label'=>'Estado','class' => 'form-control')); ?>
+						<?php echo $this->Form->input('status_treament', array('label'=>'','type'=>'select','options'=>array(''=>'[SELECCIONE ESTADO]','Activo'=>'Activo','Suspendido'=>'Suspendido'),'class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
 						<?php echo $this->Form->input('prescription', array('label'=>'Recipe','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('observations_prescription', array('class' => 'form-control')); ?>
+						<?php echo $this->Form->input('observations_prescription', array('label'=>'Observaciones','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 
 					<?php echo $this->Form->submit('Añadir', array('class' => 'btn btn-large btn-primary')); ?>

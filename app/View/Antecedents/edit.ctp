@@ -36,7 +36,7 @@
 						<?php echo $this->Form->input('personals_doctors', array('label'=>'Doctor Tratante','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('surgicals', array('type'=>'select','options'=>array(''=>'[SELECCIONE]','Si'=>'Si','No'=>'No'),'label'=>'Sirugias','class' => 'form-control')); ?>
+            <?php echo $this->Form->input('surgicals', array('type'=>'select','options'=>array(''=>'[SELECCIONE]','Si'=>'Si','No'=>'No'),'label'=>'Sirugias','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 
 					<?php echo $this->Form->submit('Guardar', array('class' => 'btn btn-large btn-primary')); ?>

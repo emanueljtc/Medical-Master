@@ -13,7 +13,7 @@
                 <table id="Antecedents" class="table table-bordered table-striped">
 					<thead>
 						<tr>
-													<th class="text-center"><?php echo $this->Paginator->sort('N° Antecedente'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('N°'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('Paciente'); ?></th>
                           <th class="text-center"><?php echo $this->Paginator->sort('N° Historia'); ?></th>
                           <th class="text-center"><?php echo $this->Paginator->sort('Antecedente'); ?></th>

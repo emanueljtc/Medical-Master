@@ -71,16 +71,7 @@ class Antecedent extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'personals_doctors' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
-				'message' => 'Campo Vacio',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
+		
 		'surgicals' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),

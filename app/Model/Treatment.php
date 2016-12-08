@@ -43,8 +43,8 @@ class Treatment extends AppModel {
 			),
 		),
 		'status_treament' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
 				'message' => 'Campo Vacio',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -62,16 +62,7 @@ class Treatment extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'observations_prescription' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
-				//'message' => 'Campo Vacio',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
+		
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed

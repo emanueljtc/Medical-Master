@@ -64,7 +64,7 @@ function calcularEdad()
 
 				<fieldset>
 
-										<div class="form-group">
+					<div class="form-group">
 						<?php echo $this->Form->input('person_id', array('label'=>'Paciente','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 

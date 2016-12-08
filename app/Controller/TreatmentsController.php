@@ -38,6 +38,10 @@ class TreatmentsController extends AppController {
 			throw new NotFoundException(__('El tratamiento no existe'));
 		}
 		$options = array('conditions' => array('Treatment.' . $this->Treatment->primaryKey => $id));
+		$this->pdfConfig = array(
+    	'orientation' => 'portrait',
+    	'filename' => 'personal'.$id.'.pdf'
+    );
 		$this->set('treatment', $this->Treatment->find('first', $options));
 	}
 

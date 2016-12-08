@@ -15,14 +15,14 @@
             </div>
         </div>
         <!-- search form -->
-        <form action="#" method="get" class="sidebar-form">
+       <!-- <form action="#" method="get" class="sidebar-form">
             <div class="input-group">
                 <input type="text" name="q" class="form-control" placeholder="Buscar..."/>
                 <span class="input-group-btn">
                     <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
                 </span>
             </div>
-        </form>
+        </form>-->
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
@@ -85,7 +85,7 @@
             <li class="treeview">
               <a href="#">
                   <i class="glyphicon glyphicon-glass"></i>
-                  <span>Dignosticos</span>
+                  <span>Diagnosticos</span>
                   <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul id="id" class="treeview-menu">
@@ -109,6 +109,36 @@
                   </li>
                   <li class="menu">
                     <?php echo $this->Html->link(__(' Nuevo Tratamiento'), array('controller' => 'treatments', 'action' => 'add'), array('class'=>'fa fa-angle-double-right')); ?>
+                </li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                  <i class="glyphicon glyphicon-file"></i>
+                  <span>Indicaciones</span>
+                  <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul id="id" class="treeview-menu">
+                  <li class="menu">
+                      <?php echo $this->Html->link(__(' Indicaciones Registradas'), array('controller' => 'indications', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
+                  </li>
+                  <li class="menu">
+                    <?php echo $this->Html->link(__(' Nueva Indicación'), array('controller' => 'indications', 'action' => 'add'), array('class'=>'fa fa-angle-double-right')); ?>
+                </li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                  <i class="glyphicon glyphicon-file"></i>
+                  <span>Estudios</span>
+                  <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul id="id" class="treeview-menu">
+                  <li class="menu">
+                      <?php echo $this->Html->link(__('Estudios registrados'), array('controller' => 'studies', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
+                  </li>
+                  <li class="menu">
+                    <?php echo $this->Html->link(__(' Nuevo Estudio'), array('controller' => 'studies', 'action' => 'add'), array('class'=>'fa fa-angle-double-right')); ?>
                 </li>
               </ul>
             </li>

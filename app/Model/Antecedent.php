@@ -13,7 +13,7 @@ class Antecedent extends AppModel {
  *
  * @var string
  */
-	public $displayField = 'name_antecendent';
+	public $displayField = 'id';
 
 /**
  * Validation rules
@@ -107,6 +107,13 @@ class Antecedent extends AppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
+		),
+		'History' => array(
+			'className' => 'History',
+			'foreignKey' => 'history_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
 		)
 	);
 
@@ -115,20 +122,6 @@ class Antecedent extends AppModel {
  *
  * @var array
  */
-	public $hasMany = array(
-		'History' => array(
-			'className' => 'History',
-			'foreignKey' => 'antecedent_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		)
-	);
+
 
 }

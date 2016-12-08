@@ -67,9 +67,7 @@ function calcularEdad()
 										<div class="form-group">
 						<?php echo $this->Form->input('person_id', array('label'=>'Paciente','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
-					<div class="form-group">
-						<?php echo $this->Form->input('antecedent_id', array('label'=>'N° Antecedente','class' => 'form-control')); ?>
-					</div><!-- .form-group -->
+
           <label>Fecha de Nacimiento:</label>
 
           <div class="form-group">

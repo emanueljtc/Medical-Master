@@ -57,8 +57,7 @@ class HistoriesController extends AppController {
 			}
 		}
 		$people = $this->History->Person->find('list');
-		$antecedents = $this->History->Antecedent->find('list');
-		$this->set(compact('people', 'antecedents'));
+		$this->set(compact('people'));
 	}
 
 /**

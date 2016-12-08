@@ -15,7 +15,6 @@
 						<tr>
 													<th class="text-center"><?php echo $this->Paginator->sort('N° Historia'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('Paciente'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('N° Antecedente'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('Edad'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('Tamaño'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('Peso'); ?></th>
@@ -28,9 +27,6 @@
 		<td class="text-center"><?php echo h($history['History']['id']); ?>&nbsp;</td>
 		<td class="text-center">
 			<?php echo $this->Html->link($history['Person']['full_name'], array('controller' => 'people', 'action' => 'view', $history['Person']['id'])); ?>
-		</td>
-		<td class="text-center">
-			<?php echo $this->Html->link($history['Antecedent']['id'], array('controller' => 'antecedents', 'action' => 'view', $history['Antecedent']['id'])); ?>
 		</td>
 		<td class="text-center"><?php echo h($history['History']['age']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($history['History']['weight']); ?>&nbsp;</td>

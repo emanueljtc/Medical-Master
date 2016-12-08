@@ -57,7 +57,8 @@ class AntecedentsController extends AppController {
 			}
 		}
 		$people = $this->Antecedent->Person->find('list');
-		$this->set(compact('people'));
+		$histories = $this->Antecedent->History->find('list');
+		$this->set(compact('people', 'histories'));
 	}
 
 /**
@@ -84,7 +85,8 @@ class AntecedentsController extends AppController {
 			$this->request->data = $this->Antecedent->find('first', $options);
 		}
 		$people = $this->Antecedent->Person->find('list');
-		$this->set(compact('people'));
+		$histories = $this->Antecedent->History->find('list');
+		$this->set(compact('people', 'histories'));
 	}
 
 /**

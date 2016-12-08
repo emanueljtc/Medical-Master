@@ -15,7 +15,8 @@
 						<tr>
 													<th class="text-center"><?php echo $this->Paginator->sort('N° Antecedente'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('Paciente'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('Antecedente'); ?></th>
+                          <th class="text-center"><?php echo $this->Paginator->sort('N° Historia'); ?></th>
+                          <th class="text-center"><?php echo $this->Paginator->sort('Antecedente'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('Origen'); ?></th>
 													<!-- <th class="text-center"><?php echo $this->Paginator->sort('Tiempo de Padecimiento'); ?></th> -->
 													<!-- <th class="text-center"><?php echo $this->Paginator->sort('Familia'); ?></th>
@@ -32,6 +33,9 @@
 		<td class="text-center"><?php echo h($antecedent['Antecedent']['id']); ?>&nbsp;</td>
 		<td class="text-center">
 			<?php echo $this->Html->link($antecedent['Person']['full_name'], array('controller' => 'people', 'action' => 'view', $antecedent['Person']['id'])); ?>
+		</td>
+    <td class="text-center">
+			<?php echo $this->Html->link($antecedent['History']['id'], array('controller' => 'histories', 'action' => 'view', $antecedent['History']['id'])); ?>
 		</td>
 		<td class="text-center"><?php echo h($antecedent['Antecedent']['name_antecendent']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($antecedent['Antecedent']['origin']); ?>&nbsp;</td>

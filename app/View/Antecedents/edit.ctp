@@ -17,6 +17,9 @@
 					<div class="form-group">
 						<?php echo $this->Form->input('person_id', array('label'=>'Paciente','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
+          <div class="form-group">
+						<?php echo $this->Form->input('history_id', array('label'=>'N° Historia','class' => 'form-control')); ?>
+					</div><!-- .form-group -->
 					<div class="form-group">
 						<?php echo $this->Form->input('name_antecendent', array('label'=>'Antecedente','class' => 'form-control')); ?>
 					</div><!-- .form-group -->

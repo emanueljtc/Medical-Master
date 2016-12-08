@@ -114,7 +114,7 @@
             </li>
             <li class="treeview">
               <a href="#">
-                  <i class="glyphicon glyphicon-file"></i>
+                  <i class="glyphicon glyphicon-list-alt"></i>
                   <span>Indicaciones</span>
                   <i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -129,7 +129,7 @@
             </li>
             <li class="treeview">
               <a href="#">
-                  <i class="glyphicon glyphicon-file"></i>
+                  <i class="glyphicon glyphicon-tasks"></i>
                   <span>Estudios</span>
                   <i class="fa fa-angle-left pull-right"></i>
               </a>

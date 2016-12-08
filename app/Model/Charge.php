@@ -25,7 +25,7 @@ class Charge extends AppModel {
 		'total_cost' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				'message' => 'Campo Vacio',
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -35,7 +35,7 @@ class Charge extends AppModel {
 		'person_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				'message' => 'Campo Vacio',
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -45,7 +45,7 @@ class Charge extends AppModel {
 		'citation_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				'message' => 'Campo Vacio',
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -55,7 +55,7 @@ class Charge extends AppModel {
 		'state_charge' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
-				'message' => 'Campo Vacio',
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -65,7 +65,7 @@ class Charge extends AppModel {
 		'typepayment_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				'message' => 'Campo Vacio',
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -75,7 +75,7 @@ class Charge extends AppModel {
 		'observations' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
-				'message' => 'Campo Vacio',
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

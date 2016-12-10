@@ -19,7 +19,8 @@
 	},
 	"require": {
 		"php": ">=5.2.8",
-		"ext-mcrypt": "*"
+		"ext-mcrypt": "*",
+		"fmcorz/acl-manager": "^1.2"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "3.7.*",

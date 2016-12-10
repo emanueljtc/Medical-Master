@@ -15,20 +15,26 @@ class GroupsController extends AppController {
  *
  * @var array
  */
-	public $helpers = array('Y');
+ 	public $helpers = array('Html','Form','Time','Js');
 
 /**
  * Components
  *
  * @var array
  */
-	public $components = array('Paginator', 'Y', 'Session');
+	public $components = array('Paginator', 'Session','RequestHandler');
 
 /**
  * index method
  *
  * @return void
  */
+		 public function beforeFilter() {
+		    parent::beforeFilter();
+
+		      // For CakePHP 2.1 and up
+		    $this->Auth->allow();
+		}
 	public function index() {
 		$this->Group->recursive = 0;
 		$this->set('groups', $this->paginate());
@@ -114,4 +120,9 @@ class GroupsController extends AppController {
 		$this->Session->setFlash(__('Group was not deleted'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
+	public $actsAs = array('Acl' => array('type' => 'requester'));
+
+    public function parentNode() {
+        return null;
+    }
 }

@@ -6,12 +6,22 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <?= $this->Html->image('avatar04.png', array('class' => 'img-circle')); ?>
+                <!-- <?php echo $this->Html->image('../files/user/foto/'.$user['User']['foto_dir'].'/'.'thumb_'.$user['User']['foto'], array('class' => 'img-circle')); ?> -->
+                    <?php  if($current_user['group_id'] == '1'):                 ?>
+                      <?= $this->Html->image('avatar04.png', array('class' => 'img-circle')); ?>
+                    <?php endif; ?>
+                    <?php  if($current_user['group_id'] == '2'):                 ?>
+                      <?= $this->Html->image('avatar3.png', array('class' => 'img-circle')); ?>
+                    <?php endif; ?>
+                    <?php  if($current_user['group_id'] == '3'):                 ?>
+                      <?= $this->Html->image('avatar5.png', array('class' => 'img-circle')); ?>
+                    <?php endif; ?>
             </div>
             <div class="pull-left info">
-                <p>Hola, Dr. Gustavo</p>
+              <br>
 
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                <p><?php	echo $this->Session->read('Auth.User.full_name')?></p>
+
             </div>
         </div>
         <!-- search form -->
@@ -29,11 +39,6 @@
             <li class="active">
                 <?= $this->Html->link('<i class="fa fa-dashboard"></i> <span>Inicio</span>', '/', array('escape' => false)); ?>
             </li>
-            <!-- <li>
-                <a href="pages/widgets.html">
-                    <i class="fa fa-th"></i> <span>Inicio</span>
-                </a>
-            </li> -->
 
             <li>
             <li class="treeview">
@@ -67,6 +72,7 @@
                 </li>
               </ul>
             </li>
+
             <li class="treeview">
               <a href="#">
                 <i class="glyphicon glyphicon-briefcase"></i>
@@ -82,6 +88,8 @@
                 </li>
               </ul>
             </li>
+            <?php  if($current_user['group_id'] == '3' ): ?>
+
             <li class="treeview">
               <a href="#">
                   <i class="glyphicon glyphicon-glass"></i>
@@ -97,6 +105,9 @@
                 </li>
               </ul>
             </li>
+          <?php endif; ?>
+          <?php  if($current_user['group_id'] == '3' ): ?>
+
             <li class="treeview">
               <a href="#">
                   <i class="glyphicon glyphicon-file"></i>
@@ -112,6 +123,9 @@
                 </li>
               </ul>
             </li>
+            <?php endif; ?>
+            <?php  if($current_user['group_id'] == '3' ): ?>
+
             <li class="treeview">
               <a href="#">
                   <i class="glyphicon glyphicon-list-alt"></i>
@@ -127,6 +141,8 @@
                 </li>
               </ul>
             </li>
+          <?php endif; ?>
+          <?php  if($current_user['group_id'] == '3' ): ?>
             <li class="treeview">
               <a href="#">
                   <i class="glyphicon glyphicon-tasks"></i>
@@ -142,6 +158,8 @@
                 </li>
               </ul>
             </li>
+          <?php endif; ?>
+
             <li class="treeview">
               <a href="#">
                   <i class="glyphicon glyphicon-calendar"></i>
@@ -167,9 +185,13 @@
                   <li class="menu">
                       <?php echo $this->Html->link(__(' Pagos Registrados'), array('controller' => 'charges', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
                   </li>
+                  <?php  if($current_user['group_id'] == '3' ): ?>
+
                   <li class="menu">
                     <?php echo $this->Html->link(__(' Nuevo Pago'), array('controller' => 'charges', 'action' => 'add'), array('class'=>'fa fa-angle-double-right')); ?>
                 </li>
+              <?php endif; ?>
+                
               </ul>
             </li>
             <li class="treeview">

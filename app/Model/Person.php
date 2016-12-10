@@ -24,7 +24,7 @@ class Person extends AppModel {
 	public $virtualFields = array(
 		  'full_name' => 'CONCAT(name, " ", last_name)',
 	);
-
+	
 /**
  * Validation rules
  *

@@ -31,7 +31,8 @@ class UsersController extends AppController {
 			}
 
 			public function logout() {
-			 //Leave empty for now.
+				$this->Session->setFlash(__('Cerrada la Sesion'), 'flash/error');
+  			$this->redirect($this->Auth->logout());
 			}
 	public function index() {
 		$this->User->recursive = 0;
@@ -51,7 +52,7 @@ class UsersController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->User->exists($id)) {
-			throw new NotFoundException(__('Invalid user'));
+			throw new NotFoundException(__('El Usuario no Existe'));
 		}
 		$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
 		$this->set('user', $this->User->find('first', $options));
@@ -66,10 +67,10 @@ class UsersController extends AppController {
 		if ($this->request->is('post')) {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('The user has been saved'), 'flash/success');
+				$this->Session->setFlash(__('El Usuario ha sido guardado'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The user could not be saved. Please, try again.'), 'flash/error');
+				$this->Session->setFlash(__('El usuario no ha sido guardado. Por Favor, Intente de Nuevo.'), 'flash/error');
 			}
 		}
 		$groups = $this->User->Group->find('list');
@@ -86,14 +87,14 @@ class UsersController extends AppController {
 	public function edit($id = null) {
         $this->User->id = $id;
 		if (!$this->User->exists($id)) {
-			throw new NotFoundException(__('Invalid user'));
+			throw new NotFoundException(__('El Usuario no Existe'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('The user has been saved'), 'flash/success');
+				$this->Session->setFlash(__('El Usuario fue actualizado'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The user could not be saved. Please, try again.'), 'flash/error');
+				$this->Session->setFlash(__('El usuario no fue actualizado. Por Favor, Intente de Nuevo'), 'flash/error');
 			}
 		} else {
 			$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
@@ -117,18 +118,18 @@ class UsersController extends AppController {
 		}
 		$this->User->id = $id;
 		if (!$this->User->exists()) {
-			throw new NotFoundException(__('Invalid user'));
+			throw new NotFoundException(__('El Usuario no Existe'));
 		}
 		if ($this->User->delete()) {
-			$this->Session->setFlash(__('User deleted'), 'flash/success');
+			$this->Session->setFlash(__('Usuario Eliminado'), 'flash/success');
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('User was not deleted'), 'flash/error');
+		$this->Session->setFlash(__('Usuario no Eliminado'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
 	public function beforeFilter() {
     parent::beforeFilter();
-    $this->Auth->allow('peligro','login','logout','add');
+    $this->Auth->allow('peligro','login','logout');
 }
 	//PARA ACTUALIZAR LOS PERMISOS DEBO RECORRER DESDE EL NAVEGADOR
 	//ESTA FUNCION users/peligro

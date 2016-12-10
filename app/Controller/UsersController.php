@@ -35,7 +35,7 @@ class UsersController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->User->exists($id)) {
-			throw new NotFoundException(__('El usuario no existe'));
+			throw new NotFoundException(__('Invalid user'));
 		}
 		$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
 		$this->set('user', $this->User->find('first', $options));
@@ -50,15 +50,14 @@ class UsersController extends AppController {
 		if ($this->request->is('post')) {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('El usuario ha sido guardado'), 'flash/success');
+				$this->Session->setFlash(__('The user has been saved'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('El usuario no ha sido guardado. Por Favor, Intente de Nuevo'), 'flash/error');
+				$this->Session->setFlash(__('The user could not be saved. Please, try again.'), 'flash/error');
 			}
 		}
-		$specialties = $this->User->Specialty->find('list');
 		$groups = $this->User->Group->find('list');
-		$this->set(compact('specialties', 'groups'));
+		$this->set(compact('groups'));
 	}
 
 /**
@@ -71,22 +70,21 @@ class UsersController extends AppController {
 	public function edit($id = null) {
         $this->User->id = $id;
 		if (!$this->User->exists($id)) {
-			throw new NotFoundException(__('El usuario no existe'));
+			throw new NotFoundException(__('Invalid user'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('El usuario ha sido actualizado'), 'flash/success');
+				$this->Session->setFlash(__('The user has been saved'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('El usuario no ha sido actualizado. Por Favor, Intente de Nuevo.'), 'flash/error');
+				$this->Session->setFlash(__('The user could not be saved. Please, try again.'), 'flash/error');
 			}
 		} else {
 			$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
 			$this->request->data = $this->User->find('first', $options);
 		}
-		$specialties = $this->User->Specialty->find('list');
 		$groups = $this->User->Group->find('list');
-		$this->set(compact('specialties', 'groups'));
+		$this->set(compact('groups'));
 	}
 
 /**
@@ -103,13 +101,13 @@ class UsersController extends AppController {
 		}
 		$this->User->id = $id;
 		if (!$this->User->exists()) {
-			throw new NotFoundException(__('El usuario no existe'));
+			throw new NotFoundException(__('Invalid user'));
 		}
 		if ($this->User->delete()) {
-			$this->Session->setFlash(__('El usuario ha sido eliminado'), 'flash/success');
+			$this->Session->setFlash(__('User deleted'), 'flash/success');
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('El usuario no ha sido eliminado'), 'flash/error');
+		$this->Session->setFlash(__('User was not deleted'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
 }

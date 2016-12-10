@@ -10,17 +10,18 @@ header("Content-Type: application/json; charset=UTF-8");
     }
 
     // Access-Control headers are received during OPTIONS requests
-    if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+		$requestMethod = isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD'] : null;
+    if ($requestMethod == 'OPTIONS') {
 
         if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD']))
-            header("Access-Control-Allow-Methods: GET, POST, OPTIONS");         
+            header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 
         if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']))
             header("Access-Control-Allow-
             Headers:{$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
-                
+
         exit(0);
-        
+
     }
 /**
  * People Controller
@@ -70,7 +71,7 @@ class PeopleController extends AppController {
 				'persona' => $persona,
 				'_serialize' => array('persona')
 						));
-					}		
+					}
 
 /**
  * add method

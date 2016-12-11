@@ -22,10 +22,7 @@
 
                 <p><?php	echo $this->Session->read('Auth.User.full_name')?></p>
 
-<<<<<<< HEAD
-                <!-- <a href="#"><i class="fa fa-circle text-success"></i> Online</a> -->
-=======
->>>>>>> diseño
+
             </div>
         </div>
         <!-- search form -->

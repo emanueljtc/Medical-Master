@@ -65,29 +65,29 @@ Cache::config('default', array('engine' => 'File'));
  */
 
  CakePlugin::load('DebugKit'); // Loads a single plugin named DebugKit
-  // CakePlugin::load('CakePdf', array('bootstrap'=>true, 'routes' =>true));
-	//
-  //   Configure::write('CakePdf', array(
-	//
-  //       //'binary' => 'C:\wkhtmltopdf\bin\wkhtmltopdf.exe',//DESCOMENTAR PARA WINDOWS
-  //       'engine' => 'CakePdf.WkHtmlToPdf',
-  //       'options' => array(
-  //           'print-media-type' => true,
-  //           'outline' => true,
-  //           'dpi' => 96
-  //       ),
-  //       'margin' => array(
-  //           'bottom' => 12,
-  //           'left' => 10,
-  //           'right' => 10,
-  //           'top' => 20
-  //       ),
-  //       'orientation' => 'landscape',
-  //      'download' => true,
-	//
-  //   ));
-   // CakePlugin::load('AclExtras');
+  CakePlugin::load('CakePdf', array('bootstrap'=>true, 'routes' =>true));
 
+    Configure::write('CakePdf', array(
+
+        //'binary' => 'C:\wkhtmltopdf\bin\wkhtmltopdf.exe',//DESCOMENTAR PARA WINDOWS
+        'engine' => 'CakePdf.WkHtmlToPdf',
+        'options' => array(
+            'print-media-type' => true,
+            'outline' => true,
+            'dpi' => 96
+        ),
+        'margin' => array(
+            'bottom' => 12,
+            'left' => 10,
+            'right' => 10,
+            'top' => 20
+        ),
+        'orientation' => 'landscape',
+       'download' => true,
+
+    ));
+   CakePlugin::load('AclExtras');
+   CakePlugin::load('Upload');
 
 /**
  * To prefer app translation over plugin translation, you can set

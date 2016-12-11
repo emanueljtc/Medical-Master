@@ -5,25 +5,39 @@ App::uses('AppController', 'Controller');
  *
  * @property Group $Group
  * @property PaginatorComponent $Paginator
+ * @property yComponent $y
  * @property SessionComponent $Session
  */
 class GroupsController extends AppController {
+
+/**
+ * Helpers
+ *
+ * @var array
+ */
+ 	public $helpers = array('Html','Form','Time','Js');
 
 /**
  * Components
  *
  * @var array
  */
-	public $components = array('Paginator', 'Session');
+	public $components = array('Paginator', 'Session','RequestHandler');
 
 /**
  * index method
  *
  * @return void
  */
+		 public function beforeFilter() {
+		    parent::beforeFilter();
+
+		      // For CakePHP 2.1 and up
+		    $this->Auth->allow();
+		}
 	public function index() {
 		$this->Group->recursive = 0;
-		$this->set('groups', $this->Paginator->paginate());
+		$this->set('groups', $this->paginate());
 	}
 
 /**
@@ -50,10 +64,10 @@ class GroupsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Group->create();
 			if ($this->Group->save($this->request->data)) {
-				$this->Session->setFlash(__('The group has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('The group has been saved'), 'flash/success');
+				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The group could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The group could not be saved. Please, try again.'), 'flash/error');
 			}
 		}
 	}
@@ -66,15 +80,16 @@ class GroupsController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+        $this->Group->id = $id;
 		if (!$this->Group->exists($id)) {
 			throw new NotFoundException(__('Invalid group'));
 		}
-		if ($this->request->is(array('post', 'put'))) {
+		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Group->save($this->request->data)) {
-				$this->Session->setFlash(__('The group has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('The group has been saved'), 'flash/success');
+				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The group could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The group could not be saved. Please, try again.'), 'flash/error');
 			}
 		} else {
 			$options = array('conditions' => array('Group.' . $this->Group->primaryKey => $id));
@@ -86,20 +101,24 @@ class GroupsController extends AppController {
  * delete method
  *
  * @throws NotFoundException
+ * @throws MethodNotAllowedException
  * @param string $id
  * @return void
  */
 	public function delete($id = null) {
+		if (!$this->request->is('post')) {
+			throw new MethodNotAllowedException();
+		}
 		$this->Group->id = $id;
 		if (!$this->Group->exists()) {
 			throw new NotFoundException(__('Invalid group'));
 		}
-		$this->request->allowMethod('post', 'delete');
 		if ($this->Group->delete()) {
-			$this->Session->setFlash(__('The group has been deleted.'));
-		} else {
-			$this->Session->setFlash(__('The group could not be deleted. Please, try again.'));
+			$this->Session->setFlash(__('Group deleted'), 'flash/success');
+			$this->redirect(array('action' => 'index'));
 		}
-		return $this->redirect(array('action' => 'index'));
+		$this->Session->setFlash(__('Group was not deleted'), 'flash/error');
+		$this->redirect(array('action' => 'index'));
 	}
+	
 }

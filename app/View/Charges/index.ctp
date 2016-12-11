@@ -31,14 +31,14 @@
 		<td class="text-center"><?php echo h($charge['Charge']['id']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($charge['Charge']['total_cost']); ?>&nbsp;</td>
 		<td class="text-center">
-			<?php echo $this->Html->link($charge['Person']['name'], array('controller' => 'people', 'action' => 'view', $charge['Person']['id'])); ?>
+			<?php echo $this->Html->link($charge['Person']['full_name'], array('controller' => 'people', 'action' => 'view', $charge['Person']['id'])); ?>
 		</td>
 		<td class="text-center">
 			<?php echo $this->Html->link($charge['Citation']['id'], array('controller' => 'citations', 'action' => 'view', $charge['Citation']['id'])); ?>
 		</td>
 		<td class="text-center"><?php echo h($charge['Charge']['state_charge']); ?>&nbsp;</td>
 		<td class="text-center">
-			<?php echo $this->Html->link($charge['Typepayment']['id'], array('controller' => 'typepayments', 'action' => 'view', $charge['Typepayment']['id'])); ?>
+			<?php echo $this->Html->link($charge['Typepayment']['type_payment'], array('controller' => 'typepayments', 'action' => 'view', $charge['Typepayment']['id'])); ?>
 		</td>
 		<td class="text-center"><?php echo h($charge['Charge']['observations']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($charge['Charge']['created']); ?>&nbsp;</td>

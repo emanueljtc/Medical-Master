@@ -23,7 +23,7 @@ class SpecialtiesController extends AppController {
  */
 	public function index() {
 		$this->Specialty->recursive = 0;
-		$this->set('specialties', $this->Paginator->paginate());
+		$this->set('specialties', $this->paginate());
 	}
 
 /**
@@ -35,7 +35,7 @@ class SpecialtiesController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->Specialty->exists($id)) {
-			throw new NotFoundException(__('Invalid specialty'));
+			throw new NotFoundException(__('La especialidad no existe'));
 		}
 		$options = array('conditions' => array('Specialty.' . $this->Specialty->primaryKey => $id));
 		$this->set('specialty', $this->Specialty->find('first', $options));
@@ -50,14 +50,12 @@ class SpecialtiesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Specialty->create();
 			if ($this->Specialty->save($this->request->data)) {
-				$this->Session->setFlash(__('The specialty has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('La especialidad ha sido guardada'), 'flash/success');
+				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The specialty could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La especialidad no ha sido guardada. Por Favor, Intente de Nuevo.'), 'flash/error');
 			}
 		}
-		$rols = $this->Specialty->Rol->find('list');
-		$this->set(compact('rols'));
 	}
 
 /**
@@ -68,42 +66,44 @@ class SpecialtiesController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+        $this->Specialty->id = $id;
 		if (!$this->Specialty->exists($id)) {
-			throw new NotFoundException(__('Invalid specialty'));
+			throw new NotFoundException(__('La especialidad no existe'));
 		}
-		if ($this->request->is(array('post', 'put'))) {
+		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Specialty->save($this->request->data)) {
-				$this->Session->setFlash(__('The specialty has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('La especialidad ha sido actualizada'), 'flash/success');
+				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The specialty could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('La especialidad no ha sido actualizada. Por Favor, Intente de Nuevo'), 'flash/error');
 			}
 		} else {
 			$options = array('conditions' => array('Specialty.' . $this->Specialty->primaryKey => $id));
 			$this->request->data = $this->Specialty->find('first', $options);
 		}
-		$rols = $this->Specialty->Rol->find('list');
-		$this->set(compact('rols'));
 	}
 
 /**
  * delete method
  *
  * @throws NotFoundException
+ * @throws MethodNotAllowedException
  * @param string $id
  * @return void
  */
 	public function delete($id = null) {
+		if (!$this->request->is('post')) {
+			throw new MethodNotAllowedException();
+		}
 		$this->Specialty->id = $id;
 		if (!$this->Specialty->exists()) {
-			throw new NotFoundException(__('Invalid specialty'));
+			throw new NotFoundException(__('La especialidad no existe'));
 		}
-		$this->request->allowMethod('post', 'delete');
 		if ($this->Specialty->delete()) {
-			$this->Session->setFlash(__('The specialty has been deleted.'));
-		} else {
-			$this->Session->setFlash(__('The specialty could not be deleted. Please, try again.'));
+			$this->Session->setFlash(__('La especialidad ha sido eliminada'), 'flash/success');
+			$this->redirect(array('action' => 'index'));
 		}
-		return $this->redirect(array('action' => 'index'));
+		$this->Session->setFlash(__('La especialidad no ha sido eliminada. Por Favor, Intente de Nuevo'), 'flash/error');
+		$this->redirect(array('action' => 'index'));
 	}
 }

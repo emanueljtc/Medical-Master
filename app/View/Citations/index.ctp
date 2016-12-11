@@ -6,20 +6,19 @@
 		<div class="box-header">
 			<h3 class="box-title"><?php echo __('Citas'); ?></h3>
 			<div class="box-tools pull-right">
-                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> New Citation'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
+                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> Nueva Cita'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
             </div>
 		</div>
 			<div class="box-body table-responsive">
                 <table id="Citations" class="table table-bordered table-striped">
 					<thead>
 						<tr>
-													<th class="text-center"><?php echo $this->Paginator->sort('N° Cita'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('N° Citas'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('Paciente'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('hour'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('date'); ?></th>
-                          <th class="text-center"><?php echo $this->Paginator->sort('Estado'); ?></th>
-													<!--<th class="text-center"><?php echo $this->Paginator->sort('created'); ?></th>
-                           <th class="text-center"><?php echo $this->Paginator->sort('modified'); ?></th> -->
+													<th class="text-center"><?php echo $this->Paginator->sort('Fecha Cita'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Estado'); ?></th>
+													<!-- <th class="text-center"><?php echo $this->Paginator->sort('created'); ?></th> -->
+													<th class="text-center"><?php echo $this->Paginator->sort('Fecha - Asignacion'); ?></th>
 												<th class="text-center"><?php echo __('Acciones'); ?></th>
 						</tr>
 					</thead>
@@ -28,16 +27,14 @@
 	<tr>
 		<td class="text-center"><?php echo h($citation['Citation']['id']); ?>&nbsp;</td>
 		<td class="text-center">
-			<?php echo $this->Html->link($citation['Person']['name'], array('controller' => 'people', 'action' => 'view', $citation['Person']['id'])); ?>
+			<?php echo $this->Html->link($citation['Person']['full_name'], array('controller' => 'people', 'action' => 'view', $citation['Person']['id'])); ?>
 		</td>
-		<td class="text-center"><?php echo h($citation['Citation']['hour']); ?>&nbsp;</td>
-		<td class="text-center"><?php echo h($citation['Citation']['date']); ?>&nbsp;</td>
-    <td class="text-center">
+		<td class="text-center"><?php echo h($citation['Citation']['date_hour']); ?>&nbsp;</td>
+		<td class="text-center">
 			<?php echo $this->Html->link($citation['Datecitation']['state'], array('controller' => 'datecitations', 'action' => 'view', $citation['Datecitation']['id'])); ?>
 		</td>
-    <!--<td class="text-center"><?php echo h($citation['Citation']['created']); ?>&nbsp;</td>
-		 <td class="text-center"><?php echo h($citation['Citation']['modified']); ?>&nbsp;</td> -->
-
+		<!-- <td class="text-center"><?php echo h($citation['Citation']['created']); ?>&nbsp;</td> -->
+		<td class="text-center"><?php echo h($citation['Citation']['modified']); ?>&nbsp;</td>
 		<td class="text-center">
 			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('action' => 'view', $citation['Citation']['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'view')); ?>
 			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $citation['Citation']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'edit')); ?>

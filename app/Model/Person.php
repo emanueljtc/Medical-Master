@@ -3,9 +3,7 @@ App::uses('AppModel', 'Model');
 /**
  * Person Model
  *
- * @property Rol $Rol
  * @property Nationality $Nationality
- * @property Specialty $Specialty
  * @property Antecedent $Antecedent
  * @property Charge $Charge
  * @property Citation $Citation
@@ -22,8 +20,11 @@ class Person extends AppModel {
  *
  * @var string
  */
-	public $displayField = 'name';
-
+	public $displayField = 'full_name';
+	public $virtualFields = array(
+		  'full_name' => 'CONCAT(name, " ", last_name)',
+	);
+	
 /**
  * Validation rules
  *
@@ -33,7 +34,7 @@ class Person extends AppModel {
 		'name' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Campo Vacio',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -43,7 +44,7 @@ class Person extends AppModel {
 		'last_name' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Campo Vacio',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -53,7 +54,7 @@ class Person extends AppModel {
 		'dni' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
+				'message' => 'Campo Vacio - Campo Numerico',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -63,7 +64,7 @@ class Person extends AppModel {
 		'gender' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Campo Vacio',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -73,7 +74,7 @@ class Person extends AppModel {
 		'address' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Campo Vacio',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -81,9 +82,9 @@ class Person extends AppModel {
 			),
 		),
 		'phone' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Campo Vacio - Campo Numerico',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -93,17 +94,7 @@ class Person extends AppModel {
 		'email' => array(
 			'email' => array(
 				'rule' => array('email'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'rol_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
+				'message' => 'Campo Vacio',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -113,33 +104,15 @@ class Person extends AppModel {
 		'nationality_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
+				'message' => 'Campo Vacio',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'specialty_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				'allowEmpty' =>  true,
-				'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'token' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
+
+
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
@@ -150,23 +123,9 @@ class Person extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Rol' => array(
-			'className' => 'Rol',
-			'foreignKey' => 'rol_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
 		'Nationality' => array(
 			'className' => 'Nationality',
 			'foreignKey' => 'nationality_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
-		'Specialty' => array(
-			'className' => 'Specialty',
-			'foreignKey' => 'specialty_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

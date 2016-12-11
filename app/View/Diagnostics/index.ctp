@@ -4,7 +4,11 @@
 
     <div class="box box-primary">
 		<div class="box-header">
+<<<<<<< HEAD
 			<h3 class="box-title"><?php echo __('Diagnostico'); ?></h3>
+=======
+			<h3 class="box-title"><?php echo __('Diagnosticos'); ?></h3>
+>>>>>>> diseño
 			<div class="box-tools pull-right">
                 <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> Nuevo Diagnostico'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
             </div>
@@ -13,6 +17,7 @@
                 <table id="Diagnostics" class="table table-bordered table-striped">
 					<thead>
 						<tr>
+<<<<<<< HEAD
 													<th class="text-center"><?php echo $this->Paginator->sort('Nº Diagnostico'); ?></th>
 													<!-- <th class="text-center"><?php echo $this->Paginator->sort('Tamaño de Senos'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('Forma de los Senos'); ?></th>
@@ -48,6 +53,43 @@
 													<th class="text-center"><?php echo $this->Paginator->sort('person_id'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('history_id'); ?></th>
 												<th class="text-center"><?php echo __('Actions'); ?></th>
+=======
+													<th class="text-center"><?php echo $this->Paginator->sort('N° de Diagnostico'); ?></th>
+													<!-- <th class="text-center"><?php echo $this->Paginator->sort('Tamaño de Senos'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Forma de Senos'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Simetira de Senos'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Piel de Senos'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('C.A.P de Senos'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Vagina'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Cuello Vagina'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Coloscopia'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Ano'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Cabeza Cuello'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Tacto Tumor'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Forma Tumor'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Superfice Tumor'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Contorno Tumor'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Eje Tumor'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Consistencia Tumor'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Laringoscopia'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Menarguia'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Reglas'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('PRS'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Compañero Sexual'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Distancia C.A.P'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Gestas'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('R.S.I'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Paras'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Abdomen'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Abortos'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Vulva'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Cesarea'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Edad del Primer Parto'); ?></th> -->
+													<th class="text-center"><?php echo $this->Paginator->sort('Diagnostico'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Paciente'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('N° Historia'); ?></th>
+												<th class="text-center"><?php echo __('Acciones'); ?></th>
+>>>>>>> diseño
 						</tr>
 					</thead>
 					<tbody>
@@ -92,9 +134,9 @@
 			<?php echo $this->Html->link($diagnostic['History']['id'], array('controller' => 'histories', 'action' => 'view', $diagnostic['History']['id'])); ?>
 		</td>
 		<td class="text-center">
-			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('action' => 'view', $diagnostic['Diagnostic']['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'view')); ?>
-			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $diagnostic['Diagnostic']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'edit')); ?>
-			<?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('action' => 'delete', $diagnostic['Diagnostic']['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'delete'), __('Are you sure you want to delete # %s?', $diagnostic['Diagnostic']['id'])); ?>
+			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('action' => 'view', $diagnostic['Diagnostic']['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Vista')); ?>
+			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $diagnostic['Diagnostic']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Editar')); ?>
+			<?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('action' => 'delete', $diagnostic['Diagnostic']['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Eliminar'), __('Esta seguro de eliminar el diagnostico # %s?', $diagnostic['Diagnostic']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

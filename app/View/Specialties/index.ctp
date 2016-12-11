@@ -15,7 +15,6 @@
 						<tr>
 													<th class="text-center"><?php echo $this->Paginator->sort('id'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('specialty'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('rol_id'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('created'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('modified'); ?></th>
 												<th class="text-center"><?php echo __('Actions'); ?></th>
@@ -26,9 +25,6 @@
 	<tr>
 		<td class="text-center"><?php echo h($specialty['Specialty']['id']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($specialty['Specialty']['specialty']); ?>&nbsp;</td>
-		<td class="text-center">
-			<?php echo $this->Html->link($specialty['Rol']['rol'], array('controller' => 'rols', 'action' => 'view', $specialty['Rol']['id'])); ?>
-		</td>
 		<td class="text-center"><?php echo h($specialty['Specialty']['created']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($specialty['Specialty']['modified']); ?>&nbsp;</td>
 		<td class="text-center">

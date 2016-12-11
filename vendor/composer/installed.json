@@ -588,5 +588,34 @@
         ],
         "description": "Symfony Yaml Component",
         "homepage": "https://symfony.com"
+    },
+    {
+        "name": "fmcorz/acl-manager",
+        "version": "1.2.5",
+        "version_normalized": "1.2.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/FMCorz/AclManager.git",
+            "reference": "135e973977671d23fff03ae4f7b156d43b42126e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/FMCorz/AclManager/zipball/135e973977671d23fff03ae4f7b156d43b42126e",
+            "reference": "135e973977671d23fff03ae4f7b156d43b42126e",
+            "shasum": ""
+        },
+        "require": {
+            "composer/installers": "*",
+            "php": ">=5.2.8"
+        },
+        "time": "2013-10-30 00:54:31",
+        "type": "cakephp-plugin",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "AclManager for CakePHP 2.x",
+        "homepage": "http://github.com/FMCorz/AclManager"
     }
 ]

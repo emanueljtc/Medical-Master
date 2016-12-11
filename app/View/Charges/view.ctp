@@ -25,7 +25,7 @@
 		</td>
 </tr><tr>		<td><strong><?php echo __('Person'); ?></strong></td>
 		<td>
-			<?php echo $this->Html->link($charge['Person']['name'], array('controller' => 'people', 'action' => 'view', $charge['Person']['id']), array('class' => '')); ?>
+			<?php echo $this->Html->link($charge['Person']['full_name'], array('controller' => 'people', 'action' => 'view', $charge['Person']['id']), array('class' => '')); ?>
 			&nbsp;
 		</td>
 </tr><tr>		<td><strong><?php echo __('Citation'); ?></strong></td>
@@ -40,7 +40,7 @@
 		</td>
 </tr><tr>		<td><strong><?php echo __('Typepayment'); ?></strong></td>
 		<td>
-			<?php echo $this->Html->link($charge['Typepayment']['id'], array('controller' => 'typepayments', 'action' => 'view', $charge['Typepayment']['id']), array('class' => '')); ?>
+			<?php echo $this->Html->link($charge['Typepayment']['type_payment'], array('controller' => 'typepayments', 'action' => 'view', $charge['Typepayment']['id']), array('class' => '')); ?>
 			&nbsp;
 		</td>
 </tr><tr>		<td><strong><?php echo __('Observations'); ?></strong></td>

@@ -23,7 +23,7 @@ class TreatmentsController extends AppController {
  */
 	public function index() {
 		$this->Treatment->recursive = 0;
-		$this->set('treatments', $this->Paginator->paginate());
+		$this->set('treatments', $this->paginate());
 	}
 
 /**
@@ -35,9 +35,13 @@ class TreatmentsController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->Treatment->exists($id)) {
-			throw new NotFoundException(__('Invalid treatment'));
+			throw new NotFoundException(__('El tratamiento no existe'));
 		}
 		$options = array('conditions' => array('Treatment.' . $this->Treatment->primaryKey => $id));
+		$this->pdfConfig = array(
+    	'orientation' => 'portrait',
+    	'filename' => 'personal'.$id.'.pdf'
+    );
 		$this->set('treatment', $this->Treatment->find('first', $options));
 	}
 
@@ -50,10 +54,10 @@ class TreatmentsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Treatment->create();
 			if ($this->Treatment->save($this->request->data)) {
-				$this->Session->setFlash(__('The treatment has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('El tratamiento ha sido guardado'), 'flash/success');
+				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The treatment could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('EL tratamiento. Por Favor, Intente de Nuevo.'), 'flash/error');
 			}
 		}
 		$people = $this->Treatment->Person->find('list');
@@ -69,15 +73,16 @@ class TreatmentsController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+        $this->Treatment->id = $id;
 		if (!$this->Treatment->exists($id)) {
-			throw new NotFoundException(__('Invalid treatment'));
+			throw new NotFoundException(__('El tratamiento no existe'));
 		}
-		if ($this->request->is(array('post', 'put'))) {
+		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Treatment->save($this->request->data)) {
-				$this->Session->setFlash(__('The treatment has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('El tratamiento ha sido actualizado'), 'flash/success');
+				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The treatment could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El tratamiento no ha sido actualizado. Por Favor, Intente de Nuevo.'), 'flash/error');
 			}
 		} else {
 			$options = array('conditions' => array('Treatment.' . $this->Treatment->primaryKey => $id));
@@ -92,20 +97,23 @@ class TreatmentsController extends AppController {
  * delete method
  *
  * @throws NotFoundException
+ * @throws MethodNotAllowedException
  * @param string $id
  * @return void
  */
 	public function delete($id = null) {
+		if (!$this->request->is('post')) {
+			throw new MethodNotAllowedException();
+		}
 		$this->Treatment->id = $id;
 		if (!$this->Treatment->exists()) {
-			throw new NotFoundException(__('Invalid treatment'));
+			throw new NotFoundException(__('El tratamiento no existe'));
 		}
-		$this->request->allowMethod('post', 'delete');
 		if ($this->Treatment->delete()) {
-			$this->Session->setFlash(__('The treatment has been deleted.'));
-		} else {
-			$this->Session->setFlash(__('The treatment could not be deleted. Please, try again.'));
+			$this->Session->setFlash(__('El tratamiento ha sido eliminado'), 'flash/success');
+			$this->redirect(array('action' => 'index'));
 		}
-		return $this->redirect(array('action' => 'index'));
+		$this->Session->setFlash(__('El tratamiento no ha sido eliminado'), 'flash/error');
+		$this->redirect(array('action' => 'index'));
 	}
 }

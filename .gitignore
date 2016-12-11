@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # User specific & automatically generated files #
 #################################################
 /app/Config/database.php
@@ -12,12 +12,12 @@
 *.mo
 
 # IDE and editor specific files #
-#################################
+
 /nbproject
 .idea
 
 # OS generated files #
-######################
+
 .DS_Store
 .DS_Store?
 ._*
@@ -26,8 +26,7 @@
 Icon?
 ehthumbs.db
 Thumbs.db
-<<<<<<< HEAD
-=======
+
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 
@@ -61,10 +60,6 @@ $RECYCLE.BIN/
 
 .DS_Store
 Thumbs.db
-UserInterfaceState.xcuserstate
->>>>>>> 3114317f691d2667e010efc4565ad52d44249e59
-=======
 node_modules
 hooks
 wwww
->>>>>>> desarrollo

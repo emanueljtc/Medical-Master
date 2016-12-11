@@ -7,13 +7,13 @@
         <div class="user-panel">
             <div class="pull-left image">
                 <!-- <?php echo $this->Html->image('../files/user/foto/'.$user['User']['foto_dir'].'/'.'thumb_'.$user['User']['foto'], array('class' => 'img-circle')); ?> -->
-                    <?php  if($current_user['group_id'] == '1'):                 ?>
+                    <?php  if($current_user['group_id'] == '4'):                 ?>
                       <?= $this->Html->image('avatar04.png', array('class' => 'img-circle')); ?>
                     <?php endif; ?>
-                    <?php  if($current_user['group_id'] == '2'):                 ?>
+                    <?php  if($current_user['group_id'] == '5'):                 ?>
                       <?= $this->Html->image('avatar3.png', array('class' => 'img-circle')); ?>
                     <?php endif; ?>
-                    <?php  if($current_user['group_id'] == '3'):                 ?>
+                    <?php  if($current_user['group_id'] == '6'):                 ?>
                       <?= $this->Html->image('avatar5.png', array('class' => 'img-circle')); ?>
                     <?php endif; ?>
             </div>
@@ -191,7 +191,7 @@
                     <?php echo $this->Html->link(__(' Nuevo Pago'), array('controller' => 'charges', 'action' => 'add'), array('class'=>'fa fa-angle-double-right')); ?>
                 </li>
               <?php endif; ?>
-                
+
               </ul>
             </li>
             <li class="treeview">

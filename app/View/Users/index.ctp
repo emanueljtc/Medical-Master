@@ -13,7 +13,7 @@
                 <table id="Users" class="table table-bordered table-striped">
 					<thead>
 						<tr>
-													<th class="text-center"><?php echo $this->Paginator->sort('Foto'); ?></th>
+													<!-- <th class="text-center"><?php echo $this->Paginator->sort('Foto'); ?></th> -->
 													<th class="text-center"><?php echo $this->Paginator->sort('Nombre'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('Usuario'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('Grupo'); ?></th>
@@ -25,7 +25,7 @@
 					<tbody>
 					<?php foreach ($users as $user): ?>
 	<tr>
-    <td><?php echo $this->Html->image('../files/user/foto/'. $user['User']['foto_dir'].'/'.'thumb_'.$user['User']['foto']); ?></td>
+    <!-- <td><?php echo $this->Html->image('../files/user/foto/'. $user['User']['foto_dir'].'/'.'thumb_'.$user['User']['foto']); ?></td> -->
 		<td class="text-center"><?php echo h($user['User']['full_name']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($user['User']['username']); ?>&nbsp;</td>
 		<td class="text-center">

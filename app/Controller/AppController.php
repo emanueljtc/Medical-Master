@@ -39,24 +39,25 @@ class AppController extends Controller {
         )
     ),
     'Session');
+    public function beforeFilter() {
+        //Configure AuthComponent
+        $this->Auth->loginAction = array(
+          'controller' => 'users',
+          'action' => 'login'
+        );
+        $this->Auth->logoutRedirect = array(
+          'controller' => 'users',
+          'action' => 'login'
+        );
+        $this->Auth->loginRedirect = array(
+          'controller' => 'pages',
+          'action' => 'home'
+        );
+        $this->set('current_user', $this->Auth->user());
+        $this->Auth->allow('display');
+    }
 
      public $uses = array('Post');
      public $theme = "CakeAdminLTE";
-     public function beforeFilter() {
-         //Configure AuthComponent
-         $this->Auth->loginAction = array(
-           'controller' => 'users',
-           'action' => 'login'
-         );
-         $this->Auth->logoutRedirect = array(
-           'controller' => 'users',
-           'action' => 'login'
-         );
-         $this->Auth->loginRedirect = array(
-           'controller' => 'pages',
-           'action' => 'home'
-         );
-         $this->set('current_user', $this->Auth->user());
-         $this->Auth->allow('display');
-     }
+
 }

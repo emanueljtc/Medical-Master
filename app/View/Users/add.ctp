@@ -20,12 +20,12 @@
 					<div class="form-group">
 						<?php echo $this->Form->input('password', array('label'=>'Contraseña','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
-          <div class="form-group">
+          <!-- <div class="form-group">
             <?php
             echo $this->Form->input('foto',array('type'=>'file','label'=>'Foto','class'=>'form-control'));
             echo $this->Form->input('foto_dir',array('type'=>'hidden'));
             ?>
-          </div>
+          </div> -->
 					<div class="form-group">
 						<?php echo $this->Form->input('group_id', array('label'=>'Grupo','class' => 'form-control')); ?>
 					</div><!-- .form-group -->

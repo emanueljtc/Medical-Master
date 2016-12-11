@@ -140,4 +140,5 @@ class PeopleController extends AppController {
 		$this->Session->setFlash(__('Paciente no Eliminado'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
+	
 }

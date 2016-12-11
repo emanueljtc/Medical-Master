@@ -14,7 +14,8 @@ class UsersController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'Session');
+ 	public $helpers = array('Html','Form','Time','Js');
+	public $components = array('Paginator', 'Session','RequestHandler');
 
 /**
  * index method
@@ -127,22 +128,27 @@ class UsersController extends AppController {
 		$this->Session->setFlash(__('Usuario no Eliminado'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
+
+
 	public function beforeFilter() {
     parent::beforeFilter();
-    $this->Auth->allow('peligro','login','logout');
+    $this->Auth->allow('initDB','add');
+
 }
 	//PARA ACTUALIZAR LOS PERMISOS DEBO RECORRER DESDE EL NAVEGADOR
-	//ESTA FUNCION users/peligro
-	public function peligro() {
+	//ESTA FUNCION users/initDB
+	public function initDB() {
     $group = $this->User->Group;
 
+
     // Acceso al grupo de administadores
-    $group->id = 1;
+    $group->id = 4;
     $this->Acl->allow($group, 'controllers');
 
-    // Acceso al Grupo de Secretari@s
-    $group->id = 2;
 
+
+    // Acceso al Grupo de Secretari@s
+    $group->id = 5;
     $this->Acl->deny($group, 'controllers');
 		$this->Acl->deny($group, 'controllers/People/delete');
 		$this->Acl->deny($group, 'controllers/Histories/delete');
@@ -159,7 +165,7 @@ class UsersController extends AppController {
 
 
     // Acceso a Doctores
-    $group->id = 3;
+    $group->id = 6;
     $this->Acl->deny($group, 'controllers');
 		$this->Acl->deny($group, 'controllers/People/delete');
 		$this->Acl->deny($group, 'controllers/Histories/delete');
@@ -188,6 +194,8 @@ class UsersController extends AppController {
 
     // allow basic users to log out
     $this->Acl->allow($group, 'controllers/users/logout');
+
+
 
     // si muestra este mensaje  no hubo error en obtener los nuevos permisos
     echo "Permisos Concedidos";

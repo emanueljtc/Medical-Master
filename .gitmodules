@@ -1,0 +1,12 @@
+[submodule "app/Plugin/Users"]
+	path = app/Plugin/Users
+	url = git@github.com:CakeDC/users.git
+[submodule "app/Plugin/Migrations"]
+	path = app/Plugin/Migrations
+	url = git@github.com:CakeDC/migrations.git
+[submodule "app/app/Plugin/Search"]
+	path = app/app/Plugin/Search
+	url = git@github.com:CakeDC/Search
+[submodule "app/app/Plugin/Utils"]
+	path = app/app/Plugin/Utils
+	url = git@github.com:CakeDC/Utils

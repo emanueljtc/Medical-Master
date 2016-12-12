@@ -202,7 +202,18 @@
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-black">
-                                     <?= $this->Html->image('avatar04.png', array('class' => 'img-circle')); ?>
+                                  
+                                      <!-- <?php echo $this->Html->image('../files/user/foto/'.$user['User']['foto_dir'].'/'.'thumb_'.$user['User']['foto'], array('class' => 'img-circle')); ?> -->
+                                          <?php  if($current_user['group_id'] == '1'):                 ?>
+                                            <?= $this->Html->image('avatar04.png', array('class' => 'img-circle')); ?>
+                                          <?php endif; ?>
+                                          <?php  if($current_user['group_id'] == '2'):                 ?>
+                                            <?= $this->Html->image('avatar3.png', array('class' => 'img-circle')); ?>
+                                          <?php endif; ?>
+                                          <?php  if($current_user['group_id'] == '3'):                 ?>
+                                            <?= $this->Html->image('avatar5.png', array('class' => 'img-circle')); ?>
+                                          <?php endif; ?>
+                              
                                     <p>
                                     <?php	echo $this->Session->read('Auth.User.full_name')?>
                                         <small>Doctor Oncologo</small>

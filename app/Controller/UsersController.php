@@ -104,20 +104,6 @@ class UsersController extends AppController {
 		$groups = $this->User->Group->find('list');
 		$this->set(compact('groups'));
 	}
-  function change_password() {
-    if (!empty($this->data)) {
-        if ($this->User->save($this->data)) {
-            $this->Session->setFlash(__('Password has been changed.'), 'flash/success');
-             $this->redirect(array('action' => 'index'));
-        } else {
-            $this->Session->setFlash(__('Password could not be changed.'), 'flash/error');
-        }
-    } else {
-        $this->data = $this->User->findById($this->Auth->user('id'));
-    }
-    $groups = $this->User->Group->find('list');
-		$this->set(compact('groups'));
-}
 
 /**
  * delete method

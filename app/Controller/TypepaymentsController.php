@@ -23,7 +23,7 @@ class TypepaymentsController extends AppController {
  */
 	public function index() {
 		$this->Typepayment->recursive = 0;
-		$this->set('typepayments', $this->Paginator->paginate());
+		$this->set('typepayments', $this->paginate());
 	}
 
 /**
@@ -35,7 +35,7 @@ class TypepaymentsController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->Typepayment->exists($id)) {
-			throw new NotFoundException(__('Invalid typepayment'));
+			throw new NotFoundException(__('Tipo de Pago no Existe'));
 		}
 		$options = array('conditions' => array('Typepayment.' . $this->Typepayment->primaryKey => $id));
 		$this->set('typepayment', $this->Typepayment->find('first', $options));
@@ -50,10 +50,10 @@ class TypepaymentsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Typepayment->create();
 			if ($this->Typepayment->save($this->request->data)) {
-				$this->Session->setFlash(__('The typepayment has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('El tipo de pago ha sido guardado'), 'flash/success');
+				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The typepayment could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El tipo de pago no ha sido guardado. Por Favor, Intente de Nuevo.'), 'flash/error');
 			}
 		}
 	}
@@ -66,15 +66,16 @@ class TypepaymentsController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+        $this->Typepayment->id = $id;
 		if (!$this->Typepayment->exists($id)) {
-			throw new NotFoundException(__('Invalid typepayment'));
+			throw new NotFoundException(__('Tipo de Pago no Existe'));
 		}
-		if ($this->request->is(array('post', 'put'))) {
+		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Typepayment->save($this->request->data)) {
-				$this->Session->setFlash(__('The typepayment has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('El tipo de pago ha sido actualizado'), 'flash/success');
+				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The typepayment could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El tipo de pago no ha sido actualizado. Por Favor, Intente de Nuevo.'), 'flash/error');
 			}
 		} else {
 			$options = array('conditions' => array('Typepayment.' . $this->Typepayment->primaryKey => $id));
@@ -86,20 +87,23 @@ class TypepaymentsController extends AppController {
  * delete method
  *
  * @throws NotFoundException
+ * @throws MethodNotAllowedException
  * @param string $id
  * @return void
  */
 	public function delete($id = null) {
+		if (!$this->request->is('post')) {
+			throw new MethodNotAllowedException();
+		}
 		$this->Typepayment->id = $id;
 		if (!$this->Typepayment->exists()) {
-			throw new NotFoundException(__('Invalid typepayment'));
+			throw new NotFoundException(__('Tipo de Pago no Existe'));
 		}
-		$this->request->allowMethod('post', 'delete');
 		if ($this->Typepayment->delete()) {
-			$this->Session->setFlash(__('The typepayment has been deleted.'));
-		} else {
-			$this->Session->setFlash(__('The typepayment could not be deleted. Please, try again.'));
+			$this->Session->setFlash(__('El tipo de pago ha sido eliminado'), 'flash/success');
+			$this->redirect(array('action' => 'index'));
 		}
-		return $this->redirect(array('action' => 'index'));
+		$this->Session->setFlash(__('El tipo de pago ha sido eliminado'), 'flash/error');
+		$this->redirect(array('action' => 'index'));
 	}
 }

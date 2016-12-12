@@ -14,18 +14,36 @@ class UsersController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'Session');
+ 	public $helpers = array('Html','Form','Time','Js');
+	public $components = array('Paginator', 'Session','RequestHandler');
 
 /**
  * index method
  *
  * @return void
  */
+		 public function login() {
+			 if ($this->request->is('post')) {
+					 if ($this->Auth->login()) {
+							 return $this->redirect($this->Auth->redirectUrl());
+					 }
+					 $this->Session->setFlash(__('Su Usuario o Contraseña es Incorrecta, Verifique e Intente de Nuevo.'), 'flash/error');
+			 }
+			}
+
+			public function logout() {
+				$this->Session->setFlash(__('Cerrada la Sesion'), 'flash/error');
+  			$this->redirect($this->Auth->logout());
+			}
 	public function index() {
 		$this->User->recursive = 0;
-		$this->set('users', $this->Paginator->paginate());
+		$this->set('users', $this->paginate());
 	}
-
+	// 	public function beforeFilter() {
+	//     parent::beforeFilter();
+	//     // For CakePHP 2.1 and up
+	//     $this->Auth->allow();
+	// }
 /**
  * view method
  *
@@ -35,7 +53,7 @@ class UsersController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->User->exists($id)) {
-			throw new NotFoundException(__('Invalid user'));
+			throw new NotFoundException(__('El Usuario no Existe'));
 		}
 		$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
 		$this->set('user', $this->User->find('first', $options));
@@ -50,10 +68,10 @@ class UsersController extends AppController {
 		if ($this->request->is('post')) {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('The user has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('El Usuario ha sido guardado'), 'flash/success');
+				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El usuario no ha sido guardado. Por Favor, Intente de Nuevo.'), 'flash/error');
 			}
 		}
 		$groups = $this->User->Group->find('list');
@@ -68,15 +86,16 @@ class UsersController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+        $this->User->id = $id;
 		if (!$this->User->exists($id)) {
-			throw new NotFoundException(__('Invalid user'));
+			throw new NotFoundException(__('El Usuario no Existe'));
 		}
-		if ($this->request->is(array('post', 'put'))) {
+		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('The user has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('El Usuario fue actualizado'), 'flash/success');
+				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('El usuario no fue actualizado. Por Favor, Intente de Nuevo'), 'flash/error');
 			}
 		} else {
 			$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
@@ -85,25 +104,115 @@ class UsersController extends AppController {
 		$groups = $this->User->Group->find('list');
 		$this->set(compact('groups'));
 	}
+  function change_password() {
+    if (!empty($this->data)) {
+        if ($this->User->save($this->data)) {
+            $this->Session->setFlash(__('Password has been changed.'), 'flash/success');
+             $this->redirect(array('action' => 'index'));
+        } else {
+            $this->Session->setFlash(__('Password could not be changed.'), 'flash/error');
+        }
+    } else {
+        $this->data = $this->User->findById($this->Auth->user('id'));
+    }
+    $groups = $this->User->Group->find('list');
+		$this->set(compact('groups'));
+}
 
 /**
  * delete method
  *
  * @throws NotFoundException
+ * @throws MethodNotAllowedException
  * @param string $id
  * @return void
  */
 	public function delete($id = null) {
+		if (!$this->request->is('post')) {
+			throw new MethodNotAllowedException();
+		}
 		$this->User->id = $id;
 		if (!$this->User->exists()) {
-			throw new NotFoundException(__('Invalid user'));
+			throw new NotFoundException(__('El Usuario no Existe'));
 		}
-		$this->request->allowMethod('post', 'delete');
 		if ($this->User->delete()) {
-			$this->Session->setFlash(__('The user has been deleted.'));
-		} else {
-			$this->Session->setFlash(__('The user could not be deleted. Please, try again.'));
+			$this->Session->setFlash(__('Usuario Eliminado'), 'flash/success');
+			$this->redirect(array('action' => 'index'));
 		}
-		return $this->redirect(array('action' => 'index'));
+		$this->Session->setFlash(__('Usuario no Eliminado'), 'flash/error');
+		$this->redirect(array('action' => 'index'));
 	}
+
+
+	public function beforeFilter() {
+    parent::beforeFilter();
+    $this->Auth->allow('initDB','add');
+
+}
+	//PARA ACTUALIZAR LOS PERMISOS DEBO RECORRER DESDE EL NAVEGADOR
+	//ESTA FUNCION users/initDB
+	public function initDB() {
+    $group = $this->User->Group;
+
+
+    // Acceso al grupo de administadores
+    $group->id = 4;
+    $this->Acl->allow($group, 'controllers');
+
+
+
+    // Acceso al Grupo de Secretari@s
+    $group->id = 5;
+    $this->Acl->deny($group, 'controllers');
+		$this->Acl->deny($group, 'controllers/People/delete');
+		$this->Acl->deny($group, 'controllers/Histories/delete');
+		$this->Acl->allow($group, 'controllers/People/index');
+		$this->Acl->allow($group, 'controllers/People/add');
+		$this->Acl->allow($group, 'controllers/People/view');
+		$this->Acl->allow($group, 'controllers/People/edit');
+		$this->Acl->allow($group, 'controllers/Histories/index');
+		$this->Acl->allow($group, 'controllers/Histories/add');
+		$this->Acl->allow($group, 'controllers/Histories/view');
+		$this->Acl->allow($group, 'controllers/Histories/edit');
+		$this->Acl->allow($group, 'controllers/Citations/');
+		$this->Acl->allow($group, 'controllers/Charges/');
+
+
+    // Acceso a Doctores
+    $group->id = 6;
+    $this->Acl->deny($group, 'controllers');
+		$this->Acl->deny($group, 'controllers/People/delete');
+		$this->Acl->deny($group, 'controllers/Histories/delete');
+		$this->Acl->deny($group, 'controllers/Antecedents/delete');
+		$this->Acl->deny($group, 'controllers/Charges/');
+		$this->Acl->allow($group, 'controllers/People/index');
+		$this->Acl->allow($group, 'controllers/People/add');
+		$this->Acl->allow($group, 'controllers/People/view');
+		$this->Acl->allow($group, 'controllers/People/edit');
+		$this->Acl->allow($group, 'controllers/Histories/index');
+		$this->Acl->allow($group, 'controllers/Histories/add');
+		$this->Acl->allow($group, 'controllers/Histories/view');
+		$this->Acl->allow($group, 'controllers/Histories/edit');
+		$this->Acl->allow($group, 'controllers/Antecedents/index');
+		$this->Acl->allow($group, 'controllers/Antecedents/add');
+		$this->Acl->allow($group, 'controllers/Antecedents/edit');
+		$this->Acl->allow($group, 'controllers/Antecedents/view');
+		$this->Acl->allow($group, 'controllers/Diagnostics');
+		$this->Acl->allow($group, 'controllers/Treatments/');
+		$this->Acl->allow($group, 'controllers/Indications/');
+		$this->Acl->allow($group, 'controllers/Studies/');
+		$this->Acl->allow($group, 'controllers/Citations/');
+		$this->Acl->allow($group, 'controllers/Charges/index');
+		$this->Acl->allow($group, 'controllers/Charges/view');
+
+
+    // allow basic users to log out
+    $this->Acl->allow($group, 'controllers/users/logout');
+
+
+
+    // si muestra este mensaje  no hubo error en obtener los nuevos permisos
+    echo "Permisos Concedidos";
+    exit;
+}
 }

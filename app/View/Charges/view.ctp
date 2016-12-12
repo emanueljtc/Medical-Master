@@ -1,65 +1,71 @@
-<div class="charges view">
-<h2><?php echo __('Charge'); ?></h2>
-	<dl>
-		<dt><?php echo __('Id'); ?></dt>
-		<dd>
+
+<div class="row">
+    <div class="col-xs-12">
+		
+		<div class="box box-primary">
+			<div class="box-header">
+				<h3 class="box-title"><?php  echo __('Charge'); ?></h3>
+				<div class="box-tools pull-right">
+	                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i> Edit'), array('action' => 'edit', $charge['Charge']['id']), array('class' => 'btn btn-primary', 'escape' => false)); ?>
+	            </div>
+			</div>
+			
+			<div class="box-body table-responsive">
+                <table id="Charges" class="table table-bordered table-striped">
+					<tbody>
+						<tr>		<td><strong><?php echo __('Id'); ?></strong></td>
+		<td>
 			<?php echo h($charge['Charge']['id']); ?>
 			&nbsp;
-		</dd>
-		<dt><?php echo __('Total Cost'); ?></dt>
-		<dd>
+		</td>
+</tr><tr>		<td><strong><?php echo __('Total Cost'); ?></strong></td>
+		<td>
 			<?php echo h($charge['Charge']['total_cost']); ?>
 			&nbsp;
-		</dd>
-		<dt><?php echo __('Person'); ?></dt>
-		<dd>
-			<?php echo $this->Html->link($charge['Person']['name'], array('controller' => 'people', 'action' => 'view', $charge['Person']['id'])); ?>
+		</td>
+</tr><tr>		<td><strong><?php echo __('Person'); ?></strong></td>
+		<td>
+			<?php echo $this->Html->link($charge['Person']['full_name'], array('controller' => 'people', 'action' => 'view', $charge['Person']['id']), array('class' => '')); ?>
 			&nbsp;
-		</dd>
-		<dt><?php echo __('Citation'); ?></dt>
-		<dd>
-			<?php echo $this->Html->link($charge['Citation']['id'], array('controller' => 'citations', 'action' => 'view', $charge['Citation']['id'])); ?>
+		</td>
+</tr><tr>		<td><strong><?php echo __('Citation'); ?></strong></td>
+		<td>
+			<?php echo $this->Html->link($charge['Citation']['id'], array('controller' => 'citations', 'action' => 'view', $charge['Citation']['id']), array('class' => '')); ?>
 			&nbsp;
-		</dd>
-		<dt><?php echo __('State Charge'); ?></dt>
-		<dd>
+		</td>
+</tr><tr>		<td><strong><?php echo __('State Charge'); ?></strong></td>
+		<td>
 			<?php echo h($charge['Charge']['state_charge']); ?>
 			&nbsp;
-		</dd>
-		<dt><?php echo __('Typepayment'); ?></dt>
-		<dd>
-			<?php echo $this->Html->link($charge['Typepayment']['id'], array('controller' => 'typepayments', 'action' => 'view', $charge['Typepayment']['id'])); ?>
+		</td>
+</tr><tr>		<td><strong><?php echo __('Typepayment'); ?></strong></td>
+		<td>
+			<?php echo $this->Html->link($charge['Typepayment']['type_payment'], array('controller' => 'typepayments', 'action' => 'view', $charge['Typepayment']['id']), array('class' => '')); ?>
 			&nbsp;
-		</dd>
-		<dt><?php echo __('Observations'); ?></dt>
-		<dd>
+		</td>
+</tr><tr>		<td><strong><?php echo __('Observations'); ?></strong></td>
+		<td>
 			<?php echo h($charge['Charge']['observations']); ?>
 			&nbsp;
-		</dd>
-		<dt><?php echo __('Created'); ?></dt>
-		<dd>
+		</td>
+</tr><tr>		<td><strong><?php echo __('Created'); ?></strong></td>
+		<td>
 			<?php echo h($charge['Charge']['created']); ?>
 			&nbsp;
-		</dd>
-		<dt><?php echo __('Modified'); ?></dt>
-		<dd>
+		</td>
+</tr><tr>		<td><strong><?php echo __('Modified'); ?></strong></td>
+		<td>
 			<?php echo h($charge['Charge']['modified']); ?>
 			&nbsp;
-		</dd>
-	</dl>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Charge'), array('action' => 'edit', $charge['Charge']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Charge'), array('action' => 'delete', $charge['Charge']['id']), array(), __('Are you sure you want to delete # %s?', $charge['Charge']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Charges'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Charge'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List People'), array('controller' => 'people', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Person'), array('controller' => 'people', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Citations'), array('controller' => 'citations', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Citation'), array('controller' => 'citations', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Typepayments'), array('controller' => 'typepayments', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Typepayment'), array('controller' => 'typepayments', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+		</td>
+</tr>					</tbody>
+				</table><!-- /.table table-striped table-bordered -->
+			</div><!-- /.table-responsive -->
+			
+		</div><!-- /.view -->
+
+			
+	</div><!-- /#page-content .span9 -->
+
+</div><!-- /#page-container .row-fluid -->
+

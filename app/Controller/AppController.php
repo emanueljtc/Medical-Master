@@ -32,7 +32,32 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 
-    public $components = array('RequestHandler');
-    
+    public $components = array('RequestHandler', 'Acl',
+    'Auth' => array(
+        'authorize' => array(
+            'Actions' => array('actionPath' => 'controllers')
+        )
+    ),
+    'Session');
+    public function beforeFilter() {
+        //Configure AuthComponent
+        $this->Auth->loginAction = array(
+          'controller' => 'users',
+          'action' => 'login'
+        );
+        $this->Auth->logoutRedirect = array(
+          'controller' => 'users',
+          'action' => 'login'
+        );
+        $this->Auth->loginRedirect = array(
+          'controller' => 'pages',
+          'action' => 'home'
+        );
+        $this->set('current_user', $this->Auth->user());
+        $this->Auth->allow('display');
+    }
+
      public $uses = array('Post');
+     public $theme = "CakeAdminLTE";
+
 }

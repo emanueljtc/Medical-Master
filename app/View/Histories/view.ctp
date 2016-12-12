@@ -1,143 +1,148 @@
-<div class="histories view">
-<h2><?php echo __('History'); ?></h2>
-	<dl>
-		<dt><?php echo __('Id'); ?></dt>
-		<dd>
+
+<div class="row">
+    <div class="col-xs-12">
+
+		<div class="box box-primary">
+			<div class="box-header">
+				<h3 class="box-title"><?php  echo __('Vista Historia'); ?></h3>
+				<div class="box-tools pull-right">
+	                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i> Edit'), array('action' => 'edit', $history['History']['id']), array('class' => 'btn btn-primary', 'escape' => false)); ?>
+	            </div>
+			</div>
+
+			<div class="box-body table-responsive">
+                <table id="Histories" class="table table-bordered table-striped">
+					<tbody>
+						<tr>		<td><strong><?php echo __('N° Historia'); ?></strong></td>
+		<td>
 			<?php echo h($history['History']['id']); ?>
 			&nbsp;
-		</dd>
-		<dt><?php echo __('Person'); ?></dt>
-		<dd>
-			<?php echo $this->Html->link($history['Person']['name'], array('controller' => 'people', 'action' => 'view', $history['Person']['id'])); ?>
+		</td>
+</tr><tr>		<td><strong><?php echo __('Paciente'); ?></strong></td>
+		<td>
+			<?php echo $this->Html->link($history['Person']['full_name'], array('controller' => 'people', 'action' => 'view', $history['Person']['id']), array('class' => '')); ?>
 			&nbsp;
-		</dd>
-		<dt><?php echo __('Antecedent'); ?></dt>
-		<dd>
-			<?php echo $this->Html->link($history['Antecedent']['id'], array('controller' => 'antecedents', 'action' => 'view', $history['Antecedent']['id'])); ?>
+		</td>
+</tr><tr>		<td><strong><?php echo __('Fecha de Nacimiento'); ?></strong></td>
+		<td>
+			<?php echo h($history['History']['born_date']); ?>
 			&nbsp;
-		</dd>
-		<dt><?php echo __('Age'); ?></dt>
-		<dd>
+		</td>
+</tr><tr>		<td><strong><?php echo __('Edad'); ?></strong></td>
+		<td>
 			<?php echo h($history['History']['age']); ?>
 			&nbsp;
-		</dd>
-		<dt><?php echo __('Weight'); ?></dt>
-		<dd>
+		</td>
+</tr><tr>		<td><strong><?php echo __('Peso'); ?></strong></td>
+		<td>
 			<?php echo h($history['History']['weight']); ?>
 			&nbsp;
-		</dd>
-		<dt><?php echo __('Height'); ?></dt>
-		<dd>
+		</td>
+</tr><tr>		<td><strong><?php echo __('Tamaño'); ?></strong></td>
+		<td>
 			<?php echo h($history['History']['height']); ?>
 			&nbsp;
-		</dd>
-	</dl>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit History'), array('action' => 'edit', $history['History']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete History'), array('action' => 'delete', $history['History']['id']), array(), __('Are you sure you want to delete # %s?', $history['History']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Histories'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New History'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List People'), array('controller' => 'people', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Person'), array('controller' => 'people', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Antecedents'), array('controller' => 'antecedents', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Antecedent'), array('controller' => 'antecedents', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Diagnostics'), array('controller' => 'diagnostics', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Diagnostic'), array('controller' => 'diagnostics', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
-<div class="related">
-	<h3><?php echo __('Related Diagnostics'); ?></h3>
-	<?php if (!empty($history['Diagnostic'])): ?>
-	<table cellpadding = "0" cellspacing = "0">
-	<tr>
-		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Size Boobs'); ?></th>
-		<th><?php echo __('Form Boobs'); ?></th>
-		<th><?php echo __('Symmetry Boobs'); ?></th>
-		<th><?php echo __('Skin Boobs'); ?></th>
-		<th><?php echo __('Cap Boobs'); ?></th>
-		<th><?php echo __('Pussy'); ?></th>
-		<th><?php echo __('Neck Pussy'); ?></th>
-		<th><?php echo __('Coloscopia'); ?></th>
-		<th><?php echo __('Ano  Straight'); ?></th>
-		<th><?php echo __('Head Neck'); ?></th>
-		<th><?php echo __('Touch Tumor'); ?></th>
-		<th><?php echo __('Form Tumor'); ?></th>
-		<th><?php echo __('Surface Tumor'); ?></th>
-		<th><?php echo __('Contour Tumor'); ?></th>
-		<th><?php echo __('Axis Tumor'); ?></th>
-		<th><?php echo __('Consistency Tumor'); ?></th>
-		<th><?php echo __('Laringoscopia'); ?></th>
-		<th><?php echo __('Menarguia'); ?></th>
-		<th><?php echo __('Reglas'); ?></th>
-		<th><?php echo __('Prs'); ?></th>
-		<th><?php echo __('Companion Sexual'); ?></th>
-		<th><?php echo __('Distance Cap'); ?></th>
-		<th><?php echo __('Gestas'); ?></th>
-		<th><?php echo __('Rsi'); ?></th>
-		<th><?php echo __('Paras'); ?></th>
-		<th><?php echo __('Abdomen'); ?></th>
-		<th><?php echo __('Misbirth'); ?></th>
-		<th><?php echo __('Gynecological Vulva'); ?></th>
-		<th><?php echo __('Cesareans'); ?></th>
-		<th><?php echo __('Age Birth One'); ?></th>
-		<th><?php echo __('Diagnostico'); ?></th>
-		<th><?php echo __('Person Id'); ?></th>
-		<th><?php echo __('History Id'); ?></th>
-		<th class="actions"><?php echo __('Actions'); ?></th>
-	</tr>
-	<?php foreach ($history['Diagnostic'] as $diagnostic): ?>
+		</td>
+</tr>					</tbody>
+				</table><!-- /.table table-striped table-bordered -->
+			</div><!-- /.table-responsive -->
+
+		</div><!-- /.view -->
+
+
+			<div class="box box-primary">
+				<div class="box-header">
+					<h3 class="box-title"><?php echo __('Diagnostico Relacionados'); ?></h3>
+					<div class="box-tools pull-right">
+						<?php echo $this->Html->link('<i class="glyphicon glyphicon-plus"></i> '.__('New Diagnostic'), array('controller' => 'diagnostics', 'action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>					</div><!-- /.actions -->
+				</div>
+				<?php if (!empty($history['Diagnostic'])): ?>
+
+					<div class="box-body table-responsive">
+						<table class="table table-bordered table-striped">
+							<thead>
+								<tr>
+											<th class="text-center"><?php echo __('N° Diagnostico'); ?></th>
+                  		<th class="text-center"><?php echo __('Diagnostico'); ?></th>
+
+									<th class="text-center"><?php echo __('Acciones'); ?></th>
+								</tr>
+							</thead>
+							<tbody>
+									<?php
+										$i = 0;
+										foreach ($history['Diagnostic'] as $diagnostic): ?>
 		<tr>
-			<td><?php echo $diagnostic['id']; ?></td>
-			<td><?php echo $diagnostic['size_boobs']; ?></td>
-			<td><?php echo $diagnostic['form_boobs']; ?></td>
-			<td><?php echo $diagnostic['symmetry_boobs']; ?></td>
-			<td><?php echo $diagnostic['skin_boobs']; ?></td>
-			<td><?php echo $diagnostic['cap_boobs']; ?></td>
-			<td><?php echo $diagnostic['pussy']; ?></td>
-			<td><?php echo $diagnostic['neck_pussy']; ?></td>
-			<td><?php echo $diagnostic['coloscopia']; ?></td>
-			<td><?php echo $diagnostic['ano_ straight']; ?></td>
-			<td><?php echo $diagnostic['head_neck']; ?></td>
-			<td><?php echo $diagnostic['touch_tumor']; ?></td>
-			<td><?php echo $diagnostic['form_tumor']; ?></td>
-			<td><?php echo $diagnostic['surface_tumor']; ?></td>
-			<td><?php echo $diagnostic['contour_tumor']; ?></td>
-			<td><?php echo $diagnostic['axis_tumor']; ?></td>
-			<td><?php echo $diagnostic['consistency_tumor']; ?></td>
-			<td><?php echo $diagnostic['laringoscopia']; ?></td>
-			<td><?php echo $diagnostic['menarguia']; ?></td>
-			<td><?php echo $diagnostic['reglas']; ?></td>
-			<td><?php echo $diagnostic['prs']; ?></td>
-			<td><?php echo $diagnostic['companion_sexual']; ?></td>
-			<td><?php echo $diagnostic['distance_cap']; ?></td>
-			<td><?php echo $diagnostic['gestas']; ?></td>
-			<td><?php echo $diagnostic['rsi']; ?></td>
-			<td><?php echo $diagnostic['paras']; ?></td>
-			<td><?php echo $diagnostic['abdomen']; ?></td>
-			<td><?php echo $diagnostic['misbirth']; ?></td>
-			<td><?php echo $diagnostic['gynecological_vulva']; ?></td>
-			<td><?php echo $diagnostic['cesareans']; ?></td>
-			<td><?php echo $diagnostic['age_birth_one']; ?></td>
-			<td><?php echo $diagnostic['diagnostico']; ?></td>
-			<td><?php echo $diagnostic['person_id']; ?></td>
-			<td><?php echo $diagnostic['history_id']; ?></td>
-			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'diagnostics', 'action' => 'view', $diagnostic['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'diagnostics', 'action' => 'edit', $diagnostic['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'diagnostics', 'action' => 'delete', $diagnostic['id']), array(), __('Are you sure you want to delete # %s?', $diagnostic['id'])); ?>
+			<td class="text-center"><?php echo $diagnostic['id']; ?></td>
+
+			<td class="text-center"><?php echo $diagnostic['diagnostico']; ?></td>
+			<td class="text-center">
+				<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('controller' => 'diagnostics', 'action' => 'view', $diagnostic['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Ver')); ?>
+				<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('controller' => 'diagnostics', 'action' => 'edit', $diagnostic['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Editar')); ?>
+				<?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('controller' => 'diagnostics', 'action' => 'delete', $diagnostic['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Eliminar'), __('Esta usted seguro de eliminar el diagnostico # %s?', $diagnostic['id'])); ?>
 			</td>
 		</tr>
 	<?php endforeach; ?>
-	</table>
-<?php endif; ?>
+							</tbody>
+						</table><!-- /.table table-striped table-bordered -->
+					</div><!-- /.table-responsive -->
 
-	<div class="actions">
-		<ul>
-			<li><?php echo $this->Html->link(__('New Diagnostic'), array('controller' => 'diagnostics', 'action' => 'add')); ?> </li>
-		</ul>
-	</div>
-</div>
+				<?php endif; ?>
+
+
+
+			</div><!-- /.related -->
+
+
+			<div class="box box-primary">
+				<div class="box-header">
+					<h3 class="box-title"><?php echo __('Antecedentes Relacionados'); ?></h3>
+					<div class="box-tools pull-right">
+						<?php echo $this->Html->link('<i class="glyphicon glyphicon-plus"></i> '.__('New Antecedent'), array('controller' => 'antecedents', 'action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>					</div><!-- /.actions -->
+				</div>
+				<?php if (!empty($history['Antecedent'])): ?>
+
+					<div class="box-body table-responsive">
+						<table class="table table-bordered table-striped">
+							<thead>
+								<tr>
+											<th class="text-center"><?php echo __('N°'); ?></th>
+                  		<th class="text-center"><?php echo __('Antecedente'); ?></th>
+                  		<th class="text-center"><?php echo __('Origen'); ?></th>
+                  		<th class="text-center"><?php echo __('Doctor Tratante'); ?></th>
+                  		<th class="text-center"><?php echo __('Creado'); ?></th>
+
+									<th class="text-center"><?php echo __('Acciones'); ?></th>
+								</tr>
+							</thead>
+							<tbody>
+									<?php
+										$i = 0;
+										foreach ($history['Antecedent'] as $antecedent): ?>
+		<tr>
+			<td class="text-center"><?php echo $antecedent['id']; ?></td>
+			<td class="text-center"><?php echo $antecedent['name_antecendent']; ?></td>
+			<td class="text-center"><?php echo $antecedent['origin']; ?></td>
+			<td class="text-center"><?php echo $antecedent['personals_doctors']; ?></td>
+			<td class="text-center"><?php echo $antecedent['created']; ?></td>
+			<td class="text-center">
+				<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('controller' => 'antecedents', 'action' => 'view', $antecedent['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Ver')); ?>
+				<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('controller' => 'antecedents', 'action' => 'edit', $antecedent['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Editar')); ?>
+				<?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('controller' => 'antecedents', 'action' => 'delete', $antecedent['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Eliminar'), __('Esta seguro de eliminar el antecedente # %s?', $antecedent['id'])); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+							</tbody>
+						</table><!-- /.table table-striped table-bordered -->
+					</div><!-- /.table-responsive -->
+
+				<?php endif; ?>
+
+
+
+			</div><!-- /.related -->
+
+
+	</div><!-- /#page-content .span9 -->
+
+</div><!-- /#page-container .row-fluid -->

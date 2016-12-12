@@ -1,5 +1,5 @@
 <?php
-App::uses('AppModel', 'Model');
+App::uses('AppModel', 'Model','AclComponent');
 /**
  * User Model
  *
@@ -60,6 +60,7 @@ class User extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
@@ -69,6 +70,7 @@ class User extends AppModel {
  *
  * @var array
  */
+
 	public $belongsTo = array(
 		'Group' => array(
 			'className' => 'Group',
@@ -78,4 +80,27 @@ class User extends AppModel {
 			'order' => ''
 		)
 	);
+
+	public function beforeSave($options = array()) {
+			 $this->data['User']['password'] = AuthComponent::password(
+				 $this->data['User']['password']
+			 );
+			 return true;
+	 }
+	 public $actsAs = array('Acl' => array('type' => 'requester'));
+
+    public function parentNode() {
+        if (!$this->id && empty($this->data)) {
+            return null;
+        }
+        if (isset($this->data['User']['group_id'])) {
+            $groupId = $this->data['User']['group_id'];
+        } else {
+            $groupId = $this->field('group_id');
+        }
+        if (!$groupId) {
+            return null;
+        }
+        return array('Group' => array('id' => $groupId));
+    }
 }

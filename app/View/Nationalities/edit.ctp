@@ -1,21 +1,31 @@
-<div class="nationalities form">
-<?php echo $this->Form->create('Nationality'); ?>
-	<fieldset>
-		<legend><?php echo __('Edit Nationality'); ?></legend>
-	<?php
-		echo $this->Form->input('id');
-		echo $this->Form->input('nacionalidad');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
 
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Nationality.id')), array(), __('Are you sure you want to delete # %s?', $this->Form->value('Nationality.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Nationalities'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List People'), array('controller' => 'people', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Person'), array('controller' => 'people', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+<div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+		<div class="box box-primary">
+			<div class="box-header">
+			<h3 class="box-title"><?php echo __('Edit Nationality'); ?></h3>
+			</div>
+			<div class="box-body table-responsive">
+
+			<?php echo $this->Form->create('Nationality', array('role' => 'form')); ?>
+
+				<fieldset>
+
+										<div class="form-group">
+						<?php echo $this->Form->input('id', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('nacionalidad', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+
+					<?php echo $this->Form->submit('Modificar', array('class' => 'btn btn-large btn-primary')); ?>
+
+				</fieldset>
+
+						<?php echo $this->Form->end(); ?>
+
+		</div><!-- /.form -->
+
+	</div><!-- /#page-content .col-sm-9 -->
+
+</div><!-- /#page-container .row-fluid -->

@@ -12,7 +12,7 @@ class Datecitation extends AppModel {
  *
  * @var string
  */
-	public $displayField = 'id';
+	public $displayField = 'state';
 
 /**
  * Validation rules
@@ -23,7 +23,7 @@ class Datecitation extends AppModel {
 		'state' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Campo Vacio',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

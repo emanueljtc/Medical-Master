@@ -1,74 +1,100 @@
-<div class="specialties view">
-<h2><?php echo __('Specialty'); ?></h2>
-	<dl>
-		<dt><?php echo __('Id'); ?></dt>
-		<dd>
+
+<div class="row">
+    <div class="col-xs-12">
+		
+		<div class="box box-primary">
+			<div class="box-header">
+				<h3 class="box-title"><?php  echo __('Specialty'); ?></h3>
+				<div class="box-tools pull-right">
+	                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i> Edit'), array('action' => 'edit', $specialty['Specialty']['id']), array('class' => 'btn btn-primary', 'escape' => false)); ?>
+	            </div>
+			</div>
+			
+			<div class="box-body table-responsive">
+                <table id="Specialties" class="table table-bordered table-striped">
+					<tbody>
+						<tr>		<td><strong><?php echo __('Id'); ?></strong></td>
+		<td>
 			<?php echo h($specialty['Specialty']['id']); ?>
 			&nbsp;
-		</dd>
-		<dt><?php echo __('Specialty'); ?></dt>
-		<dd>
+		</td>
+</tr><tr>		<td><strong><?php echo __('Specialty'); ?></strong></td>
+		<td>
 			<?php echo h($specialty['Specialty']['specialty']); ?>
 			&nbsp;
-		</dd>
-		<dt><?php echo __('Rol'); ?></dt>
-		<dd>
-			<?php echo $this->Html->link($specialty['Rol']['rol'], array('controller' => 'rols', 'action' => 'view', $specialty['Rol']['id'])); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Created'); ?></dt>
-		<dd>
+		</td>
+</tr><tr>		<td><strong><?php echo __('Created'); ?></strong></td>
+		<td>
 			<?php echo h($specialty['Specialty']['created']); ?>
 			&nbsp;
-		</dd>
-		<dt><?php echo __('Modified'); ?></dt>
-		<dd>
+		</td>
+</tr><tr>		<td><strong><?php echo __('Modified'); ?></strong></td>
+		<td>
 			<?php echo h($specialty['Specialty']['modified']); ?>
 			&nbsp;
-		</dd>
-	</dl>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Specialty'), array('action' => 'edit', $specialty['Specialty']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Specialty'), array('action' => 'delete', $specialty['Specialty']['id']), array(), __('Are you sure you want to delete # %s?', $specialty['Specialty']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Specialties'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Specialty'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Rols'), array('controller' => 'rols', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Rol'), array('controller' => 'rols', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
-<!-- <div class="related">
-	<h3><?php echo __('Related Rol'); ?></h3>
-	<?php if (!empty($specialty['Rol'])): ?>
-	<table cellpadding = "0" cellspacing = "0">
-	<tr>
-		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Rol'); ?></th>
-		<th><?php echo __('Created'); ?></th>
-		<th><?php echo __('Modified'); ?></th>
-		<th class="actions"><?php echo __('Actions'); ?></th>
-	</tr>
-	<?php foreach ($specialty['Rol'] as $rol): ?>
+		</td>
+</tr>					</tbody>
+				</table><!-- /.table table-striped table-bordered -->
+			</div><!-- /.table-responsive -->
+			
+		</div><!-- /.view -->
+
+					
+			<div class="box box-primary">
+				<div class="box-header">
+					<h3 class="box-title"><?php echo __('Related Users'); ?></h3>
+					<div class="box-tools pull-right">
+						<?php echo $this->Html->link('<i class="glyphicon glyphicon-plus"></i> '.__('New User'), array('controller' => 'users', 'action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>					</div><!-- /.actions -->
+				</div>
+				<?php if (!empty($specialty['User'])): ?>
+					
+					<div class="box-body table-responsive">
+						<table class="table table-bordered table-striped">
+							<thead>
+								<tr>
+											<th class="text-center"><?php echo __('Id'); ?></th>
+		<th class="text-center"><?php echo __('Full Name'); ?></th>
+		<th class="text-center"><?php echo __('Username'); ?></th>
+		<th class="text-center"><?php echo __('Password'); ?></th>
+		<th class="text-center"><?php echo __('Specialty Id'); ?></th>
+		<th class="text-center"><?php echo __('Group Id'); ?></th>
+		<th class="text-center"><?php echo __('Created'); ?></th>
+		<th class="text-center"><?php echo __('Modified'); ?></th>
+									<th class="text-center"><?php echo __('Actions'); ?></th>
+								</tr>
+							</thead>
+							<tbody>
+									<?php
+										$i = 0;
+										foreach ($specialty['User'] as $user): ?>
 		<tr>
-			<td><?php echo $rol['id']; ?></td>
-			<td><?php echo $rol['rol']; ?></td>
-			<td><?php echo $rol['created']; ?></td>
-			<td><?php echo $rol['modified']; ?></td>
-			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'rols', 'action' => 'view', $rol['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'rols', 'action' => 'edit', $rol['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'rols', 'action' => 'delete', $rol['id']), array(), __('Are you sure you want to delete # %s?', $specialty['id'])); ?>
+			<td class="text-center"><?php echo $user['id']; ?></td>
+			<td class="text-center"><?php echo $user['full_name']; ?></td>
+			<td class="text-center"><?php echo $user['username']; ?></td>
+			<td class="text-center"><?php echo $user['password']; ?></td>
+			<td class="text-center"><?php echo $user['specialty_id']; ?></td>
+			<td class="text-center"><?php echo $user['group_id']; ?></td>
+			<td class="text-center"><?php echo $user['created']; ?></td>
+			<td class="text-center"><?php echo $user['modified']; ?></td>
+			<td class="text-center">
+				<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('controller' => 'users', 'action' => 'view', $user['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'view')); ?>
+				<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('controller' => 'users', 'action' => 'edit', $user['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'edit')); ?>
+				<?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('controller' => 'users', 'action' => 'delete', $user['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'delete'), __('Are you sure you want to delete # %s?', $user['id'])); ?>
 			</td>
 		</tr>
 	<?php endforeach; ?>
-	</table>
-<?php endif; ?>
+							</tbody>
+						</table><!-- /.table table-striped table-bordered -->
+					</div><!-- /.table-responsive -->
+					
+				<?php endif; ?>
 
-	<div class="actions">
-		<ul>
-			<li><?php echo $this->Html->link(__('New Rol'), array('controller' => 'rols', 'action' => 'add')); ?> </li>
-		</ul>
-	</div>
-</div> -->
+				
+				
+			</div><!-- /.related -->
+
+			
+	</div><!-- /#page-content .span9 -->
+
+</div><!-- /#page-container .row-fluid -->
+

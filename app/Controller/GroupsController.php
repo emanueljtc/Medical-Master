@@ -120,5 +120,5 @@ class GroupsController extends AppController {
 		$this->Session->setFlash(__('Group was not deleted'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
-	
+
 }

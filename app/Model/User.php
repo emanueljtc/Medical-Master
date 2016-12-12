@@ -60,6 +60,7 @@ class User extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
@@ -69,6 +70,7 @@ class User extends AppModel {
  *
  * @var array
  */
+
 	public $belongsTo = array(
 		'Group' => array(
 			'className' => 'Group',

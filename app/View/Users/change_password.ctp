@@ -21,9 +21,15 @@
 					<div class="form-group">
 						<?php echo $this->Form->input('username', array('label'=>'Usuario','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
-					<div class="form-group">
-						<?php echo $this->Form->input('password', array('label'=>'Contraseña','class' => 'form-control')); ?>
-					</div><!-- .form-group -->
+					<!-- <div class="form-group">
+						<?php echo $this->Form->input('password', array('type'=>'Password','label'=>'Contraseña','class' => 'form-control')); ?>
+					</div><!-- .form-group --> 
+          <div class="form-group">
+            <?php echo $this->Form->input('password1', array('type'=>'Password','label'=>'Contraseña Nueva','class' => 'form-control')); ?>
+          </div>
+          <div class="form-group">
+            <?php echo $this->Form->input('password2', array('type'=>'Password','label'=>'Confirmar Contraseña','class' => 'form-control')); ?>
+          </div>
           <!-- <div class="form-group">
             <?php
             echo $this->Form->input('foto',array('label'=>'Foto','type'=>'file','class'=>'form-control'));
@@ -34,7 +40,7 @@
 						<?php echo $this->Form->input('group_id', array('label'=>'Grupo','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 
-					<?php echo $this->Form->submit('Actualizar', array('class' => 'btn btn-large btn-primary')); ?>
+					<?php echo $this->Form->submit('Añadir', array('class' => 'btn btn-large btn-primary')); ?>
 
 				</fieldset>
 

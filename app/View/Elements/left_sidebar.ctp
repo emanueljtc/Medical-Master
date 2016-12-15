@@ -7,13 +7,13 @@
         <div class="user-panel">
             <div class="pull-left image">
                 <!-- <?php echo $this->Html->image('../files/user/foto/'.$user['User']['foto_dir'].'/'.'thumb_'.$user['User']['foto'], array('class' => 'img-circle')); ?> -->
-                    <?php  if($current_user['group_id'] == '4'):                 ?>
+                    <?php  if($current_user['group_id'] == '1'):                 ?>
                       <?= $this->Html->image('avatar04.png', array('class' => 'img-circle')); ?>
                     <?php endif; ?>
-                    <?php  if($current_user['group_id'] == '5'):                 ?>
+                    <?php  if($current_user['group_id'] == '2'):                 ?>
                       <?= $this->Html->image('avatar3.png', array('class' => 'img-circle')); ?>
                     <?php endif; ?>
-                    <?php  if($current_user['group_id'] == '6'):                 ?>
+                    <?php  if($current_user['group_id'] == '3'):                 ?>
                       <?= $this->Html->image('avatar5.png', array('class' => 'img-circle')); ?>
                     <?php endif; ?>
             </div>

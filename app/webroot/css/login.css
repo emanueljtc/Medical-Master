@@ -1,5 +1,3 @@
-@import "bourbon";
-@import "bourbon";
 
 body {
 
@@ -10,8 +8,16 @@ body {
     /*border: 1px solid red;*/
 
 }
+.title{
+  font-family: atomo;
+  font-size: 36px;
+  color: #042c4e;
+  font-style: italic;
+}
 .developers{
   color: #ffffff;
+  font-family: atomo;
+  font-size: 150%;
 }
 .wrapper {
   margin-top: 206px;
@@ -66,4 +72,21 @@ body {
   }
 
 
+}
+.zoom {
+    font-size: 12px;
+    /*width: 300px;*/
+
+    /* Firefox */
+    -moz-transition: font-size 300ms linear 0s;
+    /* Chrome / Safari */
+    -webkit-transition: font-size 300ms linear 0s;
+    /* Opera */
+    -o-transition: font-size 300ms linear 0s;
+    /* Default */
+    transition: font-size 300ms linear 0s;
+}
+
+.zoom:hover {
+    font-size: 16px;
 }

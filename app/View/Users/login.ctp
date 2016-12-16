@@ -5,11 +5,11 @@
 
 
 
-        <div class="form-signin">
-          <marquee loop="1" SCROLLAMOUNT="25" behavior = "slide" direction="right">
+        <div class="form-signin zoom">
+          <!-- <marquee loop="1" SCROLLAMOUNT="25" behavior = "slide" direction="right"> -->
 
-              <h3 style="font-size:24">_________Medical_Master________</h3>
-              </marquee>
+              <h3 class="title">____Medical_Master____</h3>
+              <!-- </marquee> -->
               <div class="col-xs-12">
                     <?php echo $this->Form->create('User'); ?>
                         <fieldset>
@@ -28,14 +28,14 @@
                     <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Recuerdame
                   </label>
               </div>
-
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Acceder</button>
-
-
+               <center>
+                  <button class="btn btn-md btn-primary" type="submit">Entrar</button>
+                  <!-- <button class="btn btn-md btn-danger" type="submit">Limpiar</button> -->
+              </center>    
 
         </div>
         <br><br><br>
         <center>
-    <h4 class="developers">Hecho por Emanuel Torres C & GUillermo Ochoa T.</h4>
+    <h4 class="developers">Desarrollado por Emanuel Torres C. & Guillermo Ochoa T.</h4>
   </center>
 </div>

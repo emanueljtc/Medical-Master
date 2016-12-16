@@ -8,7 +8,7 @@
         <div class="form-signin">
           <marquee loop="1" SCROLLAMOUNT="25" behavior = "slide" direction="right">
 
-              <h3 style="font-size:24">____Medical_Master____</h3>
+              <h3 style="font-size:24">_________Medical_Master________</h3>
               </marquee>
               <div class="col-xs-12">
                     <?php echo $this->Form->create('User'); ?>
@@ -36,6 +36,6 @@
         </div>
         <br><br><br>
         <center>
-    <h4>Hecho por Emanuel Torres C.</h4>
+    <h4 class="developers">Hecho por Emanuel Torres C & GUillermo Ochoa T.</h4>
   </center>
 </div>

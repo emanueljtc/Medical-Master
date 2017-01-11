@@ -56,8 +56,8 @@ class AntecedentsController extends AppController {
 				$this->Session->setFlash(__('El antecedente no ha sido guardado, Por Favor, Intente de Nuevo'), 'flash/error');
 			}
 		}
-		$people = $this->Antecedent->Person->find('list');
-		$histories = $this->Antecedent->History->find('list');
+		$people = $this->Antecedent->Person->find('list',array('order'=>'full_name DESC'));
+		$histories = $this->Antecedent->History->find('list',array('order'=>'id DESC'));
 		$this->set(compact('people', 'histories'));
 	}
 

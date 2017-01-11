@@ -14,8 +14,15 @@ class HistoriesController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'Session');
-
+ 	public $helpers = array('Html','Form','Time','Js');
+	public $components = array('Paginator', 'Session','RequestHandler');
+	public $paginate = array (
+ 		 'limit' => 10,
+ 		 'order' => array(
+			 	'History.id' => 'asc'
+			),
+      //'conditions'=>array('Personal.status'=>'Activo'),
+ 		 );
 /**
  * index method
  *
@@ -23,6 +30,7 @@ class HistoriesController extends AppController {
  */
 	public function index() {
 		$this->History->recursive = 0;
+		$this->Paginator->settings = $this->paginate;
 		$this->set('histories', $this->paginate());
 	}
 
@@ -46,17 +54,19 @@ class HistoriesController extends AppController {
  *
  * @return void
  */
+
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->History->create();
 			if ($this->History->save($this->request->data)) {
+				$this->History->getLastInsertId();
 				$this->Session->setFlash(__('La Historia Fue Registrada Correctamente'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('La Historia No Fue Registrada Correctamente. Por Favor, Intente de Nuevo.'), 'flash/error');
 			}
 		}
-		$people = $this->History->Person->find('list');
+		$people = $this->History->Person->find('list',array('order'=>'id DESC'));
 		$this->set(compact('people'));
 	}
 
@@ -102,13 +112,13 @@ class HistoriesController extends AppController {
 		}
 		$this->History->id = $id;
 		if (!$this->History->exists()) {
-			throw new NotFoundException(__('Invalid history'));
+			throw new NotFoundException(__('La Historia no Existe'));
 		}
 		if ($this->History->delete()) {
-			$this->Session->setFlash(__('History deleted'), 'flash/success');
+			$this->Session->setFlash(__('La Historia ha sido eliminada con exito'), 'flash/success');
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('History was not deleted'), 'flash/error');
+		$this->Session->setFlash(__('La Historia fue eliminada'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
 }

@@ -38,14 +38,35 @@
 			<?php echo h($person['Person']['gender']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong>Direccion <?php echo __(''); ?></strong></td>
+</tr><tr>		<td><strong>Fecha_Nacimiento <?php echo __(''); ?></strong></td>
 		<td>
-			<?php echo h($person['Person']['address']); ?>
+			<?php echo h($person['Person']['born_date']); ?>
+			&nbsp;
+		</td>
+</tr><tr>		<td><strong>Edad <?php echo __(''); ?></strong></td>
+		<td>
+			<?php echo h($person['Person']['age']); ?>
 			&nbsp;
 		</td>
 </tr><tr>		<td><strong>Telefono <?php echo __(''); ?></strong></td>
 		<td>
 			<?php echo h($person['Person']['phone']); ?>
+			&nbsp;
+		</td>
+</tr>
+<tr>		<td><strong>Telefono_Emergencia <?php echo __(''); ?></strong></td>
+		<td>
+			<?php echo h($person['Person']['phone_dos']); ?>
+			&nbsp;
+		</td>
+</tr><tr>		<td><strong>Peso <?php echo __(''); ?></strong></td>
+		<td>
+			<?php echo h($person['Person']['weight']); ?>
+			&nbsp;
+		</td>
+</tr><tr>		<td><strong>Alto <?php echo __(''); ?></strong></td>
+		<td>
+			<?php echo h($person['Person']['height']); ?>
 			&nbsp;
 		</td>
 </tr><tr>		<td><strong>Correo Electronico <?php echo __(''); ?></strong></td>
@@ -68,6 +89,11 @@
 			<?php echo h($person['Person']['token']); ?>
 			&nbsp;
 		</td> -->
+</tr><tr>		<td><strong>Direccion <?php echo __(''); ?></strong></td>
+		<td>
+			<?php echo h($person['Person']['address']); ?>
+			&nbsp;
+		</td>
 </tr>					</tbody>
 				</table><!-- /.table table-striped table-bordered -->
 			</div><!-- /.table-responsive -->
@@ -243,40 +269,8 @@
 						<table class="table table-bordered table-striped">
 							<thead>
 								<tr>
-											<th class="text-center"><?php echo __('N° Diagnostico'); ?></th>
-                		<!-- <th class="text-center"><?php echo __('Size Boobs'); ?></th>
-                		<th class="text-center"><?php echo __('Form Boobs'); ?></th>
-                		<th class="text-center"><?php echo __('Symmetry Boobs'); ?></th>
-                		<th class="text-center"><?php echo __('Skin Boobs'); ?></th>
-                		<th class="text-center"><?php echo __('Cap Boobs'); ?></th>
-                		<th class="text-center"><?php echo __('Pussy'); ?></th>
-                		<th class="text-center"><?php echo __('Neck Pussy'); ?></th>
-                		<th class="text-center"><?php echo __('Coloscopia'); ?></th>
-                		<th class="text-center"><?php echo __('Ano  Straight'); ?></th>
-                		<th class="text-center"><?php echo __('Head Neck'); ?></th>
-                		<th class="text-center"><?php echo __('Touch Tumor'); ?></th>
-                		<th class="text-center"><?php echo __('Form Tumor'); ?></th>
-                		<th class="text-center"><?php echo __('Surface Tumor'); ?></th>
-                		<th class="text-center"><?php echo __('Contour Tumor'); ?></th>
-                		<th class="text-center"><?php echo __('Axis Tumor'); ?></th>
-                		<th class="text-center"><?php echo __('Consistency Tumor'); ?></th>
-                		<th class="text-center"><?php echo __('Laringoscopia'); ?></th>
-                		<th class="text-center"><?php echo __('Menarguia'); ?></th>
-                		<th class="text-center"><?php echo __('Reglas'); ?></th>
-                		<th class="text-center"><?php echo __('Prs'); ?></th>
-                		<th class="text-center"><?php echo __('Companion Sexual'); ?></th>
-                		<th class="text-center"><?php echo __('Distance Cap'); ?></th>
-                		<th class="text-center"><?php echo __('Gestas'); ?></th>
-                		<th class="text-center"><?php echo __('Rsi'); ?></th>
-                		<th class="text-center"><?php echo __('Paras'); ?></th>
-                		<th class="text-center"><?php echo __('Abdomen'); ?></th>
-                		<th class="text-center"><?php echo __('Misbirth'); ?></th>
-                		<th class="text-center"><?php echo __('Gynecological Vulva'); ?></th>
-                		<th class="text-center"><?php echo __('Cesareans'); ?></th>
-                		<th class="text-center"><?php echo __('Age Birth One'); ?></th> -->
+										<th class="text-center"><?php echo __('N° Diagnostico'); ?></th>
                 		<th class="text-center"><?php echo __('Diagnostico'); ?></th>
-                		<!-- <th class="text-center"><?php echo __('Person Id'); ?></th>
-                		<th class="text-center"><?php echo __('History Id'); ?></th> -->
 									<th class="text-center"><?php echo __('Acciones'); ?></th>
 								</tr>
 							</thead>
@@ -286,39 +280,7 @@
 										foreach ($person['Diagnostic'] as $diagnostic): ?>
 		<tr>
 			<td class="text-center"><?php echo $diagnostic['id']; ?></td>
-			<!-- <td class="text-center"><?php echo $diagnostic['size_boobs']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['form_boobs']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['symmetry_boobs']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['skin_boobs']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['cap_boobs']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['pussy']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['neck_pussy']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['coloscopia']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['ano_ straight']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['head_neck']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['touch_tumor']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['form_tumor']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['surface_tumor']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['contour_tumor']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['axis_tumor']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['consistency_tumor']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['laringoscopia']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['menarguia']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['reglas']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['prs']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['companion_sexual']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['distance_cap']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['gestas']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['rsi']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['paras']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['abdomen']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['misbirth']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['gynecological_vulva']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['cesareans']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['age_birth_one']; ?></td> -->
 			<td class="text-center"><?php echo $diagnostic['diagnostico']; ?></td>
-			<!-- <td class="text-center"><?php echo $diagnostic['person_id']; ?></td>
-			<td class="text-center"><?php echo $diagnostic['history_id']; ?></td> -->
 			<td class="text-center">
 				<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('controller' => 'diagnostics', 'action' => 'view', $diagnostic['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Ver')); ?>
 				<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('controller' => 'diagnostics', 'action' => 'edit', $diagnostic['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Editar')); ?>
@@ -350,11 +312,7 @@
 							<thead>
 								<tr>
 											<th class="text-center"><?php echo __('N° Historia'); ?></th>
-                  		<!-- <th class="text-center"><?php echo __('Person Id'); ?></th> -->
-                  		<!-- <th class="text-center"><?php echo __('Antecedent Id'); ?></th> -->
-                  		<th class="text-center"><?php echo __('Edad'); ?></th>
-                  		<th class="text-center"><?php echo __('Peso'); ?></th>
-                  		<th class="text-center"><?php echo __('Tamaño'); ?></th>
+
 									<th class="text-center"><?php echo __('Acciones'); ?></th>
 								</tr>
 							</thead>
@@ -366,9 +324,7 @@
 			<td class="text-center"><?php echo $history['id']; ?></td>
 			<!-- <td class="text-center"><?php echo $history['person_id']; ?></td> -->
 			<!-- <td class="text-center"><?php echo $history['antecedent_id']; ?></td> -->
-			<td class="text-center"><?php echo $history['age']; ?></td>
-			<td class="text-center"><?php echo $history['weight']; ?></td>
-			<td class="text-center"><?php echo $history['height']; ?></td>
+			
 			<td class="text-center">
 				<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('controller' => 'histories', 'action' => 'view', $history['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'view')); ?>
 				<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('controller' => 'histories', 'action' => 'edit', $history['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'edit')); ?>

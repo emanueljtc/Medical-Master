@@ -32,53 +32,15 @@ class History extends AppModel {
 		'person_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-			'message' => 'Campo Vacio',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
+				'message' => 'EL CAMPO ES NUMERICO',
+				),
+				'isUnique' => array(
+					'rule' => array('isUnique'),
+					'message' => 'EL PACIENTE YA TIENE SU NUMERO DE HISTORIA ASIGNADO',
+					'required' => 'create'
+					),
 		),
-		'antecedent_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				'message' => 'Campo Vacio',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'age' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				'message' => 'Campo Vacio',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'weight' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				'message' => 'Campo Vacio',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'height' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-			'message' => 'Campo Vacio',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
+
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed

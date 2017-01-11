@@ -15,22 +15,18 @@
 						<tr>
 													<th class="text-center"><?php echo $this->Paginator->sort('N° Historia'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('Paciente'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('Edad'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('Tamaño'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('Peso'); ?></th>
+
 												<th class="text-center"><?php echo __('Acciones'); ?></th>
 						</tr>
 					</thead>
 					<tbody>
 					<?php foreach ($histories as $history): ?>
 	<tr>
-		<td class="text-center"><?php echo h($history['History']['id']); ?>&nbsp;</td>
+		<td class="text-center"><?php echo h('000'.$history['History']['id']); ?>&nbsp;</td>
 		<td class="text-center">
 			<?php echo $this->Html->link($history['Person']['full_name'], array('controller' => 'people', 'action' => 'view', $history['Person']['id'])); ?>
 		</td>
-		<td class="text-center"><?php echo h($history['History']['age']); ?>&nbsp;</td>
-		<td class="text-center"><?php echo h($history['History']['weight']); ?>&nbsp;</td>
-		<td class="text-center"><?php echo h($history['History']['height']); ?>&nbsp;</td>
+
 		<td class="text-center">
 			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('action' => 'view', $history['History']['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Ver')); ?>
 			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $history['History']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Editar')); ?>
@@ -46,7 +42,11 @@
 		</div><!-- /.index -->
 
 	</div><!-- /#page-content .col-sm-9 -->
-
+  <center>
+  				<paginador><!-- etiqueta personalidad-->
+  						<?php echo $this->element('paginador');?>
+  				</paginador>
+  				</center>
 </div><!-- /#page-container .row-fluid -->
 
 <?php

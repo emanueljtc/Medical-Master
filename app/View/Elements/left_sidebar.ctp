@@ -45,7 +45,7 @@
             <li class="treeview">
                 <a href="#">
                     <i class="glyphicon glyphicon-user"></i>
-                    <span>Pacientes</span>
+                    <span>Datos Filiatorios</span>
                     <i class="fa fa-angle-left pull-right"></i>
 
                 </a>

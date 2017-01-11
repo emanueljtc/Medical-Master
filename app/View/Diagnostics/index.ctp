@@ -4,11 +4,8 @@
 
     <div class="box box-primary">
 		<div class="box-header">
-<<<<<<< HEAD
-			<h3 class="box-title"><?php echo __('Diagnostico'); ?></h3>
-=======
+
 			<h3 class="box-title"><?php echo __('Diagnosticos'); ?></h3>
->>>>>>> diseño
 			<div class="box-tools pull-right">
                 <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> Nuevo Diagnostico'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
             </div>
@@ -17,43 +14,7 @@
                 <table id="Diagnostics" class="table table-bordered table-striped">
 					<thead>
 						<tr>
-<<<<<<< HEAD
-													<th class="text-center"><?php echo $this->Paginator->sort('Nº Diagnostico'); ?></th>
-													<!-- <th class="text-center"><?php echo $this->Paginator->sort('Tamaño de Senos'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('Forma de los Senos'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('Simetira de los Senos'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('Piel de los Cenos'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('cap_boobs'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('pussy'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('neck_pussy'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('coloscopia'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('ano_ straight'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('head_neck'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('touch_tumor'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('form_tumor'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('surface_tumor'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('contour_tumor'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('axis_tumor'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('consistency_tumor'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('laringoscopia'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('menarguia'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('reglas'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('prs'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('companion_sexual'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('distance_cap'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('gestas'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('rsi'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('paras'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('abdomen'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('misbirth'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('gynecological_vulva'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('cesareans'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('age_birth_one'); ?></th> -->
-													<th class="text-center"><?php echo $this->Paginator->sort('diagnostico'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('person_id'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('history_id'); ?></th>
-												<th class="text-center"><?php echo __('Actions'); ?></th>
-=======
+
 													<th class="text-center"><?php echo $this->Paginator->sort('N° de Diagnostico'); ?></th>
 													<!-- <th class="text-center"><?php echo $this->Paginator->sort('Tamaño de Senos'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('Forma de Senos'); ?></th>
@@ -89,7 +50,7 @@
 													<th class="text-center"><?php echo $this->Paginator->sort('Paciente'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('N° Historia'); ?></th>
 												<th class="text-center"><?php echo __('Acciones'); ?></th>
->>>>>>> diseño
+
 						</tr>
 					</thead>
 					<tbody>

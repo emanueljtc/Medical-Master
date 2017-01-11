@@ -142,13 +142,13 @@ class UsersController extends AppController {
 
 
     // Acceso al grupo de administadores
-    $group->id = 4;
+    $group->id = 1;
     $this->Acl->allow($group, 'controllers');
 
 
 
     // Acceso al Grupo de Secretari@s
-    $group->id = 5;
+    $group->id = 2;
     $this->Acl->deny($group, 'controllers');
 		$this->Acl->deny($group, 'controllers/People/delete');
 		$this->Acl->deny($group, 'controllers/Histories/delete');
@@ -165,7 +165,7 @@ class UsersController extends AppController {
 
 
     // Acceso a Doctores
-    $group->id = 6;
+    $group->id = 3;
     $this->Acl->deny($group, 'controllers');
 		$this->Acl->deny($group, 'controllers/People/delete');
 		$this->Acl->deny($group, 'controllers/Histories/delete');
@@ -184,10 +184,13 @@ class UsersController extends AppController {
 		$this->Acl->allow($group, 'controllers/Antecedents/edit');
 		$this->Acl->allow($group, 'controllers/Antecedents/view');
 		$this->Acl->allow($group, 'controllers/Diagnostics');
-		$this->Acl->allow($group, 'controllers/Treatments/');
-		$this->Acl->allow($group, 'controllers/Indications/');
-		$this->Acl->allow($group, 'controllers/Studies/');
-		$this->Acl->allow($group, 'controllers/Citations/');
+		$this->Acl->allow($group, 'controllers/Treatments');
+		$this->Acl->allow($group, 'controllers/Indications');
+		$this->Acl->allow($group, 'controllers/Studies/index');
+    $this->Acl->allow($group, 'controllers/Studies/add');
+    $this->Acl->allow($group, 'controllers/Studies/edit');
+
+    $this->Acl->allow($group, 'controllers/Citations/');
 		$this->Acl->allow($group, 'controllers/Charges/index');
 		$this->Acl->allow($group, 'controllers/Charges/view');
 

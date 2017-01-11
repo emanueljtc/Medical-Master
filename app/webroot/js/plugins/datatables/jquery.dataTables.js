@@ -7344,7 +7344,9 @@
 		 *        var an = oSettings.aanFeatures.p;
 		 *        for ( var i=0, iLen=an.length ; i<iLen ; i++ ) {
 		 *          var buttons = an[i].getElementsByTagName('span');
-		 *
+		 *          if ( oSettings._iDisplayStart === 0 ) {
+		 *            buttons[0].className = "paginate_disabled_previous";
+		 *            buttons[1].className = "paginate_disabled_previous";
 		 *          }
 		 *          else {
 		 *            buttons[0].className = "paginate_enabled_previous";
@@ -9812,8 +9814,7 @@
 		 *      } );
 		 *    } );
 		 */
-
-		"aDataSort": [ 0, 1, 2, 3, 4 ], // MODIFICANDO A
+		"aDataSort": null,
 
 
 		/**
@@ -11429,7 +11430,12 @@
 		"sTable": "dataTable",
 
 		/* Two buttons buttons */
-
+		"sPagePrevEnabled": "paginate_enabled_previous",
+		"sPagePrevDisabled": "paginate_disabled_previous",
+		"sPageNextEnabled": "paginate_enabled_next",
+		"sPageNextDisabled": "paginate_disabled_next",
+		"sPageJUINext": "",
+		"sPageJUIPrev": "",
 
 		/* Full numbers paging buttons */
 		"sPageButton": "paginate_button",

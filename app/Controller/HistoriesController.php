@@ -61,7 +61,7 @@ class HistoriesController extends AppController {
 			if ($this->History->save($this->request->data)) {
 				$this->History->getLastInsertId();
 				$this->Session->setFlash(__('La Historia Fue Registrada Correctamente'), 'flash/success');
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('controller'=>'antecedents','action' => 'add'));
 			} else {
 				$this->Session->setFlash(__('La Historia No Fue Registrada Correctamente. Por Favor, Intente de Nuevo.'), 'flash/error');
 			}

@@ -192,7 +192,7 @@
                     <?php echo $this->Html->link(__(' Nuevo Pago'), array('controller' => 'charges', 'action' => 'add'), array('class'=>'fa fa-angle-double-right')); ?>
                 </li>
               <?php endif; ?>
-
+              <?php  if($current_user['group_id'] == '1' ): ?>
               </ul>
             </li>
             <li class="treeview">
@@ -223,9 +223,12 @@
                   <li class="menu">
                     <?php echo $this->Html->link(__(' Estado Citas'), array('controller' => 'datecitations', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
                 </li>
+                <li class="menu">
+                  <?php echo $this->Html->link(__('Backup'), "/app/backup/", array('class' => 'fa fa-angle-double-right')); ?>
+                </li>
               </ul>
             </li>
-
+            <?php endif; ?>
             <!-- <li>
                 <a href="pages/mailbox.html">
                     <i class="fa fa-envelope"></i> <span>Mailbox</span>

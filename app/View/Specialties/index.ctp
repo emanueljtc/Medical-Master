@@ -4,19 +4,18 @@
 
     <div class="box box-primary">
 		<div class="box-header">
-			<h3 class="box-title"><?php echo __('Specialties'); ?></h3>
+			<h3 class="box-title"><?php echo __('Especialidades'); ?></h3>
 			<div class="box-tools pull-right">
                 <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> New Specialty'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
             </div>
-		</div>	
+		</div>
 			<div class="box-body table-responsive">
                 <table id="Specialties" class="table table-bordered table-striped">
 					<thead>
 						<tr>
-													<th class="text-center"><?php echo $this->Paginator->sort('id'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('specialty'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('created'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('modified'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('N°'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Especialidad'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Realizado'); ?></th>
 												<th class="text-center"><?php echo __('Actions'); ?></th>
 						</tr>
 					</thead>
@@ -26,7 +25,6 @@
 		<td class="text-center"><?php echo h($specialty['Specialty']['id']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($specialty['Specialty']['specialty']); ?>&nbsp;</td>
 		<td class="text-center"><?php echo h($specialty['Specialty']['created']); ?>&nbsp;</td>
-		<td class="text-center"><?php echo h($specialty['Specialty']['modified']); ?>&nbsp;</td>
 		<td class="text-center">
 			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('action' => 'view', $specialty['Specialty']['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'view')); ?>
 			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $specialty['Specialty']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'edit')); ?>
@@ -37,10 +35,10 @@
 					</tbody>
 				</table>
 			</div><!-- /.table-responsive -->
-			
-			
+
+
 		</div><!-- /.index -->
-	
+
 	</div><!-- /#page-content .col-sm-9 -->
 
 </div><!-- /#page-container .row-fluid -->

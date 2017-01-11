@@ -24,6 +24,12 @@
 						<?php echo $this->Form->input('name_studie', array('class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
+						<?php echo $this->Form->input('functional_exam', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('physical_exam', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
 						<?php echo $this->Form->input('observations', array('class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 

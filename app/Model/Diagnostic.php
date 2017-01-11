@@ -16,7 +16,10 @@ class Diagnostic extends AppModel {
  *
  * @var string
  */
-	public $displayField = 'diagnostico';
+	public $displayField = 'id';
+	public $virtualFields = array(
+			'resultado' => 'CONCAT(id, ": ", diagnostico)',
+	);
 
 /**
  * Validation rules

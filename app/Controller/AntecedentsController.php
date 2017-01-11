@@ -51,13 +51,13 @@ class AntecedentsController extends AppController {
 			$this->Antecedent->create();
 			if ($this->Antecedent->save($this->request->data)) {
 				$this->Session->setFlash(__('El antecedente ha sido guardado'), 'flash/success');
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('controller'=>'diagnostics','action' => 'add'));
 			} else {
 				$this->Session->setFlash(__('El antecedente no ha sido guardado, Por Favor, Intente de Nuevo'), 'flash/error');
 			}
 		}
 		$people = $this->Antecedent->Person->find('list',array('order'=>'full_name DESC'));
-		$histories = $this->Antecedent->History->find('list',array('order'=>'id DESC'));
+		$histories = $this->Antecedent->History->find('list',array('order'=> 'id DESC'));
 		$this->set(compact('people', 'histories'));
 	}
 

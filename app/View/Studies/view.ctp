@@ -20,17 +20,27 @@
 		</td>
 </tr><tr>		<td><strong><?php echo __('Diagnostic'); ?></strong></td>
 		<td>
-			<?php echo $this->Html->link($study['Diagnostic']['diagnostico'], array('controller' => 'diagnostics', 'action' => 'view', $study['Diagnostic']['id']), array('class' => '')); ?>
+			<?php echo $this->Html->link($study['Diagnostic']['resultado'], array('controller' => 'diagnostics', 'action' => 'view', $study['Diagnostic']['id']), array('class' => '')); ?>
 			&nbsp;
 		</td>
 </tr><tr>		<td><strong><?php echo __('Person'); ?></strong></td>
 		<td>
-			<?php echo $this->Html->link($study['Person']['name'], array('controller' => 'people', 'action' => 'view', $study['Person']['id']), array('class' => '')); ?>
+			<?php echo $this->Html->link($study['Person']['full_name'], array('controller' => 'people', 'action' => 'view', $study['Person']['id']), array('class' => '')); ?>
 			&nbsp;
 		</td>
 </tr><tr>		<td><strong><?php echo __('Name Studie'); ?></strong></td>
 		<td>
 			<?php echo h($study['Study']['name_studie']); ?>
+			&nbsp;
+		</td>
+</tr><tr>		<td><strong><?php echo __('Functional Exam'); ?></strong></td>
+		<td>
+			<?php echo h($study['Study']['functional_exam']); ?>
+			&nbsp;
+		</td>
+</tr><tr>		<td><strong><?php echo __('Physical Exam'); ?></strong></td>
+		<td>
+			<?php echo h($study['Study']['physical_exam']); ?>
 			&nbsp;
 		</td>
 </tr><tr>		<td><strong><?php echo __('Observations'); ?></strong></td>

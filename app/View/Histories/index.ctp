@@ -22,7 +22,7 @@
 					<tbody>
 					<?php foreach ($histories as $history): ?>
 	<tr>
-		<td class="text-center"><?php echo h('000'.$history['History']['id']); ?>&nbsp;</td>
+		<td class="text-center"><?php echo h($history['History']['id']); ?>&nbsp;</td>
 		<td class="text-center">
 			<?php echo $this->Html->link($history['Person']['full_name'], array('controller' => 'people', 'action' => 'view', $history['Person']['id'])); ?>
 		</td>

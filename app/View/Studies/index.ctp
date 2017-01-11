@@ -8,7 +8,7 @@
 			<div class="box-tools pull-right">
                 <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> New Study'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
             </div>
-		</div>	
+		</div>
 			<div class="box-body table-responsive">
                 <table id="Studies" class="table table-bordered table-striped">
 					<thead>
@@ -28,7 +28,7 @@
 	<tr>
 		<td class="text-center"><?php echo h($study['Study']['id']); ?>&nbsp;</td>
 		<td class="text-center">
-			<?php echo $this->Html->link($study['Diagnostic']['diagnostico'], array('controller' => 'diagnostics', 'action' => 'view', $study['Diagnostic']['id'])); ?>
+			<?php echo $this->Html->link($study['Diagnostic']['id'], array('controller' => 'diagnostics', 'action' => 'view', $study['Diagnostic']['id'])); ?>
 		</td>
 		<td class="text-center">
 			<?php echo $this->Html->link($study['Person']['name'], array('controller' => 'people', 'action' => 'view', $study['Person']['id'])); ?>
@@ -47,10 +47,10 @@
 					</tbody>
 				</table>
 			</div><!-- /.table-responsive -->
-			
-			
+
+
 		</div><!-- /.index -->
-	
+
 	</div><!-- /#page-content .col-sm-9 -->
 
 </div><!-- /#page-container .row-fluid -->

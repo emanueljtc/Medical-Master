@@ -22,6 +22,10 @@ class History extends AppModel {
  * @var string
  */
 	public $displayField = 'id';
+ // 	public $virtualfield = array(
+ // 	  'n_h' => 'CONCAT(id, " ", full_name)',
+	//  );
+	// public $number = '000';
 
 /**
  * Validation rules

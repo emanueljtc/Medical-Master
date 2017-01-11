@@ -9036,7 +9036,7 @@
 		 *      } );
 		 *    } )
 		 */
-		"iDisplayLength": 10,
+		"iDisplayLength": 2, //FILRO DISPLAY PAGINATION
 
 
 		/**
@@ -9224,7 +9224,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "",
+				"sNext": "Next",
 
 
 				/**
@@ -9245,7 +9245,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sPrevious": ""
+				"sPrevious": "Previous"
 			},
 
 			/**

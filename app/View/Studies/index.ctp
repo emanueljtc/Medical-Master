@@ -13,13 +13,13 @@
                 <table id="Studies" class="table table-bordered table-striped">
 					<thead>
 						<tr>
-													<th class="text-center"><?php echo $this->Paginator->sort('id'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('diagnostic_id'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('person_id'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('name_studie'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('observations'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('created'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('modified'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('N°'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('N° Diagnostico'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Paciente'); ?></th>
+													<th class="text-center"><?php echo $this->Paginator->sort('Estudio'); ?></th>
+													<!-- <th class="text-center"><?php echo $this->Paginator->sort('observations'); ?></th> -->
+													<th class="text-center"><?php echo $this->Paginator->sort('Fecha'); ?></th>
+													<!-- <th class="text-center"><?php echo $this->Paginator->sort('modified'); ?></th> -->
 												<th class="text-center"><?php echo __('Actions'); ?></th>
 						</tr>
 					</thead>
@@ -34,9 +34,9 @@
 			<?php echo $this->Html->link($study['Person']['name'], array('controller' => 'people', 'action' => 'view', $study['Person']['id'])); ?>
 		</td>
 		<td class="text-center"><?php echo h($study['Study']['name_studie']); ?>&nbsp;</td>
-		<td class="text-center"><?php echo h($study['Study']['observations']); ?>&nbsp;</td>
+		<!-- <td class="text-center"><?php echo h($study['Study']['observations']); ?>&nbsp;</td> -->
 		<td class="text-center"><?php echo h($study['Study']['created']); ?>&nbsp;</td>
-		<td class="text-center"><?php echo h($study['Study']['modified']); ?>&nbsp;</td>
+		<!-- <td class="text-center"><?php echo h($study['Study']['modified']); ?>&nbsp;</td> -->
 		<td class="text-center">
 			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('action' => 'view', $study['Study']['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'view')); ?>
 			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $study['Study']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'edit')); ?>

@@ -188,6 +188,7 @@ class UsersController extends AppController {
 		$this->Acl->allow($group, 'controllers/Indications');
 		$this->Acl->allow($group, 'controllers/Studies/index');
     $this->Acl->allow($group, 'controllers/Studies/add');
+    $this->Acl->allow($group, 'controllers/Studies/view');
     $this->Acl->allow($group, 'controllers/Studies/edit');
 
     $this->Acl->allow($group, 'controllers/Citations/');

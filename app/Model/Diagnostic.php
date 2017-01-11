@@ -17,9 +17,9 @@ class Diagnostic extends AppModel {
  * @var string
  */
 	public $displayField = 'id';
-	public $virtualFields = array(
-			'resultado' => 'CONCAT(id, ": ", diagnostico)',
-	);
+	// public $virtualFields = array(
+	// 		'resultado' => 'CONCAT(id , " ", diagnostico)',
+	// );
 
 /**
  * Validation rules

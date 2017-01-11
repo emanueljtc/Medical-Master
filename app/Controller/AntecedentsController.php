@@ -14,7 +14,15 @@ class AntecedentsController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'Session');
+ public $helpers = array('Html','Form','Time','Js');
+ public $components = array('Paginator', 'Session','RequestHandler');
+	public $paginate = array (
+ 		 'limit' => 2,
+ 		 'order' => array(
+			 	'Antecedent.id' => 'asc'
+			),
+      //'conditions'=>array('Personal.status'=>'Activo'),
+ 		 );
 
 /**
  * index method

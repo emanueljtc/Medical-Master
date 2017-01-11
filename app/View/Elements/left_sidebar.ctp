@@ -224,7 +224,7 @@
                     <?php echo $this->Html->link(__(' Estado Citas'), array('controller' => 'datecitations', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
                 </li>
                 <li class="menu">
-                  <?php echo $this->Html->link(__('Backup'), "/app/backup/", array('class' => 'fa fa-angle-double-right')); ?>
+                  <?php echo $this->Html->link(__(' Backup'), array('controller'=>'users','action'=>'backup'), array('class' => 'fa fa-angle-double-right')); ?>
                 </li>
               </ul>
             </li>

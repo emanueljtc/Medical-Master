@@ -56,8 +56,8 @@ class DiagnosticsController extends AppController {
 				$this->Session->setFlash(__('The diagnostic could not be saved. Please, try again.'), 'flash/error');
 			}
 		}
-		$people = $this->Diagnostic->Person->find('list');
-		$histories = $this->Diagnostic->History->find('list');
+		$people = $this->Diagnostic->Person->find('list',array('order'=>'full_name DESC'));
+		$histories = $this->Diagnostic->History->find('list',array('order'=>'id DESC'));
 		$this->set(compact('people', 'histories'));
 	}
 

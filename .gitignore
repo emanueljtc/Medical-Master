@@ -4,6 +4,7 @@
 /app/tmp
 app/Plugin/CakePdf/Vendor/
 /lib/Cake/Console/Templates/skel/tmp/
+/app/Plugin/CakePdf/Vendor/
 /plugins
 /vendors
 /build
@@ -12,12 +13,12 @@ app/Plugin/CakePdf/Vendor/
 *.mo
 
 # IDE and editor specific files #
-#################################
+
 /nbproject
 .idea
 
 # OS generated files #
-######################
+
 .DS_Store
 .DS_Store?
 ._*
@@ -25,6 +26,40 @@ app/Plugin/CakePdf/Vendor/
 .Trashes
 Icon?
 ehthumbs.db
+Thumbs.db
+
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
+
+*~
+*.sw[mnpcod]
+*.log
+*.tmp
+*.tmp.*
+log.txt
+*.sublime-project
+*.sublime-workspace
+.vscode/
+npm-debug.log*
+
+.idea/
+.sass-cache/
+.tmp/
+.versions/
+coverage/
+dist/
+node_modules/
+tmp/
+temp/
+hooks/
+platforms/
+plugins/
+plugins/android.json
+plugins/ios.json
+www/
+$RECYCLE.BIN/
+
+.DS_Store
 Thumbs.db
 node_modules
 hooks

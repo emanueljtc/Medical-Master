@@ -1,28 +1,7 @@
 <?php
 App::uses('AppController', 'Controller');
 
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
-	if (isset($_SERVER['HTTP_ORIGIN'])) {
-        header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
-        header('Access-Control-Allow-Credentials: true');
-        header('Access-Control-Max-Age: 86400');    // cache for 1 day
-    }
 
-    // Access-Control headers are received during OPTIONS requests
-		$requestMethod = isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD'] : null;
-    if ($requestMethod == 'OPTIONS') {
-
-        if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD']))
-            header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
-
-        if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']))
-            header("Access-Control-Allow-
-            Headers:{$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
-
-        exit(0);
-
-    }
 /**
  * People Controller
  *
@@ -37,6 +16,7 @@ class PeopleController extends AppController {
  * @var array
  */
 	public $components = array('Paginator', 'Session');
+	
 /**
  * index method
  *
@@ -83,7 +63,7 @@ class PeopleController extends AppController {
 			$this->Person->create();
 			if ($this->Person->save($this->request->data)) {
 				$this->Session->setFlash(__('Paciente Guardado Con Exito'), 'flash/success');
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('controller' => 'histories','action' => 'add'));
 			} else {
 				$this->Session->setFlash(__('Paciente No Guardado. Por Favor, Intente de Nuevo.'), 'flash/error');
 			}
@@ -140,5 +120,5 @@ class PeopleController extends AppController {
 		$this->Session->setFlash(__('Paciente no Eliminado'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
-	
+
 }

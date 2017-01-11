@@ -22,6 +22,7 @@
 
                 <p><?php	echo $this->Session->read('Auth.User.full_name')?></p>
 
+
             </div>
         </div>
         <!-- search form -->
@@ -44,7 +45,7 @@
             <li class="treeview">
                 <a href="#">
                     <i class="glyphicon glyphicon-user"></i>
-                    <span>Pacientes</span>
+                    <span>Datos Filiatorios</span>
                     <i class="fa fa-angle-left pull-right"></i>
 
                 </a>

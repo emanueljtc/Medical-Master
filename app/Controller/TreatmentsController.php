@@ -54,10 +54,10 @@ class TreatmentsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Treatment->create();
 			if ($this->Treatment->save($this->request->data)) {
-				$this->Session->setFlash(__('El tratamiento ha sido guardado'), 'flash/success');
+				$this->Session->setFlash(__('El tratamiento ha sido registrado'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('EL tratamiento. Por Favor, Intente de Nuevo.'), 'flash/error');
+				$this->Session->setFlash(__('EL tratamiento no ha sido registrado. Por Favor, Intente de Nuevo.'), 'flash/error');
 			}
 		}
 		$people = $this->Treatment->Person->find('list',array('order'=>'full_name DESC'));

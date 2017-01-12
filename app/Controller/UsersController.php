@@ -32,7 +32,7 @@ class UsersController extends AppController {
 			}
 
 			public function logout() {
-				$this->Session->setFlash(__('Cerrada la Sesion'), 'flash/error');
+				$this->Session->setFlash(__('Gracias por usar Medical Master, Vuelva Pronto.'), 'flash/error');
   			$this->redirect($this->Auth->logout());
 			}
 	public function index() {

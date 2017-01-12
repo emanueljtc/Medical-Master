@@ -58,10 +58,10 @@ class AntecedentsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Antecedent->create();
 			if ($this->Antecedent->save($this->request->data)) {
-				$this->Session->setFlash(__('El antecedente ha sido guardado'), 'flash/success');
+				$this->Session->setFlash(__('El antecedente ha sido registrado correctamente'), 'flash/success');
 				$this->redirect(array('controller'=>'diagnostics','action' => 'add'));
 			} else {
-				$this->Session->setFlash(__('El antecedente no ha sido guardado, Por Favor, Intente de Nuevo'), 'flash/error');
+				$this->Session->setFlash(__('El antecedente no ha sido registrado, Por Favor, Intente de Nuevo'), 'flash/error');
 			}
 		}
 		$people = $this->Antecedent->Person->find('list',array('order'=>'full_name DESC'));
@@ -83,7 +83,7 @@ class AntecedentsController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Antecedent->save($this->request->data)) {
-				$this->Session->setFlash(__('El antecedente ha sido actualizado'), 'flash/success');
+				$this->Session->setFlash(__('El antecedente ha sido actualizado correctamente'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('El antecedente no ha sido actualizado, por favor intente de nuevo.'), 'flash/error');
@@ -114,7 +114,7 @@ class AntecedentsController extends AppController {
 			throw new NotFoundException(__('EL antecedente no existe'));
 		}
 		if ($this->Antecedent->delete()) {
-			$this->Session->setFlash(__('El antecedente eliminado'), 'flash/success');
+			$this->Session->setFlash(__('El antecedente eliminado correctamente'), 'flash/success');
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('El antecedente no ha sido eliminado, Por Favor, Intente de Nuevo.'), 'flash/error');

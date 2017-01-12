@@ -50,10 +50,10 @@ class IndicationsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Indication->create();
 			if ($this->Indication->save($this->request->data)) {
-				$this->Session->setFlash(__('La indicacion ha sido guardada.'), 'flash/success');
+				$this->Session->setFlash(__('La indicacion ha sido registrada.'), 'flash/success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('La indicacion no ha sido guardada. Por Favor, Intente de Nuevo.'), 'flash/error');
+				$this->Session->setFlash(__('La indicacion no ha sido registrada. Por Favor, Intente de Nuevo.'), 'flash/error');
 			}
 		}
 		$diagnostics = $this->Indication->Diagnostic->find('list');

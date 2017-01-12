@@ -16,7 +16,7 @@ class PeopleController extends AppController {
  * @var array
  */
 	public $components = array('Paginator', 'Session');
-	
+
 /**
  * index method
  *
@@ -62,10 +62,10 @@ class PeopleController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Person->create();
 			if ($this->Person->save($this->request->data)) {
-				$this->Session->setFlash(__('Paciente Guardado Con Exito'), 'flash/success');
+				$this->Session->setFlash(__('El Paciente ha sido Registrado correctamente'), 'flash/success');
 				$this->redirect(array('controller' => 'histories','action' => 'add'));
 			} else {
-				$this->Session->setFlash(__('Paciente No Guardado. Por Favor, Intente de Nuevo.'), 'flash/error');
+				$this->Session->setFlash(__('el Paciente No ha sido registrado. Verifique e Intente de Nuevo.'), 'flash/error');
 			}
 		}
 		$nationalities = $this->Person->Nationality->find('list');
@@ -85,10 +85,10 @@ class PeopleController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Person->save($this->request->data)) {
-				$this->Session->setFlash(__('Paciente Guardado Con Exito'), 'flash/success');
+				$this->Session->setFlash(__('El Paciente ha sido registrado correctamente'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('Paciente No Editado. Por Favor, Intente de Nuevo.'), 'flash/error');
+				$this->Session->setFlash(__('El Paciente no ha sido actualizado. Verifique e Intente de Nuevo.'), 'flash/error');
 			}
 		} else {
 			$options = array('conditions' => array('Person.' . $this->Person->primaryKey => $id));
@@ -114,10 +114,10 @@ class PeopleController extends AppController {
 			throw new NotFoundException(__('Paciente No Existente'));
 		}
 		if ($this->Person->delete()) {
-			$this->Session->setFlash(__('Paciente Eliminado'), 'flash/success');
+			$this->Session->setFlash(__('El Paciente ha sido Eliminado correctamente'), 'flash/success');
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Paciente no Eliminado'), 'flash/error');
+		$this->Session->setFlash(__('el Paciente no ha sido Eliminado'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
 

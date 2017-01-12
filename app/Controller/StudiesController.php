@@ -50,10 +50,10 @@ class StudiesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Study->create();
 			if ($this->Study->save($this->request->data)) {
-				$this->Session->setFlash(__('El estudio ha sido guardado.'), 'flash/success');
+				$this->Session->setFlash(__('El estudio ha sido registrado.'), 'flash/success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('El estudio no ha sido guardado, Por Favor, Intente de Nuevo.'), 'flash/error');
+				$this->Session->setFlash(__('El estudio no ha sido registrado, Por Favor, Intente de Nuevo.'), 'flash/error');
 			}
 		}
 		$diagnostics = $this->Study->Diagnostic->find('list');
@@ -102,7 +102,7 @@ class StudiesController extends AppController {
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Study->delete()) {
-			$this->Session->setFlash(__('El estudio ha silo eliminado.'), 'flash/success');
+			$this->Session->setFlash(__('El estudio ha sido eliminado.'), 'flash/success');
 		} else {
 			$this->Session->setFlash(__('El estudio no ha sido eliminado. Por Favor, Intente de Nuevo.'), 'flash/error');
 		}

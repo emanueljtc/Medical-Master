@@ -4,18 +4,18 @@
 html,
 body {
   overflow-x: hidden!important;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Monospace', sans-serif;
   -webkit-font-smoothing: antialiased;
   min-height: 100%;
   background: #f9f9f9;
 }
 .divcontainer{
-  min-width: 410px; 
-  height: 500px; 
-  max-width: 800px; 
-  margin: 0 auto; 
+  min-width: 410px;
+  height: 500px;
+  max-width: 800px;
+  margin: 0 auto;
   background-image: url('../img/medicalmaster.png');
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   background-position: center;
   background-size: 80%
 }
@@ -669,7 +669,7 @@ body > .header .logo .icon {
 .sidebar .sidebar-menu .treeview-menu > li > a {
   padding: 5px 5px 5px 15px;
   display: block;
-  font-size: 14px;
+  font-size: 16px;
   margin: 0px 0px;
 }
 .sidebar .sidebar-menu .treeview-menu > li > a > .fa,
@@ -2641,7 +2641,7 @@ Component: timeline
 }
 .skin-blue .treeview-menu > li.active > a,
 .skin-blue .treeview-menu > li > a:hover {
-  color: #111;
+  color: #428bca;
 }
 .skin-blue .sidebar-form {
   -webkit-border-radius: 2px;

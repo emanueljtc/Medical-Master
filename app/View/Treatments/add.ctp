@@ -26,9 +26,9 @@
 					<div class="form-group">
 						<?php echo $this->Form->input('observations_prescription', array('label'=>'Observaciones','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
-
+          <center>
 					<?php echo $this->Form->submit('Añadir', array('class' => 'btn btn-large btn-primary')); ?>
-
+          </center>
 				</fieldset>
 
 						<?php echo $this->Form->end(); ?>

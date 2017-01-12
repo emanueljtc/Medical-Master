@@ -3,9 +3,9 @@ $.extend( true, $.fn.dataTable.defaults, {
 	"sDom":
 		"<'row'<'col-xs-6'l><'col-xs-6'f>r>"+
 		"t"+
-		"<'row'<'col-xs-6'i><'col-xs-6'p>>",
+		"<'row'<'col-xs-6 col-md-5'i><'col-xs-6 col-md-4'p>>",
 	"oLanguage": {
-		"sLengthMenu": "_MENU_ records per page"
+		"sLengthMenu": "_MENU_ Registros por Pagina"
 	}
 } );
 

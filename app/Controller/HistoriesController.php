@@ -16,13 +16,7 @@ class HistoriesController extends AppController {
  */
  	public $helpers = array('Html','Form','Time','Js');
 	public $components = array('Paginator', 'Session','RequestHandler');
-	public $paginate = array (
- 		 'limit' => 10,
- 		 'order' => array(
-			 	'History.id' => 'asc'
-			),
-      //'conditions'=>array('Personal.status'=>'Activo'),
- 		 );
+	
 /**
  * index method
  *

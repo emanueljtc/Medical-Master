@@ -9036,7 +9036,7 @@
 		 *      } );
 		 *    } )
 		 */
-		"iDisplayLength": 5, //FILTRO DISPLAY PAGINATION
+		"iDisplayLength": 10,
 
 
 		/**
@@ -9134,7 +9134,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sSortAscending": "Activar para ordenar la columna ascendente",
+				"sSortAscending": ": activate to sort column ascending",
 
 				/**
 				 * ARIA label that is added to the table headers when the column may be
@@ -9155,7 +9155,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sSortDescending": ": Activar para ordenar la columna descendente"
+				"sSortDescending": ": activate to sort column descending"
 			},
 
 			/**
@@ -9182,7 +9182,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sFirst": "Primero",
+				"sFirst": "First",
 
 
 				/**
@@ -9203,7 +9203,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sLast": "Ultimo",
+				"sLast": "Last",
 
 
 				/**
@@ -9224,7 +9224,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "Anterior",
+				"sNext": "",
 
 
 				/**
@@ -9245,7 +9245,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sPrevious": "Siguiente"
+				"sPrevious": ""
 			},
 
 			/**
@@ -9266,7 +9266,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sEmptyTable": "No hay datos disponibles en la tabla",
+			"sEmptyTable": "No data available in table",
 
 
 			/**
@@ -9287,9 +9287,7 @@
 			 *      } );
 			 *    } );
 			 */
-		//	"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
-			"sInfo": "Mostrando _END_ registros de _TOTAL_",
-
+			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
 
 
 			/**
@@ -9308,7 +9306,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoEmpty": "Mostrando 0 de 0 de 0 registros",
+			"sInfoEmpty": "Showing 0 to 0 of 0 entries",
 
 
 			/**
@@ -9431,7 +9429,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLoadingRecords": "Cargando...",
+			"sLoadingRecords": "Loading...",
 
 
 			/**
@@ -9526,7 +9524,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sZeroRecords": "No se encontraron registros coincidentes"
+			"sZeroRecords": "No matching records found"
 		},
 
 

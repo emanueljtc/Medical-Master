@@ -1,44 +1,7 @@
 <?php
 App::uses('AppController', 'Controller');
-<<<<<<< HEAD
-=======
 
->>>>>>> diseño
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
-	if (isset($_SERVER['HTTP_ORIGIN'])) {
-        header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
-        header('Access-Control-Allow-Credentials: true');
-        header('Access-Control-Max-Age: 86400');    // cache for 1 day
-    }
 
-    // Access-Control headers are received during OPTIONS requests
-<<<<<<< HEAD
-    if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
-
-        if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD']))
-            header("Access-Control-Allow-Methods: GET, POST, OPTIONS");         
-=======
-		$requestMethod = isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD'] : null;
-    if ($requestMethod == 'OPTIONS') {
-
-        if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD']))
-            header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
->>>>>>> diseño
-
-        if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']))
-            header("Access-Control-Allow-
-            Headers:{$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
-<<<<<<< HEAD
-                
-        exit(0);
-        
-=======
-
-        exit(0);
-
->>>>>>> diseño
-    }
 /**
  * People Controller
  *
@@ -52,12 +15,8 @@ class PeopleController extends AppController {
  *
  * @var array
  */
-<<<<<<< HEAD
-	public $components = array('Paginator', 'Session','RequestHandler');
-
-=======
 	public $components = array('Paginator', 'Session');
->>>>>>> diseño
+	
 /**
  * index method
  *
@@ -65,21 +24,12 @@ class PeopleController extends AppController {
  */
 	public function index() {
 		$this->Person->recursive = 0;
-<<<<<<< HEAD
-		$this->set('people', $this->Paginator->paginate());
-		$this->set('personas',$this->Person->find('all'));
-   		$this->set('_serialize', array('personas'));
-	}
-
-
-=======
 		$this->set('people', $this->paginate());
 		$this->set('personas',$this->Person->find('all'));
    		$this->set('_serialize', array('personas'));
 
 		$this->set('people', $this->paginate());
 	}
->>>>>>> diseño
 /**
  * view method
  *
@@ -94,10 +44,7 @@ class PeopleController extends AppController {
 		$options = array('conditions' => array('Person.' . $this->Person->primaryKey => $id));
 		$this->set('person', $this->Person->find('first', $options));
 	}
-<<<<<<< HEAD
-=======
 
->>>>>>> diseño
 	public function api($id){
 				$persona = $this->Person->findById($id);
 				$this->set(array(
@@ -105,10 +52,7 @@ class PeopleController extends AppController {
 				'_serialize' => array('persona')
 						));
 					}
-<<<<<<< HEAD
-=======
 
->>>>>>> diseño
 /**
  * add method
  *
@@ -119,7 +63,7 @@ class PeopleController extends AppController {
 			$this->Person->create();
 			if ($this->Person->save($this->request->data)) {
 				$this->Session->setFlash(__('Paciente Guardado Con Exito'), 'flash/success');
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('controller' => 'histories','action' => 'add'));
 			} else {
 				$this->Session->setFlash(__('Paciente No Guardado. Por Favor, Intente de Nuevo.'), 'flash/error');
 			}
@@ -176,5 +120,5 @@ class PeopleController extends AppController {
 		$this->Session->setFlash(__('Paciente no Eliminado'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
-	
+
 }

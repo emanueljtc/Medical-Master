@@ -42,11 +42,7 @@
 		</div><!-- /.index -->
 
 	</div><!-- /#page-content .col-sm-9 -->
-          <center>
-      				<paginador><!-- etiqueta personalidad-->
-      						<?php echo $this->element('paginador');?>
-      				</paginador>
-  				</center>
+          
 </div><!-- /#page-container .row-fluid -->
 
 <?php

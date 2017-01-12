@@ -4149,13 +4149,17 @@ a.thumbnail.active
 .alert-dismissible
 {
     padding-right: 35px;
+}.alert-dismissable,
+.alert-dismissible
+{
+    padding-right: 35px;
 }.alert-dismissable .close,
 .alert-dismissible .close
 {
     position: relative;top: -2px;right: -21px;color: inherit;
 }.alert-success
 {
-    color: #3c763d;border-color: #d6e9c6;background-color: #dff0d8;
+    color: #ffffff;border-color: transparent;background-color: #70bb05; font-size: 20px; font-weight:bold; font-family: "Comic", Courier, monospace; text-transform: uppercase; text-align: center;
 }.alert-success hr
 {
     border-top-color: #c9e2b3;
@@ -4164,7 +4168,7 @@ a.thumbnail.active
     color: #2b542c;
 }.alert-info
 {
-    color: #31708f;border-color: #bce8f1;background-color: #d9edf7;
+    color: #ffffff;border-color: transparent;background-color: #29abe0; font-size: 20px; font-weight:bold; font-family: "Comic", Courier, monospace; text-transform: uppercase; text-align: center;
 }.alert-info hr
 {
     border-top-color: #a6e1ec;
@@ -4173,7 +4177,7 @@ a.thumbnail.active
     color: #245269;
 }.alert-warning
 {
-    color: #8a6d3b;border-color: #faebcc;background-color: #fcf8e3;
+    color: #ffffff;border-color: transparent;background-color: #f47c3c; font-size: 20px; font-weight:bold; font-family: "Comic", Courier, monospace; text-transform: uppercase; text-align: center;
 }.alert-warning hr
 {
     border-top-color: #f7e1b5;
@@ -4182,7 +4186,7 @@ a.thumbnail.active
     color: #66512c;
 }.alert-danger
 {
-    color: #a94442;border-color: #ebccd1;background-color: #f2dede;
+    color: #ffffff;border-color: transparent;background-color: #d9534f; font-size: 20px; font-weight:bold; font-family: "Comic", Courier, monospace; text-transform: uppercase; text-align: center;
 }.alert-danger hr
 {
     border-top-color: #e4b9c0;

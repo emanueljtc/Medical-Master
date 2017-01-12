@@ -2,16 +2,15 @@
 #################################################
 /app/Config/database.php
 /app/tmp
-
+log/
 /lib/Cake/Console/Templates/skel/tmp/
-/app/Plugin/CakePdf/Vendor/
+/app/Plugin/CakePdf/Vendor/mpdf/ttfonts/*
 /plugins
 /vendors
 /build
 /dist
 /tags
 *.mo
-/app/Plugin/CakePdf/Vendor/mpdf/ttfonts/XB RiyazBd.ttf
 node_modules/
-app/webroot/fonts/chun.ttf
-
+/app/webroot/fonts/*
+*.ttf

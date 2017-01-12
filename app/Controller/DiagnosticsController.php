@@ -56,7 +56,7 @@ class DiagnosticsController extends AppController {
 				$this->Session->setFlash(__('El Diagnostico no ha sido registrado, Verifique e Intente de Nuevo.'), 'flash/error');
 			}
 		}
-		$people = $this->Diagnostic->Person->find('list',array('order'=>'full_name DESC'));
+		$people = $this->Diagnostic->Person->find('list',array('order'=>'id DESC'));
 		$histories = $this->Diagnostic->History->find('list',array('order'=>'id DESC'));
 		$this->set(compact('people', 'histories'));
 	}

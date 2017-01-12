@@ -60,8 +60,8 @@ class TreatmentsController extends AppController {
 				$this->Session->setFlash(__('EL tratamiento no ha sido registrado. Por Favor, Intente de Nuevo.'), 'flash/error');
 			}
 		}
-		$people = $this->Treatment->Person->find('list',array('order'=>'full_name DESC'));
-		$diagnostics = $this->Treatment->Diagnostic->find('list',array('order'=>'diagnostico DESC'));
+		$people = $this->Treatment->Person->find('list',array('order'=>'id DESC'));
+		$diagnostics = $this->Treatment->Diagnostic->find('list',array('order'=>'id DESC'));
 		$this->set(compact('people', 'diagnostics'));
 	}
 

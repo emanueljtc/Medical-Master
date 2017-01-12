@@ -56,9 +56,9 @@ class IndicationsController extends AppController {
 				$this->Session->setFlash(__('La indicacion no ha sido registrada. Por Favor, Intente de Nuevo.'), 'flash/error');
 			}
 		}
-		$diagnostics = $this->Indication->Diagnostic->find('list');
-		$treatments = $this->Indication->Treatment->find('list');
-		$people = $this->Indication->Person->find('list');
+		$diagnostics = $this->Indication->Diagnostic->find('list',array('order'=>'id DESC'));
+		$treatments = $this->Indication->Treatment->find('list',array('order'=>'id DESC'));
+		$people = $this->Indication->Person->find('list',array('order'=>'id DESC'));
 		$this->set(compact('diagnostics', 'treatments', 'people'));
 	}
 

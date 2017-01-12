@@ -22,6 +22,7 @@
 
                 <p><?php	echo $this->Session->read('Auth.User.full_name')?></p>
 
+
             </div>
         </div>
         <!-- search form -->
@@ -44,7 +45,7 @@
             <li class="treeview">
                 <a href="#">
                     <i class="glyphicon glyphicon-user"></i>
-                    <span>Pacientes</span>
+                    <span>Datos Filiatorios</span>
                     <i class="fa fa-angle-left pull-right"></i>
 
                 </a>
@@ -191,7 +192,7 @@
                     <?php echo $this->Html->link(__(' Nuevo Pago'), array('controller' => 'charges', 'action' => 'add'), array('class'=>'fa fa-angle-double-right')); ?>
                 </li>
               <?php endif; ?>
-
+              <?php  if($current_user['group_id'] == '1' ): ?>
               </ul>
             </li>
             <li class="treeview">
@@ -222,9 +223,12 @@
                   <li class="menu">
                     <?php echo $this->Html->link(__(' Estado Citas'), array('controller' => 'datecitations', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
                 </li>
+                <li class="menu">
+                  <?php echo $this->Html->link(__(' Backup'), array('controller'=>'users','action'=>'backup'), array('class' => 'fa fa-angle-double-right')); ?>
+                </li>
               </ul>
             </li>
-
+            <?php endif; ?>
             <!-- <li>
                 <a href="pages/mailbox.html">
                     <i class="fa fa-envelope"></i> <span>Mailbox</span>

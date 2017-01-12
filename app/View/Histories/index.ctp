@@ -15,9 +15,7 @@
 						<tr>
 													<th class="text-center"><?php echo $this->Paginator->sort('N° Historia'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('Paciente'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('Edad'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('Tamaño'); ?></th>
-													<th class="text-center"><?php echo $this->Paginator->sort('Peso'); ?></th>
+
 												<th class="text-center"><?php echo __('Acciones'); ?></th>
 						</tr>
 					</thead>
@@ -28,9 +26,7 @@
 		<td class="text-center">
 			<?php echo $this->Html->link($history['Person']['full_name'], array('controller' => 'people', 'action' => 'view', $history['Person']['id'])); ?>
 		</td>
-		<td class="text-center"><?php echo h($history['History']['age']); ?>&nbsp;</td>
-		<td class="text-center"><?php echo h($history['History']['weight']); ?>&nbsp;</td>
-		<td class="text-center"><?php echo h($history['History']['height']); ?>&nbsp;</td>
+
 		<td class="text-center">
 			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('action' => 'view', $history['History']['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Ver')); ?>
 			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $history['History']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Editar')); ?>
@@ -46,13 +42,13 @@
 		</div><!-- /.index -->
 
 	</div><!-- /#page-content .col-sm-9 -->
-
+          
 </div><!-- /#page-container .row-fluid -->
 
 <?php
 	echo $this->Html->script('jquery.min');
 	echo $this->Html->script('plugins/datatables/jquery.dataTables');
-	echo $this->Html->script('plugins/datatables/dataTables.bootstrap');
+  echo $this->Html->script('plugins/datatables/dataTables.bootstrap');
 ?>
 <script type="text/javascript">
     $(function() {

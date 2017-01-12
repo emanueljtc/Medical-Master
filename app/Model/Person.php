@@ -24,7 +24,7 @@ class Person extends AppModel {
 	public $virtualFields = array(
 		  'full_name' => 'CONCAT(name, " ", last_name)',
 	);
-	
+
 /**
  * Validation rules
  *
@@ -54,12 +54,13 @@ class Person extends AppModel {
 		'dni' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				'message' => 'Campo Vacio - Campo Numerico',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
+				'message' => 'EL CAMPO ES NUMERICO',
+				),
+				'isUnique' => array(
+					'rule' => array('isUnique'),
+					'message' => 'NUMERO DE CEDULA YA SE ENCUENTRA ASIGNADO A OTRO PACIENTE',
+					'required' => 'create'
+					),
 		),
 		'gender' => array(
 			'notEmpty' => array(
@@ -95,11 +96,12 @@ class Person extends AppModel {
 			'email' => array(
 				'rule' => array('email'),
 				'message' => 'Campo Vacio',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
+				),
+				'isUnique' => array(
+					'rule' => array('isUnique'),
+					'message' => 'ESTE EMAIL YA SE ENCUENTRA ASIGNADO A OTRO PACIENTE',
+					'required' => 'create'
+					),
 		),
 		'nationality_id' => array(
 			'numeric' => array(

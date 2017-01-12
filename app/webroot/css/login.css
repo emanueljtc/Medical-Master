@@ -1,16 +1,24 @@
-@import "bourbon";
-@import "bourbon";
 
 body {
-  background: -moz-radial-gradient(center, ellipse cover, rgba(24,118,205,1) 0%, rgba(20,92,173,1) 75%, rgba(20,92,173,1) 85%);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(24,118,205,1)), color-stop(75%, rgba(20,92,173,1)), color-stop(85%, rgba(20,92,173,1)));
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(24,118,205,1) 0%, rgba(20,92,173,1) 75%, rgba(20,92,173,1) 85%);
-  background: -o-radial-gradient(center, ellipse cover, rgba(24,118,205,1) 0%, rgba(20,92,173,1) 75%, rgba(20,92,173,1) 85%);
-  background: -ms-radial-gradient(center, ellipse cover, rgba(24,118,205,1) 0%, rgba(20,92,173,1) 75%, rgba(20,92,173,1) 85%);
-  background: radial-gradient(ellipse at center, rgba(24,118,205,1) 0%, rgba(20,92,173,1) 75%, rgba(20,92,173,1) 85%);
+
+    width: 100%;
+    /*height: 400px;*/
+    background-image: url('http://localhost/medical_master/app/webroot/img/login.jpg');
+    background-size: 100% 100%;
+    /*border: 1px solid red;*/
 
 }
-
+.title{
+  font-family: atomo;
+  font-size: 36px;
+  color: #042c4e;
+  font-style: italic;
+}
+.developers{
+  color: #ffffff;
+  font-family: atomo;
+  font-size: 150%;
+}
 .wrapper {
   margin-top: 206px;
   margin-bottom: 80px;
@@ -20,7 +28,7 @@ body {
   max-width: 437px;
   padding: 15px 27px 24px;
   margin: 0 auto;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.73);
       -webkit-box-shadow: 14px 5px 43px 3px rgba(0,0,0,0.83);
       -moz-box-shadow: 14px 5px 43px 3px rgba(0,0,0,0.83);
       box-shadow: 14px 5px 43px 3px rgba(0,0,0,0.83);
@@ -63,4 +71,22 @@ body {
     border-top-right-radius: 0;
   }
 
+
+}
+.zoom {
+    font-size: 12px;
+    /*width: 300px;*/
+
+    /* Firefox */
+    -moz-transition: font-size 300ms linear 0s;
+    /* Chrome / Safari */
+    -webkit-transition: font-size 300ms linear 0s;
+    /* Opera */
+    -o-transition: font-size 300ms linear 0s;
+    /* Default */
+    transition: font-size 300ms linear 0s;
+}
+
+.zoom:hover {
+    font-size: 16px;
 }

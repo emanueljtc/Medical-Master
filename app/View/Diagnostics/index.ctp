@@ -4,6 +4,7 @@
 
     <div class="box box-primary">
 		<div class="box-header">
+
 			<h3 class="box-title"><?php echo __('Diagnosticos'); ?></h3>
 			<div class="box-tools pull-right">
                 <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> Nuevo Diagnostico'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
@@ -13,6 +14,7 @@
                 <table id="Diagnostics" class="table table-bordered table-striped">
 					<thead>
 						<tr>
+
 													<th class="text-center"><?php echo $this->Paginator->sort('N° de Diagnostico'); ?></th>
 													<!-- <th class="text-center"><?php echo $this->Paginator->sort('Tamaño de Senos'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('Forma de Senos'); ?></th>
@@ -48,6 +50,7 @@
 													<th class="text-center"><?php echo $this->Paginator->sort('Paciente'); ?></th>
 													<th class="text-center"><?php echo $this->Paginator->sort('N° Historia'); ?></th>
 												<th class="text-center"><?php echo __('Acciones'); ?></th>
+
 						</tr>
 					</thead>
 					<tbody>

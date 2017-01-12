@@ -4,56 +4,78 @@
 
 		<div class="box box-primary">
 			<div class="box-header">
-				<h3 class="box-title"><?php  echo __('Diagnostic'); ?></h3>
+
+
+				<h3 class="box-title"><?php
+
+        echo __('Diagnostico Detallado')?></h3>
 				<div class="box-tools pull-right">
-	                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i> Edit'), array('action' => 'edit', $diagnostic['Diagnostic']['id']), array('class' => 'btn btn-primary', 'escape' => false)); ?>
+	                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i> Editar'), array('action' => 'edit', $diagnostic['Diagnostic']['id']), array('class' => 'btn btn-primary', 'escape' => false)); ?>
 	            </div>
 			</div>
 
 			<div class="box-body table-responsive">
                 <table id="Diagnostics" class="table table-bordered table-striped">
 					<tbody>
-						<tr>		<td><strong><?php echo __('Id'); ?></strong></td>
-		<td>
-			<?php echo h($diagnostic['Diagnostic']['id']); ?>
-			&nbsp;
-		</td>
-</tr><tr>		<td><strong><?php echo __('Reason'); ?></strong></td>
+						<tr>
+              <td><strong><?php echo __('Nº'); ?></strong></td>
+          		<td>
+          			<?php echo h($diagnostic['Diagnostic']['id']); ?>
+          			&nbsp;
+          		</td>
+
+            </tr>
+            <tr>
+              <td><strong><?php echo __('Paciente'); ?></strong></td>
+          		<td>
+                <?php echo $this->Html->link($diagnostic['Person']['full_name'], array('controller' => 'people', 'action' => 'view', $diagnostic['Person']['id'])); ?>
+          			&nbsp;
+          		</td>
+
+            </tr>
+             <tr>
+              <td><strong><?php echo __('Nº Historia'); ?></strong></td>
+            		<td>
+            			<?php echo $this->Html->link($diagnostic['History']['id'], array('controller' => 'histories', 'action' => 'view', $diagnostic['History']['id']), array('class' => '')); ?>
+            			&nbsp;
+            		</td>
+            </tr>
+<tr>		<td><strong><?php echo __('Motivo_Consulta'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['reason']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Size Boobs'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Tamaño Senos'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['size_boobs']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Form Boobs'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Forma Senos'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['form_boobs']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Symmetry Boobs'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Simetria Senos'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['symmetry_boobs']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Skin Boobs'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Piel Senos'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['skin_boobs']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Cap Boobs'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('CAP Senos'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['cap_boobs']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Pussy'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Vagina'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['pussy']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Neck Pussy'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Cuello Vagina'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['neck_pussy']); ?>
 			&nbsp;
@@ -63,42 +85,42 @@
 			<?php echo h($diagnostic['Diagnostic']['coloscopia']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Ano  Straight'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Ano - Recto'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['ano_ straight']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Head Neck'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Cabeza Cuello'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['head_neck']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Touch Tumor'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Tacto Tumor'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['touch_tumor']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Form Tumor'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Forma Tumor'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['form_tumor']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Surface Tumor'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Superficie Tumor'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['surface_tumor']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Contour Tumor'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Contorno Tumor'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['contour_tumor']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Axis Tumor'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Eje Tumor'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['axis_tumor']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Consistency Tumor'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Consistencia Tumor'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['consistency_tumor']); ?>
 			&nbsp;
@@ -118,17 +140,17 @@
 			<?php echo h($diagnostic['Diagnostic']['reglas']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Prs'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('PRS'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['prs']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Companion Sexual'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Compañero Sexual'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['companion_sexual']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Distance Cap'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Distancia CAP'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['distance_cap']); ?>
 			&nbsp;
@@ -138,7 +160,7 @@
 			<?php echo h($diagnostic['Diagnostic']['gestas']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Rsi'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('RSI'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['rsi']); ?>
 			&nbsp;
@@ -153,22 +175,22 @@
 			<?php echo h($diagnostic['Diagnostic']['abdomen']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Misbirth'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Abortos'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['misbirth']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Gynecological Vulva'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Vulva'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['gynecological_vulva']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Cesareans'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Cesareas'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['cesareans']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Age Birth One'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Edad del Primer Parto'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['age_birth_one']); ?>
 			&nbsp;
@@ -178,24 +200,14 @@
 			<?php echo h($diagnostic['Diagnostic']['diagnostico']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Person'); ?></strong></td>
-		<td>
-			<?php echo $this->Html->link($diagnostic['Person']['full_name'], array('controller' => 'people', 'action' => 'view', $diagnostic['Person']['id']), array('class' => '')); ?>
-			&nbsp;
-		</td>
-</tr><tr>		<td><strong><?php echo __('History'); ?></strong></td>
-		<td>
-			<?php echo $this->Html->link($diagnostic['History']['id'], array('controller' => 'histories', 'action' => 'view', $diagnostic['History']['id']), array('class' => '')); ?>
-			&nbsp;
-		</td>
-</tr>					</tbody>
+</tr>				</tbody>
 				</table><!-- /.table table-striped table-bordered -->
 			</div><!-- /.table-responsive -->
 
 		</div><!-- /.view -->
 
 
-			
+
 
 
 	</div><!-- /#page-content .span9 -->

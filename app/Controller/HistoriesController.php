@@ -16,7 +16,7 @@ class HistoriesController extends AppController {
  */
  	public $helpers = array('Html','Form','Time','Js');
 	public $components = array('Paginator', 'Session','RequestHandler');
-	
+
 /**
  * index method
  *
@@ -54,10 +54,10 @@ class HistoriesController extends AppController {
 			$this->History->create();
 			if ($this->History->save($this->request->data)) {
 				$this->History->getLastInsertId();
-				$this->Session->setFlash(__('La Historia Fue Registrada Correctamente'), 'flash/success');
+				$this->Session->setFlash(__('El Numero de Historia ha sido asignado Correctamente'), 'flash/success');
 				$this->redirect(array('controller'=>'antecedents','action' => 'add'));
 			} else {
-				$this->Session->setFlash(__('La Historia No Fue Registrada Correctamente. Por Favor, Intente de Nuevo.'), 'flash/error');
+				$this->Session->setFlash(__('El Numero de Historia no ha sido asignado, Verifique e Intente de Nuevo.'), 'flash/error');
 			}
 		}
 		$people = $this->History->Person->find('list',array('order'=>'id DESC'));
@@ -74,14 +74,14 @@ class HistoriesController extends AppController {
 	public function edit($id = null) {
         $this->History->id = $id;
 		if (!$this->History->exists($id)) {
-			throw new NotFoundException(__('Historia No Existe'));
+			throw new NotFoundException(__('La Historia No Existe'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->History->save($this->request->data)) {
-				$this->Session->setFlash(__('La Historia  Fue Editada Correctamente'), 'flash/success');
+				$this->Session->setFlash(__('El Numero de Historia ha sido modificado Correctamente'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('La Historia  No Fue Editada Correctamente. Por Favor, Intente Nuevamente .'), 'flash/error');
+				$this->Session->setFlash(__('El Numero de Historia no ha sido editado.Por Favor, Intente Nuevamente .'), 'flash/error');
 			}
 		} else {
 			$options = array('conditions' => array('History.' . $this->History->primaryKey => $id));

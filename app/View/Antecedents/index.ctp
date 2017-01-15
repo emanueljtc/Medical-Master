@@ -6,8 +6,11 @@
 		<div class="box-header">
 			<h3 class="box-title"><?php echo __('Antecedentes'); ?></h3>
 			<div class="box-tools pull-right">
+              <?php  if($current_user['group_id'] == '1' and '3' ): ?>
                 <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> Nuevo Antecedente'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
-            </div>
+              <?php endif; ?>
+
+      </div>
 		</div>
 			<div class="box-body table-responsive">
                 <table id="Antecedents" class="table table-bordered table-striped">
@@ -47,9 +50,12 @@
 		<td class="text-center"><?php echo h($antecedent['Antecedent']['modified']); ?>&nbsp;</td>
 		<td class="text-center">
 			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('action' => 'view', $antecedent['Antecedent']['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Ver')); ?>
-			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $antecedent['Antecedent']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Editar')); ?>
+      <?php  if($current_user['group_id'] == '1' and '3' ): ?>
+      <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $antecedent['Antecedent']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Editar')); ?>
 			<?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('action' => 'delete', $antecedent['Antecedent']['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Eliminar'), __('Esta Seguro de Eliminar el Antecedente # %s?', $antecedent['Antecedent']['id'])); ?>
-		</td>
+    <?php endif; ?>
+
+    </td>
 	</tr>
 <?php endforeach; ?>
 					</tbody>

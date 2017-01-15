@@ -10,8 +10,6 @@
 			<?php echo $this->Form->create('Study', array('role' => 'form')); ?>
 
 				<fieldset>
-
-
 					<div class="form-group col-sm-6">
 						<?php echo $this->Form->input('person_id', array('label'=>'Paciente','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
@@ -22,21 +20,17 @@
 						<?php echo $this->Form->input('name_studie', array('label'=>'Nombre del Estudio','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
           <div class="form-group">
-						<?php echo $this->Form->input('functional_exam', array('class' => 'form-control')); ?>
+						<?php echo $this->Form->input('functional_exam', array('label'=>'Examen Funcional','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
           <div class="form-group">
-						<?php echo $this->Form->input('physical_exam', array('class' => 'form-control')); ?>
+						<?php echo $this->Form->input('physical_exam', array('label'=>'Examen Fisico','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
-					<div class="form-group">
-						<?php echo $this->Form->input('observations', array('class' => 'form-control')); ?>
-					</div><!-- .form-group -->
-
-					<?php echo $this->Form->submit('Submit', array('class' => 'btn btn-large btn-primary')); ?>
+          <center>
+					       <?php echo $this->Form->submit('Añadir', array('class' => 'btn btn-large btn-primary')); ?>
+          </center>
 
 				</fieldset>
-
 						<?php echo $this->Form->end(); ?>
-
 		</div><!-- /.form -->
 
 	</div><!-- /#page-content .col-sm-9 -->

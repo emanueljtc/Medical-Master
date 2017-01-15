@@ -4,9 +4,12 @@
 
     <div class="box box-primary">
 		<div class="box-header">
-			<h3 class="box-title"><?php echo __('Studies'); ?></h3>
+			<h3 class="box-title"><?php echo __('Estudios'); ?></h3>
 			<div class="box-tools pull-right">
-                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> New Study'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
+        <?php  if($current_user['group_id'] == '1' and '3' ): ?>
+                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> Nuevo Estudio'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
+        <?php endif; ?>
+
             </div>
 		</div>
 			<div class="box-body table-responsive">
@@ -20,7 +23,7 @@
 													<!-- <th class="text-center"><?php echo $this->Paginator->sort('observations'); ?></th> -->
 													<th class="text-center"><?php echo $this->Paginator->sort('Fecha'); ?></th>
 													<!-- <th class="text-center"><?php echo $this->Paginator->sort('modified'); ?></th> -->
-												<th class="text-center"><?php echo __('Actions'); ?></th>
+												<th class="text-center"><?php echo __('Acciones'); ?></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -38,10 +41,13 @@
 		<td class="text-center"><?php echo h($study['Study']['created']); ?>&nbsp;</td>
 		<!-- <td class="text-center"><?php echo h($study['Study']['modified']); ?>&nbsp;</td> -->
 		<td class="text-center">
-			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('action' => 'view', $study['Study']['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'view')); ?>
-			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $study['Study']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'edit')); ?>
-			<?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('action' => 'delete', $study['Study']['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'delete'), __('Are you sure you want to delete # %s?', $study['Study']['id'])); ?>
-		</td>
+			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('action' => 'view', $study['Study']['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Ver')); ?>
+      <?php  if($current_user['group_id'] == '1' and '3' ): ?>
+        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $study['Study']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Editar')); ?>
+			  <?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('action' => 'delete', $study['Study']['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Eliminar'), __('Are you sure you want to delete # %s?', $study['Study']['id'])); ?>
+      <?php endif; ?>
+
+  	</td>
 	</tr>
 <?php endforeach; ?>
 					</tbody>

@@ -35,7 +35,7 @@ class CitationsController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->Citation->exists($id)) {
-			throw new NotFoundException(__('La cita no esta agendada'));
+			throw new NotFoundException(__('La Cita no existe'));
 		}
 		$options = array('conditions' => array('Citation.' . $this->Citation->primaryKey => $id));
 		$this->set('citation', $this->Citation->find('first', $options));
@@ -50,13 +50,13 @@ class CitationsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Citation->create();
 			if ($this->Citation->save($this->request->data)) {
-				$this->Session->setFlash(__('La cita ha sido agendada'), 'flash/success');
+				$this->Session->setFlash(__('La cita ha sido agendada correctamente'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('La cita no ha sido agendada. Por Favor, Intente de Nuevo.'), 'flash/error');
+				$this->Session->setFlash(__('La cita no ha sido agendada. Verifique Intente de Nuevo.'), 'flash/error');
 			}
 		}
-		$people = $this->Citation->Person->find('list');
+		$people = $this->Citation->Person->find('list',array('order'=>'id DESC'));
 		$datecitations = $this->Citation->Datecitation->find('list');
 		$this->set(compact('people', 'datecitations'));
 	}
@@ -71,14 +71,14 @@ class CitationsController extends AppController {
 	public function edit($id = null) {
         $this->Citation->id = $id;
 		if (!$this->Citation->exists($id)) {
-			throw new NotFoundException(__('La cita no esta agendada'));
+			throw new NotFoundException(__('La cita no existe'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Citation->save($this->request->data)) {
-				$this->Session->setFlash(__('La cita agendada ha sido modificada'), 'flash/success');
+				$this->Session->setFlash(__('La cita agendada ha sido modificada correctamente'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('La cita agendada no ha sido modificada. Por Favor, Intente de Nuevo'), 'flash/error');
+				$this->Session->setFlash(__('La cita agendada no ha sido modificada. Verifique e Intente de Nuevo'), 'flash/error');
 			}
 		} else {
 			$options = array('conditions' => array('Citation.' . $this->Citation->primaryKey => $id));
@@ -103,10 +103,10 @@ class CitationsController extends AppController {
 		}
 		$this->Citation->id = $id;
 		if (!$this->Citation->exists()) {
-			throw new NotFoundException(__('La cita no esta agendada'));
+			throw new NotFoundException(__('La cita no existe'));
 		}
 		if ($this->Citation->delete()) {
-			$this->Session->setFlash(__('La cita ha sido eliminada'), 'flash/success');
+			$this->Session->setFlash(__('La cita ha sido eliminada correctamente'), 'flash/success');
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('La cita no ha sido eliminada'), 'flash/error');

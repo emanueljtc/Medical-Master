@@ -4,7 +4,11 @@
 
 		<div class="box box-primary">
 			<div class="box-header">
-				<h3 class="box-title"><?php  echo __('Diagnostico'); ?></h3>
+
+
+				<h3 class="box-title"><?php
+
+        echo __('Diagnostico Detallado')?></h3>
 				<div class="box-tools pull-right">
 	                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i> Editar'), array('action' => 'edit', $diagnostic['Diagnostic']['id']), array('class' => 'btn btn-primary', 'escape' => false)); ?>
 	            </div>
@@ -13,32 +17,55 @@
 			<div class="box-body table-responsive">
                 <table id="Diagnostics" class="table table-bordered table-striped">
 					<tbody>
-						<tr>		<td><strong><?php echo __('N° Diagnostico'); ?></strong></td>
+						<tr>
+              <td><strong><?php echo __('Nº'); ?></strong></td>
+          		<td>
+          			<?php echo h($diagnostic['Diagnostic']['id']); ?>
+          			&nbsp;
+          		</td>
+
+            </tr>
+            <tr>
+              <td><strong><?php echo __('Paciente'); ?></strong></td>
+          		<td>
+                <?php echo $this->Html->link($diagnostic['Person']['full_name'], array('controller' => 'people', 'action' => 'view', $diagnostic['Person']['id'])); ?>
+          			&nbsp;
+          		</td>
+
+            </tr>
+             <tr>
+              <td><strong><?php echo __('Nº Historia'); ?></strong></td>
+            		<td>
+            			<?php echo $this->Html->link($diagnostic['History']['id'], array('controller' => 'histories', 'action' => 'view', $diagnostic['History']['id']), array('class' => '')); ?>
+            			&nbsp;
+            		</td>
+            </tr>
+<tr>		<td><strong><?php echo __('Motivo_Consulta'); ?></strong></td>
 		<td>
-			<?php echo h($diagnostic['Diagnostic']['id']); ?>
+			<?php echo h($diagnostic['Diagnostic']['reason']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Tamaño de Senos'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Tamaño Senos'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['size_boobs']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Forma de Senos'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Forma Senos'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['form_boobs']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Simetria de Senos'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Simetria Senos'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['symmetry_boobs']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Piel de Senos'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Piel Senos'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['skin_boobs']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('CAP de Senos'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('CAP Senos'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['cap_boobs']); ?>
 			&nbsp;
@@ -58,7 +85,7 @@
 			<?php echo h($diagnostic['Diagnostic']['coloscopia']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Ano'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Ano - Recto'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['ano_ straight']); ?>
 			&nbsp;
@@ -158,12 +185,12 @@
 			<?php echo h($diagnostic['Diagnostic']['gynecological_vulva']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Cesarea'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Cesareas'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['cesareans']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Edad Primer Parto'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Edad del Primer Parto'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['age_birth_one']); ?>
 			&nbsp;
@@ -173,173 +200,14 @@
 			<?php echo h($diagnostic['Diagnostic']['diagnostico']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Paciente'); ?></strong></td>
-		<td>
-			<?php echo $this->Html->link($diagnostic['Person']['name'], array('controller' => 'people', 'action' => 'view', $diagnostic['Person']['id']), array('class' => '')); ?>
-			&nbsp;
-		</td>
-</tr><tr>		<td><strong><?php echo __('N° Historia'); ?></strong></td>
-		<td>
-			<?php echo $this->Html->link($diagnostic['History']['id'], array('controller' => 'histories', 'action' => 'view', $diagnostic['History']['id']), array('class' => '')); ?>
-			&nbsp;
-		</td>
-</tr>					</tbody>
+</tr>				</tbody>
 				</table><!-- /.table table-striped table-bordered -->
 			</div><!-- /.table-responsive -->
 
 		</div><!-- /.view -->
-			<div class="box box-primary">
-				<div class="box-header">
-					<h3 class="box-title"><?php echo __('Estudios Relacionados'); ?></h3>
-					<div class="box-tools pull-right">
-						<?php echo $this->Html->link('<i class="glyphicon glyphicon-plus"></i> '.__('Nuevo Estudio'), array('controller' => 'studies', 'action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>					</div><!-- /.actions -->
-				</div>
-				<?php if (!empty($diagnostic['Study'])): ?>
-
-					<div class="box-body table-responsive">
-						<table class="table table-bordered table-striped">
-							<thead>
-								<tr>
-											<th class="text-center"><?php echo __('N° Estudio'); ?></th>
-              		<th class="text-center"><?php echo __('N° Diagnostico'); ?></th>
-              		<!-- <th class="text-center"><?php echo __('Person Id'); ?></th> -->
-              		<th class="text-center"><?php echo __('Estudio'); ?></th>
-              		<!-- <th class="text-center"><?php echo __('Observations'); ?></th> -->
-              		<th class="text-center"><?php echo __('Creado'); ?></th>
-              		<!-- <th class="text-center"><?php echo __('Modified'); ?></th> -->
-									<th class="text-center"><?php echo __('Acciones'); ?></th>
-								</tr>
-							</thead>
-							<tbody>
-									<?php
-										$i = 0;
-										foreach ($diagnostic['Study'] as $study): ?>
-		<tr>
-			<td class="text-center"><?php echo $study['id']; ?></td>
-			<td class="text-center"><?php echo $study['diagnostic_id']; ?></td>
-			<!-- <td class="text-center"><?php echo $study['person_id']; ?></td> -->
-			<td class="text-center"><?php echo $study['name_studie']; ?></td>
-			<!-- <td class="text-center"><?php echo $study['observations']; ?></td> -->
-			<td class="text-center"><?php echo $study['created']; ?></td>
-			<!-- <td class="text-center"><?php echo $study['modified']; ?></td> -->
-			<td class="text-center">
-				<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('controller' => 'studies', 'action' => 'view', $study['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Ver')); ?>
-				<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('controller' => 'studies', 'action' => 'edit', $study['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Editar')); ?>
-				<?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('controller' => 'studies', 'action' => 'delete', $study['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Eliminar'), __('Esta Seguro de eliminar el Estudio # %s?', $study['id'])); ?>
-			</td>
-		</tr>
-	<?php endforeach; ?>
-							</tbody>
-						</table><!-- /.table table-striped table-bordered -->
-					</div><!-- /.table-responsive -->
-
-				<?php endif; ?>
 
 
 
-			</div><!-- /.related -->
-      <div class="box box-primary">
-				<div class="box-header">
-					<h3 class="box-title"><?php echo __('Tratamientos Relacionados'); ?></h3>
-					<div class="box-tools pull-right">
-						<?php echo $this->Html->link('<i class="glyphicon glyphicon-plus"></i> '.__('Nuevo Tratamiento'), array('controller' => 'treatments', 'action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>					</div><!-- /.actions -->
-				</div>
-				<?php if (!empty($diagnostic['Treatment'])): ?>
-
-					<div class="box-body table-responsive">
-						<table class="table table-bordered table-striped">
-							<thead>
-								<tr>
-											<th class="text-center"><?php echo __('N° Tratamiento'); ?></th>
-                  		<!-- <th class="text-center"><?php echo __('Person Id'); ?></th>
-                  		<th class="text-center"><?php echo __('Diagnostic Id'); ?></th> -->
-                  		<th class="text-center"><?php echo __('Estado'); ?></th>
-                  		<th class="text-center"><?php echo __('Recipe'); ?></th>
-                  		<!-- <th class="text-center"><?php echo __('Observationes Recipe'); ?></th> -->
-                  		<th class="text-center"><?php echo __('Creado'); ?></th>
-                  		<th class="text-center"><?php echo __('Modificado'); ?></th>
-									<th class="text-center"><?php echo __('Acciones'); ?></th>
-								</tr>
-							</thead>
-							<tbody>
-									<?php
-										$i = 0;
-										foreach ($diagnostic['Treatment'] as $treatment): ?>
-		<tr>
-			<td class="text-center"><?php echo $treatment['id']; ?></td>
-			<!-- <td class="text-center"><?php echo $treatment['person_id']; ?></td>
-			<td class="text-center"><?php echo $treatment['diagnostic_id']; ?></td> -->
-			<td class="text-center"><?php echo $treatment['status_treament']; ?></td>
-			<td class="text-center"><?php echo $treatment['prescription']; ?></td>
-			<!-- <td class="text-center"><?php echo $treatment['observations_prescription']; ?></td> -->
-			<td class="text-center"><?php echo $treatment['created']; ?></td>
-			<td class="text-center"><?php echo $treatment['modified']; ?></td>
-			<td class="text-center">
-				<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('controller' => 'treatments', 'action' => 'view', $treatment['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Ver')); ?>
-				<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('controller' => 'treatments', 'action' => 'edit', $treatment['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Editar')); ?>
-				<?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('controller' => 'treatments', 'action' => 'delete', $treatment['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Eliminar'), __('Esta seguro de eliminar el tratamiento # %s?', $treatment['id'])); ?>
-			</td>
-		</tr>
-	<?php endforeach; ?>
-							</tbody>
-						</table><!-- /.table table-striped table-bordered -->
-					</div><!-- /.table-responsive -->
-
-				<?php endif; ?>
-
-
-
-			</div><!-- /.related -->
-      <div class="box box-primary">
-				<div class="box-header">
-					<h3 class="box-title"><?php echo __('Indicaciones Relacionadas'); ?></h3>
-					<div class="box-tools pull-right">
-						<?php echo $this->Html->link('<i class="glyphicon glyphicon-plus"></i> '.__('Nueva Indicacion'), array('controller' => 'indications', 'action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>					</div><!-- /.actions -->
-				</div>
-				<?php if (!empty($diagnostic['Indication'])): ?>
-
-					<div class="box-body table-responsive">
-						<table class="table table-bordered table-striped">
-							<thead>
-								<tr>
-									<th class="text-center"><?php echo __('N° Indicacion'); ?></th>
-              		<!-- <th class="text-center"><?php echo __('Diagnostic Id'); ?></th>
-              		<th class="text-center"><?php echo __('Treatment Id'); ?></th>
-              		<th class="text-center"><?php echo __('Person Id'); ?></th> -->
-              		<th class="text-center"><?php echo __('Indicacion'); ?></th>
-              		<th class="text-center"><?php echo __('Creado'); ?></th>
-              		<th class="text-center"><?php echo __('Modificado'); ?></th>
-									<th class="text-center"><?php echo __('Acciones'); ?></th>
-								</tr>
-							</thead>
-							<tbody>
-									<?php
-										$i = 0;
-										foreach ($diagnostic['Indication'] as $indication): ?>
-		<tr>
-			<td class="text-center"><?php echo $indication['id']; ?></td>
-			<!-- <td class="text-center"><?php echo $indication['diagnostic_id']; ?></td>
-			<td class="text-center"><?php echo $indication['treatment_id']; ?></td>
-			<td class="text-center"><?php echo $indication['person_id']; ?></td> -->
-			<td class="text-center"><?php echo $indication['indication']; ?></td>
-			<td class="text-center"><?php echo $indication['created']; ?></td>
-			<td class="text-center"><?php echo $indication['modified']; ?></td>
-			<td class="text-center">
-				<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('controller' => 'indications', 'action' => 'view', $indication['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Ver')); ?>
-				<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('controller' => 'indications', 'action' => 'edit', $indication['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Editar')); ?>
-				<?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('controller' => 'indications', 'action' => 'delete', $indication['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Eliminar'), __('Esta Seguro de Eliminar la indiciacion # %s?', $indication['id'])); ?>
-			</td>
-		</tr>
-	<?php endforeach; ?>
-							</tbody>
-						</table><!-- /.table table-striped table-bordered -->
-					</div><!-- /.table-responsive -->
-
-				<?php endif; ?>
-
-
-
-			</div><!-- /.related -->
 
 
 	</div><!-- /#page-content .span9 -->

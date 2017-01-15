@@ -76,11 +76,11 @@ function calcularEdad()
 					<div class="form-group col-sm-6">
 						<?php echo $this->Form->input('dni', array('type'=>'text','label'=>'Cedula','class' => 'form-control','onkeypress'=>'return IsCedula(event);','maxlength'=>'60')); ?>
 					</div><!-- .form-group -->
-					<div class="form-group col-sm-6">
+					<div class="form-group col-sm-6 hiden">
 						<?php echo $this->Form->input('gender', array('label'=>'Genero','type'=>'select','options'=>array(''=>'[SELECCIONE SEXO]','Femenino'=>'Femenino','Masculino'=>'Masculino'),'class' => 'form-control')); ?>
 					</div><!-- .form-group -->
           <div class="form-group col-sm-4">
-            <?php echo $this->Form->input('born_date', array('label'=>'Fecha de Nacimiento','placeholder' => '','class'=>'form-control','id'=>'f_date2','readonly'=>'readonly')); ?>
+            <?php echo $this->Form->input('born_date', array('label'=>'Nacimiento','placeholder' => '','class'=>'form-control','id'=>'f_date2','readonly'=>'readonly')); ?>
               <button id="fnac"><span class="input-group-addon glyphicon glyphicon-calendar"></span></button>
 
 					</div>
@@ -101,15 +101,15 @@ function calcularEdad()
 
 					<div class="form-group col-sm-4">
 
-						<?php echo $this->Form->input('phone', array('label'=>'Telefono Personal','class' => 'form-control','onkeypress'=>'return IsTelefono(event);','maxlength'=>'11')); ?>
+						<?php echo $this->Form->input('phone', array('label'=>'Tel Personal','class' => 'form-control','onkeypress'=>'return IsTelefono(event);','maxlength'=>'11')); ?>
 					</div><!-- .form-group -->
           <div class="form-group col-sm-4">
-						<?php echo $this->Form->input('phone_dos', array('label'=>'Telefono _ Emergencia','class' => 'form-control','onkeypress'=>'return IsTelefono(event);','maxlength'=>'11')); ?>
+						<?php echo $this->Form->input('phone_dos', array('label'=>'Tel_Emergencia','class' => 'form-control','onkeypress'=>'return IsTelefono(event);','maxlength'=>'11')); ?>
 					</div><!-- .form-group -->
           <div class="form-group col-sm-4">
             <?php echo $this->Form->input('nationality_id', array('label'=>'Nacionalidad','class' => 'form-control')); ?>
           </div><!-- .form-group -->
-					<div class="form-group col-sm-5">
+					<div class="form-group col-sm-6">
 						<?php echo $this->Form->input('email', array('label'=>'Correo Electronico','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group col-sm-4">
@@ -119,10 +119,23 @@ function calcularEdad()
 						<?php echo $this->Form->input('address', array('label'=>'Direccion','class' => 'form-control')); ?>
 
 					</div><!-- .form-group -->
-          <div class="form-group col-sm-12">
-            <center>
-            <?php echo $this->Form->submit('Añadir', array('class' => 'btn btn-large btn-primary')); ?>
-          </center>
+          <script type="text/javascript">
+              function confirmar() {
+                  var r = confirm("¿Desea Añadir el Paciente?")
+              if(r==true) {
+
+                document.Person.submit()
+
+              }else{
+                return false;
+              }
+
+              }
+              </script>
+    <div class="form-group col-sm-12">
+      <center>
+      <?php echo $this->Form->submit('Actualizar', array('class' => 'btn btn-large btn-primary','onClick'=>'confirmar();')); ?>
+    </center>
 					</div><!-- .form-group -->
 				</fieldset>
 

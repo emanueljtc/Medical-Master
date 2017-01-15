@@ -45,14 +45,7 @@ class PeopleController extends AppController {
 		$this->set('person', $this->Person->find('first', $options));
 	}
 
-	public function api($id){
-				$persona = $this->Person->findById($id);
-				$this->set(array(
-				'persona' => $persona,
-				'_serialize' => array('persona')
-						));
-					}
-
+	
 /**
  * add method
  *

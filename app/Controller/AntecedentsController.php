@@ -114,7 +114,7 @@ class AntecedentsController extends AppController {
 			throw new NotFoundException(__('EL antecedente no existe'));
 		}
 		if ($this->Antecedent->delete()) {
-			$this->Session->setFlash(__('El antecedente eliminado correctamente'), 'flash/success');
+			$this->Session->setFlash(__('El antecedente ha sido eliminado correctamente'), 'flash/success');
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('El antecedente no ha sido eliminado, Por Favor, Intente de Nuevo.'), 'flash/error');

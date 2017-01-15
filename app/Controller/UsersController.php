@@ -32,7 +32,7 @@ class UsersController extends AppController {
 			}
 
 			public function logout() {
-				$this->Session->setFlash(__('Gracias por usar Medical Master, Vuelva Pronto.'), 'flash/error');
+				$this->Session->setFlash(__('Gracias por usar Medical Master, Vuelva Pronto.'), 'flash/success');
   			$this->redirect($this->Auth->logout());
 			}
 	public function index() {
@@ -152,22 +152,36 @@ class UsersController extends AppController {
     $this->Acl->deny($group, 'controllers');
 		$this->Acl->deny($group, 'controllers/People/delete');
 		$this->Acl->deny($group, 'controllers/Histories/delete');
+    $this->Acl->deny($group, 'controllers/Diagnostics/add');
+    $this->Acl->deny($group, 'controllers/Diagnostics/delete');
+    $this->Acl->deny($group, 'controllers/Prescriptions/add');
+    $this->Acl->deny($group, 'controllers/Prescriptions/delete');
+    $this->Acl->deny($group, 'controllers/Studies/add');
+    $this->Acl->deny($group, 'controllers/Studies/delete');
+
 		$this->Acl->allow($group, 'controllers/People/index');
 		$this->Acl->allow($group, 'controllers/People/add');
 		$this->Acl->allow($group, 'controllers/People/view');
 		$this->Acl->allow($group, 'controllers/People/edit');
 		$this->Acl->allow($group, 'controllers/Histories/index');
 		$this->Acl->allow($group, 'controllers/Histories/add');
-		$this->Acl->allow($group, 'controllers/Histories/view');
-		$this->Acl->allow($group, 'controllers/Histories/edit');
-		$this->Acl->allow($group, 'controllers/Citations/');
+    $this->Acl->allow($group, 'controllers/Diagnostics/index');
+    $this->Acl->allow($group, 'controllers/Diagnostics/view');
+    $this->Acl->allow($group, 'controllers/Prescriptions/index');
+    $this->Acl->allow($group, 'controllers/Prescriptions/view');
+    $this->Acl->allow($group, 'controllers/Studies/index');
+    $this->Acl->allow($group, 'controllers/Studies/view');
+    $this->Acl->allow($group, 'controllers/Citations/');
 		$this->Acl->allow($group, 'controllers/Charges/');
 
 
     // Acceso a Doctores
     $group->id = 3;
     $this->Acl->deny($group, 'controllers');
-		$this->Acl->deny($group, 'controllers/People/delete');
+    //$this->acl->deny($group, 'controllers/Users/');
+
+
+    $this->Acl->deny($group, 'controllers/People/delete');
 		$this->Acl->deny($group, 'controllers/Histories/delete');
 		$this->Acl->deny($group, 'controllers/Antecedents/delete');
 		$this->Acl->deny($group, 'controllers/Charges/');
@@ -183,14 +197,14 @@ class UsersController extends AppController {
 		$this->Acl->allow($group, 'controllers/Antecedents/add');
 		$this->Acl->allow($group, 'controllers/Antecedents/edit');
 		$this->Acl->allow($group, 'controllers/Antecedents/view');
-		$this->Acl->allow($group, 'controllers/Diagnostics');
-		$this->Acl->allow($group, 'controllers/Treatments');
+    $this->Acl->allow($group, 'controllers/Antecedents/delete');
+    $this->Acl->allow($group, 'controllers/Diagnostics');
+		$this->Acl->allow($group, 'controllers/Prescriptions');
 		$this->Acl->allow($group, 'controllers/Indications');
 		$this->Acl->allow($group, 'controllers/Studies/index');
     $this->Acl->allow($group, 'controllers/Studies/add');
     $this->Acl->allow($group, 'controllers/Studies/view');
     $this->Acl->allow($group, 'controllers/Studies/edit');
-
     $this->Acl->allow($group, 'controllers/Citations/');
 		$this->Acl->allow($group, 'controllers/Charges/index');
 		$this->Acl->allow($group, 'controllers/Charges/view');
@@ -202,7 +216,9 @@ class UsersController extends AppController {
 
 
     // si muestra este mensaje  no hubo error en obtener los nuevos permisos
-    echo "Permisos Concedidos";
+
+    $this->Session->setFlash(__('Permisos Actualizados'), 'flash/success');
+    $this->redirect(array('action' => 'index'));
     exit;
 }
 }

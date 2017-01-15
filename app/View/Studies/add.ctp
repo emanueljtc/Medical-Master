@@ -23,7 +23,10 @@
 						<?php echo $this->Form->input('functional_exam', array('label'=>'Examen Funcional','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
           <div class="form-group">
-						<?php echo $this->Form->input('physical_exam', array('label'=>'Examen Fisico','class' => 'form-control')); ?>
+						<?php echo $this->Form->input('physical_exam', array('label'=>'Examen Funcional','class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+          <div class="form-group">
+						<?php echo $this->Form->input('observations', array('label'=>'Observaciones','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
           <center>
 					       <?php echo $this->Form->submit('Añadir', array('class' => 'btn btn-large btn-primary')); ?>

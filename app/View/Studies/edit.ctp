@@ -29,6 +29,9 @@
           <div class="form-group">
             <?php echo $this->Form->input('physical_exam', array('label'=>'Examen Fisico','class' => 'form-control')); ?>
           </div><!-- .form-group -->
+          <div class="form-group">
+						<?php echo $this->Form->input('observations', array('label'=>'Observaciones','class' => 'form-control')); ?>
+					</div><!-- .form-group -->
           <center>
             <?php echo $this->Form->submit('Actualizar', array('class' => 'btn btn-large btn-primary')); ?>
          </center>

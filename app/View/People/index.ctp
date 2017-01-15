@@ -56,6 +56,13 @@
 
 
 		</div><!-- /.index -->
+    <div class="btn-group btn-group-justified col-sm-4">
+
+            <?php echo $this->Html->link(__('Nuevo Antecedente'), array('controller'=>'antecedents','action' => 'add'), array('class' => 'btn btn-info')); ?>
+            <?php echo $this->Html->link(__('Lista de Historias'), array('controller' => 'histories','action' => 'index'), array('class' => 'btn btn-danger')); ?>
+            <?php echo $this->Html->link(__('Nueva Historia'), array('controller' => 'histories', 'action' => 'add'), array('class' => 'btn btn-primary')); ?>
+
+    </div>
 
 	</div><!-- /#page-content .col-sm-9 -->
 

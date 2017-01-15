@@ -58,14 +58,11 @@ class Person extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-			'inList' => array(
-				'rule' => array('inList'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
+			'isUnique' => array(
+				'rule' => array('isUnique'),
+				'message' => 'EL NUMERO DE IDENTIFICACION YA ESTA REGISTRADO',
+				'required' => 'create'
+				),
 		),
 		'gender' => array(
 			'notEmpty' => array(

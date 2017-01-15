@@ -45,7 +45,7 @@ class PeopleController extends AppController {
 		$this->set('person', $this->Person->find('first', $options));
 	}
 
-	
+
 /**
  * add method
  *
@@ -78,7 +78,7 @@ class PeopleController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Person->save($this->request->data)) {
-				$this->Session->setFlash(__('El Paciente ha sido registrado correctamente'), 'flash/success');
+				$this->Session->setFlash(__('El Paciente ha sido actualizado correctamente'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('El Paciente no ha sido actualizado. Verifique e Intente de Nuevo.'), 'flash/error');

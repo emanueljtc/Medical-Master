@@ -3,7 +3,7 @@
     <div class="col-xs-6 col-xs-offset-3">
 		<div class="box box-primary">
 			<div class="box-header">
-			<h3 class="box-title"><?php echo __('Edit Study'); ?></h3>
+			<h3 class="box-title"><?php echo __('Editar Estudio'); ?></h3>
 			</div>
 			<div class="box-body table-responsive">
 
@@ -30,7 +30,7 @@
             <?php echo $this->Form->input('physical_exam', array('label'=>'Examen Fisico','class' => 'form-control')); ?>
           </div><!-- .form-group -->
           <center>
-            <?php echo $this->Form->submit('Añadir', array('class' => 'btn btn-large btn-primary')); ?>
+            <?php echo $this->Form->submit('Actualizar', array('class' => 'btn btn-large btn-primary')); ?>
          </center>
         </fieldset>
 

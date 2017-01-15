@@ -56,8 +56,8 @@ class ChargesController extends AppController {
 				$this->Session->setFlash(__('El Pago no ha sido registrado, Verifique e Intente de nuevo.'), 'flash/error');
 			}
 		}
-		$people = $this->Charge->Person->find('list');
-		$citations = $this->Charge->Citation->find('list');
+		$people = $this->Charge->Person->find('list',array('order'=>'id DESC'));
+		$citations = $this->Charge->Citation->find('list',array('order'=>'id DESC'));
 		$typepayments = $this->Charge->Typepayment->find('list');
 		$this->set(compact('people', 'citations', 'typepayments'));
 	}
@@ -85,8 +85,8 @@ class ChargesController extends AppController {
 			$options = array('conditions' => array('Charge.' . $this->Charge->primaryKey => $id));
 			$this->request->data = $this->Charge->find('first', $options);
 		}
-		$people = $this->Charge->Person->find('list');
-		$citations = $this->Charge->Citation->find('list');
+		$people = $this->Charge->Person->find('list',array('order'=>'id DESC'));
+		$citations = $this->Charge->Citation->find('list',array('order'=>'id DESC'));
 		$typepayments = $this->Charge->Typepayment->find('list');
 		$this->set(compact('people', 'citations', 'typepayments'));
 	}

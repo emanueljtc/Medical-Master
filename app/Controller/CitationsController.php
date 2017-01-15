@@ -56,7 +56,7 @@ class CitationsController extends AppController {
 				$this->Session->setFlash(__('La cita no ha sido agendada. Verifique Intente de Nuevo.'), 'flash/error');
 			}
 		}
-		$people = $this->Citation->Person->find('list');
+		$people = $this->Citation->Person->find('list',array('order'=>'id DESC'));
 		$datecitations = $this->Citation->Datecitation->find('list');
 		$this->set(compact('people', 'datecitations'));
 	}

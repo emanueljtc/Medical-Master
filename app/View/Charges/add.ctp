@@ -11,7 +11,7 @@
 
 				<fieldset>
 
-										<div class="form-group">
+					<div class="form-group col-sm-4">
 						<?php echo $this->Form->input('total_cost', array('label'=>'Costo Total','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">

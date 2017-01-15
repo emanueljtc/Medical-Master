@@ -56,8 +56,8 @@ class StudiesController extends AppController {
 				$this->Session->setFlash(__('El estudio no ha sido registrado, Por Favor, Intente de Nuevo.'), 'flash/error');
 			}
 		}
-		$diagnostics = $this->Study->Diagnostic->find('list');
-		$people = $this->Study->Person->find('list');
+		$diagnostics = $this->Study->Diagnostic->find('list',array('order'=>'id DESC'));
+		$people = $this->Study->Person->find('list',array('order'=>'id DESC'));
 		$this->set(compact('diagnostics', 'people'));
 	}
 

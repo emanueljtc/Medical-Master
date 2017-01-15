@@ -152,7 +152,7 @@
               </a>
               <ul id="id" class="treeview-menu">
                   <li class="menu">
-                      <?php echo $this->Html->link(__('Estudios registrados'), array('controller' => 'studies', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
+                      <?php echo $this->Html->link(__('Estudios Registrados'), array('controller' => 'studies', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
                   </li>
                   <li class="menu">
                     <?php echo $this->Html->link(__(' Nuevo Estudio'), array('controller' => 'studies', 'action' => 'add'), array('class'=>'fa fa-angle-double-right')); ?>
@@ -222,6 +222,9 @@
                   </li>
                   <li class="menu">
                     <?php echo $this->Html->link(__(' Estado Citas'), array('controller' => 'datecitations', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
+                </li>
+                <li class="menu">
+                  <?php echo $this->Html->link(__(' Actualizar Permisos'), array('controller'=>'users','action'=>'initDB'), array('class' => 'fa fa-angle-double-right')); ?>
                 </li>
                 <li class="menu">
                   <?php echo $this->Html->link(__(' Backup'), array('controller'=>'users','action'=>'backup'), array('class' => 'fa fa-angle-double-right')); ?>

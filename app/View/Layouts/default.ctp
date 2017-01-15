@@ -33,6 +33,7 @@ $cakeDescription = __d('cake_dev', 'Medical M.');
 			echo $this->Html->css('bootstrap.min.css');
 			echo $this->Html->css('//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css');
 			echo $this->Html->css('ionicons.min.css');
+			echo $this->Html->css('jscal2.css');
 			echo $this->Html->css('//fonts.googleapis.com/css?family=Droid+Serif:400,700,700italic,400italic');
 			echo $this->Html->css('CakeAdminLTE');
 

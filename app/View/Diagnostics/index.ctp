@@ -7,8 +7,10 @@
 
 			<h3 class="box-title"><?php echo __('Diagnosticos'); ?></h3>
 			<div class="box-tools pull-right">
-                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> Nuevo Diagnostico'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
-            </div>
+              <?php  if($current_user['group_id'] == '1' and '3' ): ?>
+                  <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> Nuevo Diagnostico'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
+              <?php endif; ?>
+      </div>
 		</div>
 			<div class="box-body table-responsive">
                 <table id="Diagnostics" class="table table-bordered table-striped">
@@ -36,9 +38,12 @@
 		</td>
 		<td class="text-center">
 			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('action' => 'view', $diagnostic['Diagnostic']['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Vista')); ?>
-			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $diagnostic['Diagnostic']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Editar')); ?>
-			<?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('action' => 'delete', $diagnostic['Diagnostic']['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Eliminar'), __('Esta seguro de eliminar el diagnostico # %s?', $diagnostic['Diagnostic']['id'])); ?>
-		</td>
+      <?php  if($current_user['group_id'] == '1' and '3' ): ?>
+  			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $diagnostic['Diagnostic']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Editar')); ?>
+  			<?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('action' => 'delete', $diagnostic['Diagnostic']['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'Eliminar'), __('Esta seguro de eliminar el diagnostico # %s?', $diagnostic['Diagnostic']['id'])); ?>
+      <?php endif; ?>
+
+    </td>
 	</tr>
 <?php endforeach; ?>
 					</tbody>

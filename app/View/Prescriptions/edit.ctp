@@ -3,11 +3,11 @@
     <div class="col-xs-6 col-xs-offset-3">
 		<div class="box box-primary">
 			<div class="box-header">
-			<h3 class="box-title"><?php echo __('Edit Indication'); ?></h3>
+			<h3 class="box-title"><?php echo __('Edit Prescription'); ?></h3>
 			</div>
 			<div class="box-body table-responsive">
 		
-			<?php echo $this->Form->create('Indication', array('role' => 'form')); ?>
+			<?php echo $this->Form->create('Prescription', array('role' => 'form')); ?>
 
 				<fieldset>
 
@@ -15,16 +15,19 @@
 						<?php echo $this->Form->input('id', array('class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('diagnostic_id', array('class' => 'form-control')); ?>
-					</div><!-- .form-group -->
-					<div class="form-group">
-						<?php echo $this->Form->input('treatment_id', array('class' => 'form-control')); ?>
-					</div><!-- .form-group -->
-					<div class="form-group">
 						<?php echo $this->Form->input('person_id', array('class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group">
-						<?php echo $this->Form->input('indication', array('class' => 'form-control')); ?>
+						<?php echo $this->Form->input('diagnostic_id', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('status_treament', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('prescription', array('class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('indications', array('class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 
 					<?php echo $this->Form->submit('Submit', array('class' => 'btn btn-large btn-primary')); ?>

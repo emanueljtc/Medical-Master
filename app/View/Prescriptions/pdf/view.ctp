@@ -32,6 +32,11 @@ a:link {
 	text-transform: uppercase;
 	font-size: 20px;
 	font-family: monospace;
+	font-weight: bold;
+	background-image:url("http://localhost/medical_master/app/webroot/img/medicalmaster2.png");
+	background-repeat: no-repeat;
+	background-position: center;
+
 	}
 .b {
 	position: absolute;
@@ -45,6 +50,10 @@ a:link {
 	text-transform: uppercase;
 	font-size: 20px;
 	font-family: monospace;
+	font-weight: bold;
+	background-image:url("http://localhost/medical_master/app/webroot/img/medicalmaster2.png");
+	background-repeat: no-repeat;
+	background-position: center;
 }
 .recipe1 {
 	position: absolute;
@@ -60,6 +69,7 @@ a:link {
     right: 12%;
     width: 797px;
     height: 437px;
+
 
 }
 .indicaciones {
@@ -90,6 +100,7 @@ a:link {
 	text-decoration: none;
 	text-align: right;
 }
+
 </style>
 
 <div class="recipe2">
@@ -97,7 +108,7 @@ a:link {
 		<?php echo "" . date("d") . "/" . date("m") . "/" . date("Y"); ?>
 		</div >
 			<!-- <img src="http://localhost/medical_master/app/webroot/img/images.jpg" align="left" height="200" width="200"> -->
-			<img src="http://localhost/medical_master/app/webroot/img/doctor.jpg" align="left" height="200" width="200">
+			<img src="http://localhost/medical_master/app/webroot/img/logo.png" align="left" height="200" width="200">
 
 			<!-- <img src="http://localhost/medical_master/app/webroot/img/images.jpg" align="right" height="200" width="200"> -->
 			<img src="http://localhost/medical_master/app/webroot/img/floresta.gif" align="right" height="200" width="200">
@@ -105,7 +116,7 @@ a:link {
 																<center>
 										<h1>Dr. Gustavo Torres Sanchez</h1>
 													<h3>Cirujano - Oncólogo</h3>
-													<h4>0414-4789284</h4>
+								<h4>MSDS: 23392 - CMA: 2082 - CI: 4567839 </h4>
 
 																</center>
 
@@ -125,7 +136,7 @@ a:link {
 
 
 			<!-- <img src="http://localhost/medical_master/app/webroot/img/images.jpg" align="left" height="200" width="200"> -->
-			<img src="http://localhost/medical_master/app/webroot/img/doctor.jpg" align="left" height="200" width="200">
+			<img src="http://localhost/medical_master/app/webroot/img/logo.png" align="left" height="200" width="200">
 
 
 

@@ -1442,6 +1442,7 @@ body > .header .logo .icon {
   font-weight: 400;
   float: left;
   cursor: default;
+  text-transform: uppercase;
 }
 .box .box-header a {
   color: #444;

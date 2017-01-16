@@ -40,7 +40,13 @@
 	</div><!-- /#page-content .col-sm-9 -->
 
 </div><!-- /#page-container .row-fluid -->
+<div class="btn-group btn-group-justified col-sm-4">
 
+  <?php echo $this->Html->link(__('Nuevo Paciente'), array('controller'=>'people','action' => 'add'), array('class' => 'btn btn-info')); ?>
+  <?php echo $this->Html->link(__('Lista de Pacientes'), array('controller'=>'people','action' => 'index'), array('class' => 'btn btn-danger')); ?>
+  <?php echo $this->Html->link(__('Nueva Historia'), array('controller'=>'histories','action' => 'add'), array('class' => 'btn btn-primary')); ?>
+
+</div>
 <?php
 	echo $this->Html->script('jquery.min');
 	echo $this->Html->script('plugins/datatables/jquery.dataTables');

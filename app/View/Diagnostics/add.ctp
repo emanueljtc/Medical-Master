@@ -31,9 +31,12 @@
 					<div class="form-group col-sm-4">
             <?php echo $this->Form->input('form_boobs', array('label'=>'Forma de Senos','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
-					<div class="form-group col-sm-4">
+					<!-- <div class="form-group col-sm-4">
             <?php echo $this->Form->input('symmetry_boobs', array('label'=>'Simetria de Senos','class' => 'form-control')); ?>
-          </div><!-- .form-group -->
+          </div>-->
+          <div class="form-group col-sm-4">
+            <?php echo $this->Form->input('symmetry_boobs', array('label'=>'Simetria Senos','class' => 'form-control')); ?>
+					</div><!-- .form-group -->
 					<div class="form-group col-sm-4">
             <?php echo $this->Form->input('skin_boobs', array('label'=>'Piel de Senos','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
@@ -71,7 +74,7 @@
             <?php echo $this->Form->input('axis_tumor', array('label'=>'Eje Tumor','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group col-sm-4">
-            <?php echo $this->Form->input('consistency_tumor', array('label'=>'Consistencia Tumor','class' => 'form-control')); ?>
+            <?php echo $this->Form->input('consistency_tumor', array('label'=>'Consistencia T.','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group col-sm-4">
             <?php echo $this->Form->input('laringoscopia', array('label'=>'Laringoscopia','class' => 'form-control')); ?>
@@ -113,7 +116,7 @@
             <?php echo $this->Form->input('cesareans', array('label'=>'Cesareas','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group col-sm-4">
-            <?php echo $this->Form->input('age_birth_one', array('type'=>'text','onkeypress'=>'return EdadParto(event);','maxlength'=>'3','label'=>'Edad Primer Parto','class' => 'form-control')); ?>
+            <?php echo $this->Form->input('age_birth_one', array('label'=>'E.P.P','type'=>'text','onkeypress'=>'return EdadParto(event);','maxlength'=>'3','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group col-sm-12">
             <?php echo $this->Form->input('diagnostico', array('label'=>'Diagnostico','class' => 'form-control')); ?>
@@ -130,3 +133,10 @@
 	</div><!-- /#page-content .col-sm-9 -->
 
 </div><!-- /#page-container .row-fluid -->
+<div class="btn-group btn-group-justified col-sm-4">
+
+  <?php echo $this->Html->link(__('Nuevo Antecedente'), array('controller'=>'antecedents','action' => 'add'), array('class' => 'btn btn-info')); ?>
+  <?php echo $this->Html->link(__('Lista de Diagnosticos'), array('action' => 'index'), array('class' => 'btn btn-danger')); ?>
+  <?php echo $this->Html->link(__('Nuevo Paciente'), array('controller' => 'people', 'action' => 'add'), array('class' => 'btn btn-primary')); ?>
+
+</div>

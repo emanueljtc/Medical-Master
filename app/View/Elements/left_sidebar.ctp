@@ -89,7 +89,7 @@
                 </li>
               </ul>
             </li>
-            <?php  if($current_user['group_id'] == '3' ): ?>
+            <?php  if($current_user['group_id'] == '3' or '1'): ?>
 
             <li class="treeview">
               <a href="#">
@@ -107,25 +107,25 @@
               </ul>
             </li>
           <?php endif; ?>
-          <?php  if($current_user['group_id'] == '3' ): ?>
+          <?php  if($current_user['group_id'] == '3' or '1' ): ?>
 
             <li class="treeview">
               <a href="#">
                   <i class="glyphicon glyphicon-file"></i>
-                  <span>Tratamientos</span>
+                  <span>Recipes</span>
                   <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul id="id" class="treeview-menu">
                   <li class="menu">
-                      <?php echo $this->Html->link(__(' Tratamientos Registrados'), array('controller' => 'treatments', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
+                      <?php echo $this->Html->link(__(' Recipes Registrados'), array('controller' => 'prescriptions', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
                   </li>
                   <li class="menu">
-                    <?php echo $this->Html->link(__(' Nuevo Tratamiento'), array('controller' => 'treatments', 'action' => 'add'), array('class'=>'fa fa-angle-double-right')); ?>
+                    <?php echo $this->Html->link(__(' Nuevo Recipe'), array('controller' => 'prescriptions', 'action' => 'add'), array('class'=>'fa fa-angle-double-right')); ?>
                 </li>
               </ul>
             </li>
             <?php endif; ?>
-            <?php  if($current_user['group_id'] == '3' ): ?>
+            <!-- <?php  if($current_user['group_id'] == '3' ): ?>
 
             <li class="treeview">
               <a href="#">
@@ -142,8 +142,8 @@
                 </li>
               </ul>
             </li>
-          <?php endif; ?>
-          <?php  if($current_user['group_id'] == '3' ): ?>
+          <?php endif; ?> -->
+          <?php  if($current_user['group_id'] == '3' or '1' ): ?>
             <li class="treeview">
               <a href="#">
                   <i class="glyphicon glyphicon-tasks"></i>
@@ -152,7 +152,7 @@
               </a>
               <ul id="id" class="treeview-menu">
                   <li class="menu">
-                      <?php echo $this->Html->link(__('Estudios registrados'), array('controller' => 'studies', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
+                      <?php echo $this->Html->link(__('Estudios Registrados'), array('controller' => 'studies', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
                   </li>
                   <li class="menu">
                     <?php echo $this->Html->link(__(' Nuevo Estudio'), array('controller' => 'studies', 'action' => 'add'), array('class'=>'fa fa-angle-double-right')); ?>
@@ -186,7 +186,7 @@
                   <li class="menu">
                       <?php echo $this->Html->link(__(' Pagos Registrados'), array('controller' => 'charges', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
                   </li>
-                  <?php  if($current_user['group_id'] == '3' ): ?>
+                  <?php  if($current_user['group_id'] == '2' ): ?>
 
                   <li class="menu">
                     <?php echo $this->Html->link(__(' Nuevo Pago'), array('controller' => 'charges', 'action' => 'add'), array('class'=>'fa fa-angle-double-right')); ?>
@@ -222,6 +222,9 @@
                   </li>
                   <li class="menu">
                     <?php echo $this->Html->link(__(' Estado Citas'), array('controller' => 'datecitations', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
+                </li>
+                <li class="menu">
+                  <?php echo $this->Html->link(__(' Actualizar Permisos'), array('controller'=>'users','action'=>'initDB'), array('class' => 'fa fa-angle-double-right')); ?>
                 </li>
                 <li class="menu">
                   <?php echo $this->Html->link(__(' Backup'), array('controller'=>'users','action'=>'backup'), array('class' => 'fa fa-angle-double-right')); ?>

@@ -6,7 +6,7 @@
 			<div class="box-header">
 				<h3 class="box-title"><?php  echo __('Antecedente'); ?></h3>
 				<div class="box-tools pull-right">
-	                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i> Edit'), array('action' => 'edit', $antecedent['Antecedent']['id']), array('class' => 'btn btn-primary', 'escape' => false)); ?>
+	                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i> Editar'), array('action' => 'edit', $antecedent['Antecedent']['id']), array('class' => 'btn btn-primary', 'escape' => false)); ?>
 	            </div>
 			</div>
 
@@ -76,5 +76,11 @@
 
 
 	</div><!-- /#page-content .span9 -->
+  <div class="btn-group btn-group-justified col-sm-4">
 
+          <?php echo $this->Html->link(__('Nuevo Diagnostico'), array('controller'=>'diagnostics','action' => 'add'), array('class' => 'btn btn-info')); ?>
+          <?php echo $this->Html->link(__('Lista de Antecedentes'), array('action' => 'index'), array('class' => 'btn btn-danger')); ?>
+          <?php echo $this->Html->link(__('Nuevo Paciente'), array('controller' => 'people', 'action' => 'add'), array('class' => 'btn btn-primary')); ?>
+
+  </div>
 </div><!-- /#page-container .row-fluid -->

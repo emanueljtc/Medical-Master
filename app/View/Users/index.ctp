@@ -4,9 +4,9 @@
 
     <div class="box box-primary">
 		<div class="box-header">
-			<h3 class="box-title"><?php echo __('Usuario'); ?></h3>
+			<h3 class="box-title"><?php echo __('Usuarios'); ?></h3>
 			<div class="box-tools pull-right">
-                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> Nuevo usuario'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
+                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> Nuevo Usuario'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
             </div>
 		</div>
 			<div class="box-body table-responsive">
@@ -50,7 +50,13 @@
 	</div><!-- /#page-content .col-sm-9 -->
 
 </div><!-- /#page-container .row-fluid -->
+<div class="btn-group btn-group-justified col-sm-4">
 
+  <?php echo $this->Html->link(__('Nuevo Grupo'), array('controller'=>'groups','action' => 'add'), array('class' => 'btn btn-info')); ?>
+  <?php echo $this->Html->link(__('Lista de Grupos'), array('controller'=>'groups','action' => 'index'), array('class' => 'btn btn-danger')); ?>
+  <?php echo $this->Html->link(__('Nuevo Usuario'), array('action' => 'add'), array('class' => 'btn btn-primary')); ?>
+
+</div>
 <?php
 	echo $this->Html->script('jquery.min');
 	echo $this->Html->script('plugins/datatables/jquery.dataTables');

@@ -9,9 +9,8 @@ App::uses('AppModel', 'Model');
  * @property Citation $Citation
  * @property Diagnostic $Diagnostic
  * @property History $History
- * @property Indication $Indication
+ * @property Prescription $Prescription
  * @property Study $Study
- * @property Treatment $Treatment
  */
 class Person extends AppModel {
 
@@ -22,9 +21,8 @@ class Person extends AppModel {
  */
 	public $displayField = 'full_name';
 	public $virtualFields = array(
-		  'full_name' => 'CONCAT(name, " ", last_name)',
-	);
-
+	        'full_name' => 'CONCAT(name, " ", last_name)',
+		    );
 /**
  * Validation rules
  *
@@ -34,7 +32,7 @@ class Person extends AppModel {
 		'name' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
-				'message' => 'Campo Vacio',
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -44,7 +42,7 @@ class Person extends AppModel {
 		'last_name' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
-				'message' => 'Campo Vacio',
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -54,18 +52,22 @@ class Person extends AppModel {
 		'dni' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				'message' => 'EL CAMPO ES NUMERICO',
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+			'isUnique' => array(
+				'rule' => array('isUnique'),
+				'message' => 'EL NUMERO DE IDENTIFICACION YA ESTA REGISTRADO',
+				'required' => 'create'
 				),
-				'isUnique' => array(
-					'rule' => array('isUnique'),
-					'message' => 'NUMERO DE CEDULA YA SE ENCUENTRA ASIGNADO A OTRO PACIENTE',
-					'required' => 'create'
-					),
 		),
 		'gender' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
-				'message' => 'Campo Vacio',
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -75,7 +77,47 @@ class Person extends AppModel {
 		'address' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
-				'message' => 'Campo Vacio',
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'born_date' => array(
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'age' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'weight' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'height' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -85,7 +127,17 @@ class Person extends AppModel {
 		'phone' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
-				'message' => 'Campo Vacio - Campo Numerico',
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'phone_dos' => array(
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -95,26 +147,23 @@ class Person extends AppModel {
 		'email' => array(
 			'email' => array(
 				'rule' => array('email'),
-				'message' => 'Campo Vacio',
-				),
-				'isUnique' => array(
-					'rule' => array('isUnique'),
-					'message' => 'ESTE EMAIL YA SE ENCUENTRA ASIGNADO A OTRO PACIENTE',
-					'required' => 'create'
-					),
-		),
-		'nationality_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				'message' => 'Campo Vacio',
+				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-
-
+		'nationality_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
@@ -205,8 +254,8 @@ class Person extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-		'Indication' => array(
-			'className' => 'Indication',
+		'Prescription' => array(
+			'className' => 'Prescription',
 			'foreignKey' => 'person_id',
 			'dependent' => false,
 			'conditions' => '',
@@ -220,19 +269,6 @@ class Person extends AppModel {
 		),
 		'Study' => array(
 			'className' => 'Study',
-			'foreignKey' => 'person_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'Treatment' => array(
-			'className' => 'Treatment',
 			'foreignKey' => 'person_id',
 			'dependent' => false,
 			'conditions' => '',

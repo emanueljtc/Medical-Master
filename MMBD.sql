@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 10-12-2016 a las 18:02:08
+-- Tiempo de generación: 12-01-2017 a las 11:02:53
 -- Versión del servidor: 5.7.16-0ubuntu0.16.04.1
--- Versión de PHP: 5.6.28-2+deb.sury.org~xenial+1
+-- Versión de PHP: 5.6.29-1+deb.sury.org~xenial+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -43,119 +43,136 @@ CREATE TABLE `acos` (
 --
 
 INSERT INTO `acos` (`id`, `parent_id`, `model`, `foreign_key`, `alias`, `lft`, `rght`) VALUES
-(1, NULL, NULL, NULL, 'controllers', 1, 226),
-(2, 1, NULL, NULL, 'Antecedents', 2, 13),
+(1, NULL, NULL, NULL, 'controllers', 1, 260),
+(2, 1, NULL, NULL, 'Antecedents', 2, 15),
 (3, 2, NULL, NULL, 'index', 3, 4),
 (4, 2, NULL, NULL, 'view', 5, 6),
 (5, 2, NULL, NULL, 'add', 7, 8),
 (6, 2, NULL, NULL, 'edit', 9, 10),
 (7, 2, NULL, NULL, 'delete', 11, 12),
-(8, 1, NULL, NULL, 'Back', 14, 31),
-(9, 8, NULL, NULL, 'startup', 15, 16),
-(10, 8, NULL, NULL, 'out', 17, 18),
-(11, 8, NULL, NULL, 'err', 19, 20),
-(12, 8, NULL, NULL, 'aco_sync', 21, 22),
-(13, 8, NULL, NULL, 'aco_update', 23, 24),
-(14, 8, NULL, NULL, 'getControllerList', 25, 26),
-(15, 8, NULL, NULL, 'verify', 27, 28),
-(16, 8, NULL, NULL, 'recover', 29, 30),
-(17, 1, NULL, NULL, 'Charges', 32, 43),
-(18, 17, NULL, NULL, 'index', 33, 34),
-(19, 17, NULL, NULL, 'view', 35, 36),
-(20, 17, NULL, NULL, 'add', 37, 38),
-(21, 17, NULL, NULL, 'edit', 39, 40),
-(22, 17, NULL, NULL, 'delete', 41, 42),
-(23, 1, NULL, NULL, 'Citations', 44, 55),
-(24, 23, NULL, NULL, 'index', 45, 46),
-(25, 23, NULL, NULL, 'view', 47, 48),
-(26, 23, NULL, NULL, 'add', 49, 50),
-(27, 23, NULL, NULL, 'edit', 51, 52),
-(28, 23, NULL, NULL, 'delete', 53, 54),
-(29, 1, NULL, NULL, 'Datecitations', 56, 67),
-(30, 29, NULL, NULL, 'index', 57, 58),
-(31, 29, NULL, NULL, 'view', 59, 60),
-(32, 29, NULL, NULL, 'add', 61, 62),
-(33, 29, NULL, NULL, 'edit', 63, 64),
-(34, 29, NULL, NULL, 'delete', 65, 66),
-(35, 1, NULL, NULL, 'Diagnostics', 68, 79),
-(36, 35, NULL, NULL, 'index', 69, 70),
-(37, 35, NULL, NULL, 'view', 71, 72),
-(38, 35, NULL, NULL, 'add', 73, 74),
-(39, 35, NULL, NULL, 'edit', 75, 76),
-(40, 35, NULL, NULL, 'delete', 77, 78),
-(41, 1, NULL, NULL, 'Groups', 80, 93),
-(42, 41, NULL, NULL, 'index', 81, 82),
-(43, 41, NULL, NULL, 'view', 83, 84),
-(44, 41, NULL, NULL, 'add', 85, 86),
-(45, 41, NULL, NULL, 'edit', 87, 88),
-(46, 41, NULL, NULL, 'delete', 89, 90),
-(47, 41, NULL, NULL, 'parentNode', 91, 92),
-(48, 1, NULL, NULL, 'Histories', 94, 105),
-(49, 48, NULL, NULL, 'index', 95, 96),
-(50, 48, NULL, NULL, 'view', 97, 98),
-(51, 48, NULL, NULL, 'add', 99, 100),
-(52, 48, NULL, NULL, 'edit', 101, 102),
-(53, 48, NULL, NULL, 'delete', 103, 104),
-(54, 1, NULL, NULL, 'Indications', 106, 117),
-(55, 54, NULL, NULL, 'index', 107, 108),
-(56, 54, NULL, NULL, 'view', 109, 110),
-(57, 54, NULL, NULL, 'add', 111, 112),
-(58, 54, NULL, NULL, 'edit', 113, 114),
-(59, 54, NULL, NULL, 'delete', 115, 116),
-(60, 1, NULL, NULL, 'Nationalities', 118, 129),
-(61, 60, NULL, NULL, 'index', 119, 120),
-(62, 60, NULL, NULL, 'view', 121, 122),
-(63, 60, NULL, NULL, 'add', 123, 124),
-(64, 60, NULL, NULL, 'edit', 125, 126),
-(65, 60, NULL, NULL, 'delete', 127, 128),
-(66, 1, NULL, NULL, 'Pages', 130, 133),
-(67, 66, NULL, NULL, 'display', 131, 132),
-(68, 1, NULL, NULL, 'People', 134, 147),
-(69, 68, NULL, NULL, 'index', 135, 136),
-(70, 68, NULL, NULL, 'view', 137, 138),
-(71, 68, NULL, NULL, 'api', 139, 140),
-(72, 68, NULL, NULL, 'add', 141, 142),
-(73, 68, NULL, NULL, 'edit', 143, 144),
-(74, 68, NULL, NULL, 'delete', 145, 146),
-(75, 1, NULL, NULL, 'Specialties', 148, 159),
-(76, 75, NULL, NULL, 'index', 149, 150),
-(77, 75, NULL, NULL, 'view', 151, 152),
-(78, 75, NULL, NULL, 'add', 153, 154),
-(79, 75, NULL, NULL, 'edit', 155, 156),
-(80, 75, NULL, NULL, 'delete', 157, 158),
-(81, 1, NULL, NULL, 'Studies', 160, 171),
-(82, 81, NULL, NULL, 'index', 161, 162),
-(83, 81, NULL, NULL, 'view', 163, 164),
-(84, 81, NULL, NULL, 'add', 165, 166),
-(85, 81, NULL, NULL, 'edit', 167, 168),
-(86, 81, NULL, NULL, 'delete', 169, 170),
-(87, 1, NULL, NULL, 'Treatments', 172, 183),
-(88, 87, NULL, NULL, 'index', 173, 174),
-(89, 87, NULL, NULL, 'view', 175, 176),
-(90, 87, NULL, NULL, 'add', 177, 178),
-(91, 87, NULL, NULL, 'edit', 179, 180),
-(92, 87, NULL, NULL, 'delete', 181, 182),
-(93, 1, NULL, NULL, 'Typepayments', 184, 195),
-(94, 93, NULL, NULL, 'index', 185, 186),
-(95, 93, NULL, NULL, 'view', 187, 188),
-(96, 93, NULL, NULL, 'add', 189, 190),
-(97, 93, NULL, NULL, 'edit', 191, 192),
-(98, 93, NULL, NULL, 'delete', 193, 194),
-(99, 1, NULL, NULL, 'Users', 196, 213),
-(100, 99, NULL, NULL, 'login', 197, 198),
-(101, 99, NULL, NULL, 'logout', 199, 200),
-(102, 99, NULL, NULL, 'index', 201, 202),
-(103, 99, NULL, NULL, 'view', 203, 204),
-(104, 99, NULL, NULL, 'add', 205, 206),
-(105, 99, NULL, NULL, 'edit', 207, 208),
-(106, 99, NULL, NULL, 'delete', 209, 210),
-(107, 99, NULL, NULL, 'peligro', 211, 212),
-(108, 1, NULL, NULL, 'AclExtras', 214, 215),
-(109, 1, NULL, NULL, 'CakePdf', 216, 217),
-(110, 1, NULL, NULL, 'DebugKit', 218, 225),
-(111, 110, NULL, NULL, 'ToolbarAccess', 219, 224),
-(112, 111, NULL, NULL, 'history_state', 220, 221),
-(113, 111, NULL, NULL, 'sql_explain', 222, 223);
+(8, 1, NULL, NULL, 'Back', 16, 33),
+(9, 8, NULL, NULL, 'startup', 17, 18),
+(10, 8, NULL, NULL, 'out', 19, 20),
+(11, 8, NULL, NULL, 'err', 21, 22),
+(12, 8, NULL, NULL, 'aco_sync', 23, 24),
+(13, 8, NULL, NULL, 'aco_update', 25, 26),
+(14, 8, NULL, NULL, 'getControllerList', 27, 28),
+(15, 8, NULL, NULL, 'verify', 29, 30),
+(16, 8, NULL, NULL, 'recover', 31, 32),
+(17, 1, NULL, NULL, 'Charges', 34, 47),
+(18, 17, NULL, NULL, 'index', 35, 36),
+(19, 17, NULL, NULL, 'view', 37, 38),
+(20, 17, NULL, NULL, 'add', 39, 40),
+(21, 17, NULL, NULL, 'edit', 41, 42),
+(22, 17, NULL, NULL, 'delete', 43, 44),
+(23, 1, NULL, NULL, 'Citations', 48, 61),
+(24, 23, NULL, NULL, 'index', 49, 50),
+(25, 23, NULL, NULL, 'view', 51, 52),
+(26, 23, NULL, NULL, 'add', 53, 54),
+(27, 23, NULL, NULL, 'edit', 55, 56),
+(28, 23, NULL, NULL, 'delete', 57, 58),
+(29, 1, NULL, NULL, 'Datecitations', 62, 75),
+(30, 29, NULL, NULL, 'index', 63, 64),
+(31, 29, NULL, NULL, 'view', 65, 66),
+(32, 29, NULL, NULL, 'add', 67, 68),
+(33, 29, NULL, NULL, 'edit', 69, 70),
+(34, 29, NULL, NULL, 'delete', 71, 72),
+(35, 1, NULL, NULL, 'Diagnostics', 76, 89),
+(36, 35, NULL, NULL, 'index', 77, 78),
+(37, 35, NULL, NULL, 'view', 79, 80),
+(38, 35, NULL, NULL, 'add', 81, 82),
+(39, 35, NULL, NULL, 'edit', 83, 84),
+(40, 35, NULL, NULL, 'delete', 85, 86),
+(41, 1, NULL, NULL, 'Groups', 90, 103),
+(42, 41, NULL, NULL, 'index', 91, 92),
+(43, 41, NULL, NULL, 'view', 93, 94),
+(44, 41, NULL, NULL, 'add', 95, 96),
+(45, 41, NULL, NULL, 'edit', 97, 98),
+(46, 41, NULL, NULL, 'delete', 99, 100),
+(48, 1, NULL, NULL, 'Histories', 104, 117),
+(49, 48, NULL, NULL, 'index', 105, 106),
+(50, 48, NULL, NULL, 'view', 107, 108),
+(51, 48, NULL, NULL, 'add', 109, 110),
+(52, 48, NULL, NULL, 'edit', 111, 112),
+(53, 48, NULL, NULL, 'delete', 113, 114),
+(54, 1, NULL, NULL, 'Indications', 118, 131),
+(55, 54, NULL, NULL, 'index', 119, 120),
+(56, 54, NULL, NULL, 'view', 121, 122),
+(57, 54, NULL, NULL, 'add', 123, 124),
+(58, 54, NULL, NULL, 'edit', 125, 126),
+(59, 54, NULL, NULL, 'delete', 127, 128),
+(60, 1, NULL, NULL, 'Nationalities', 132, 145),
+(61, 60, NULL, NULL, 'index', 133, 134),
+(62, 60, NULL, NULL, 'view', 135, 136),
+(63, 60, NULL, NULL, 'add', 137, 138),
+(64, 60, NULL, NULL, 'edit', 139, 140),
+(65, 60, NULL, NULL, 'delete', 141, 142),
+(66, 1, NULL, NULL, 'Pages', 146, 151),
+(67, 66, NULL, NULL, 'display', 147, 148),
+(68, 1, NULL, NULL, 'People', 152, 167),
+(69, 68, NULL, NULL, 'index', 153, 154),
+(70, 68, NULL, NULL, 'view', 155, 156),
+(71, 68, NULL, NULL, 'api', 157, 158),
+(72, 68, NULL, NULL, 'add', 159, 160),
+(73, 68, NULL, NULL, 'edit', 161, 162),
+(74, 68, NULL, NULL, 'delete', 163, 164),
+(75, 1, NULL, NULL, 'Specialties', 168, 181),
+(76, 75, NULL, NULL, 'index', 169, 170),
+(77, 75, NULL, NULL, 'view', 171, 172),
+(78, 75, NULL, NULL, 'add', 173, 174),
+(79, 75, NULL, NULL, 'edit', 175, 176),
+(80, 75, NULL, NULL, 'delete', 177, 178),
+(81, 1, NULL, NULL, 'Studies', 182, 195),
+(82, 81, NULL, NULL, 'index', 183, 184),
+(83, 81, NULL, NULL, 'view', 185, 186),
+(84, 81, NULL, NULL, 'add', 187, 188),
+(85, 81, NULL, NULL, 'edit', 189, 190),
+(86, 81, NULL, NULL, 'delete', 191, 192),
+(87, 1, NULL, NULL, 'Treatments', 196, 209),
+(88, 87, NULL, NULL, 'index', 197, 198),
+(89, 87, NULL, NULL, 'view', 199, 200),
+(90, 87, NULL, NULL, 'add', 201, 202),
+(91, 87, NULL, NULL, 'edit', 203, 204),
+(92, 87, NULL, NULL, 'delete', 205, 206),
+(93, 1, NULL, NULL, 'Typepayments', 210, 223),
+(94, 93, NULL, NULL, 'index', 211, 212),
+(95, 93, NULL, NULL, 'view', 213, 214),
+(96, 93, NULL, NULL, 'add', 215, 216),
+(97, 93, NULL, NULL, 'edit', 217, 218),
+(98, 93, NULL, NULL, 'delete', 219, 220),
+(99, 1, NULL, NULL, 'Users', 224, 243),
+(100, 99, NULL, NULL, 'login', 225, 226),
+(101, 99, NULL, NULL, 'logout', 227, 228),
+(102, 99, NULL, NULL, 'index', 229, 230),
+(103, 99, NULL, NULL, 'view', 231, 232),
+(104, 99, NULL, NULL, 'add', 233, 234),
+(105, 99, NULL, NULL, 'edit', 235, 236),
+(106, 99, NULL, NULL, 'delete', 237, 238),
+(108, 1, NULL, NULL, 'AclExtras', 244, 245),
+(109, 1, NULL, NULL, 'CakePdf', 246, 247),
+(110, 1, NULL, NULL, 'DebugKit', 248, 257),
+(111, 110, NULL, NULL, 'ToolbarAccess', 249, 256),
+(112, 111, NULL, NULL, 'history_state', 250, 251),
+(113, 111, NULL, NULL, 'sql_explain', 252, 253),
+(114, 99, NULL, NULL, 'initDB', 239, 240),
+(115, 1, NULL, NULL, 'Upload', 258, 259),
+(150, 2, NULL, NULL, 'backup', 13, 14),
+(151, 17, NULL, NULL, 'backup', 45, 46),
+(152, 23, NULL, NULL, 'backup', 59, 60),
+(153, 29, NULL, NULL, 'backup', 73, 74),
+(154, 35, NULL, NULL, 'backup', 87, 88),
+(155, 41, NULL, NULL, 'backup', 101, 102),
+(156, 48, NULL, NULL, 'backup', 115, 116),
+(157, 54, NULL, NULL, 'backup', 129, 130),
+(158, 60, NULL, NULL, 'backup', 143, 144),
+(159, 66, NULL, NULL, 'backup', 149, 150),
+(160, 68, NULL, NULL, 'backup', 165, 166),
+(161, 75, NULL, NULL, 'backup', 179, 180),
+(162, 81, NULL, NULL, 'backup', 193, 194),
+(163, 87, NULL, NULL, 'backup', 207, 208),
+(164, 93, NULL, NULL, 'backup', 221, 222),
+(165, 99, NULL, NULL, 'backup', 241, 242),
+(166, 111, NULL, NULL, 'backup', 254, 255);
 
 -- --------------------------------------------------------
 
@@ -164,7 +181,7 @@ INSERT INTO `acos` (`id`, `parent_id`, `model`, `foreign_key`, `alias`, `lft`, `
 --
 
 CREATE TABLE `antecedents` (
-  `id` int(10) NOT NULL,
+  `id` int(4) UNSIGNED ZEROFILL NOT NULL,
   `person_id` int(10) NOT NULL,
   `history_id` int(10) NOT NULL,
   `name_antecendent` varchar(50) NOT NULL,
@@ -182,8 +199,9 @@ CREATE TABLE `antecedents` (
 --
 
 INSERT INTO `antecedents` (`id`, `person_id`, `history_id`, `name_antecendent`, `origin`, `time_ suffering`, `family`, `personals_doctors`, `surgicals`, `created`, `modified`) VALUES
-(1, 2, 1, 'Diesvio', 'hereditario', '18', 'si', 'Luis MuÃ±os', 'Si', '2016-11-19', '2016-12-08'),
-(5, 3, 3, 'Antimatismo', 'Heridario', '10', 'si', 'Palo Verltran', 'No', '2016-12-07', '2016-12-08');
+(0003, 1, 1, 'Cardiopatia', 'hereditario', '20', 'Abuelo Parterno pacedia de problemas cardiacos', '', 'No', '2017-01-11', '2017-01-11'),
+(0004, 1, 1, 'kkkksda', 'hereditario', '12', 'Abuelo Parterno pacedia de problemas cardiacos', 'quien ', 'No', '2017-01-11', '2017-01-11'),
+(0005, 1, 1, 'Diesvio', 'hereditario', '10', 'Abuelo Parterno pacedia de problemas cardiacos', 'Palo Verltran', 'No', '2017-01-11', '2017-01-11');
 
 -- --------------------------------------------------------
 
@@ -265,7 +283,30 @@ INSERT INTO `aros_acos` (`id`, `aro_id`, `aco_id`, `_create`, `_read`, `_update`
 (29, 3, 35, '1', '1', '1', '1'),
 (30, 3, 18, '1', '1', '1', '1'),
 (31, 3, 19, '1', '1', '1', '1'),
-(32, 3, 101, '1', '1', '1', '1');
+(32, 3, 101, '1', '1', '1', '1'),
+(33, 2, 24, '1', '1', '1', '1'),
+(34, 2, 18, '1', '1', '1', '1'),
+(35, 2, 26, '1', '1', '1', '1'),
+(36, 2, 27, '1', '1', '1', '1'),
+(37, 2, 25, '1', '1', '1', '1'),
+(38, 2, 20, '1', '1', '1', '1'),
+(39, 2, 21, '1', '1', '1', '1'),
+(40, 2, 19, '1', '1', '1', '1'),
+(41, 2, 7, '-1', '-1', '-1', '-1'),
+(42, 2, 3, '1', '1', '1', '1'),
+(43, 2, 5, '1', '1', '1', '1'),
+(44, 2, 6, '1', '1', '1', '1'),
+(45, 2, 4, '1', '1', '1', '1'),
+(46, 2, 35, '1', '1', '1', '1'),
+(47, 2, 87, '1', '1', '1', '1'),
+(48, 2, 54, '1', '1', '1', '1'),
+(49, 2, 101, '1', '1', '1', '1'),
+(50, 3, 87, '1', '1', '1', '1'),
+(51, 3, 54, '1', '1', '1', '1'),
+(52, 3, 82, '1', '1', '1', '1'),
+(53, 3, 84, '1', '1', '1', '1'),
+(54, 3, 85, '1', '1', '1', '1'),
+(55, 3, 83, '1', '1', '1', '1');
 
 -- --------------------------------------------------------
 
@@ -274,7 +315,7 @@ INSERT INTO `aros_acos` (`id`, `aro_id`, `aco_id`, `_create`, `_read`, `_update`
 --
 
 CREATE TABLE `charges` (
-  `id` int(10) NOT NULL,
+  `id` int(4) UNSIGNED ZEROFILL NOT NULL,
   `total_cost` int(10) NOT NULL,
   `person_id` int(10) NOT NULL,
   `citation_id` int(10) NOT NULL,
@@ -290,7 +331,8 @@ CREATE TABLE `charges` (
 --
 
 INSERT INTO `charges` (`id`, `total_cost`, `person_id`, `citation_id`, `state_charge`, `typepayment_id`, `observations`, `created`, `modified`) VALUES
-(1, 5000, 2, 1, 'Pago', 3, 'optimo', '2016-12-06', '2016-12-06');
+(0001, 5000, 2, 1, 'Cancelado', 3, 'Pagado', '2016-12-06', '2016-12-14'),
+(0002, 40000, 3, 1, 'No Cancelado', 1, 'Ninguna', '2016-12-12', '2016-12-14');
 
 -- --------------------------------------------------------
 
@@ -340,37 +382,38 @@ INSERT INTO `datecitations` (`id`, `state`) VALUES
 --
 
 CREATE TABLE `diagnostics` (
-  `id` int(10) NOT NULL,
-  `size_boobs` varchar(100) NOT NULL,
-  `form_boobs` varchar(100) NOT NULL,
-  `symmetry_boobs` varchar(100) NOT NULL,
-  `skin_boobs` varchar(100) NOT NULL,
-  `cap_boobs` varchar(100) NOT NULL,
-  `pussy` varchar(100) NOT NULL,
-  `neck_pussy` varchar(100) NOT NULL,
-  `coloscopia` varchar(100) NOT NULL,
-  `ano_ straight` varchar(100) NOT NULL,
-  `head_neck` varchar(100) NOT NULL,
-  `touch_tumor` varchar(100) NOT NULL,
-  `form_tumor` varchar(100) NOT NULL,
-  `surface_tumor` varchar(100) NOT NULL,
-  `contour_tumor` varchar(100) NOT NULL,
-  `axis_tumor` varchar(100) NOT NULL,
-  `consistency_tumor` varchar(100) NOT NULL,
-  `laringoscopia` varchar(100) NOT NULL,
-  `menarguia` varchar(100) NOT NULL,
-  `reglas` varchar(100) NOT NULL,
-  `prs` varchar(100) NOT NULL,
-  `companion_sexual` varchar(100) NOT NULL,
-  `distance_cap` varchar(100) NOT NULL,
-  `gestas` varchar(100) NOT NULL,
-  `rsi` varchar(100) NOT NULL,
-  `paras` varchar(100) NOT NULL,
-  `abdomen` varchar(100) NOT NULL,
-  `misbirth` varchar(100) NOT NULL,
-  `gynecological_vulva` varchar(100) NOT NULL,
-  `cesareans` varchar(100) NOT NULL,
-  `age_birth_one` int(3) NOT NULL,
+  `id` int(4) UNSIGNED ZEROFILL NOT NULL,
+  `reason` text NOT NULL,
+  `size_boobs` varchar(100) DEFAULT NULL,
+  `form_boobs` varchar(100) DEFAULT NULL,
+  `symmetry_boobs` varchar(100) DEFAULT NULL,
+  `skin_boobs` varchar(100) DEFAULT NULL,
+  `cap_boobs` varchar(100) DEFAULT NULL,
+  `pussy` varchar(100) DEFAULT NULL,
+  `neck_pussy` varchar(100) DEFAULT NULL,
+  `coloscopia` varchar(100) DEFAULT NULL,
+  `ano_ straight` varchar(100) DEFAULT NULL,
+  `head_neck` varchar(100) DEFAULT NULL,
+  `touch_tumor` varchar(100) DEFAULT NULL,
+  `form_tumor` varchar(100) DEFAULT NULL,
+  `surface_tumor` varchar(100) DEFAULT NULL,
+  `contour_tumor` varchar(100) DEFAULT NULL,
+  `axis_tumor` varchar(100) DEFAULT NULL,
+  `consistency_tumor` varchar(100) DEFAULT NULL,
+  `laringoscopia` varchar(100) DEFAULT NULL,
+  `menarguia` varchar(100) DEFAULT NULL,
+  `reglas` varchar(100) DEFAULT NULL,
+  `prs` varchar(100) DEFAULT NULL,
+  `companion_sexual` varchar(100) DEFAULT NULL,
+  `distance_cap` varchar(100) DEFAULT NULL,
+  `gestas` varchar(100) DEFAULT NULL,
+  `rsi` varchar(100) DEFAULT NULL,
+  `paras` varchar(100) DEFAULT NULL,
+  `abdomen` varchar(100) DEFAULT NULL,
+  `misbirth` varchar(100) DEFAULT NULL,
+  `gynecological_vulva` varchar(100) DEFAULT NULL,
+  `cesareans` varchar(100) DEFAULT NULL,
+  `age_birth_one` int(3) DEFAULT NULL,
   `diagnostico` text NOT NULL,
   `person_id` int(11) NOT NULL,
   `history_id` int(11) NOT NULL
@@ -380,8 +423,10 @@ CREATE TABLE `diagnostics` (
 -- Volcado de datos para la tabla `diagnostics`
 --
 
-INSERT INTO `diagnostics` (`id`, `size_boobs`, `form_boobs`, `symmetry_boobs`, `skin_boobs`, `cap_boobs`, `pussy`, `neck_pussy`, `coloscopia`, `ano_ straight`, `head_neck`, `touch_tumor`, `form_tumor`, `surface_tumor`, `contour_tumor`, `axis_tumor`, `consistency_tumor`, `laringoscopia`, `menarguia`, `reglas`, `prs`, `companion_sexual`, `distance_cap`, `gestas`, `rsi`, `paras`, `abdomen`, `misbirth`, `gynecological_vulva`, `cesareans`, `age_birth_one`, `diagnostico`, `person_id`, `history_id`) VALUES
-(1, '38', 'Redondas', 'perfectas', 'suave', 'si', 'ufff', 'si', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'si', 'no', 'si', '8', '10', 'no', 'no', 'no', 'si', 'no', 'no', 12, 'Perfecto estado', 2, 1);
+INSERT INTO `diagnostics` (`id`, `reason`, `size_boobs`, `form_boobs`, `symmetry_boobs`, `skin_boobs`, `cap_boobs`, `pussy`, `neck_pussy`, `coloscopia`, `ano_ straight`, `head_neck`, `touch_tumor`, `form_tumor`, `surface_tumor`, `contour_tumor`, `axis_tumor`, `consistency_tumor`, `laringoscopia`, `menarguia`, `reglas`, `prs`, `companion_sexual`, `distance_cap`, `gestas`, `rsi`, `paras`, `abdomen`, `misbirth`, `gynecological_vulva`, `cesareans`, `age_birth_one`, `diagnostico`, `person_id`, `history_id`) VALUES
+(0001, 'Inflamacion', '38', 'Redondas', 'perfectas', 'suave', 'si', 'ufff', 'si', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'si', 'no', 'si', '8', '10', 'no', 'no', 'no', 'si', 'no', 'no', 12, 'Perfecto estado', 1, 1),
+(0002, 'Dolores en Articulaciones ', '22', '333', '222', '22', '22', '222', '22', '22', '22', '22', '22', '22', 'Desconocido', 'Desconocido', 'Desconocido', 'Desconocido', 'Desconocido', 'Desconocido', 'Desconocido', 'Desconocido', 'Desconocido', 'Desconocido', 'Desconocido', 'Desconocido', 'Desconocido', 'Desconocido', 'Desconocido', 'Desconocido', 'Desconocido', 12, 'Desconocido', 2, 2),
+(0003, 'dolor de Columna', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'si', '', '', '', '', '', '', '', '', NULL, 'Inflamacion de Vertebras', 3, 3);
 
 -- --------------------------------------------------------
 
@@ -412,44 +457,18 @@ INSERT INTO `groups` (`id`, `name`, `created`, `modified`) VALUES
 --
 
 CREATE TABLE `historys` (
-  `id` int(10) NOT NULL,
-  `person_id` int(10) NOT NULL,
-  `born_date` varchar(255) NOT NULL,
-  `age` int(3) NOT NULL,
-  `weight` int(10) NOT NULL,
-  `height` int(25) NOT NULL
+  `id` int(4) UNSIGNED ZEROFILL NOT NULL,
+  `person_id` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `historys`
 --
 
-INSERT INTO `historys` (`id`, `person_id`, `born_date`, `age`, `weight`, `height`) VALUES
-(1, 2, '04-07-1990', 26, 234, 344),
-(3, 3, '04-07-1990', 26, 55, 175);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `indications`
---
-
-CREATE TABLE `indications` (
-  `id` int(10) NOT NULL,
-  `diagnostic_id` int(10) NOT NULL,
-  `treatment_id` int(10) NOT NULL,
-  `person_id` int(10) NOT NULL,
-  `indication` varchar(255) NOT NULL,
-  `created` date NOT NULL,
-  `modified` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `indications`
---
-
-INSERT INTO `indications` (`id`, `diagnostic_id`, `treatment_id`, `person_id`, `indication`, `created`, `modified`) VALUES
-(4, 1, 3, 2, 'Cada 8 horas', '2016-12-08', '2016-12-08');
+INSERT INTO `historys` (`id`, `person_id`) VALUES
+(0001, 1),
+(0002, 2),
+(0003, 3);
 
 -- --------------------------------------------------------
 
@@ -482,7 +501,12 @@ CREATE TABLE `people` (
   `dni` int(15) NOT NULL,
   `gender` varchar(10) NOT NULL,
   `address` text NOT NULL,
+  `born_date` varchar(20) NOT NULL,
+  `age` int(3) NOT NULL,
+  `weight` int(10) NOT NULL,
+  `height` int(10) NOT NULL,
   `phone` varchar(20) NOT NULL,
+  `phone_dos` varchar(20) NOT NULL,
   `email` varchar(100) NOT NULL,
   `nationality_id` int(11) NOT NULL,
   `pass_app` varchar(15) DEFAULT NULL,
@@ -493,10 +517,37 @@ CREATE TABLE `people` (
 -- Volcado de datos para la tabla `people`
 --
 
-INSERT INTO `people` (`id`, `name`, `last_name`, `dni`, `gender`, `address`, `phone`, `email`, `nationality_id`, `pass_app`, `token`) VALUES
-(2, 'Guillermo', 'Ochoa', 21099, 'Masculino', 'Maracay', '12245', 'g@gf.com', 1, '123', '5lYxFE2MLGANQUIkpqliavPBk'),
-(3, 'Emanuel', 'Torres', 18971787, 'masculino', 'San Juan de los Morros', '46231', 'emane@ds.com', 1, '111', 'JCr3SB7D9z4m0bUX50kFIvrpR'),
-(4, 'jhkj', 'jhjkh', 133235445, 'Femenino', 'jhgjhyujyjhg', '4343543453', 'ghg@g.com', 1, '123', NULL);
+INSERT INTO `people` (`id`, `name`, `last_name`, `dni`, `gender`, `address`, `born_date`, `age`, `weight`, `height`, `phone`, `phone_dos`, `email`, `nationality_id`, `pass_app`, `token`) VALUES
+(1, 'Ana ', 'Cordova', 20355749, 'Femenino', 'Funda Villa 2 - Villa de Cura ', '16-03-1992', 24, 65, 165, '04262442085', '024428976', 'anakcordova@gmail.com', 1, '123', NULL),
+(2, 'Luis', 'Clemente', 2218718, 'Masculino', 'las palmas', '08-01-1930', 87, 80, 160, '02464315404', '02464315404', 'luis@gmail.com', 1, '123', NULL),
+(3, 'Emanuel', 'Torres', 18971787, 'Masculino', 'Las Palmas Calle Vargas', '04-07-1990', 26, 70, 175, '04165615973', '02464315404', 'emanueljtc@gmail.com', 1, '123', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `prescriptions`
+--
+
+CREATE TABLE `prescriptions` (
+  `id` int(4) UNSIGNED ZEROFILL NOT NULL,
+  `person_id` int(10) NOT NULL,
+  `diagnostic_id` int(10) NOT NULL,
+  `status_treament` varchar(10) NOT NULL,
+  `prescription` text NOT NULL,
+  `indications` text,
+  `created` date NOT NULL,
+  `modified` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `prescriptions`
+--
+
+INSERT INTO `prescriptions` (`id`, `person_id`, `diagnostic_id`, `status_treament`, `prescription`, `indications`, `created`, `modified`) VALUES
+(0003, 2, 1, 'Suspendido', 'Rifoxina', '', '2016-12-07', '2016-12-08'),
+(0006, 2, 1, 'Activo', 'amoxicilina tabl 500mg', '', '2016-12-17', '2016-12-17'),
+(0007, 3, 3, 'Activo', 'Relajante Muscular', '', '2017-01-12', '2017-01-12'),
+(0008, 1, 1, 'Activo', 'Jarabe', '', '2017-01-12', '2017-01-12');
 
 -- --------------------------------------------------------
 
@@ -505,39 +556,23 @@ INSERT INTO `people` (`id`, `name`, `last_name`, `dni`, `gender`, `address`, `ph
 --
 
 CREATE TABLE `studies` (
-  `id` int(10) NOT NULL,
+  `id` int(4) UNSIGNED ZEROFILL NOT NULL,
   `diagnostic_id` int(10) NOT NULL,
   `person_id` int(10) NOT NULL,
   `name_studie` varchar(50) NOT NULL,
+  `functional_exam` text NOT NULL,
+  `physical_exam` text NOT NULL,
   `observations` text NOT NULL,
   `created` date NOT NULL,
   `modified` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
 --
--- Estructura de tabla para la tabla `treatments`
+-- Volcado de datos para la tabla `studies`
 --
 
-CREATE TABLE `treatments` (
-  `id` int(10) NOT NULL,
-  `person_id` int(10) NOT NULL,
-  `diagnostic_id` int(10) NOT NULL,
-  `status_treament` varchar(10) NOT NULL,
-  `prescription` varchar(100) NOT NULL,
-  `observations_prescription` text,
-  `created` date NOT NULL,
-  `modified` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `treatments`
---
-
-INSERT INTO `treatments` (`id`, `person_id`, `diagnostic_id`, `status_treament`, `prescription`, `observations_prescription`, `created`, `modified`) VALUES
-(3, 2, 1, 'Suspendido', 'Rifoxina', '', '2016-12-07', '2016-12-08'),
-(5, 3, 1, 'Activo', 'Broxol', 'Cada 6 Horas', '2016-12-08', '2016-12-08');
+INSERT INTO `studies` (`id`, `diagnostic_id`, `person_id`, `name_studie`, `functional_exam`, `physical_exam`, `observations`, `created`, `modified`) VALUES
+(0001, 1, 1, 'Electrocardiograma', 'dsdad a sda as', 'dsadasdawdadwasasd ', 'sdasdwdsdwdadwd', '2017-01-10', '2017-01-10');
 
 -- --------------------------------------------------------
 
@@ -571,8 +606,6 @@ CREATE TABLE `users` (
   `full_name` varchar(255) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `foto` varchar(255) NOT NULL,
-  `foto_dir` varchar(255) NOT NULL,
   `group_id` int(10) NOT NULL,
   `created` date NOT NULL,
   `modified` date NOT NULL
@@ -582,10 +615,10 @@ CREATE TABLE `users` (
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `full_name`, `username`, `password`, `foto`, `foto_dir`, `group_id`, `created`, `modified`) VALUES
-(2, 'Emanuel Torres', 'emanueljtc', '0f010f79f9916e9165b62acc6637ec4434421239', 'yoperfil2.jpg', '2', 1, '2016-12-10', '2016-12-10'),
-(9, 'Gustavo Torres', 'gust', '54e5fb1ff5b4037be9de16b285defaba1d497af2', 'jetter.jpg', '9', 3, '2016-12-10', '2016-12-10'),
-(11, 'Guillermo Ochoa', 'guille', '54e5fb1ff5b4037be9de16b285defaba1d497af2', 'Graduado-Birrete-83978.gif', '11', 2, '2016-12-10', '2016-12-10');
+INSERT INTO `users` (`id`, `full_name`, `username`, `password`, `group_id`, `created`, `modified`) VALUES
+(2, 'Emanuel Torres', 'emanueljtc', '0f010f79f9916e9165b62acc6637ec4434421239', 1, '2016-12-10', '2016-12-10'),
+(9, 'Gustavo Torres', 'gust', '54e5fb1ff5b4037be9de16b285defaba1d497af2', 3, '2016-12-10', '2016-12-10'),
+(11, 'Guillermo Ochoa', 'guille', '54e5fb1ff5b4037be9de16b285defaba1d497af2', 2, '2016-12-10', '2016-12-10');
 
 --
 -- Índices para tablas volcadas
@@ -658,12 +691,6 @@ ALTER TABLE `historys`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `indications`
---
-ALTER TABLE `indications`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indices de la tabla `nationalities`
 --
 ALTER TABLE `nationalities`
@@ -676,15 +703,15 @@ ALTER TABLE `people`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `studies`
+-- Indices de la tabla `prescriptions`
 --
-ALTER TABLE `studies`
+ALTER TABLE `prescriptions`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `treatments`
+-- Indices de la tabla `studies`
 --
-ALTER TABLE `treatments`
+ALTER TABLE `studies`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -707,12 +734,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `acos`
 --
 ALTER TABLE `acos`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=167;
 --
 -- AUTO_INCREMENT de la tabla `antecedents`
 --
 ALTER TABLE `antecedents`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de la tabla `aros`
 --
@@ -722,12 +749,12 @@ ALTER TABLE `aros`
 -- AUTO_INCREMENT de la tabla `aros_acos`
 --
 ALTER TABLE `aros_acos`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 --
 -- AUTO_INCREMENT de la tabla `charges`
 --
 ALTER TABLE `charges`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `citations`
 --
@@ -742,7 +769,7 @@ ALTER TABLE `datecitations`
 -- AUTO_INCREMENT de la tabla `diagnostics`
 --
 ALTER TABLE `diagnostics`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `groups`
 --
@@ -752,12 +779,7 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT de la tabla `historys`
 --
 ALTER TABLE `historys`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT de la tabla `indications`
---
-ALTER TABLE `indications`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `nationalities`
 --
@@ -767,17 +789,17 @@ ALTER TABLE `nationalities`
 -- AUTO_INCREMENT de la tabla `people`
 --
 ALTER TABLE `people`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de la tabla `prescriptions`
+--
+ALTER TABLE `prescriptions`
+  MODIFY `id` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT de la tabla `studies`
 --
 ALTER TABLE `studies`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT de la tabla `treatments`
---
-ALTER TABLE `treatments`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `typepayments`
 --

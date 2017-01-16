@@ -50,13 +50,13 @@ class DiagnosticsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Diagnostic->create();
 			if ($this->Diagnostic->save($this->request->data)) {
-				$this->Session->setFlash(__('El Diagnostico ha sido registrado'), 'flash/success');
+				$this->Session->setFlash(__('El Diagnostico ha sido registrado Correctamente'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('El Diagnostico no ha sido registrado, Verifique e Intente de Nuevo.'), 'flash/error');
 			}
 		}
-		$people = $this->Diagnostic->Person->find('list',array('order'=>'full_name DESC'));
+		$people = $this->Diagnostic->Person->find('list',array('order'=>'id DESC'));
 		$histories = $this->Diagnostic->History->find('list',array('order'=>'id DESC'));
 		$this->set(compact('people', 'histories'));
 	}
@@ -75,7 +75,7 @@ class DiagnosticsController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Diagnostic->save($this->request->data)) {
-				$this->Session->setFlash(__('El Diagnostico ha sido actualizado'), 'flash/success');
+				$this->Session->setFlash(__('El Diagnostico ha sido actualizado Correctamente'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('El Diagnostico no ha sido actualizado, Verifique e Intente de Nuevo.'), 'flash/error');
@@ -106,7 +106,7 @@ class DiagnosticsController extends AppController {
 			throw new NotFoundException(__('Diagnostico Invalido'));
 		}
 		if ($this->Diagnostic->delete()) {
-			$this->Session->setFlash(__('El Diagnostico ha sido eliminado'), 'flash/success');
+			$this->Session->setFlash(__('El Diagnostico ha sido eliminado Correctamente'), 'flash/success');
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('El Diagnostico no ha sido actualizado'), 'flash/error');

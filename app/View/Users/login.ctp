@@ -31,11 +31,14 @@
                <center>
                   <button class="btn btn-md btn-primary" type="submit">Entrar</button>
                   <!-- <button class="btn btn-md btn-danger" type="submit">Limpiar</button> -->
-              </center>    
+              </center>
 
         </div>
-        <br><br><br>
-        <center>
-    <h4 class="developers">Desarrollado por Emanuel Torres C. & Guillermo Ochoa T.</h4>
-  </center>
+        <br><br>
+          <footer id="footer">
+              <center>
+                <h4 class="developers">Desarrollado por Emanuel Torres C. & Guillermo Ochoa T.</h4>
+            </center>
+          </footer>
+
 </div>

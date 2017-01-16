@@ -48,3 +48,10 @@
 	</div><!-- /#page-content .col-sm-9 -->
 
 </div><!-- /#page-container .row-fluid -->
+<div class="btn-group btn-group-justified col-sm-4">
+
+  <?php echo $this->Html->link(__('Nuevo Diagnostico'), array('controller'=>'diagnostics','action' => 'add'), array('class' => 'btn btn-info')); ?>
+  <?php echo $this->Html->link(__('Lista de Estudios'), array('action' => 'index'), array('class' => 'btn btn-danger')); ?>
+  <?php echo $this->Html->link(__('Nuevo Estudio'), array('action' => 'add'), array('class' => 'btn btn-primary')); ?>
+
+</div>

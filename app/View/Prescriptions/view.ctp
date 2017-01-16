@@ -69,6 +69,6 @@
 
   <?php echo $this->Html->link(__('Nuevo Diagnostico'), array('controller'=>'diagnostics','action' => 'add'), array('class' => 'btn btn-info')); ?>
   <?php echo $this->Html->link(__('Lista de Recipes'), array('action' => 'index'), array('class' => 'btn btn-danger')); ?>
-  <?php echo $this->Html->link(__('Nuevo Recipe'), array('action' => 'add'), array('class' => 'btn btn-primary')); ?>
+  <?php echo $this->Html->link(__('Imprimir'), array('action' => 'view', $prescription['Prescription']['id'], 'ext' => 'pdf' ), array('class' => 'btn btn-primary')); ?>
 
 </div>

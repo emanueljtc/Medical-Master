@@ -1,7 +1,12 @@
 <style>
 h3{
-			text-decoration: underline;
-			font-family: "Times New Roman", Georgia, Serif;
+			text-decoration: none;
+			font-family: "monospace", Georgia, Serif;
+
+}
+h1{
+			text-decoration: none;
+			font-family: "monospace", Georgia, Serif;
 
 }
 p{
@@ -15,99 +20,130 @@ a:link {
     color: #000;
 		text-decoration: none;
 }
-img{
-	width: 150px;
-	height: 130px;
-	float: left;
+.a {
+	position: absolute;
+	top: 252px;
+	right: 100px;
+	width: 610px;
+	height: 370px;
+	border-radius: 14px;
+	border: 2px solid #73AD21;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 20px;
+	font-family: monospace;
+	}
+.b {
+	position: absolute;
+	top: 255px;
+	right: 100px;
+	width: 610px;
+	height: 370px;
+	border-radius: 14px;
+	border: 2px solid #73AD21;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 20px;
+	font-family: monospace;
+}
+.recipe1 {
+	position: absolute;
+	top: 630px;
+	right: 12%;
+	width: 797px;
+	height: 437px;
+
+}
+.recipe2 {
+    position: absolute;
+    top: 0px;
+    right: 12%;
+    width: 797px;
+    height: 437px;
+
+}
+.indicaciones {
+	position: absolute;
+	top: 210px;
+	right: -50px;
+	width: 797px;
+	height: 437px;
+	text-transform: uppercase;
+	display: -webkit-inline-box;
+	font-size: 15px;
+
+}
+.tratamiento {
+	position: absolute;
+    top: 205px;
+    right: -50px;
+    width: 797px;
+    height: 437px;
+    text-transform: uppercase;
+		display: -webkit-inline-box;
+		font-size: 15px;
+
+}
+.fecha{
+	font-size: 20px;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: right;
 }
 </style>
-<br>
-																<center>RECIPE</center>
-<div class="row">
-    <div class="col-xs-12">
 
-		<div class="box box-primary">
-			<div class="box-header">
-				<h3 class="box-title"><?php  echo __('Tratamiento'); ?></h3>
+<div class="recipe2">
+		<div class="fecha">
+		<?php echo "" . date("d") . "/" . date("m") . "/" . date("Y"); ?>
+		</div >
+			<!-- <img src="http://localhost/medical_master/app/webroot/img/images.jpg" align="left" height="200" width="200"> -->
+			<img src="http://localhost/medical_master/app/webroot/img/doctor.jpg" align="left" height="200" width="200">
 
-			</div>
+			<!-- <img src="http://localhost/medical_master/app/webroot/img/images.jpg" align="right" height="200" width="200"> -->
+			<img src="http://localhost/medical_master/app/webroot/img/floresta.gif" align="right" height="200" width="200">
 
-			<div class="box-body table-responsive">
-                <table id="Treatments" class="table table-bordered table-striped">
-					<tbody>
-						<tr>		<td><strong><?php echo __('N° Tratamiento'); ?></strong></td>
-		<td>
-			<?php echo h($treatment['Treatment']['id']); ?>
-			&nbsp;
-		</td>
-</tr><tr>		<td><strong><?php echo __('Paciente'); ?></strong></td>
-		<td>
-			<?php echo $this->Html->link($treatment['Person']['full_name'], array('controller' => 'people', 'action' => 'view', $treatment['Person']['id']), array('class' => '')); ?>
-			&nbsp;
-		</td>
-</tr><tr>		<td><strong><?php echo __('Diagnostico'); ?></strong></td>
-		<td>
-			<?php echo $this->Html->link($treatment['Diagnostic']['diagnostico'], array('controller' => 'diagnostics', 'action' => 'view', $treatment['Diagnostic']['id']), array('class' => '')); ?>
-			&nbsp;
-		</td>
-</tr><tr>		<td><strong><?php echo __('Estado'); ?></strong></td>
-		<td>
-			<?php echo h($treatment['Treatment']['status_treament']); ?>
-			&nbsp;
-		</td>
-</tr><tr>		<td><strong><?php echo __('Recipe'); ?></strong></td>
-		<td>
-			<?php echo h($treatment['Treatment']['prescription']); ?>
-			&nbsp;
-		</td>
-</tr><tr>		<td><strong><?php echo __('Observacion'); ?></strong></td>
-		<td>
-			<?php echo h($treatment['Treatment']['observations_prescription']); ?>
-			&nbsp;
-		</td>
+																<center>
+										<h1>Dr. Gustavo Torres Sanchez</h1>
+													<h3>Cirujano - Oncólogo</h3>
+													<h4>0414-4789284</h4>
 
-</tr>					</tbody>
-				</table><!-- /.table table-striped table-bordered -->
-			</div><!-- /.table-responsive -->
+																</center>
 
-		</div><!-- /.view -->
+	<div class="tratamiento">
+		<h3><?php echo "Tratamiento"."-"."Paciente:".$this->Html->link($prescription['Person']['full_name'], array('controller' => 'people', 'action' => 'view', $prescription['Person']['id']), array('class' => '')); ?></h3>
+		<h3><?php echo h("-"."Recipe:".$prescription['Prescription']['id']); ?></h3>
+
+	</div>
+		<div class="a">
+			<br>
+			<?php echo h($prescription['Prescription']['prescription']); ?>
+		</div>
+</div>
 
 
-			<div class="box box-primary">
-				<div class="box-header">
-					<h3 class="box-title"><?php echo __('Indicaciones'); ?></h3>
+<div class="recipe1">
 
-				<?php if (!empty($treatment['Indication'])): ?>
 
-					<div class="box-body table-responsive">
-						<table class="table table-bordered table-striped">
-							<thead>
-								<tr>
-											<th class="text-center"><?php echo __('Indication'); ?></th>
-								</tr>
-							</thead>
-							<tbody>
-									<?php
-										$i = 0;
-										foreach ($treatment['Indication'] as $indication): ?>
-		<tr>
-			<td class="text-center"><?php echo $indication['indication']; ?></td>
-
-		</tr>
-	<?php endforeach; ?>
-							</tbody>
-						</table><!-- /.table table-striped table-bordered -->
-					</div><!-- /.table-responsive -->
-
-				<?php endif; ?>
+			<!-- <img src="http://localhost/medical_master/app/webroot/img/images.jpg" align="left" height="200" width="200"> -->
+			<img src="http://localhost/medical_master/app/webroot/img/doctor.jpg" align="left" height="200" width="200">
 
 
 
-			</div><!-- /.related -->
+			<!-- <img src="http://localhost/medical_master/app/webroot/img/images.jpg" align="right" height="200" width="200"> -->
+			<img src="http://localhost/medical_master/app/webroot/img/floresta.gif" align="right" height="200" width="200">
 
+																<center>
+										<h1>Dr. Gustavo Torres Sanchez</h1>
+													<h3>Cirujano - Oncólogo</h3>
+													<h4>0414-4789284</h4>
 
-	</div><!-- /#page-content .span9 -->
-
-</div><!-- /#page-container .row-fluid -->
-<br><br>
-                      <center>Dr. Gustavo Torres</center>
+												      </center>
+		<div class="indicaciones">
+			<h3><?php echo "Indicaciones"."-"."Paciente:".$this->Html->link($prescription['Person']['full_name'], array('controller' => 'people', 'action' => 'view', $prescription['Person']['id'])); ?></h3>
+			<h3><?php echo h("-"."Recipe:".$prescription['Prescription']['id']); ?></h3>
+		</div>
+		<div class="b">
+				<br>
+				<?php echo h($prescription['Prescription']['indications']); ?>
+		</div>
+</div>

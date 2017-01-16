@@ -29,6 +29,9 @@
           <div class="form-group">
             <?php echo $this->Form->input('physical_exam', array('label'=>'Examen Fisico','class' => 'form-control')); ?>
           </div><!-- .form-group -->
+          <div class="form-group">
+						<?php echo $this->Form->input('observations', array('label'=>'Observaciones','class' => 'form-control')); ?>
+					</div><!-- .form-group -->
           <center>
             <?php echo $this->Form->submit('Actualizar', array('class' => 'btn btn-large btn-primary')); ?>
          </center>
@@ -45,3 +48,10 @@
 	</div><!-- /#page-content .col-sm-9 -->
 
 </div><!-- /#page-container .row-fluid -->
+<div class="btn-group btn-group-justified col-sm-4">
+
+  <?php echo $this->Html->link(__('Nuevo Diagnostico'), array('controller'=>'diagnostics','action' => 'add'), array('class' => 'btn btn-info')); ?>
+  <?php echo $this->Html->link(__('Lista de Estudios'), array('action' => 'index'), array('class' => 'btn btn-danger')); ?>
+  <?php echo $this->Html->link(__('Nuevo Estudio'), array('action' => 'add'), array('class' => 'btn btn-primary')); ?>
+
+</div>

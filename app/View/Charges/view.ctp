@@ -72,3 +72,10 @@
 	</div><!-- /#page-content .span9 -->
 
 </div><!-- /#page-container .row-fluid -->
+<div class="btn-group btn-group-justified col-sm-4">
+
+  <?php echo $this->Html->link(__('Nueva Cita'), array('controller'=>'citations','action' => 'add'), array('class' => 'btn btn-info')); ?>
+  <?php echo $this->Html->link(__('Lista de Pagos'), array('action' => 'index'), array('class' => 'btn btn-danger')); ?>
+  <?php echo $this->Html->link(__('Nuevo Pago'), array('action' => 'add'), array('class' => 'btn btn-primary')); ?>
+
+</div>

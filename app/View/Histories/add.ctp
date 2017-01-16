@@ -11,13 +11,12 @@
 
 				<fieldset>
 
-					<div class="form-group">
+					<div class="form-group col-sm-12">
 						<?php echo $this->Form->input('person_id', array('label'=>'Paciente','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
-
-
-
-					<?php echo $this->Form->submit('Añadir', array('class' => 'btn btn-large btn-primary')); ?>
+          <center>
+					<?php echo $this->Form->submit('Asignar Nº Historia', array('class' => 'btn btn-large btn-primary')); ?>
+          </center>
 
 				</fieldset>
 
@@ -28,3 +27,10 @@
 	</div><!-- /#page-content .col-sm-9 -->
 
 </div><!-- /#page-container .row-fluid -->
+<div class="btn-group btn-group-justified col-sm-4">
+
+        <?php echo $this->Html->link(__('Nuevo Antecedente'), array('controller'=>'antecedents','action' => 'add'), array('class' => 'btn btn-info')); ?>
+        <?php echo $this->Html->link(__('Lista de Historias'), array('action' => 'index'), array('class' => 'btn btn-danger')); ?>
+        <?php echo $this->Html->link(__('Nuevo Paciente'), array('controller' => 'people', 'action' => 'add'), array('class' => 'btn btn-primary')); ?>
+
+</div>

@@ -14,28 +14,22 @@
 										<div class="form-group">
 						<?php echo $this->Form->input('id', array('class' => 'form-control')); ?>
 					</div><!-- .form-group -->
-
-					<div class="form-group">
+          <div class="form-group col-sm-6">
           <?php echo $this->Form->input('full_name', array('label'=>'Nombre Completo','class' => 'form-control')); ?>
-					</div><!-- .form-group -->
-					<div class="form-group">
-						<?php echo $this->Form->input('username', array('label'=>'Usuario','class' => 'form-control')); ?>
-					</div><!-- .form-group -->
-					<div class="form-group">
-						<?php echo $this->Form->input('password', array('label'=>'Contraseña','class' => 'form-control')); ?>
-					</div><!-- .form-group -->
-          <!-- <div class="form-group">
-            <?php
-            echo $this->Form->input('foto',array('label'=>'Foto','type'=>'file','class'=>'form-control'));
-            echo $this->Form->input('foto_dir',array('type'=>'hidden'));
-            ?>
-          </div> -->
-					<div class="form-group">
-						<?php echo $this->Form->input('group_id', array('label'=>'Grupo','class' => 'form-control')); ?>
-					</div><!-- .form-group -->
+          </div><!-- .form-group -->
+          <div class="form-group col-sm-6">
+            <?php echo $this->Form->input('group_id', array('label'=>'Grupo','class' => 'form-control')); ?>
+          </div><!-- .form-group -->
 
-					<?php echo $this->Form->submit('Actualizar', array('class' => 'btn btn-large btn-primary')); ?>
-
+          <div class="form-group col-sm-6">
+            <?php echo $this->Form->input('username', array('label'=>'Usuario','class' => 'form-control')); ?>
+          </div><!-- .form-group -->
+          <div class="form-group col-sm-6">
+            <?php echo $this->Form->input('password', array('label'=>'Contraseña','class' => 'form-control')); ?>
+          </div><!-- .form-group -->
+          <center>
+                 <?php echo $this->Form->submit('Añadir', array('class' => 'btn btn-large btn-primary')); ?>
+          </center>
 				</fieldset>
 
 						<?php echo $this->Form->end(); ?>
@@ -45,3 +39,10 @@
 	</div><!-- /#page-content .col-sm-9 -->
 
 </div><!-- /#page-container .row-fluid -->
+<div class="btn-group btn-group-justified col-sm-4">
+
+  <?php echo $this->Html->link(__('Nuevo Grupo'), array('controller'=>'groups','action' => 'add'), array('class' => 'btn btn-info')); ?>
+  <?php echo $this->Html->link(__('Lista de Usuarios'), array('action' => 'index'), array('class' => 'btn btn-danger')); ?>
+  <?php echo $this->Html->link(__('Lista de Grupos'), array('action' => 'index'), array('class' => 'btn btn-primary')); ?>
+
+</div>

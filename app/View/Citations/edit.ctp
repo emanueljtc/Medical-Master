@@ -42,6 +42,13 @@
 	</div><!-- /#page-content .col-sm-9 -->
 
 </div><!-- /#page-container .row-fluid -->
+<div class="btn-group btn-group-justified col-sm-4">
+
+  <?php echo $this->Html->link(__('Nuevo Pago'), array('controller'=>'charges','action' => 'add'), array('class' => 'btn btn-info')); ?>
+  <?php echo $this->Html->link(__('Lista de Citas'), array('action' => 'index'), array('class' => 'btn btn-danger')); ?>
+  <?php echo $this->Html->link(__('Nueva Cita'), array('action' => 'add'), array('class' => 'btn btn-primary')); ?>
+
+</div>
 <script>
       Calendar.setup({
                   inputField : "f_date2",

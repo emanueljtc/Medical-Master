@@ -14,26 +14,27 @@
 		 	<div class="form-group">
 						<?php echo $this->Form->input('id', array('class' => 'form-control')); ?>
 					</div><!-- .form-group -->
-          <?php echo $this->Form->input('total_cost', array('label'=>'Costo Total','class' => 'form-control')); ?>
-        </div><!-- .form-group -->
-        <div class="form-group">
-          <?php echo $this->Form->input('person_id', array('label'=>'Paciente','class' => 'form-control')); ?>
-        </div><!-- .form-group -->
-        <div class="form-group">
-          <?php echo $this->Form->input('citation_id', array('label'=>'N° Cita','class' => 'form-control')); ?>
-        </div><!-- .form-group -->
-        <div class="form-group">
-          <?php echo $this->Form->input('state_charge', array('label'=>'Estado','type'=>'select','options'=>array(''=>'SELECCIONE ESTADO DEL PAGO','Cancelado'=>'Cancelado','No Cancelado'=>'No Cancelado'),'class' => 'form-control')); ?>
-        </div><!-- .form-group -->
-        <div class="form-group">
-          <?php echo $this->Form->input('typepayment_id', array('label'=>'Tipo','class' => 'form-control')); ?>
-        </div><!-- .form-group -->
-        <div class="form-group">
-          <?php echo $this->Form->input('observations', array('label'=>'Observacion','class' => 'form-control')); ?>
-        </div><!-- .form-group -->
-
-        <?php echo $this->Form->submit('Actualizar', array('class' => 'btn btn-large btn-primary')); ?>
-
+          <div class="form-group col-sm-3">
+						<?php echo $this->Form->input('total_cost', array('label'=>'Costo Total','class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group col-sm-6">
+						<?php echo $this->Form->input('person_id', array('label'=>'Paciente','class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group col-sm-3">
+						<?php echo $this->Form->input('citation_id', array('label'=>'N° Cita','class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group col-sm-6">
+						<?php echo $this->Form->input('state_charge', array('label'=>'Estado','type'=>'select','options'=>array(''=>'SELECCIONE','Cancelado'=>'Cancelado','No Cancelado'=>'No Cancelado'),'class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group col-sm-6  ">
+						<?php echo $this->Form->input('typepayment_id', array('label'=>'Tipo','class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+					<div class="form-group">
+						<?php echo $this->Form->input('observations', array('label'=>'Observacion','class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+          <center>
+					       <?php echo $this->Form->submit('Actualizar', array('class' => 'btn btn-large btn-primary')); ?>
+          </center>
 				</fieldset>
 
 						<?php echo $this->Form->end(); ?>
@@ -43,3 +44,10 @@
 	</div><!-- /#page-content .col-sm-9 -->
 
 </div><!-- /#page-container .row-fluid -->
+<div class="btn-group btn-group-justified col-sm-4">
+
+  <?php echo $this->Html->link(__('Nueva Cita'), array('controller'=>'citations','action' => 'add'), array('class' => 'btn btn-info')); ?>
+  <?php echo $this->Html->link(__('Lista de Pagos'), array('action' => 'index'), array('class' => 'btn btn-danger')); ?>
+  <?php echo $this->Html->link(__('Nuevo Pago'), array('action' => 'add'), array('class' => 'btn btn-primary')); ?>
+
+</div>

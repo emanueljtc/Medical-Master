@@ -389,8 +389,8 @@ class Diagnostic extends AppModel {
  * @var array
  */
 	public $hasMany = array(
-		'Indication' => array(
-			'className' => 'Indication',
+		'Prescription' => array(
+			'className' => 'Prescription',
 			'foreignKey' => 'diagnostic_id',
 			'dependent' => false,
 			'conditions' => '',
@@ -415,19 +415,7 @@ class Diagnostic extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-		'Treatment' => array(
-			'className' => 'Treatment',
-			'foreignKey' => 'diagnostic_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		)
+
 	);
 
 }

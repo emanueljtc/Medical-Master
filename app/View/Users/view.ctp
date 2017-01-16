@@ -4,7 +4,7 @@
 
 		<div class="box box-primary">
 			<div class="box-header">
-				<h3 class="box-title"><?php  echo __('Usuario'); ?></h3>
+				<h3 class="box-title"><?php  echo __('Vista Usuario'); ?></h3>
 				<div class="box-tools pull-right">
 	                <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i> Editar'), array('action' => 'edit', $user['User']['id']), array('class' => 'btn btn-primary', 'escape' => false)); ?>
 	            </div>
@@ -58,3 +58,10 @@
 	</div><!-- /#page-content .span9 -->
 
 </div><!-- /#page-container .row-fluid -->
+<div class="btn-group btn-group-justified col-sm-4">
+
+  <?php echo $this->Html->link(__('Nuevo Grupo'), array('controller'=>'groups','action' => 'add'), array('class' => 'btn btn-info')); ?>
+  <?php echo $this->Html->link(__('Lista de Usuarios'), array('action' => 'index'), array('class' => 'btn btn-danger')); ?>
+  <?php echo $this->Html->link(__('Lista de Grupos'), array('action' => 'index'), array('class' => 'btn btn-primary')); ?>
+
+</div>

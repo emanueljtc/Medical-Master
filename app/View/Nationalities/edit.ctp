@@ -3,7 +3,7 @@
     <div class="col-xs-6 col-xs-offset-3">
 		<div class="box box-primary">
 			<div class="box-header">
-			<h3 class="box-title"><?php echo __('Edit Nationality'); ?></h3>
+			<h3 class="box-title"><?php echo __('Editar Nationalidad'); ?></h3>
 			</div>
 			<div class="box-body table-responsive">
 
@@ -29,3 +29,10 @@
 	</div><!-- /#page-content .col-sm-9 -->
 
 </div><!-- /#page-container .row-fluid -->
+<div class="btn-group btn-group-justified col-sm-4">
+
+  <?php echo $this->Html->link(__('Nuevo Paciente'), array('controller'=>'people','action' => 'add'), array('class' => 'btn btn-info')); ?>
+  <?php echo $this->Html->link(__('Lista de Nacionalidades'), array('action' => 'index'), array('class' => 'btn btn-danger')); ?>
+  <?php echo $this->Html->link(__('Nueva Nacionalidad'), array('action' => 'add'), array('class' => 'btn btn-primary')); ?>
+
+</div>

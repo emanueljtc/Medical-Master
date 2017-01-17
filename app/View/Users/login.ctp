@@ -1,14 +1,14 @@
 <?php $this->layout = 'p_login'; ?>
 
-</style>
  <div class="wrapper">
 
 
-
+        <!-- <div class="logo"></div> -->
+        
         <div class="form-signin zoom">
           <!-- <marquee loop="1" SCROLLAMOUNT="25" behavior = "slide" direction="right"> -->
 
-              <h3 class="title">____Medical_Master____</h3>
+              <h3 class="title">Medical_Master</h3>
               <!-- </marquee> -->
               <div class="col-xs-12">
                     <?php echo $this->Form->create('User'); ?>
@@ -31,11 +31,14 @@
                <center>
                   <button class="btn btn-md btn-primary" type="submit">Entrar</button>
                   <!-- <button class="btn btn-md btn-danger" type="submit">Limpiar</button> -->
-              </center>    
+              </center>
 
         </div>
-        <br><br><br>
-        <center>
-    <h4 class="developers">Desarrollado por Emanuel Torres C. & Guillermo Ochoa T.</h4>
-  </center>
+        <br><br>
+          <footer id="footer">
+              <center>
+                <h4 class="developers">Desarrollado por Emanuel Torres C. & Guillermo Ochoa T.</h4>
+            </center>
+          </footer>
+
 </div>

@@ -3,16 +3,29 @@ body {
 
     width: 100%;
     /*height: 400px;*/
-    background-image: url('http://localhost/medical_master/app/webroot/img/login.jpg');
+    background-color: transparent;
+    background-image: url('..//../img/login.jpg');
     background-size: 100% 100%;
-    /*border: 1px solid red;*/
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+h3{
+  font-family: monospace;
+  font-weight: bold;
+  text-align: center;
+}
 
 }
 .title{
-  font-family: atomo;
   font-size: 36px;
   color: #042c4e;
-  font-style: italic;
+  font-style: normal;
+  font-family: monospace;
+  text-aling:center;
+
 }
 .developers{
   color: #ffffff;
@@ -20,14 +33,36 @@ body {
   font-size: 150%;
 }
 .wrapper {
-  margin-top: 206px;
+  margin-top: 260px;
   margin-bottom: 80px;
 }
-
+.logo{
+  position: absolute;
+    top: 0px;
+    right: 528px;
+    width: 273px;
+    height: 177px;
+    background-image: url(..//../img/medicalmaster.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.34);
+    -webkit-box-shadow: 14px 5px 43px 3px rgba(0,0,0,0.83);
+    -moz-box-shadow: 14px 5px 43px 3px rgba(0,0,0,0.83);
+    box-shadow: 14px 5px 43px 3px rgba(0,0,0,0.83);
+    -webkit-border-top-left-radius: 15px;
+    -webkit-border-top-right-radius: 12px;
+    -webkit-border-bottom-right-radius: 12px;
+    -webkit-border-bottom-left-radius: 12px;
+}
 .form-signin {
   max-width: 437px;
   padding: 15px 27px 24px;
   margin: 0 auto;
+  /*background-image:url("..//../img/medicalmaster3.png");*/
+	background-repeat: no-repeat;
+	background-position: center;
+  background-size: cover;
   background-color: rgba(255, 255, 255, 0.73);
       -webkit-box-shadow: 14px 5px 43px 3px rgba(0,0,0,0.83);
       -moz-box-shadow: 14px 5px 43px 3px rgba(0,0,0,0.83);
@@ -74,7 +109,8 @@ body {
 
 }
 .zoom {
-    font-size: 12px;
+    font-size: 15px;
+    font-family: monospace;
     /*width: 300px;*/
 
     /* Firefox */
@@ -85,8 +121,4 @@ body {
     -o-transition: font-size 300ms linear 0s;
     /* Default */
     transition: font-size 300ms linear 0s;
-}
-
-.zoom:hover {
-    font-size: 16px;
 }

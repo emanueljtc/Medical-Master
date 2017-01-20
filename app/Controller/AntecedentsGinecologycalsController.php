@@ -35,7 +35,7 @@ class AntecedentsGinecologycalsController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->AntecedentsGinecologycal->exists($id)) {
-			throw new NotFoundException(__('Invalid antecedents ginecologycal'));
+			throw new NotFoundException(__('Antecedente Ginecologico Invalido'));
 		}
 		$options = array('conditions' => array('AntecedentsGinecologycal.' . $this->AntecedentsGinecologycal->primaryKey => $id));
 		$this->set('antecedentsGinecologycal', $this->AntecedentsGinecologycal->find('first', $options));
@@ -50,10 +50,10 @@ class AntecedentsGinecologycalsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->AntecedentsGinecologycal->create();
 			if ($this->AntecedentsGinecologycal->save($this->request->data)) {
-				$this->Session->setFlash(__('The antecedents ginecologycal has been saved'), 'flash/success');
+				$this->Session->setFlash(__('El antecedente fue registrado correctamente'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The antecedents ginecologycal could not be saved. Please, try again.'), 'flash/error');
+				$this->Session->setFlash(__('El Antecedente no fue registrado, Intente de Nuevo.'), 'flash/error');
 			}
 		}
 		$people = $this->AntecedentsGinecologycal->Person->find('list',array('order'=>'id DESC'));
@@ -71,14 +71,14 @@ class AntecedentsGinecologycalsController extends AppController {
 	public function edit($id = null) {
         $this->AntecedentsGinecologycal->id = $id;
 		if (!$this->AntecedentsGinecologycal->exists($id)) {
-			throw new NotFoundException(__('Invalid antecedents ginecologycal'));
+			throw new NotFoundException(__('Antecedente Ginecologico Invalido'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->AntecedentsGinecologycal->save($this->request->data)) {
-				$this->Session->setFlash(__('The antecedents ginecologycal has been saved'), 'flash/success');
+				$this->Session->setFlash(__('El Antecedente fue actualizado correctamente'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The antecedents ginecologycal could not be saved. Please, try again.'), 'flash/error');
+				$this->Session->setFlash(__('El Antecedente no fue actualizado, Intente de Nuevo'), 'flash/error');
 			}
 		} else {
 			$options = array('conditions' => array('AntecedentsGinecologycal.' . $this->AntecedentsGinecologycal->primaryKey => $id));
@@ -103,13 +103,13 @@ class AntecedentsGinecologycalsController extends AppController {
 		}
 		$this->AntecedentsGinecologycal->id = $id;
 		if (!$this->AntecedentsGinecologycal->exists()) {
-			throw new NotFoundException(__('Invalid antecedents ginecologycal'));
+			throw new NotFoundException(__('Antecedente Ginecologico Invalido'));
 		}
 		if ($this->AntecedentsGinecologycal->delete()) {
-			$this->Session->setFlash(__('Antecedents ginecologycal deleted'), 'flash/success');
+			$this->Session->setFlash(__('El Antecedente ha sido eliminado correctamente'), 'flash/success');
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Antecedents ginecologycal was not deleted'), 'flash/error');
+		$this->Session->setFlash(__('El Antecedente no ha sido eliminado'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
 }

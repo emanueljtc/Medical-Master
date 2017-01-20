@@ -198,6 +198,11 @@ class UsersController extends AppController {
 		$this->Acl->allow($group, 'controllers/Antecedents/edit');
 		$this->Acl->allow($group, 'controllers/Antecedents/view');
     $this->Acl->allow($group, 'controllers/Antecedents/delete');
+    $this->Acl->allow($group, 'controllers/AntecedentsGinecologycals/index');
+    $this->Acl->allow($group, 'controllers/AntecedentsGinecologycals/add');
+    $this->Acl->allow($group, 'controllers/AntecedentsGinecologycals/edit');
+    $this->Acl->allow($group, 'controllers/AntecedentsGinecologycals/view');
+    $this->Acl->allow($group, 'controllers/AntecedentsGinecologycals/delete');
     $this->Acl->allow($group, 'controllers/Diagnostics');
 		$this->Acl->allow($group, 'controllers/Prescriptions');
 		$this->Acl->allow($group, 'controllers/Indications');
@@ -205,8 +210,9 @@ class UsersController extends AppController {
     $this->Acl->allow($group, 'controllers/Studies/add');
     $this->Acl->allow($group, 'controllers/Studies/view');
     $this->Acl->allow($group, 'controllers/Studies/edit');
-    $this->Acl->allow($group, 'controllers/Citations/');
-		$this->Acl->allow($group, 'controllers/Charges/index');
+    $this->Acl->allow($group, 'controllers/Citations/index');
+    $this->Acl->allow($group, 'controllers/Citations/view');
+    $this->Acl->allow($group, 'controllers/Charges/index');
 		$this->Acl->allow($group, 'controllers/Charges/view');
 
 

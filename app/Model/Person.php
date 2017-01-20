@@ -202,6 +202,19 @@ class Person extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
+		'Antecedent' => array(
+			'className' => 'AntecedentsGinecologycal',
+			'foreignKey' => 'person_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
 		'Charge' => array(
 			'className' => 'Charge',
 			'foreignKey' => 'person_id',

@@ -126,7 +126,7 @@ function calcularEdad()
                     }else{
                       return false;
                     }
-
+                     return true;
                     }
                     </script>
           <div class="form-group col-sm-12">

@@ -65,7 +65,7 @@
 
   <?php echo $this->Html->link(__('Nueva Cita'), array('controller'=>'citations','action' => 'add'), array('class' => 'btn btn-info')); ?>
   <?php echo $this->Html->link(__('Lista de Citas'), array('controller'=>'citations','action' => 'index'), array('class' => 'btn btn-danger')); ?>
-  <?php echo $this->Html->link(__('Nuevo Paciente'), array('controller'=>'people','action' => 'add'), array('class' => 'btn btn-primary')); ?>
+  <?php echo $this->Html->link(__('Exportar Lista Pagos'), array('action' => 'lista_pdf' , $charge['Charge']['id'], 'ext' => 'pdf' ), array('class' => 'btn btn-success')); ?>
 
 </div>
 <?php

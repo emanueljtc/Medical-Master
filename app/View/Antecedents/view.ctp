@@ -33,7 +33,7 @@
 			<?php echo h($antecedent['Antecedent']['name_antecendent']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Origen'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Origen del Padecimiento'); ?></strong></td>
 		<td>
 			<?php echo h($antecedent['Antecedent']['origin']); ?>
 			&nbsp;
@@ -43,12 +43,12 @@
 			<?php echo h($antecedent['Antecedent']['time_ suffering']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Familia'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Familiares'); ?></strong></td>
 		<td>
 			<?php echo h($antecedent['Antecedent']['family']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Doctor Tratante'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Personales Médicos'); ?></strong></td>
 		<td>
 			<?php echo h($antecedent['Antecedent']['personals_doctors']); ?>
 			&nbsp;

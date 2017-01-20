@@ -45,6 +45,12 @@
 			<?php echo h($diagnostic['Diagnostic']['reason']); ?>
 			&nbsp;
 		</td>
+</tr>
+<tr>		<td><strong><?php echo __('Enfermedad Actual'); ?></strong></td>
+		<td>
+			<?php echo h($diagnostic['Diagnostic']['current_illness']); ?>
+			&nbsp;
+		</td>
 </tr><tr>		<td><strong><?php echo __('Tamaño Senos'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['size_boobs']); ?>
@@ -80,7 +86,7 @@
 			<?php echo h($diagnostic['Diagnostic']['neck_pussy']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Coloscopia'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Colposcopia'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['coloscopia']); ?>
 			&nbsp;
@@ -130,34 +136,9 @@
 			<?php echo h($diagnostic['Diagnostic']['laringoscopia']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Menarguia'); ?></strong></td>
-		<td>
-			<?php echo h($diagnostic['Diagnostic']['menarguia']); ?>
-			&nbsp;
-		</td>
-</tr><tr>		<td><strong><?php echo __('Reglas'); ?></strong></td>
-		<td>
-			<?php echo h($diagnostic['Diagnostic']['reglas']); ?>
-			&nbsp;
-		</td>
-</tr><tr>		<td><strong><?php echo __('PRS'); ?></strong></td>
-		<td>
-			<?php echo h($diagnostic['Diagnostic']['prs']); ?>
-			&nbsp;
-		</td>
-</tr><tr>		<td><strong><?php echo __('Compañero Sexual'); ?></strong></td>
-		<td>
-			<?php echo h($diagnostic['Diagnostic']['companion_sexual']); ?>
-			&nbsp;
-		</td>
 </tr><tr>		<td><strong><?php echo __('Distancia CAP'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['distance_cap']); ?>
-			&nbsp;
-		</td>
-</tr><tr>		<td><strong><?php echo __('Gestas'); ?></strong></td>
-		<td>
-			<?php echo h($diagnostic['Diagnostic']['gestas']); ?>
 			&nbsp;
 		</td>
 </tr><tr>		<td><strong><?php echo __('RSI'); ?></strong></td>
@@ -165,34 +146,14 @@
 			<?php echo h($diagnostic['Diagnostic']['rsi']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Paras'); ?></strong></td>
-		<td>
-			<?php echo h($diagnostic['Diagnostic']['paras']); ?>
-			&nbsp;
-		</td>
 </tr><tr>		<td><strong><?php echo __('Abdomen'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['abdomen']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Abortos'); ?></strong></td>
-		<td>
-			<?php echo h($diagnostic['Diagnostic']['misbirth']); ?>
-			&nbsp;
-		</td>
 </tr><tr>		<td><strong><?php echo __('Vulva'); ?></strong></td>
 		<td>
 			<?php echo h($diagnostic['Diagnostic']['gynecological_vulva']); ?>
-			&nbsp;
-		</td>
-</tr><tr>		<td><strong><?php echo __('Cesareas'); ?></strong></td>
-		<td>
-			<?php echo h($diagnostic['Diagnostic']['cesareans']); ?>
-			&nbsp;
-		</td>
-</tr><tr>		<td><strong><?php echo __('Edad del Primer Parto'); ?></strong></td>
-		<td>
-			<?php echo h($diagnostic['Diagnostic']['age_birth_one']); ?>
 			&nbsp;
 		</td>
 </tr><tr>		<td><strong><?php echo __('Diagnostico'); ?></strong></td>

@@ -1,50 +1,124 @@
+<style>
+.titulo{
+	font-family: monospace;
+	font-size:40px;
+	font-weight:bold;
+}
+
+h3{
+			text-decoration: none;
+			font-family: "monospace", Georgia, Serif;
+
+}
+h1{
+			text-decoration: none;
+			font-family: "monospace", Georgia, Serif;
+
+}
+table {
+    	width: 100%;
+		text-align: center;
+		border-collapse: collapse;
+		text-decoration: none;
+		font-family: monospace;
+    font-size: 15px;
+}
+
+table .cabeza
+{
+	background-color:#adc4cc;
+
+}
+
+table .contenido
+{
+	background-color:#00c0ef;
+}
+
+table .subtitulo
+{
+	background-color:#CAEDDE;
+}
+
+.centrar
+{
+	text-align:center;
+}
+
+a{
+	text-decoration: none;
+}
+a:link {
+    color: #000;
+		text-decoration: none;
+}
+.fecha{
+	font-size: 20px;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: right;
+}
+</style>
 
 	<div class="fecha">
 	<?php echo "" . date("d") . "/" . date("m") . "/" . date("Y"); ?>
 	</div >
 
-<table id="cabezera">
 
-			<tr class="cabezera">
-				<th class="cabezera">
-					<div class="imagen">
-						<!-- INSERTANDO LOGO-->
-						<?php	echo $this->Html->image(('../img/foto2.jpg'),array('class'=>'img'));?>
-					</div>
-				</th>
-				<th class="cabezera">
-
-						<h3>Lista General del Personal</h3>
-
-				</th>
-</table>
 <br>
-<table id="datos">
-		<thead>
-				<tr>
+<table class="tabla">
+	<tr class="cabeza">
+	<img src="http://localhost/medical_master/app/webroot/img/logo.png" align="left" height="200" width="200">
 
-						<th>Nombres</th>
-						<th>Apellidos</th>
-						<th>Cedula</th>
-						<th>Celular</th>
-						<th>Cargo</th>
+	<!-- <img src="http://localhost/medical_master/app/webroot/img/images.jpg" align="right" height="200" width="200"> -->
+	<img src="http://localhost/medical_master/app/webroot/img/floresta.gif" align="right" height="200" width="200">
 
-				</tr>
-		</thead>
-		<tbody>
-		<?php foreach ($personals as $personal): ?>
-		<tr>
-			<!-- <td><?php echo h($personal['Personal']['id']); ?>&nbsp;</td> -->
+														<center>
+								<h1>Dr. Gustavo Torres Sanchez</h1>
+											<h3>Cirujano - Oncólogo</h3>
+						<h4>MSDS: 23392 - CMA: 2082 - CI: 4567839 </h4>
 
-
-			<td><?php echo h($personal['Personal']['name']); ?>&nbsp;</td>
-			<td><?php echo h($personal['Personal']['last_name']); ?>&nbsp;</td>
-			<td><?php echo h($personal['Personal']['dni']); ?>&nbsp;</td>
-			<td><?php echo h($personal['Personal']['cell_phone']);?>&nbsp;</td>
-		<td>
-				<?php echo $this->Html->link($personal['Position']['position'], array('controller' => 'positions', 'action' => 'view', $personal['Position']['id'])); ?>
-			</td>
-
+														</center>
 		</tr>
-	<?php endforeach; ?>
+	<tr class="cabeza">
+		<td class="centrar titulo" colspan="5">Lista de Pagos</td>
+	</tr>
+
+				<tr class="cabeza">
+
+						<th>Pacientes</th>
+						<th>Nº Citas</th>
+						<th>Fechas de Pagos</th>
+						<th>Tipo de Pagos</th>
+						<th>Monto Total</th>
+				</tr>
+
+		<tbody>
+			<?php $acumulador = 0; ?>
+
+			<?php foreach ($charges as $charge): ?>
+			<tr class="contenido">
+				<!-- <td><?php echo h($charge['Charge']['id']); ?>&nbsp;</td> -->
+
+
+				<td><?php echo h($charge['Person']['full_name']); ?>&nbsp;</td>
+				<td><?php echo h($charge['Citation']['id']); ?>&nbsp;</td>
+				<td><?php echo h($charge['Charge']['modified']);?>&nbsp;</td>
+				<td><?php echo h($charge['Typepayment']['type_payment']);?>&nbsp;</td>
+				<td><?php echo h($charge['Charge']['total_cost']);?>&nbsp;</td>
+
+				<?php $acumulador += $charge['Charge']['total_cost']; ?>
+
+			</tr>
+
+		<?php endforeach; ?>
+
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td><strong>TOTAL</strong></td>
+			<td><?php echo $acumulador; ?></td>
+		</tr>
+
 </table>

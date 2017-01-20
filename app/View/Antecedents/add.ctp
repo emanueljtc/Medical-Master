@@ -27,17 +27,17 @@
 					<div class="form-group col-sm-6">
 						<?php echo $this->Form->input('time_ suffering', array('maxlength'=>'60','label'=>'Tiempo de Padecimiento','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
-          <div class="form-group">
-						<?php echo $this->Form->input('origin', array('label'=>'Origen','class' => 'form-control')); ?>
-					</div><!-- .form-group -->
-					<div class="form-group">
-						<?php echo $this->Form->input('family', array('label'=>'Familia','class' => 'form-control')); ?>
+          <div class="form-group col-sm-6">
+						<?php echo $this->Form->input('origin', array('label'=>'Origen del Padecimiento','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
 					<div class="form-group col-sm-6">
-						<?php echo $this->Form->input('personals_doctors', array('label'=>'Doctor Tratante','class' => 'form-control')); ?>
+						<?php echo $this->Form->input('family', array('label'=>'Familiares','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
+          <div class="form-group col-sm-6">
+            <?php echo $this->Form->input('surgicals', array('label'=>'Cirugias','class' => 'form-control')); ?>
+          </div><!-- .form-group -->
 					<div class="form-group col-sm-6">
-						<?php echo $this->Form->input('surgicals', array('type'=>'select','options'=>array(''=>'[SELECCIONE]','Si'=>'Si','No'=>'No'),'label'=>'Sirugias','class' => 'form-control')); ?>
+						<?php echo $this->Form->input('personals_doctors', array('label'=>'Personales Médicos','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
           <center>
 					  <?php echo $this->Form->submit('Añadir', array('class' => 'btn btn-large btn-primary')); ?>

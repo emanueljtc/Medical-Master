@@ -24,12 +24,12 @@
             <?php echo $this->Form->input('name_studie', array('label'=>'Nombre del Estudio','class' => 'form-control')); ?>
           </div><!-- .form-group -->
           <div class="form-group">
-            <?php echo $this->Form->input('functional_exam', array('label'=>'Examen Funcional','class' => 'form-control')); ?>
-          </div><!-- .form-group -->
-          <div class="form-group">
-            <?php echo $this->Form->input('physical_exam', array('label'=>'Examen Fisico','class' => 'form-control')); ?>
-          </div><!-- .form-group -->
-          <div class="form-group">
+						<?php echo $this->Form->input('functional_exam', array('label'=>'Examen Funcional (Interrogatorio)','class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+          <div class="form-group col-sm-6">
+						<?php echo $this->Form->input('physical_exam', array('label'=>'Examen Fisico','class' => 'form-control')); ?>
+					</div><!-- .form-group -->
+          <div class="form-group col-sm-6">
 						<?php echo $this->Form->input('observations', array('label'=>'Observaciones','class' => 'form-control')); ?>
 					</div><!-- .form-group -->
           <center>

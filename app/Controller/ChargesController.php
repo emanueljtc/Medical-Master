@@ -28,7 +28,7 @@ class ChargesController extends AppController {
 	 'filename' => 'Lista_'.$id.'.pdf',
 		);
 	$this->Paginator->settings = $this->paginate = array('limit' => 6);
-	 $this->set('charges', $this->paginate('Charge'));
+	 $this->set('charges', $this->paginate('Charges'));
  }
 	public function index() {
 		$this->Charge->recursive = 0;

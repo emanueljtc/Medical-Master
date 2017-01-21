@@ -21,7 +21,7 @@ Año: 2016 - 2017 -->
         <div class="form-signin zoom">
           <!-- <marquee loop="1" SCROLLAMOUNT="25" behavior = "slide" direction="right"> -->
 
-              <h3 class="title">Medical_Master</h3>
+              <h3 class="title">Login</h3>
               <!-- </marquee> -->
               <div class="col-xs-12">
                     <?php echo $this->Form->create('User'); ?>

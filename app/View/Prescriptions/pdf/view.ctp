@@ -1,105 +1,117 @@
+<!-- MEDICAL_MASTER
+Software Medico Asistencial
+Sistema de Información: Desarrollado en CAKEPHP 2.6
+Aplicativo Movil: Desarrollado en IONIC 2
+Licencia Privativa.
+Desarrolladores:
+Ing. Guillermo Ochoa Torres
+Ing. Emanuel Torres Clemente
+Lugar: Maracay - Estado Aragua - Venezuela
+Version: 1.1
+Año: 2016 - 2017 -->
 <style>
-h3{
+		h3{
+					text-decoration: none;
+					font-family: "monospace", Georgia, Serif;
+					font-size: 15px;
+
+		}
+		h1{
+					text-decoration: none;
+					font-family: "monospace", Georgia, Serif;
+					font-size: 25px;
+		}
+		p{
 			text-decoration: none;
-			font-family: "monospace", Georgia, Serif;
+			text-align: justify;
+			font-family: "Times New Roman", Georgia, Serif;
+			font-size: 130%;
+			text-indent: 3em;
+		}
+		a:link {
+		    color: #000;
+				text-decoration: none;
+		}
+		.a {
+			position: absolute;
+			top: 252px;
+			right: 100px;
+			width: 610px;
+			height: 370px;
+			border-radius: 14px;
+			border: 2px solid #73AD21;
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 20px;
+			font-family: monospace;
+			font-weight: bold;
+			background-image:url("http://localhost/medical_master/app/webroot/img/medicalmaster2.png");
+			background-repeat: no-repeat;
+			background-position: center;
 
-}
-h1{
+			}
+		.b {
+			position: absolute;
+			top: 255px;
+			right: 100px;
+			width: 610px;
+			height: 370px;
+			border-radius: 14px;
+			border: 2px solid #73AD21;
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 20px;
+			font-family: monospace;
+			font-weight: bold;
+			background-image:url("http://localhost/medical_master/app/webroot/img/medicalmaster2.png");
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		.recipe1 {
+			position: absolute;
+			top: 630px;
+			right: 12%;
+			width: 797px;
+			height: 437px;
+
+		}
+		.recipe2 {
+		    position: absolute;
+		    top: 0px;
+		    right: 12%;
+		    width: 797px;
+		    height: 437px;
+
+
+		}
+		.indicaciones {
+			position: absolute;
+			top: 210px;
+			right: -50px;
+			width: 797px;
+			height: 437px;
+			text-transform: uppercase;
+			display: -webkit-inline-box;
+			font-size: 15px;
+
+		}
+		.tratamiento {
+			position: absolute;
+		    top: 205px;
+		    right: -50px;
+		    width: 797px;
+		    height: 437px;
+		    text-transform: uppercase;
+				display: -webkit-inline-box;
+				font-size: 15px;
+
+		}
+		.fecha{
+			font-size: 20px;
+			font-weight: bold;
 			text-decoration: none;
-			font-family: "monospace", Georgia, Serif;
-
-}
-p{
-	text-decoration: none;
-	text-align: justify;
-	font-family: "Times New Roman", Georgia, Serif;
-	font-size: 130%;
-	text-indent: 3em;
-}
-a:link {
-    color: #000;
-		text-decoration: none;
-}
-.a {
-	position: absolute;
-	top: 252px;
-	right: 100px;
-	width: 610px;
-	height: 370px;
-	border-radius: 14px;
-	border: 2px solid #73AD21;
-	text-align: center;
-	text-transform: uppercase;
-	font-size: 20px;
-	font-family: monospace;
-	font-weight: bold;
-	background-image:url("http://localhost/medical_master/app/webroot/img/medicalmaster2.png");
-	background-repeat: no-repeat;
-	background-position: center;
-
-	}
-.b {
-	position: absolute;
-	top: 255px;
-	right: 100px;
-	width: 610px;
-	height: 370px;
-	border-radius: 14px;
-	border: 2px solid #73AD21;
-	text-align: center;
-	text-transform: uppercase;
-	font-size: 20px;
-	font-family: monospace;
-	font-weight: bold;
-	background-image:url("http://localhost/medical_master/app/webroot/img/medicalmaster2.png");
-	background-repeat: no-repeat;
-	background-position: center;
-}
-.recipe1 {
-	position: absolute;
-	top: 630px;
-	right: 12%;
-	width: 797px;
-	height: 437px;
-
-}
-.recipe2 {
-    position: absolute;
-    top: 0px;
-    right: 12%;
-    width: 797px;
-    height: 437px;
-
-
-}
-.indicaciones {
-	position: absolute;
-	top: 210px;
-	right: -50px;
-	width: 797px;
-	height: 437px;
-	text-transform: uppercase;
-	display: -webkit-inline-box;
-	font-size: 15px;
-
-}
-.tratamiento {
-	position: absolute;
-    top: 205px;
-    right: -50px;
-    width: 797px;
-    height: 437px;
-    text-transform: uppercase;
-		display: -webkit-inline-box;
-		font-size: 15px;
-
-}
-.fecha{
-	font-size: 20px;
-	font-weight: bold;
-	text-decoration: none;
-	text-align: right;
-}
+			text-align: right;
+		}
 
 </style>
 
@@ -115,8 +127,8 @@ a:link {
 
 																<center>
 										<h1>Dr. Gustavo Torres Sanchez</h1>
-													<h3>Cirujano - Oncólogo</h3>
-								<h4>MSDS: 23392 - CMA: 2082 - CI: 4567839 </h4>
+										<h3>Cirujano General - Cirujano Oncólogo</h3>
+								<h4>MSDS: 23392 - CMA: 2082 - RIF: V-4567839-0 </h4>
 
 																</center>
 
@@ -145,8 +157,8 @@ a:link {
 
 																<center>
 										<h1>Dr. Gustavo Torres Sanchez</h1>
-													<h3>Cirujano - Oncólogo</h3>
-													<h4>0414-4789284</h4>
+										<h3>Cirujano General - Cirujano Oncólogo</h3>
+						<h4>MSDS: 23392 - CMA: 2082 - RIF: V-4567839-0 </h4>
 
 												      </center>
 		<div class="indicaciones">

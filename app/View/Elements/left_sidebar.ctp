@@ -108,42 +108,6 @@
             </li>
           <?php endif; ?>
           <?php  if($current_user['group_id'] == '3' or '1' ): ?>
-
-            <li class="treeview">
-              <a href="#">
-                  <i class="glyphicon glyphicon-file"></i>
-                  <span>Recipes</span>
-                  <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul id="id" class="treeview-menu">
-                  <li class="menu">
-                      <?php echo $this->Html->link(__(' Recipes Registrados'), array('controller' => 'prescriptions', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
-                  </li>
-                  <li class="menu">
-                    <?php echo $this->Html->link(__(' Nuevo Recipe'), array('controller' => 'prescriptions', 'action' => 'add'), array('class'=>'fa fa-angle-double-right')); ?>
-                </li>
-              </ul>
-            </li>
-            <?php endif; ?>
-            <!-- <?php  if($current_user['group_id'] == '3' ): ?>
-
-            <li class="treeview">
-              <a href="#">
-                  <i class="glyphicon glyphicon-list-alt"></i>
-                  <span>Indicaciones</span>
-                  <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul id="id" class="treeview-menu">
-                  <li class="menu">
-                      <?php echo $this->Html->link(__(' Indicaciones Registradas'), array('controller' => 'indications', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
-                  </li>
-                  <li class="menu">
-                    <?php echo $this->Html->link(__(' Nueva Indicación'), array('controller' => 'indications', 'action' => 'add'), array('class'=>'fa fa-angle-double-right')); ?>
-                </li>
-              </ul>
-            </li>
-          <?php endif; ?> -->
-          <?php  if($current_user['group_id'] == '3' or '1' ): ?>
             <li class="treeview">
               <a href="#">
                   <i class="glyphicon glyphicon-tasks"></i>
@@ -160,7 +124,23 @@
               </ul>
             </li>
           <?php endif; ?>
-
+          <?php  if($current_user['group_id'] == '3' or '1' ): ?>
+            <li class="treeview">
+              <a href="#">
+                  <i class="glyphicon glyphicon-file"></i>
+                  <span>Recipes</span>
+                  <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul id="id" class="treeview-menu">
+                  <li class="menu">
+                      <?php echo $this->Html->link(__(' Recipes Registrados'), array('controller' => 'prescriptions', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
+                  </li>
+                  <li class="menu">
+                    <?php echo $this->Html->link(__(' Nuevo Recipe'), array('controller' => 'prescriptions', 'action' => 'add'), array('class'=>'fa fa-angle-double-right')); ?>
+                </li>
+              </ul>
+            </li>
+            <?php endif; ?>
             <li class="treeview">
               <a href="#">
                   <i class="glyphicon glyphicon-calendar"></i>

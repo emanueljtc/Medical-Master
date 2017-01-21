@@ -82,10 +82,10 @@
               </a>
               <ul id="id" class="treeview-menu">
                 <li class="menu">
-                  <?php echo $this->Html->link(__(' Antecedentes Registrados'), array('controller' => 'antecedents', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
+                  <?php echo $this->Html->link(__(' Generales'), array('controller' => 'antecedents', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
                 </li>
                 <li class="menu">
-                  <?php echo $this->Html->link(__(' Nuevo Antecedentes'), array('controller' => 'antecedents', 'action' => 'add'), array('class'=>'fa fa-angle-double-right')); ?>
+                  <?php echo $this->Html->link(__(' Ginecológicos'), array('controller' => 'antecedentsGinecologycals', 'action' => 'index'), array('class'=>'fa fa-angle-double-right')); ?>
                 </li>
               </ul>
             </li>

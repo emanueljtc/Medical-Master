@@ -1,10 +1,23 @@
+<!-- MEDICAL_MASTER
+Software Medico Asistencial
+Sistema de Información: Desarrollado en CAKEPHP 2.6
+Aplicativo Movil: Desarrollado en IONIC 2
+Licencia Privativa.
+Desarrolladores:
+Ing. Guillermo Ochoa Torres
+Ing. Emanuel Torres Clemente
+Lugar: Maracay - Estado Aragua - Venezuela
+Version: 1.1
+Año: 2016 - 2017 -->
 <?php $this->layout = 'p_login'; ?>
 
  <div class="wrapper">
 
 
-        <!-- <div class="logo"></div> -->
-        
+        <div class="logo">
+
+        </div>
+
         <div class="form-signin zoom">
           <!-- <marquee loop="1" SCROLLAMOUNT="25" behavior = "slide" direction="right"> -->
 
@@ -22,7 +35,7 @@
                         </fieldset>
 
               </div>
-              <br><br><br><br><br><br>
+
               <div class="col-xs-12">
                   <label class="checkbox">
                     <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Recuerdame
@@ -35,10 +48,11 @@
 
         </div>
         <br><br>
-          <footer id="footer">
-              <center>
-                <h4 class="developers">Desarrollado por Emanuel Torres C. & Guillermo Ochoa T.</h4>
-            </center>
-          </footer>
+
 
 </div>
+<footer id="footer-zone">
+    <center>
+      <h4 class="developers">Developers: Emanuel Torres & Guillermo Ochoa T.</h4>
+  </center>
+</footer>

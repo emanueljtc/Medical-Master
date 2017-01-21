@@ -202,7 +202,7 @@
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-black">
-                                  
+
                                       <!-- <?php echo $this->Html->image('../files/user/foto/'.$user['User']['foto_dir'].'/'.'thumb_'.$user['User']['foto'], array('class' => 'img-circle')); ?> -->
                                           <?php  if($current_user['group_id'] == '1'):                 ?>
                                             <?= $this->Html->image('avatar04.png', array('class' => 'img-circle')); ?>
@@ -213,10 +213,18 @@
                                           <?php  if($current_user['group_id'] == '3'):                 ?>
                                             <?= $this->Html->image('avatar5.png', array('class' => 'img-circle')); ?>
                                           <?php endif; ?>
-                              
+
                                     <p>
                                     <?php	echo $this->Session->read('Auth.User.full_name')?>
-                                        <small>Doctor Oncologo</small>
+                                        <?php if($current_user['group_id'] == 1): ?>
+                                            <small>Administrador</small>
+                                        <?php endif; ?>
+                                        <?php if($current_user['group_id'] == 2): ?>
+                                            <small>Secretaria</small>
+                                        <?php endif; ?>
+                                        <?php if($current_user['group_id'] == 3): ?>
+                                            <small>Doctor</small>
+                                        <?php endif; ?>
                                     </p>
                                 </li>
                                 <!-- Menu Body -->
@@ -234,10 +242,12 @@
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                                        <?php echo $this->Html->link(__('Soporte'), array('controller' => 'pages', 'action' => 'support'), array('class'=>'btn btn-default btn-flat')); ?>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="http://localhost/medical_master/users/logout" class="btn btn-default btn-flat">Salir</a>
+
+                                      <?php echo $this->Html->link(__('Salir'), array('controller' => 'users', 'action' => 'logout'), array('class'=>'btn btn-default btn-flat')); ?>
+
                                     </div>
                                 </li>
                             </ul>

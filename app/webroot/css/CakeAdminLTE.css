@@ -1,3 +1,15 @@
+/*MEDICAL_MASTER
+Software Medico Asistencial
+Sistema de Información: Desarrollado en CAKEPHP 2.6
+Aplicativo Movil: Desarrollado en IONIC 2
+Licencia Privativa.
+Desarrolladores:
+Ing. Guillermo Ochoa Torres
+Ing. Emanuel Torres Clemente
+Lugar: Maracay - Estado Aragua - Venezuela
+Version: 1.1
+Año: 2016 - 2017*/
+
 @import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
 @import url(//fonts.googleapis.com/css?family=Kaushan+Script);
 
@@ -11,13 +23,15 @@ body {
 }
 .divcontainer{
   min-width: 410px;
-  height: 500px;
-  max-width: 800px;
+  height: 495px;
+  max-width: 773px;
   margin: 0 auto;
-  background-image: url('../img/medicalmaster.png');
+  background-image: url(../img/medicalmaster.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 80%
+  background-size: 57%;
+  background-color: rgba(100, 147, 237, 0.39);
+  border-radius: 48px;
 }
 a {
   color: #555555;
@@ -129,7 +143,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Monospace', sans-serif;
 }
 /* Page Header */
 .page-header {
@@ -3538,4 +3552,10 @@ fieldset[disabled] .btn-vk.active {
 .btn-vk .badge {
   color: #587ea3;
   background-color: #ffffff;
+}
+.support{
+  margin: 23px auto;
+  font-family: monospace;
+  text-align: justify;
+
 }

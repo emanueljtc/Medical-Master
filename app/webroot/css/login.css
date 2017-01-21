@@ -3,8 +3,8 @@ body {
 
     width: 100%;
     /*height: 400px;*/
-    background-color: transparent;
     background-image: url('..//../img/login.jpg');
+    background-color: transparent;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center top;
@@ -26,39 +26,37 @@ h3{
   font-family: monospace;
   text-aling:center;
 
+
 }
 .developers{
-  color: #ffffff;
-  font-family: atomo;
+  color: #fff;
+  font-family: monospace;
   font-size: 150%;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 .wrapper {
-  margin-top: 260px;
-  margin-bottom: 80px;
+  margin-top: auto;;
+  /*margin-bottom: 80px;*/
 }
 .logo{
-  position: absolute;
-    top: 0px;
-    right: 528px;
-    width: 273px;
-    height: 177px;
+    /*position: absolute;*/
+    margin: 11 auto;
+    right: 525px;
+    max-width: 329px;
+    height: 250px;
     background-image: url(..//../img/medicalmaster.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
-    background-color: rgba(255, 255, 255, 0.34);
-    -webkit-box-shadow: 14px 5px 43px 3px rgba(0,0,0,0.83);
-    -moz-box-shadow: 14px 5px 43px 3px rgba(0,0,0,0.83);
-    box-shadow: 14px 5px 43px 3px rgba(0,0,0,0.83);
-    -webkit-border-top-left-radius: 15px;
-    -webkit-border-top-right-radius: 12px;
-    -webkit-border-bottom-right-radius: 12px;
-    -webkit-border-bottom-left-radius: 12px;
+    background-position-y: 1px;
+    background-size: contain;
+    /*background-color: #000;*/
+
 }
 .form-signin {
   max-width: 437px;
   padding: 15px 27px 24px;
-  margin: 0 auto;
+  margin: -6 auto;
   /*background-image:url("..//../img/medicalmaster3.png");*/
 	background-repeat: no-repeat;
 	background-position: center;
@@ -121,4 +119,12 @@ h3{
     -o-transition: font-size 300ms linear 0s;
     /* Default */
     transition: font-size 300ms linear 0s;
+}
+#footer-zone {
+  height: 50px;
+  background:rgba(0, 0, 0, 0.8);
+  width:100%;
+  position:absolute;
+  bottom:0;
+  left:0;
 }

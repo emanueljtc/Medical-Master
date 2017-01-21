@@ -4,7 +4,7 @@
 
     <div class="box box-primary">
 		<div class="box-header">
-			<h3 class="box-title"><?php echo __('Antecedentes'); ?></h3>
+			<h3 class="box-title"><?php echo __('Antecedentes Generales'); ?></h3>
 			<div class="box-tools pull-right">
               <?php  if($current_user['group_id'] == '1' and '3' ): ?>
                 <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i> Nuevo Antecedente'), array('action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
@@ -69,7 +69,7 @@
   <div class="btn-group btn-group-justified col-sm-4">
 
           <?php echo $this->Html->link(__('Nuevo Diagnostico'), array('controller'=>'diagnostics','action' => 'add'), array('class' => 'btn btn-info')); ?>
-          <?php echo $this->Html->link(__('Lista de Pacientes'), array('controller' => 'people', 'action' => 'index'), array('class' => 'btn btn-danger')); ?>
+          <?php echo $this->Html->link(__('Antecedentes Ginecológicos'), array('controller' => 'antecedentsGinecologycals', 'action' => 'index'), array('class' => 'btn btn-danger')); ?>
           <?php echo $this->Html->link(__('Nuevo Paciente'), array('controller' => 'people', 'action' => 'add'), array('class' => 'btn btn-primary')); ?>
 
   </div>

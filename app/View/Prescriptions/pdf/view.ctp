@@ -46,6 +46,7 @@ Año: 2016 - 2017 -->
 			font-family: monospace;
 			font-weight: bold;
 			background-image:url("http://localhost/medical_master/app/webroot/img/medicalmaster2.png");
+			background-color: rgba(100, 147, 237, 0.39);
 			background-repeat: no-repeat;
 			background-position: center;
 
@@ -64,6 +65,7 @@ Año: 2016 - 2017 -->
 			font-family: monospace;
 			font-weight: bold;
 			background-image:url("http://localhost/medical_master/app/webroot/img/medicalmaster2.png");
+			background-color: rgba(100, 147, 237, 0.39);
 			background-repeat: no-repeat;
 			background-position: center;
 		}

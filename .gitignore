@@ -12,5 +12,4 @@ log/
 /tags
 *.mo
 node_modules/
-/app/webroot/fonts/*
 *.ttf
